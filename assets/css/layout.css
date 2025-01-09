@@ -1,0 +1,47 @@
+* {
+  box-sizing: border-box;
+}
+
+header {
+  position: fixed;
+  width: 100%;
+  top: 0;
+  left: 0;
+  background-color: var(--white);
+}
+
+main {
+  background-color: pink;
+}
+
+.main-wrapper {
+  padding: 2rem;
+}
+
+.main-content {
+  background-color: lightgreen;
+}
+
+@media only screen and (min-width: 600px) {
+}
+
+@media only screen and (min-width: 1000px) {
+  .layout {
+    display: flex;
+    min-height: 100svh;
+  }
+  header {
+    height: 100svh;
+    width: 35%;
+    position: sticky;
+    top: 0;
+    left: 0;
+  }
+
+  main {
+    width: 65%;
+  }
+}
+
+@media only screen and (min-width: 1600px) {
+}
