@@ -1,0 +1,18 @@
+{
+  "name": "acf/images-small-block",
+  "title": "Bild(er) klein",
+  "description": "Dieser Block stellt ein Bild oder Bilder klein dar.",
+  "editorStyle": ["file:./style.css"],
+  "category": "media",
+  "icon": "format-gallery",
+  "keywords": ["image", "gallery"],
+  "acf": {
+    "renderTemplate": "images-small-block.php"
+  },
+  "supports": {
+    "align": false,
+    "multiple": true,
+    "alignWide": false,
+    "mode": false
+  }
+}

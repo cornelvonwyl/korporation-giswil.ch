@@ -1,0 +1,16 @@
+.images-link-block {
+  padding-bottom: 3rem;
+  border-bottom: 1px solid $color-grey;
+  margin: 4rem 0;
+  @include medium-up {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    gap: 1rem;
+  }
+
+  .images-block {
+    @include container-small;
+    margin: 0;
+  }
+}

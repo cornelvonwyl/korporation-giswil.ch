@@ -1,0 +1,52 @@
+.job-list {
+  &__title {
+    margin-bottom: 3rem;
+  }
+
+  &__items {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+
+  &__item {
+    border-top: 1px solid $color-grey;
+    display: flex;
+
+    &:last-child {
+      border-bottom: 1px solid $color-grey;
+    }
+  }
+
+  &__link {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    color: $color-gold;
+    font-size: 1.5625rem;
+    padding: 1.25rem 0;
+    width: 100%;
+
+    img {
+      width: 2rem;
+      height: auto;
+      @include transition(transform);
+    }
+
+    &:hover {
+      img {
+        transform: rotate(-45deg);
+      }
+    }
+  }
+
+  &__icon {
+    font-weight: bold;
+    margin-left: auto;
+  }
+
+  &__item--empty {
+    padding: 1rem;
+    font-size: 1.5625rem;
+  }
+}

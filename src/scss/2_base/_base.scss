@@ -1,0 +1,26 @@
+html {
+  overflow-x: hidden;
+  scroll-behavior: smooth;
+}
+
+* {
+  box-sizing: border-box;
+  scroll-margin-top: $content-offset;
+}
+
+img,
+video {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+::selection {
+  color: $color-white;
+  background: $color-black;
+}
+
+::selection {
+  color: $color-white;
+  background: $color-black;
+}

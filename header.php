@@ -15,7 +15,7 @@
 
         <header class="header">
 
-            <div class="header-logo">
+            <div class="header__logo">
                 <a href="/">
                     <svg id="Ebene_1" xmlns="http://www.w3.org/2000/svg" version="1.1" viewBox="0 0 113.3 135.1">
                         <defs>
@@ -40,7 +40,7 @@
 
 
 
-            <button class="header-hamburger" aria-label="Menü öffnen" aria-expanded="false">
+            <button class="header__hamburger" aria-label="Menü öffnen" aria-expanded="false">
                 <span></span>
                 <span></span>
                 <span></span>
@@ -49,11 +49,11 @@
             </button>
 
 
-            <nav class="header-nav--mobile">
+            <nav class="header__nav header__nav--mobile">
                 <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
             </nav>
 
-            <nav class="header-nav--desktop">
+            <nav class="header__nav header__nav--desktop">
                 <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
             </nav>
         </header>

@@ -1,0 +1,116 @@
+@font-face {
+  font-family: 'Cadiz';
+  src: url('../assets/fonts/Cadiz-Regular.otf') format('opentype');
+}
+
+* {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  font-smooth: never;
+}
+
+body {
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-family: 'Cadiz', sans-serif;
+
+  @include medium-up() {
+    font-size: 1.25rem;
+  }
+}
+
+h1 {
+  font-size: 1.5625rem;
+  @include title-spacing;
+}
+
+h2 {
+  font-size: 1.25rem;
+  color: $color-gold;
+  text-transform: uppercase;
+  @include title-spacing;
+}
+
+h3 {
+  font-size: 1.5625rem;
+  color: $color-gold;
+  @include title-spacing;
+}
+
+h4 {
+  font-size: 1.5625rem;
+  @include title-spacing;
+}
+
+h5 {
+  font-size: 0.9375rem;
+  color: $color-gold;
+  text-transform: uppercase;
+}
+
+.text-small {
+  font-size: 0.9375rem;
+}
+
+a {
+  color: $color-gold;
+  text-decoration: none;
+
+  @include hover-effect;
+}
+
+figcaption {
+  font-size: 0.9375rem;
+  margin-top: 0.75rem;
+  color: $color-grey;
+}
+
+ul.wp-block-list {
+  list-style-type: '— ';
+  padding-inline-start: 2.5rem;
+}
+
+.main-content {
+  p,
+  ul,
+  ol {
+    margin-bottom: 1.5rem;
+
+    @include medium-up {
+      margin-bottom: 2rem;
+    }
+  }
+
+  blockquote {
+    letter-spacing: 2px;
+    line-height: 1.9;
+    text-transform: uppercase;
+    font-size: 1.75rem;
+    @include spacing;
+
+    @include medium-up {
+      font-size: 2.75rem;
+    }
+  }
+
+  > *:not(.images-block):not(.wp-block-video):not(.links-block):not(
+      .images-link-block
+    ) {
+    @include container-small;
+  }
+}
+
+.arrow-link,
+.download-link {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+  width: max-content;
+  margin-left: auto;
+  line-height: 1.75;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

@@ -1,0 +1,58 @@
+.images-block {
+  @include spacing;
+
+  &:has(.swiper) {
+    margin: 1.5rem 0;
+
+    @include medium-up {
+      margin: 3.5rem 0;
+    }
+  }
+
+  &:first-child {
+    margin-top: 0;
+  }
+
+  &__image {
+    img {
+      width: 100%;
+      height: auto;
+      aspect-ratio: 1 / 1;
+      object-fit: cover;
+      object-position: center;
+
+      @include medium-up {
+        aspect-ratio: 16 / 9;
+      }
+    }
+  }
+
+  .swiper {
+    padding-bottom: 2.5rem;
+  }
+
+  .swiper-buttons {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    z-index: 10;
+  }
+}
+
+// Gallery shared
+.swiper-button-prev,
+.swiper-button-next {
+  border: none;
+  margin: 0;
+  padding: 0;
+  width: auto;
+  overflow: visible;
+  background: transparent;
+  cursor: pointer;
+  @include hover-effect;
+
+  img {
+    width: 1.5rem;
+    height: 1.5rem;
+  }
+}

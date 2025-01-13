@@ -1,0 +1,23 @@
+.post-slider {
+  @include spacing;
+
+  &__wrapper {
+    padding: 2rem 0;
+    border-bottom: solid 1px $color-grey;
+    border-top: solid 1px $color-grey;
+  }
+
+  &__image {
+    aspect-ratio: 5/4;
+    width: 100%;
+    object-fit: cover;
+  }
+
+  &__date {
+    text-transform: uppercase;
+  }
+
+  &__headline {
+    color: $color-black;
+  }
+}
