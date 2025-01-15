@@ -6,85 +6,106 @@ get_header();
 <main>
   <div class="main-wrapper">
 
+
+
     <?php if (have_posts()):
       while (have_posts()):
         the_post(); ?>
 
-        <article class="main-content">
-          <h1><?php the_title(); ?></h1>
-
-          <p> At vero eos et accusam et justo duo dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus
-            est
-            Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur sadipscing elitr, sed diam nonumy eirmod
-            tempor invidunt ut labore et dolore magna aliquyam erat, sed diam voluptua. At vero eos et accusam et justo duo
-            dolores et ea rebum. Stet clita kasd gubergren, no sea takimata sanctus est Lorem ipsum dolor sit amet. Lorem
-            ipsum dolor sit amet, consetetur sadipscing elitr, At accusam aliquyam diam diam dolore dolores duo eirmod eos
-            erat, et nonumy sed tempor et et invidunt justo labore Stet clita ea et gubergren, kasd magna no rebum. sanctus
-            sea sed takimata ut vero voluptua. est Lorem ipsum dolor sit amet. Lorem ipsum dolor sit amet, consetetur
-            sadipscing elitr, sed diam nonumy eirmod tempor invidunt ut labore et dolore magna aliquyam erat.</p>
+        <article class="main-content referenzen-single">
 
 
-          <!-- Images -->
-          <?php
-          $image_folder = get_field('image_folder');
-          if ($image_folder[0]):
-            $attachment_ids = Helpers::getAttachmentIdsByFolderId($image_folder[0]);
 
-            if (!empty($attachment_ids)): ?>
-              <div class="image-folder">
-                <div class="image-gallery">
-                  <?php foreach ($attachment_ids as $attachment_id): ?>
-                    <div class="image-item">
-                      <?php
-                      echo wp_get_attachment_image($attachment_id, 'huge');
-                      ?>
-                    </div>
-                  <?php endforeach; ?>
+          <button class="referenzen-single__back" onclick="history.back()" aria-label="Zurück zur Übersicht">
+            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/icons/close.svg" alt="Schliessen Symbol">
+          </button>
+
+          <div class="referenzen-single__wrapper">
+            <!-- Images -->
+            <?php
+            $image_folder = get_field('image_folder');
+            if ($image_folder):
+              $attachment_ids = Helpers::getAttachmentIdsByFolderId($image_folder[0]);
+
+              if (!empty($attachment_ids)): ?>
+
+                <div class="swiper-buttons">
+                  <button type="button" class="swiper-button-prev" aria-label="Vorheriges Bild">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
+                      alt="Pfeil nach links">
+                  </button>
+
+                  <span class="swiper-pagination-numbers">
+                    <span class="current-slide">1</span> / <span class="total-slides">0</span>
+                  </span>
+
+                  <button type="button" class="swiper-button-next" aria-label="Nächstes Bild">
+                    <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
+                      alt="Pfeil nach rechts">
+                  </button>
                 </div>
-              </div>
+
+                <div class="swiper">
+                  <div class="swiper-wrapper">
+                    <?php foreach ($attachment_ids as $attachment_id): ?>
+                      <div class="swiper-slide">
+                        <?php
+                        echo wp_get_attachment_image($attachment_id, 'huge');
+                        ?>
+                      </div>
+                    <?php endforeach; ?>
+                  </div>
+                </div>
+              <?php else: ?>
+                <p>Keine Bilder wurden gefunden.</p>
+              <?php endif; ?>
             <?php else: ?>
-              <p>Keine Bilder wurden gefunden.</p>
+              <p>Ordner ID ist falsch.</p>
             <?php endif; ?>
-          <?php else: ?>
-            <p>Ordner ID ist falsch.</p>
-          <?php endif; ?>
 
-          <!-- Content -->
-          <div class="post-content">
-            <?php the_content(); ?>
+            <div class="referenzen-single__content">
+
+              <p>
+                <?php echo the_title(); ?>
+              </p>
+
+              <!-- Taxonomy: Architektur -->
+              <?php
+              $architektur_terms = get_the_terms(get_the_ID(), 'architektur');
+              if ($architektur_terms && !is_wp_error($architektur_terms)):
+                $architektur_names = array_map(function ($term) {
+                  return esc_html($term->name);
+                }, $architektur_terms);
+                ?>
+                <p>Architektur: <?php echo implode(", ", $architektur_names); ?></p>
+              <?php endif; ?>
+
+              <!-- Taxonomy: Fotografie -->
+              <?php
+              $fotografie_terms = get_the_terms(get_the_ID(), 'fotografie');
+              if ($fotografie_terms && !is_wp_error($fotografie_terms)):
+                $fotografie_names = array_map(function ($term) {
+                  return esc_html($term->name);
+                }, $fotografie_terms);
+                ?>
+                <p>Fotografie: <?php echo implode(", ", $fotografie_names); ?></p>
+              <?php endif; ?>
+
+              <!-- Taxonomy: Leistungen -->
+              <?php
+              $leistungen_terms = get_the_terms(get_the_ID(), 'leistung');
+              if ($leistungen_terms && !is_wp_error($leistungen_terms)):
+                $leistungen_names = array_map(function ($term) {
+                  return esc_html($term->name);
+                }, $leistungen_terms);
+                ?>
+                <p>Leistungen: <?php echo implode(", ", $leistungen_names); ?></p>
+              <?php endif; ?>
+            </div>
+
           </div>
-
-          <!-- Taxonomy: Architektur -->
-          <?php
-          $architektur_terms = get_the_terms(get_the_ID(), 'architektur');
-          if ($architektur_terms && !is_wp_error($architektur_terms)): ?>
-            <div class="taxonomie-architektur">
-              <h2>Architektur:</h2>
-              <ul>
-                <?php foreach ($architektur_terms as $term): ?>
-                  <li><?php echo esc_html($term->name); ?></li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
-          <?php endif; ?>
-
-          <!-- Taxonomy: Fotografie -->
-          <?php
-          $fotografie_terms = get_the_terms(get_the_ID(), 'fotografie');
-          if ($fotografie_terms && !is_wp_error($fotografie_terms)): ?>
-            <div class="taxonomie-fotografie">
-              <h2>Fotografie:</h2>
-              <ul>
-                <?php foreach ($fotografie_terms as $term): ?>
-                  <li><?php echo esc_html($term->name); ?></li>
-                <?php endforeach; ?>
-              </ul>
-            </div>
-          <?php endif; ?>
         </article>
-
       <?php endwhile; endif; ?>
-
   </div>
 </main>
 <?php get_footer(); ?>

@@ -12,9 +12,9 @@
 
   <div class="swiper post-slider__container">
 
-    <div class="swiper-wrapper post-slider__wrapper">
-      <?php
+    <div class="swiper-wrapper post-slider__wrapper add-hover-effect">
 
+      <?php
       $args = array(
         'post_type' => 'post',
         'post_status' => 'publish',
@@ -29,7 +29,6 @@
           $external_page_id = get_post_meta(get_the_ID(), 'external_page', TRUE);
           $external_page_link = get_permalink($external_page_id);
           ?>
-
           <div class="swiper-slide post-slider__slide">
             <a href="<?php echo esc_url($external_page_id ? $external_page_link : get_permalink()); ?>"
               class="post-slider__link">

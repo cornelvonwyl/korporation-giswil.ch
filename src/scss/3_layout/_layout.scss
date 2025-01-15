@@ -13,6 +13,14 @@
   }
 }
 
+.main-content {
+  > *:not(.images-block):not(.wp-block-video):not(.links-block):not(
+      .images-link-block
+    ):not(.post-slider):not(.referenzen) {
+    @include container-small;
+  }
+}
+
 main {
   @include medium-up {
     width: 65%;

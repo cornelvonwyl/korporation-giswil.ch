@@ -2,9 +2,15 @@
 <main>
   <div class="main-wrapper">
     <article class="main-content">
-      <?php
-      include get_template_directory() . '/template-parts/referenz-list.php';
-      ?>
+
+      <div class="referenzen">
+        <!-- Referenzen Filter -->
+        <?php include get_template_directory() . '/template-parts/referenzen/referenzen-filter.php'; ?>
+
+
+        <!-- Referenzen List -->
+        <?php include get_template_directory() . '/template-parts/referenzen/referenzen-list.php'; ?>
+      </div>
     </article>
   </div>
 </main>

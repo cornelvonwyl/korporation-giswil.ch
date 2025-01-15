@@ -6,7 +6,6 @@
 
     <button class="post__back" onclick="history.back()" aria-label="Zurück zur Übersicht">
       <img src="<?php echo get_template_directory_uri(); ?>/src/assets/icons/close.svg" alt="Schliessen Symbol">
-
     </button>
 
     <p class="post__date text-small">

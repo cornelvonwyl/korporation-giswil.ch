@@ -1,0 +1,9 @@
+.add-hover-effect > * {
+  opacity: 1;
+  transition: opacity 0.3s ease !important;
+}
+
+.is-inactive {
+  @include transition(all);
+  opacity: 0.4;
+}

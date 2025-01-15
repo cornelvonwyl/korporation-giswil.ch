@@ -4,28 +4,30 @@ import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 
-document.querySelectorAll('.post-slider .swiper').forEach((swiperElement) => {
-  console.log(swiperElement);
-  new Swiper(swiperElement, {
-    modules: [Navigation, Autoplay, EffectFade],
-    speed: 1000,
-    crossFade: true,
-    slidesPerView: 3,
-    spaceBetween: 16,
-    navigation: {
-      nextEl: '.swiper-button-next',
-      prevEl: '.swiper-button-prev',
-    },
-    breakpoints: {
-      0: {
-        slidesPerView: 1,
+document.addEventListener('DOMContentLoaded', () => {
+  document.querySelectorAll('.post-slider .swiper').forEach((swiperElement) => {
+    console.log(swiperElement);
+    new Swiper(swiperElement, {
+      modules: [Navigation, Autoplay, EffectFade],
+      speed: 1000,
+      crossFade: true,
+      slidesPerView: 3,
+      spaceBetween: 16,
+      navigation: {
+        nextEl: '.swiper-button-next',
+        prevEl: '.swiper-button-prev',
       },
-      640: {
-        slidesPerView: 2,
+      breakpoints: {
+        0: {
+          slidesPerView: 1,
+        },
+        640: {
+          slidesPerView: 2,
+        },
+        1200: {
+          slidesPerView: 3,
+        },
       },
-      1200: {
-        slidesPerView: 3,
-      },
-    },
+    });
   });
 });
