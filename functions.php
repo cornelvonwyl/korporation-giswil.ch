@@ -54,6 +54,7 @@ function register_acf_blocks() {
   register_block_type(__DIR__ . '/template-parts/blocks/images-small-block');
   register_block_type(__DIR__ . '/template-parts/blocks/link-block');
   register_block_type(__DIR__ . '/template-parts/blocks/images-link-block');
+  register_block_type(__DIR__ . '/template-parts/blocks/post-list-block');
 
 }
 
@@ -81,6 +82,7 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context) {
       'acf/images-small-block',
       'acf/link-block',
       'acf/images-link-block',
+      'acf/post-list-block',
     );
   }
 

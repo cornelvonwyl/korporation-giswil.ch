@@ -26,16 +26,8 @@ $images = get_field('images') ?: array(
   <?php foreach ($images as $image): ?>
     <figure class="images-small-block__image">
       <?php
-      $size = 'medium';
-      $alt_text = esc_attr($image['alt'] ?? '');
       $caption = esc_html($image['caption'] ?? '');
-
-      echo wp_get_attachment_image(
-        $image['ID'],
-        $size,
-        FALSE,
-        array('loading' => 'lazy', 'alt' => $alt_text)
-      );
+      echo wp_get_attachment_image($image['ID'], 'medium');
       ?>
 
       <?php if (!empty($caption)): ?>

@@ -52,7 +52,9 @@ h5 {
   font-size: 0.9375rem;
 }
 
-a {
+.main-wrapper a,
+header a,
+footer a {
   color: $color-gold;
   text-decoration: none;
 
@@ -95,7 +97,7 @@ ul.wp-block-list {
 
   > *:not(.images-block):not(.wp-block-video):not(.links-block):not(
       .images-link-block
-    ) {
+    ):not(.post-slider) {
     @include container-small;
   }
 }

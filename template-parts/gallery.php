@@ -13,50 +13,38 @@ $unique_id = uniqid('images-block-');
 ?>
 
 <section class="images-block" id="<?php echo esc_attr($unique_id); ?>">
-    <?php if ($number_of_images === 1): ?>
-      <?php foreach ($images as $image): ?>
-        <figure class="images-block__image">
-            <?php
-            $size = 'huge';
-            echo wp_get_attachment_image(
-              $image['ID'],
-              $size,
-              FALSE,
-              array('loading' => 'lazy', 'alt' => esc_attr($image['alt'] ?? ''))
-            );
-            ?>
-        </figure>
-      <?php endforeach; ?>
-    <?php elseif ($number_of_images > 1): ?>
-      <div class="swiper">
-          <div class="swiper-wrapper">
-              <?php foreach ($images as $image): ?>
-                <div class="swiper-slide">
-                    <figure class="images-block__image">
-                        <?php
-                        $size = 'huge';
-                        echo wp_get_attachment_image(
-                          $image['ID'],
-                          $size,
-                          FALSE,
-                          array('loading' => 'lazy', 'alt' => esc_attr($image['alt'] ?? ''))
-                        );
-                        ?>
-                    </figure>
-                </div>
-              <?php endforeach; ?>
+  <?php if ($number_of_images === 1): ?>
+    <?php foreach ($images as $image): ?>
+      <figure class="images-block__image">
+        <?php
+        echo wp_get_attachment_image($image['ID'], 'huge');
+        ?>
+      </figure>
+    <?php endforeach; ?>
+  <?php elseif ($number_of_images > 1): ?>
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <?php foreach ($images as $image): ?>
+          <div class="swiper-slide">
+            <figure class="images-block__image">
+              <?php
+              echo wp_get_attachment_image($image['ID'], 'huge');
+              ?>
+            </figure>
           </div>
-
-          <div class="swiper-buttons">
-              <button type="button" class="swiper-button-prev" aria-label="Vorheriges Bild">
-                  <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
-                      alt="Pfeil nach links">
-              </button>
-              <button type="button" class="swiper-button-next" aria-label="Nächstes Bild">
-                  <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-                      alt="Pfeil nach rechts">
-              </button>
-          </div>
+        <?php endforeach; ?>
       </div>
-    <?php endif; ?>
+
+      <div class="swiper-buttons">
+        <button type="button" class="swiper-button-prev" aria-label="Vorheriges Bild">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
+            alt="Pfeil nach links">
+        </button>
+        <button type="button" class="swiper-button-next" aria-label="Nächstes Bild">
+          <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
+            alt="Pfeil nach rechts">
+        </button>
+      </div>
+    </div>
+  <?php endif; ?>
 </section>

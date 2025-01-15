@@ -17,7 +17,7 @@
     position: sticky;
     top: 0;
     left: 0;
-    padding: 3rem 4rem 4rem;
+    padding: 3rem 4rem;
     flex-direction: column;
     align-items: flex-start;
   }
@@ -26,7 +26,7 @@
     width: 4rem;
 
     @include medium-up {
-      width: 8rem;
+      width: 6rem;
     }
   }
 
@@ -97,12 +97,13 @@
       background-color: white;
       padding: 2rem 1.5rem;
       position: absolute;
-      top: 115px;
+      top: 108px;
       left: 0;
       width: 100%;
-      height: calc(100dvh - 115px);
+      height: calc(100dvh - 108px);
       visibility: hidden;
       transform: translateX(-100%);
+      overflow: scroll;
       @include transition(all);
 
       @include medium-up {
@@ -152,8 +153,8 @@
           margin-bottom: 1rem;
 
           .menu-item {
-            font-size: 1.25rem;
-            line-height: 2.25;
+            font-size: 1.125rem;
+            line-height: 2;
             padding-left: 1.5rem;
             letter-spacing: 1px;
           }

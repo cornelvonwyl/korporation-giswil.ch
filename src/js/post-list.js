@@ -11,23 +11,20 @@ document.querySelectorAll('.post-slider .swiper').forEach((swiperElement) => {
     speed: 1000,
     crossFade: true,
     slidesPerView: 3,
-    spaceBetween: 30,
+    spaceBetween: 16,
     navigation: {
       nextEl: '.swiper-button-next',
       prevEl: '.swiper-button-prev',
     },
     breakpoints: {
-      640: {
+      0: {
         slidesPerView: 1,
-        spaceBetween: 10,
       },
-      768: {
+      640: {
         slidesPerView: 2,
-        spaceBetween: 20,
       },
-      1024: {
+      1200: {
         slidesPerView: 3,
-        spaceBetween: 30,
       },
     },
   });

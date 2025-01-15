@@ -1,23 +1,75 @@
-.post-slider {
-  @include spacing;
+body {
+  .post-slider {
+    @include spacing;
 
-  &__wrapper {
-    padding: 2rem 0;
-    border-bottom: solid 1px $color-grey;
-    border-top: solid 1px $color-grey;
-  }
+    &__container {
+      border-bottom: solid 1px $color-grey;
+      border-top: solid 1px $color-grey;
+    }
 
-  &__image {
-    aspect-ratio: 5/4;
-    width: 100%;
-    object-fit: cover;
-  }
+    &__wrapper {
+      padding: 2rem 0;
+    }
 
-  &__date {
-    text-transform: uppercase;
-  }
+    &__slide {
+      position: relative;
+      height: auto;
+    }
 
-  &__headline {
-    color: $color-black;
+    &__link {
+      display: block;
+      height: 100%;
+      @include transition(all);
+
+      &:hover {
+        filter: brightness(1);
+        transform: translateY(-0.25rem);
+
+        .post-slider__headline {
+          color: $color-gold;
+        }
+      }
+    }
+
+    &__image {
+      aspect-ratio: 5/4;
+      width: 100%;
+      object-fit: cover;
+    }
+
+    &__date {
+      text-transform: uppercase;
+      margin: 0 0 0.5rem;
+      color: $color-gold;
+    }
+
+    &__headline {
+      color: $color-black;
+      padding: 0;
+      margin: 0;
+      width: 100%;
+      display: -webkit-box;
+      -webkit-line-clamp: 3;
+      -webkit-box-orient: vertical;
+      overflow: hidden;
+      padding: 1rem 0 3rem;
+      @include transition(all);
+    }
+
+    &__count {
+      color: $color-grey;
+      font-size: 0.9375rem;
+      margin: 0;
+      position: absolute;
+      left: 0;
+      bottom: 0;
+    }
+
+    .swiper-buttons {
+      display: flex;
+      justify-content: flex-end;
+      gap: 0.25rem;
+      margin-bottom: 0.75rem;
+    }
   }
 }

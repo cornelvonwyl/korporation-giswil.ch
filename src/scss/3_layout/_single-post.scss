@@ -1,0 +1,36 @@
+.single-post {
+  header {
+    display: none;
+  }
+
+  main {
+    width: 100%;
+    @include container-small;
+    margin: 0 auto;
+  }
+
+  .post {
+    &__back {
+      position: fixed;
+      top: 4rem;
+      left: 4rem;
+      width: 2.5rem;
+      height: 2.5rem;
+      background-color: transparent;
+      border: none;
+      padding: 0;
+      margin: 0;
+      cursor: pointer;
+    }
+    &__date {
+      color: $color-gold;
+      margin: 0;
+    }
+
+    &__title {
+      font-size: 2.8125rem;
+      text-align: center;
+      @include spacing;
+    }
+  }
+}
