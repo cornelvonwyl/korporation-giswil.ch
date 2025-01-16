@@ -6,7 +6,7 @@ import { Navigation } from 'swiper/modules';
 
 document.addEventListener('DOMContentLoaded', () => {
   document
-    .querySelectorAll('.single-referenz .swiper')
+    .querySelectorAll('.referenzen-single .swiper')
     .forEach((swiperElement) => {
       new Swiper(swiperElement, {
         modules: [Navigation],
@@ -34,3 +34,16 @@ function updateSlideNumbers(swiperInstance) {
   document.querySelector('.current-slide').textContent = currentSlide;
   document.querySelector('.total-slides').textContent = totalSlides;
 }
+
+document.addEventListener('DOMContentLoaded', () => {
+  const referenz = document.querySelector('.single-referenz');
+
+  if (referenz) {
+    // Add inert to header and footer
+    const header = document.querySelector('header');
+    const footer = document.querySelector('footer');
+
+    header.setAttribute('inert', '');
+    footer.setAttribute('inert', '');
+  }
+});

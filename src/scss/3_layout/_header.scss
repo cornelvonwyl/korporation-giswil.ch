@@ -20,6 +20,8 @@
     padding: 3rem 4rem;
     flex-direction: column;
     align-items: flex-start;
+    gap: 2rem;
+    overflow-y: auto;
   }
 
   &__logo {
@@ -144,13 +146,19 @@
           display: block;
 
           &:hover {
-            color: $color-black;
+            @include medium-up {
+              color: $color-black;
+            }
           }
         }
 
         .sub-menu {
           display: none;
           margin-bottom: 1rem;
+
+          &--show {
+            display: block;
+          }
 
           .menu-item {
             font-size: 1.125rem;

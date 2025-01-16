@@ -31,10 +31,14 @@
 }
 
 @mixin hover-effect() {
-  filter: brightness(1);
-  @include transition(filter);
+  @include medium-up {
+    filter: brightness(1);
+    @include transition(filter);
+  }
 
   &:hover {
-    filter: brightness(0);
+    @include medium-up {
+      filter: brightness(0);
+    }
   }
 }

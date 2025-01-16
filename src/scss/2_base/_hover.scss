@@ -1,9 +1,13 @@
 .add-hover-effect > * {
-  opacity: 1;
-  transition: opacity 0.3s ease !important;
+  @include medium-up {
+    opacity: 1;
+    transition: opacity 0.3s ease !important;
+  }
 }
 
 .is-inactive {
-  @include transition(all);
-  opacity: 0.4;
+  @include medium-up {
+    @include transition(all);
+    opacity: 0.4;
+  }
 }
