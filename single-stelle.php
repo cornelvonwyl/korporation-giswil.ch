@@ -12,7 +12,7 @@
       <?php endwhile; endif; ?>
 
     <?php
-    include get_template_directory() . '/template-parts/job-list.php';
+    include get_template_directory() . '/template-parts/job/job-list.php';
     ?>
   </div>
 </main>

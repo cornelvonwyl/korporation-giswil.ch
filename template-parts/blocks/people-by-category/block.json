@@ -1,0 +1,18 @@
+{
+  "name": "acf/people-by-category",
+  "title": "Mitarbeitende mit Kontaktinformationen",
+  "description": "Zeigt Mitarbeitende anhand von Kategorien an.",
+  "editorStyle": ["file:./style.css"],
+  "category": "media",
+  "icon": "",
+  "keywords": ["image", "gallery"],
+  "acf": {
+    "renderTemplate": "people-by-category.php"
+  },
+  "supports": {
+    "align": false,
+    "multiple": true,
+    "alignWide": false,
+    "mode": false
+  }
+}

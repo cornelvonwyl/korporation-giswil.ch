@@ -11,4 +11,4 @@
  * @param   array $context The context provided to the block by the post or its parent block.
  */
 
-include get_template_directory() . '/template-parts/gallery.php';
+include get_template_directory() . '/template-parts/components/gallery.php';

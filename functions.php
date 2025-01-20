@@ -55,7 +55,9 @@ function register_acf_blocks() {
   register_block_type(__DIR__ . '/template-parts/blocks/link-block');
   register_block_type(__DIR__ . '/template-parts/blocks/images-link-block');
   register_block_type(__DIR__ . '/template-parts/blocks/post-list-block');
-
+  register_block_type(__DIR__ . '/template-parts/blocks/people-by-category');
+  register_block_type(__DIR__ . '/template-parts/blocks/team');
+  register_block_type(__DIR__ . '/template-parts/blocks/job-list-block');
 }
 
 
@@ -83,6 +85,10 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context) {
       'acf/link-block',
       'acf/images-link-block',
       'acf/post-list-block',
+      'acf/people-by-category',
+      'acf/team',
+      'acf/job-list-block',
+      'gravityforms/form'
     );
   }
 
@@ -118,3 +124,6 @@ add_image_size('huge', 2400, 2400);
  * @return bool Always returns true to enable lazy loading.
  */
 add_filter('wp_lazy_loading_enabled', '__return_true');
+
+
+

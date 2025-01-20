@@ -1,12 +1,75 @@
-label,
-input,
-select,
-legend {
-  width: 100%;
-}
+body {
+  .gform_wrapper {
+    @include spacing;
+    .gform_heading {
+      .gform_required_legend {
+        display: none;
+      }
+    }
 
-label {
-  cursor: pointer;
+    .gform_body {
+      .gform_fields {
+        row-gap: 2rem;
+        .gfield {
+          h3 {
+            margin: 2rem 0 -0.5rem 0;
+          }
+
+          p {
+            font-size: 0.875rem;
+            margin: 0;
+          }
+
+          label,
+          legend {
+            font-size: 0.875rem;
+            line-height: 1;
+            text-transform: uppercase;
+            letter-spacing: 0.1em;
+            cursor: pointer;
+          }
+
+          input[type='text'],
+          input[type='email'],
+          input[type='tel'],
+          input[type='number'],
+          input[type='password'],
+          input[type='url'],
+          textarea {
+            background-color: $color-grey-light;
+            border: none;
+            box-shadow: none;
+            padding: 1.25rem;
+            font-size: 1rem;
+            border-radius: 0;
+
+            &::placeholder {
+              color: $color-grey;
+              opacity: 0.75;
+            }
+          }
+
+          .gfield_radio {
+            > .gchoice {
+              align-items: center;
+            }
+          }
+        }
+      }
+    }
+    .gform_footer {
+      input[type='submit'] {
+        padding: 1rem 2rem !important;
+        border-radius: 0 !important;
+      }
+    }
+
+    .gform_confirmation_message {
+      background-color: $color-gold;
+      padding: 2rem;
+      color: $color-white;
+    }
+  }
 }
 
 /* input:not(input[type='checkbox'], input[type='submit']),
@@ -34,7 +97,6 @@ textarea {
 
 .checkbox-wrapper {
   display: flex;
-  justify-content: center;
   align-items: center;
   gap: 0.5rem;
   color: $color-gold;
@@ -91,7 +153,3 @@ textarea {
     color: $color-white;
   }
 } */
-
-::placeholder {
-  font-weight: 400;
-}

@@ -1,4 +1,6 @@
 .job-list {
+  @include spacing;
+
   &__title {
     margin-bottom: 3rem;
   }

@@ -27,9 +27,7 @@ $unique_id = uniqid('images-block-');
         <?php foreach ($images as $image): ?>
           <div class="swiper-slide">
             <figure class="images-block__image">
-              <?php
-              echo wp_get_attachment_image($image['ID'], 'huge');
-              ?>
+              <?php echo wp_get_attachment_image($image['ID'], 'huge'); ?>
             </figure>
           </div>
         <?php endforeach; ?>

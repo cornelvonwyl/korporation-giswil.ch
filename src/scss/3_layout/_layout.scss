@@ -16,7 +16,7 @@
 .main-content {
   > *:not(.images-block):not(.wp-block-video):not(.links-block):not(
       .images-link-block
-    ):not(.post-slider):not(.referenzen) {
+    ):not(.post-slider):not(.referenzen):not(.person-list):not(.job-list) {
     @include container-small;
   }
 }

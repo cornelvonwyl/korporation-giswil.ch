@@ -9,6 +9,7 @@
 @import '2_base/base';
 @import '2_base/typography';
 @import '2_base/hover';
+@import '2_base/animation';
 
 // Import Layout Styles
 @import '3_layout/footer';
@@ -23,6 +24,7 @@
 @import '4_components/blocks/links-block';
 @import '4_components/blocks/job-list';
 @import '4_components/blocks/post-list';
+@import '4_components/blocks/people';
 @import '4_components/pages/referenzen-overview';
 @import '4_components/pages/referenzen-single';
 @import '4_components/forms/form';

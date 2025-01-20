@@ -11,9 +11,7 @@
   </div>
 
   <div class="swiper post-slider__container">
-
     <div class="swiper-wrapper post-slider__wrapper add-hover-effect">
-
       <?php
       $args = array(
         'post_type' => 'post',
@@ -28,6 +26,7 @@
           $posts->the_post();
           $external_page_id = get_post_meta(get_the_ID(), 'external_page', TRUE);
           $external_page_link = get_permalink($external_page_id);
+
           ?>
           <div class="swiper-slide post-slider__slide">
             <a href="<?php echo esc_url($external_page_id ? $external_page_link : get_permalink()); ?>"
@@ -40,7 +39,7 @@
                     if ($external_post) {
                       $post_type = get_post_type($external_page_id);
 
-                      if ($post_type == 'job') {
+                      if ($post_type == 'stelle') {
                         echo "Freie Stelle";
                       }
 

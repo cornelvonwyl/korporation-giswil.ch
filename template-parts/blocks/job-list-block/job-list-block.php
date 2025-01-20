@@ -12,4 +12,4 @@
  */
 
 
-include get_template_directory() . '/template-parts/post/post-list.php';
+include get_template_directory() . '/template-parts/job/job-list.php';

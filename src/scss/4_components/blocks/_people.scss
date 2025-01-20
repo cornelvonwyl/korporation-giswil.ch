@@ -1,0 +1,35 @@
+.person-list {
+  @include spacing;
+  .person-category {
+    margin-bottom: 3rem;
+
+    &__list {
+      display: grid;
+      gap: 1rem;
+      grid-template-columns: repeat(2, 1fr);
+
+      @include small-up {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @include medium-up {
+        grid-template-columns: repeat(3, 1fr);
+      }
+
+      @include large-up {
+        grid-template-columns: repeat(4, 1fr);
+      }
+
+      .person-card {
+        &__info {
+          margin: 1rem 0;
+          p {
+            font-size: 0.9375rem;
+            line-height: 2;
+            margin: 0;
+          }
+        }
+      }
+    }
+  }
+}

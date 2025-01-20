@@ -18,8 +18,7 @@ $link = get_field('link');
 <section class="images-link-block">
 
   <?php
-  // Include the gallery template part.
-  include get_template_directory() . '/template-parts/gallery.php';
+  include get_template_directory() . '/template-parts/components/gallery.php';
   ?>
 
   <?php if (!empty($link) && is_array($link)): ?>

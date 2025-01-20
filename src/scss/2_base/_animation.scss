@@ -1,0 +1,13 @@
+.main-content {
+  & > *:not(.images-block),
+  .person-card {
+    opacity: 0;
+    transform: translateY(10px);
+    transition: opacity 0.75s linear, transform 0.75s ease;
+
+    &.in-view {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+}
