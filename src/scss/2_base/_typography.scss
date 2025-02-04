@@ -10,11 +10,11 @@
 }
 
 body {
-  font-size: 1.125rem;
-  line-height: 1.5;
+  font-size: 1.0625rem;
+  line-height: 1.65;
   font-family: 'Cadiz', sans-serif;
 
-  @include medium-up() {
+  @include large-up() {
     font-size: 1.25rem;
   }
 }
@@ -25,21 +25,34 @@ h1 {
 }
 
 h2 {
-  font-size: 1.25rem;
   color: $color-gold;
   text-transform: uppercase;
+  letter-spacing: $letter-spacing;
   @include title-spacing;
+  font-size: 1.0625rem;
+
+  @include large-up() {
+    font-size: 1.25rem;
+  }
 }
 
 h3 {
-  font-size: 1.5625rem;
   color: $color-gold;
   @include title-spacing;
+  font-size: 1.0625rem;
+
+  @include large-up() {
+    font-size: 1.25rem;
+  }
 }
 
 h4 {
-  font-size: 1.5625rem;
   @include title-spacing;
+  font-size: 1.0625rem;
+
+  @include large-up() {
+    font-size: 1.25rem;
+  }
 }
 
 h5 {
@@ -49,11 +62,10 @@ h5 {
 }
 
 .text-small {
-  font-size: 0.9375rem;
+  @include text-small;
 }
 
 .main-wrapper a,
-header a,
 footer a {
   color: $color-gold;
   text-decoration: none;
@@ -87,11 +99,15 @@ ul.wp-block-list {
     letter-spacing: 2px;
     line-height: 1.9;
     text-transform: uppercase;
-    font-size: 1.75rem;
+    font-size: 1.5625rem;
     @include spacing;
 
     @include medium-up {
-      font-size: 2.75rem;
+      font-size: 1.875rem;
+    }
+
+    @include large-up {
+      font-size: 2.3rem;
     }
   }
 }

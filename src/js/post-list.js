@@ -6,7 +6,6 @@ import 'swiper/css/effect-fade';
 
 document.addEventListener('DOMContentLoaded', () => {
   document.querySelectorAll('.post-slider .swiper').forEach((swiperElement) => {
-    console.log(swiperElement);
     new Swiper(swiperElement, {
       modules: [Navigation, Autoplay, EffectFade],
       speed: 1000,

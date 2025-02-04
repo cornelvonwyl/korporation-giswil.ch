@@ -6,10 +6,14 @@
 }
 
 .main-wrapper {
-  padding: 7.25rem 1.5rem 1.5rem;
+  padding: calc($content-offset + 1.5rem) 1.5rem 1.5rem;
 
   @include medium-up {
-    padding: 2rem;
+    padding: 3.125rem;
+  }
+
+  @include large-up {
+    padding: 3.5rem 4.5rem;
   }
 }
 
@@ -23,6 +27,10 @@
 
 main {
   @include medium-up {
+    width: 70%;
+  }
+
+  @include large-up {
     width: 65%;
   }
 }

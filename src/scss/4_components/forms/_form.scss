@@ -12,20 +12,20 @@ body {
         row-gap: 2rem;
         .gfield {
           h3 {
-            margin: 2rem 0 -0.5rem 0;
+            margin: 1rem 0 -0.75rem 0;
           }
 
           p {
-            font-size: 0.875rem;
+            @include text-small;
             margin: 0;
           }
 
           label,
           legend {
-            font-size: 0.875rem;
+            @include text-small;
             line-height: 1;
             text-transform: uppercase;
-            letter-spacing: 0.1em;
+            letter-spacing: $letter-spacing;
             cursor: pointer;
           }
 

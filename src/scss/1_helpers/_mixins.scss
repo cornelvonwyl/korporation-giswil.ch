@@ -23,11 +23,15 @@
 }
 
 @mixin container-small() {
-  max-width: 48rem;
+  max-width: 40rem;
+
+  @include large-up {
+    max-width: 48rem;
+  }
 }
 
 @mixin transition($property: transform) {
-  transition: #{$property} 0.3s ease;
+  transition: #{$property} 0.4s ease;
 }
 
 @mixin hover-effect() {
@@ -40,5 +44,12 @@
     @include medium-up {
       filter: brightness(0);
     }
+  }
+}
+
+@mixin text-small() {
+  font-size: 0.8125rem;
+  @include large-up {
+    font-size: 0.9375rem;
   }
 }

@@ -1,0 +1,186 @@
+.header {
+  a {
+    color: $color-gold;
+    text-decoration: none;
+
+    &:hover {
+      color: $color-black;
+    }
+  }
+
+  &__nav {
+    &--mobile {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      background-color: white;
+      padding: 2rem 1.5rem;
+      position: absolute;
+      top: $content-offset;
+      left: 0;
+      width: 100%;
+      height: calc(100dvh - $content-offset);
+      visibility: hidden;
+      transform: translateX(-100%);
+      overflow-y: auto;
+      @include transition(all);
+
+      @include medium-up {
+        display: none;
+      }
+    }
+
+    &--show {
+      visibility: visible;
+      transform: translateX(0);
+    }
+
+    &--desktop {
+      display: none;
+
+      @include medium-up {
+        display: block;
+      }
+    }
+
+    .menu {
+      > .menu-item {
+        font-size: 1.25rem;
+        text-transform: uppercase;
+        letter-spacing: $letter-spacing;
+        line-height: 2;
+        font-size: 1.5625rem;
+        padding-right: 1rem;
+        width: fit-content;
+
+        @include medium-up {
+          font-size: 1.25rem;
+
+          & > a {
+            @include transition(all);
+          }
+
+          &:hover {
+            & > a {
+              transform: translateX(0.5rem);
+              color: $color-black;
+            }
+          }
+        }
+
+        @include large-up {
+          font-size: 1.5625rem;
+        }
+
+        &.menu-item-has-children {
+          // DESKTOP
+          @include medium-up {
+            position: relative;
+
+            &::after {
+              content: '';
+              position: absolute;
+              left: 0;
+              bottom: 0;
+              width: 0;
+              width: calc(var(--submenu-x, 500px) - 2rem);
+              height: calc(
+                var(--submenu-height, 500px) -
+                  calc(var(--submenu-height, 500px) / 4)
+              );
+              clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
+              display: none;
+            }
+
+            &:hover {
+              &::after {
+                display: block;
+              }
+              & > a {
+                &::after {
+                  width: 3rem;
+                }
+              }
+            }
+
+            & > a {
+              display: block;
+
+              &::after {
+                content: '';
+                height: 1px;
+                width: 0px;
+                position: absolute;
+                background-color: $color-gold !important;
+                top: 50%;
+                right: -0.5rem;
+                transform: translateX(100%) translateY(-50%);
+                @include transition(width);
+              }
+            }
+          }
+        }
+
+        .sub-menu {
+          max-height: 0;
+          height: auto;
+          margin: 0;
+          overflow-y: hidden;
+          @include transition(max-height);
+
+          @include medium-up {
+            z-index: 1000;
+            position: absolute;
+            right: -2.5rem;
+            bottom: -0.8rem;
+            transform: translateX(100%);
+            background: $color-white;
+            padding: 1rem 1.5rem;
+            width: max-content;
+            max-height: unset;
+            z-index: 100;
+            box-shadow: 0 1px 10px 0 #0000000f;
+            opacity: 0;
+            visibility: hidden;
+          }
+
+          &--show {
+            @include transition(max-height);
+          }
+
+          .menu-item {
+            font-size: 0.875rem;
+            line-height: 2;
+            padding-left: 1.5rem;
+            letter-spacing: 0.0625em;
+
+            @include medium-up {
+              padding-left: 0;
+              line-height: 2.5;
+            }
+
+            @include large-up {
+              font-size: 1.0625rem;
+            }
+          }
+        }
+
+        &.current-menu-item > .sub-menu,
+        &.current-menu-ancestor > .sub-menu,
+        &.current-menu-parent > .sub-menu {
+          max-height: 100%;
+          @include medium-up {
+            max-height: unset;
+          }
+        }
+      }
+
+      & .current-menu-item,
+      .current-page-ancestor {
+        > a {
+          color: $color-black;
+        }
+      }
+    }
+  }
+}

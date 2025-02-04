@@ -1,7 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.header__hamburger');
   const nav = document.querySelector('.header__nav--mobile');
-  const main = document.querySelector('main');
 
   if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
@@ -20,43 +19,198 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 document.addEventListener('DOMContentLoaded', () => {
-  const menuItem = document.querySelectorAll(
+  // All items that contain sub-menus
+  const menuItems = document.querySelectorAll(
     '.header__nav .menu-item-has-children'
   );
+  if (menuItems.length < 1) return;
 
-  const windowWidth = window.innerWidth;
+  // Breakpoint for switching from mobile to desktop logic
+  const mobileBreakpoint = 992;
+  let currentMode = null; // 'mobile' or 'desktop'
 
-  if (menuItem.length < 1) {
-    return;
+  /**
+   * ----------------------------
+   *  HELPER: Show / Hide Submenu
+   * ----------------------------
+   */
+  function showSubmenu(item, submenu) {
+    // Make submenu visible
+    submenu.style.visibility = 'visible';
+    submenu.style.opacity = '1';
+
+    // Measure actual height
+    const subMenuHeight = submenu.offsetHeight; // or scrollHeight
+    item.style.setProperty('--submenu-height', `${subMenuHeight}px`);
+
+    // Get the x positon of the submenu
+    const subMenuPosition = submenu.getBoundingClientRect().left;
+    item.style.setProperty('--submenu-x', `${subMenuPosition}px`);
+
+    // If there's a "link"/button, set aria-expanded
+    const link = item.querySelector('[role="button"]');
+    if (link) link.setAttribute('aria-expanded', 'true');
   }
 
-  menuItem.forEach((item) => {
+  function hideSubmenu(item, submenu) {
+    submenu.style.visibility = 'hidden';
+    submenu.style.opacity = '0';
+
+    // Remove or reset the custom property
+    item.style.removeProperty('--submenu-height');
+
+    const link = item.querySelector('[role="button"]');
+    if (link) link.setAttribute('aria-expanded', 'false');
+  }
+
+  /**
+   * ----------------------------
+   *  DESKTOP: Hover + Focus
+   * ----------------------------
+   */
+  function handleDesktop(item) {
     const link = item.querySelector('a');
+    const submenu = item.querySelector('.sub-menu');
+    if (!link || !submenu) return;
 
-    link.addEventListener('click', (event) => {
-      event.preventDefault();
-      const submenu = item.querySelector('.sub-menu');
+    // Remove href so it's not a real link
+    link.removeAttribute('href');
+    // Turn it into a keyboard-focusable toggle
+    link.setAttribute('role', 'button');
+    link.setAttribute('tabindex', '0');
+    link.setAttribute('aria-haspopup', 'true');
+    link.setAttribute('aria-expanded', 'false');
 
-      if (windowWidth < 992) {
-        submenu.classList.toggle('sub-menu--show');
+    // Hover in => show submenu
+    item.addEventListener('mouseenter', () => {
+      showSubmenu(item, submenu);
+    });
 
-        // Remove all other submenus
-        menuItem.forEach((otherItem) => {
-          if (otherItem !== item) {
-            otherItem
-              .querySelector('.sub-menu')
-              .classList.remove('sub-menu--show');
-          }
-        });
-      } else {
-        // Get first link in submenu
-        const firstLink = submenu.querySelector('a');
+    // Hover out => hide submenu
+    item.addEventListener('mouseleave', () => {
+      hideSubmenu(item, submenu);
+    });
 
-        // Redirect to first link in submenu
-        if (firstLink) {
-          window.location.href = firstLink.href;
-        }
+    // Keyboard focus => show
+    link.addEventListener('focus', () => {
+      showSubmenu(item, submenu);
+    });
+
+    // Focus leaves the entire <li> => hide
+    item.addEventListener('focusout', (e) => {
+      if (!item.contains(e.relatedTarget)) {
+        hideSubmenu(item, submenu);
       }
     });
-  });
+  }
+
+  /**
+   * ----------------------------
+   *  MOBILE: Click-to-expand
+   * ----------------------------
+   */
+  function handleMobile(item) {
+    const link = item.querySelector('a');
+    const submenu = item.querySelector('.sub-menu');
+    if (!link || !submenu) return;
+
+    // Make it look like an expandable toggle
+    link.setAttribute('aria-haspopup', 'true');
+    link.setAttribute('aria-expanded', 'false');
+
+    // Click => toggle open/closed
+    link.addEventListener('click', (event) => {
+      // Prevent default nav
+      event.preventDefault();
+
+      const isOpen = submenu.classList.toggle('sub-menu--show');
+      link.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+
+      if (isOpen) {
+        // Show + measure this submenu
+        // Expand: measure its total item height
+        const menuItemsInside = submenu.querySelectorAll('.menu-item');
+        const singleItemHeight = menuItemsInside[0]?.scrollHeight || 0;
+        const expandedHeight = singleItemHeight * menuItemsInside.length;
+        submenu.style.maxHeight = `${expandedHeight}px`;
+
+        // Also set pink shape
+        const subMenuHeight = submenu.offsetHeight;
+        item.style.setProperty('--submenu-height', `${subMenuHeight}px`);
+      } else {
+        // Hide
+        submenu.style.maxHeight = '0';
+        item.style.removeProperty('--submenu-height');
+      }
+
+      // Close all other open submenus (Accordion approach)
+      menuItems.forEach((otherItem) => {
+        if (otherItem !== item) {
+          const otherSubmenu = otherItem.querySelector('.sub-menu');
+          const otherLink = otherItem.querySelector('a');
+          if (
+            otherSubmenu &&
+            otherSubmenu.classList.contains('sub-menu--show')
+          ) {
+            otherSubmenu.classList.remove('sub-menu--show');
+            otherSubmenu.style.maxHeight = '0';
+            otherItem.style.removeProperty('--submenu-height');
+            if (otherLink) otherLink.setAttribute('aria-expanded', 'false');
+          }
+        }
+      });
+    });
+  }
+
+  /**
+   * ----------------------------
+   *  Remove All Listeners
+   * ----------------------------
+   * Clones each .menu-item-has-children to remove old events before re-attaching.
+   */
+  function removeAllListeners() {
+    menuItems.forEach((item) => {
+      const newItem = item.cloneNode(true);
+      item.parentNode.replaceChild(newItem, item);
+    });
+  }
+
+  /**
+   * ----------------------------
+   *  APPLY MENU BEHAVIOR
+   * ----------------------------
+   */
+  function applyMenuBehavior() {
+    const windowWidth = window.innerWidth;
+    const newMode = windowWidth < mobileBreakpoint ? 'mobile' : 'desktop';
+
+    if (newMode === currentMode) return; // No change
+
+    // If we had a previous mode, remove old listeners
+    if (currentMode !== null) {
+      removeAllListeners();
+    }
+
+    // Re-query after cloning
+    const updatedMenuItems = document.querySelectorAll(
+      '.header__nav .menu-item-has-children'
+    );
+
+    // Attach new behavior
+    updatedMenuItems.forEach((item) => {
+      if (newMode === 'mobile') {
+        handleMobile(item);
+      } else {
+        handleDesktop(item);
+      }
+    });
+
+    currentMode = newMode;
+  }
+
+  // INITIALIZE
+  applyMenuBehavior();
+
+  // Re-run on window resize
+  window.addEventListener('resize', applyMenuBehavior);
 });
