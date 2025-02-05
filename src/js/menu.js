@@ -1,19 +1,31 @@
 document.addEventListener('DOMContentLoaded', () => {
   const hamburger = document.querySelector('.header__hamburger');
   const nav = document.querySelector('.header__nav--mobile');
+  const mainContent = document.querySelector('main');
+  const footer = document.querySelector('footer');
 
   if (hamburger && nav) {
     hamburger.addEventListener('click', () => {
       const isExpanded = hamburger.getAttribute('aria-expanded') === 'true';
 
       hamburger.setAttribute('aria-expanded', isExpanded ? 'false' : 'true');
-
       hamburger.setAttribute(
         'aria-label',
         isExpanded ? 'Menü öffnen' : 'Menü schliessen'
       );
       hamburger.classList.toggle('header__hamburger--active');
       nav.classList.toggle('header__nav--show');
+
+      // Prevent scrolling when menu is open
+      document.body.classList.toggle('no-scroll', !isExpanded);
+
+      // Use 'inert' to disable main content and footer interaction
+      if (mainContent) {
+        mainContent.inert = !isExpanded;
+      }
+      if (footer) {
+        footer.inert = !isExpanded;
+      }
     });
   }
 });
@@ -171,7 +183,9 @@ document.addEventListener('DOMContentLoaded', () => {
   function removeAllListeners() {
     menuItems.forEach((item) => {
       const newItem = item.cloneNode(true);
-      item.parentNode.replaceChild(newItem, item);
+      if (item.parentNode) {
+        item.parentNode.replaceChild(newItem, item);
+      }
     });
   }
 

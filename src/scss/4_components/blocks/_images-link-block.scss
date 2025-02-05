@@ -2,8 +2,12 @@
   padding-bottom: 3rem;
   border-bottom: 1px solid $color-grey;
   margin: 4rem 0;
-  @include medium-up {
-    display: flex;
+
+  display: flex;
+  flex-direction: column;
+  gap: 3rem;
+
+  @media screen and (min-width: 1312px) {
     justify-content: space-between;
     align-items: flex-end;
     gap: 1rem;

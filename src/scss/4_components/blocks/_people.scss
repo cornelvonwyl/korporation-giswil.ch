@@ -9,7 +9,7 @@
       grid-template-columns: repeat(2, 1fr);
 
       @include small-up {
-        grid-template-columns: repeat(2, 1fr);
+        grid-template-columns: repeat(3, 1fr);
       }
 
       @include medium-up {

@@ -24,3 +24,8 @@ video {
   color: $color-white;
   background: $color-black;
 }
+
+.no-scroll {
+  overflow: hidden;
+  height: 100svh;
+}

@@ -88,7 +88,7 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context) {
       'acf/people-by-category',
       'acf/team',
       'acf/job-list-block',
-      'gravityforms/form'
+      'gravityforms/form',
     );
   }
 
@@ -124,6 +124,9 @@ add_image_size('huge', 2400, 2400);
  * @return bool Always returns true to enable lazy loading.
  */
 add_filter('wp_lazy_loading_enabled', '__return_true');
+
+
+
 
 
 

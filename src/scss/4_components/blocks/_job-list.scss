@@ -2,7 +2,7 @@
   @include spacing;
 
   &__title {
-    margin-bottom: 3rem;
+    margin-bottom: 2rem;
   }
 
   &__items {
@@ -25,14 +25,32 @@
     justify-content: space-between;
     align-items: center;
     color: $color-gold;
-    font-size: 1.5625rem;
-    padding: 1.25rem 0;
+    font-size: 1.0625rem;
+    padding: 0.75rem 0;
     width: 100%;
 
+    @include medium-up {
+      font-size: 1.25rem;
+      padding: 1rem 0;
+    }
+
+    @include large-up {
+      font-size: 1.5625rem;
+      padding: 1.25rem 0;
+    }
+
     img {
-      width: 2rem;
+      width: 1.5rem;
       height: auto;
       @include transition(transform);
+
+      @include medium-up {
+        width: 1.75rem;
+      }
+
+      @include large-up {
+        width: 2rem;
+      }
     }
 
     &:hover {

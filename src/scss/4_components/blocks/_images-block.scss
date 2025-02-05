@@ -24,14 +24,18 @@
       object-fit: cover;
       object-position: center;
 
-      @include medium-up {
+      @include small-up {
         aspect-ratio: 16 / 9;
       }
     }
   }
 
   .swiper {
-    padding-bottom: 2rem;
+    padding-bottom: 2.5rem;
+
+    @include medium-up {
+      padding-bottom: 2rem;
+    }
   }
 
   .swiper-buttons {
@@ -57,8 +61,8 @@
   @include hover-effect;
 
   img {
-    width: 1.75rem;
-    height: 1.75rem;
+    width: 1.5rem;
+    height: 1.5rem;
 
     @include medium-up {
       width: 1.25rem;

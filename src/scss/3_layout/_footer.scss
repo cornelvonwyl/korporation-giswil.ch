@@ -24,10 +24,12 @@
   }
 
   &__logo {
-    width: 4rem;
+    img {
+      width: 5.5rem;
 
-    @include medium-up {
-      width: 8rem;
+      @include medium-up {
+        width: 8rem;
+      }
     }
   }
 

@@ -1,7 +1,27 @@
-<?php get_header(); ?>
+<?php
+
+/**
+ * The template for displaying 404 pages (Not Found).
+ *
+ * @package GeneratePress
+ */
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
+get_header(); ?>
+
 <main>
-    <h1><?php esc_html_e('Page Not Found', 'vonweb'); ?></h1>
-    <p><?php esc_html_e('Sorry, the page you are looking for does not exist.', 'vonweb'); ?></p>
-    <a href="<?php echo home_url(); ?>"><?php esc_html_e('Return to homepage', 'vonweb'); ?></a>
+    <div class="main-wrapper">
+        <section class="main-content">
+            <h1>404</h1>
+            <p>
+                Leider existiert keine Seite unter diesem Link. Bitte kehren Sie zur <a href="/">Startseite</a> zurück
+                und wählen Sie einen vorhandenen Link.
+            </p>
+        </section>
+    </div>
 </main>
+
 <?php get_footer(); ?>

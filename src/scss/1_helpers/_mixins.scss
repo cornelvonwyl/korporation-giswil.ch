@@ -1,7 +1,15 @@
 @mixin spacing() {
   margin: 4rem 0;
 
+  @include small-up {
+    margin: 4rem 0;
+  }
+
   @include medium-up {
+    margin: 5rem 0;
+  }
+
+  @include large-up {
     margin: 6rem 0;
   }
 }
