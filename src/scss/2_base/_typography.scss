@@ -13,6 +13,7 @@ body {
   font-size: 1.0625rem;
   line-height: 1.65;
   font-family: 'Cadiz', sans-serif;
+  background-color: blue;
 
   @include large-up() {
     font-size: 1.25rem;
