@@ -16,7 +16,7 @@
         <header class="header">
             <div class="header__logo">
                 <a href="/">
-                    <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo-black.svg" alt="Logo">
+                    <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/" alt="Logo">
                 </a>
             </div>
 

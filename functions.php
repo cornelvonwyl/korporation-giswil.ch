@@ -32,9 +32,20 @@ function vonweb_enqueue_assets() {
   wp_enqueue_style('vonweb-style', get_stylesheet_uri());
   wp_enqueue_style('vonweb-main-css', get_template_directory_uri() . '/dist/style.css', array(), '1.0', 'all');
   wp_enqueue_script('vonweb-scripts', get_template_directory_uri() . '/dist/bundle.js', array(), '1.0', TRUE);
+
 }
 add_action('wp_enqueue_scripts', 'vonweb_enqueue_assets');
 
+
+function lr_theme_features() {
+
+  add_theme_support('wp-block-styles');
+
+  add_editor_style('vonweb-editor-style', get_template_directory_uri() . '/dist/style.css', array(), '1.0', 'all');
+
+}
+
+add_action('after_setup_theme', 'lr_theme_features');
 
 
 /**
@@ -58,6 +69,8 @@ function register_acf_blocks() {
   register_block_type(__DIR__ . '/template-parts/blocks/people-by-category');
   register_block_type(__DIR__ . '/template-parts/blocks/team');
   register_block_type(__DIR__ . '/template-parts/blocks/job-list-block');
+  register_block_type(__DIR__ . '/template-parts/blocks/image-with-content');
+  register_block_type(__DIR__ . '/template-parts/blocks/sub-service');
 }
 
 
@@ -88,6 +101,8 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context) {
       'acf/people-by-category',
       'acf/team',
       'acf/job-list-block',
+      'acf/image-with-content',
+      'acf/sub-service',
       'gravityforms/form',
     );
   }

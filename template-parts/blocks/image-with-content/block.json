@@ -1,0 +1,16 @@
+{
+  "name": "acf/image-with-content",
+  "title": "Bild mit Text",
+  "description": "Ein Block mit einem Bild neben Inhaltselementen (Untertitel, Titel, Text und Link)",
+  "editorStyle": ["file:./style.css"],
+  "category": "formatting",
+  "icon": "align-pull-left",
+  "keywords": ["image", "content", "text", "link"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "image-with-content.php"
+  },
+  "supports": {
+    "align": ["wide", "full"]
+  }
+}

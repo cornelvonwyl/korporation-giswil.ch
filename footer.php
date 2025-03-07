@@ -1,6 +1,6 @@
 </div>
 
-<footer>
+<!-- <footer>
     <div class="footer">
         <div class="footer__content">
             <div class="footer__branding">
@@ -27,7 +27,7 @@
             </div>
         </div>
     </div>
-</footer>
+</footer> -->
 <?php wp_footer(); ?>
 </body>
 

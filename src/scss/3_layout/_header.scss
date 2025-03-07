@@ -11,6 +11,10 @@
   left: 0;
   background-color: $color-white;
 
+  .logged-in & {
+    top: $logged-in-offset;
+  }
+
   a {
     text-decoration: none;
 

@@ -1,0 +1,17 @@
+{
+  "name": "acf/sub-service",
+  "title": "Sub Service",
+  "description": "A block to display sub-service with image, title, and content.",
+  "category": "formatting",
+  "icon": "admin-tools",
+  "keywords": ["sub-service", "service", "feature"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "sub-service.php"
+  },
+  "supports": {
+    "align": true,
+    "anchor": true,
+    "mode": false
+  }
+}
