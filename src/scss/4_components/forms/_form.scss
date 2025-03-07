@@ -65,7 +65,7 @@ body {
     }
 
     .gform_confirmation_message {
-      background-color: $color-gold;
+      background-color: $color-yellow;
       padding: 2rem;
       color: $color-white;
     }
@@ -99,7 +99,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: $color-gold;
+  color: $color-yellow;
 
   input[type='checkbox'] {
     appearance: none;
@@ -112,7 +112,7 @@ textarea {
     margin: 0;
     padding: 0;
     border-radius: 100%;
-    border: 1.5px solid $color-gold;
+    border: 1.5px solid $color-yellow;
 
     &:checked {
       &::after {
@@ -129,7 +129,7 @@ textarea {
       left: 50%;
       width: 0;
       height: 0;
-      background: $color-gold;
+      background: $color-yellow;
       transform: translate(-50%, -50%);
       transition: all 0.3s ease;
     }

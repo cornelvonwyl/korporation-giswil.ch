@@ -1,43 +1,8 @@
 .footer {
   background-color: $color-black;
-  color: $color-gold;
   padding: 2rem 1.5rem 3rem;
 
   @include medium-up {
     padding: 3rem 4rem 3rem;
-  }
-
-  &__content {
-    flex-direction: column;
-    display: flex;
-    gap: 4rem;
-
-    @include medium-up {
-      flex-direction: row;
-      justify-content: space-between;
-    }
-  }
-
-  &__address {
-    line-height: 2;
-    margin-bottom: 2rem;
-  }
-
-  &__logo {
-    img {
-      width: 5.5rem;
-
-      @include medium-up {
-        width: 8rem;
-      }
-    }
-  }
-
-  a {
-    &:hover {
-      filter: none;
-      text-decoration: underline;
-      text-underline-offset: 0.25rem;
-    }
   }
 }

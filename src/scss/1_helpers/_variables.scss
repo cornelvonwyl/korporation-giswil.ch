@@ -4,22 +4,24 @@
 
 // Basic Colors
 // -------
-$color-gold: #aa9673;
-$color-black: #28190a;
+$color-yellow: #ffed00;
+$color-black: #000000;
 $color-white: #ffffff;
-$color-grey: #707070;
-$color-grey-light: #f0f0f1;
+$color-grey: #f0f0f0;
+$color-grey-light: #f6f6f6;
+$color-grey-dark: #aeb9c2;
 
 // Fonts
 // -------
 $global-font-size: 16px;
+$font-family: 'Helvetica Neue', Arial, sans-serif;
 
 // Breakpoints
 // -------
 $breakpoint-small: 640px;
 $breakpoint-medium: 992px;
-$breakpoint-large: 1680px;
-$breakpoint-xlarge: 2400px;
+$breakpoint-large: 1400px;
+$breakpoint-xlarge: 2000px;
 $breakpoint-xsmall-max: ($breakpoint-small - 1);
 $breakpoint-small-max: ($breakpoint-medium - 1);
 $breakpoint-medium-max: ($breakpoint-large - 1);

@@ -1,6 +1,5 @@
 .header {
   a {
-    color: $color-gold;
     text-decoration: none;
 
     &:hover {
@@ -44,33 +43,17 @@
     }
 
     .menu {
+      display: flex;
+      flex-direction: column;
+
+      @include medium-up {
+        flex-direction: row;
+        gap: 1rem;
+      }
+
       > .menu-item {
-        font-size: 1.25rem;
-        text-transform: uppercase;
-        letter-spacing: $letter-spacing;
-        line-height: 2;
-        font-size: 1.5625rem;
         padding-right: 1rem;
         width: fit-content;
-
-        @include medium-up {
-          font-size: 1.25rem;
-
-          & > a {
-            @include transition(all);
-          }
-
-          &:hover {
-            & > a {
-              transform: translateX(0.5rem);
-              color: $color-black;
-            }
-          }
-        }
-
-        @include large-up {
-          font-size: 1.5625rem;
-        }
 
         &.menu-item-has-children {
           // DESKTOP
@@ -80,6 +63,7 @@
             &::after {
               content: '';
               position: absolute;
+              background-color: blue;
               left: 0;
               bottom: 0;
               width: 0;
@@ -111,7 +95,6 @@
                 height: 1px;
                 width: 0px;
                 position: absolute;
-                background-color: $color-gold !important;
                 top: 50%;
                 right: -0.5rem;
                 transform: translateX(100%) translateY(-50%);
@@ -131,9 +114,8 @@
           @include medium-up {
             z-index: 1000;
             position: absolute;
-            right: -2.5rem;
-            bottom: -0.8rem;
-            transform: translateX(100%);
+            bottom: 0;
+            transform: translateY(100%);
             background: $color-white;
             padding: 1rem 1.5rem;
             width: max-content;

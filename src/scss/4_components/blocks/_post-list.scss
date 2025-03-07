@@ -23,12 +23,6 @@ body {
 
       &:hover {
         filter: brightness(1);
-        /*
-        transform: translateY(-0.25rem);
-
-        .post-slider__headline {
-          color: $color-gold;
-        } */
       }
     }
 
@@ -41,7 +35,6 @@ body {
     &__date {
       text-transform: uppercase;
       margin: 0 0 0.5rem;
-      color: $color-gold;
     }
 
     &__headline {

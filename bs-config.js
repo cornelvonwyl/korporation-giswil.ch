@@ -1,5 +1,5 @@
 module.exports = {
-  proxy: 'http://localhost:10068',
+  proxy: 'http://localhost:10078',
   files: ['dist/*.css', 'dist/*.js', '*.php'],
   notify: false,
 };

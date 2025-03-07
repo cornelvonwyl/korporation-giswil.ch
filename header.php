@@ -14,14 +14,11 @@
 
 
         <header class="header">
-
             <div class="header__logo">
                 <a href="/">
                     <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo-black.svg" alt="Logo">
                 </a>
             </div>
-
-
 
             <button class="header__hamburger" aria-label="Menü öffnen" aria-expanded="false">
                 <span></span>

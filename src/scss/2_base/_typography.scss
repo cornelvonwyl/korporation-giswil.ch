@@ -1,7 +1,7 @@
-@font-face {
+/* @font-face {
   font-family: 'Cadiz';
   src: url('../assets/fonts/Cadiz-Regular.otf') format('opentype');
-}
+} */
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -10,45 +10,57 @@
 }
 
 body {
-  font-size: 1.0625rem;
-  line-height: 1.65;
-  font-family: 'Cadiz', sans-serif;
+  font-size: 1rem;
+  line-height: 1.6;
+  font-family: $font-family;
 
-  @include large-up() {
-    font-size: 1.25rem;
+  @include medium-up() {
+    font-size: 1.125rem;
   }
 }
 
 h1 {
   font-size: 1.5625rem;
-  @include title-spacing;
+
+  @include medium-up() {
+    font-size: 1.5625rem;
+  }
+
+  @include large-up() {
+    font-size: 1.5625rem;
+  }
 }
 
 h2 {
-  color: $color-gold;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  @include title-spacing;
-  font-size: 1.0625rem;
+  font-size: 1.25rem;
+
+  @include medium-up() {
+    font-size: 1.5625rem;
+  }
 
   @include large-up() {
-    font-size: 1.25rem;
+    font-size: 1.875rem;
   }
 }
 
 h3 {
-  color: $color-gold;
-  @include title-spacing;
-  font-size: 1.0625rem;
+  font-size: 1.125rem;
+
+  @include medium-up() {
+    font-size: 1.25rem;
+  }
 
   @include large-up() {
-    font-size: 1.25rem;
+    font-size: 1.5625rem;
   }
 }
 
 h4 {
-  @include title-spacing;
   font-size: 1.0625rem;
+
+  @include medium-up() {
+    font-size: 1.125rem;
+  }
 
   @include large-up() {
     font-size: 1.25rem;
@@ -56,9 +68,15 @@ h4 {
 }
 
 h5 {
-  font-size: 0.9375rem;
-  color: $color-gold;
-  text-transform: uppercase;
+  font-size: 1rem;
+
+  @include medium-up() {
+    font-size: 1.0625rem;
+  }
+
+  @include large-up() {
+    font-size: 1.125rem;
+  }
 }
 
 .text-small {
@@ -67,7 +85,6 @@ h5 {
 
 .main-wrapper a,
 footer a {
-  color: $color-gold;
   text-decoration: none;
 
   @include hover-effect;
