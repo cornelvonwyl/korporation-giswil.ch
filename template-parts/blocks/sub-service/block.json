@@ -8,10 +8,5 @@
   "acf": {
     "mode": "preview",
     "renderTemplate": "sub-service.php"
-  },
-  "supports": {
-    "align": true,
-    "anchor": true,
-    "mode": false
   }
 }

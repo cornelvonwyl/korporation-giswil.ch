@@ -19,15 +19,13 @@ body {
   }
 }
 
-h1 {
-  font-size: 1.5625rem;
+h1,
+.h1 {
+  font-size: 2rem;
+  color: $color-yellow;
 
   @include medium-up() {
-    font-size: 1.5625rem;
-  }
-
-  @include large-up() {
-    font-size: 1.5625rem;
+    font-size: 5rem;
   }
 }
 

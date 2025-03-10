@@ -24,15 +24,17 @@ if (!empty($block['align'])) {
 }
 
 // Load values and assign defaults.
-$image = get_field('image');
-$title = get_field('title');
-$content = get_field('content');
+$icon = get_field('icon');
+$subtitle = get_field('subtitle') ?: ($is_preview ? 'Beispiel Untertitel' : '');
+$title = get_field('title') ?: ($is_preview ? 'Beispiel Titel für den Block' : '');
+$content = get_field('text') ?: ($is_preview ? '<p>Dies ist ein Beispieltext, der angezeigt wird, wenn im Editor kein Inhalt eingegeben wurde. Hier können Beschreibungen, Erklärungen oder andere wichtige Informationen stehen.</p>' : '');
+$link = get_field('link');
 ?>
 
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
-  <?php if ($image): ?>
-    <div class="sub-service__image">
-      <?php echo wp_get_attachment_image($image, 'medium', FALSE, array('class' => 'sub-service__img')); ?>
+  <?php if ($icon): ?>
+    <div class="sub-service__icon">
+      <?php echo wp_get_attachment_image($icon['ID'], 'medium', FALSE, array('class' => 'sub-service__icon-img')); ?>
     </div>
   <?php endif; ?>
 
@@ -42,7 +44,7 @@ $content = get_field('content');
 
   <?php if ($content): ?>
     <div class="sub-service__content">
-      <?php echo $content; ?>
+      <?php echo wp_kses_post($content); ?>
     </div>
   <?php endif; ?>
 </div>

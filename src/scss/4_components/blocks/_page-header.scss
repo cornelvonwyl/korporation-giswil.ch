@@ -1,4 +1,4 @@
-.image-with-content {
+.page-header {
   &__container {
     display: flex;
     flex-direction: column;
@@ -56,42 +56,5 @@
     &:hover {
       background-color: #555;
     }
-  }
-
-  // Image Position Modifikationen
-  &--image-right {
-    @include medium-up {
-      .image-with-content__container {
-        flex-direction: row-reverse;
-      }
-    }
-  }
-
-  &--image-left {
-    // Standard Layout, keine besonderen Anpassungen notwendig
-  }
-
-  // Title Variant Modifikationen
-  &--title-vertical {
-    .image-with-content__title {
-      writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      margin-right: 1rem;
-      line-height: 1;
-      height: auto;
-
-      @include medium-up {
-        float: left;
-        margin-bottom: 0;
-      }
-    }
-
-    .image-with-content__text {
-      clear: right;
-    }
-  }
-
-  &--title-horizontal {
-    // Standard Layout, keine besonderen Anpassungen notwendig
   }
 }

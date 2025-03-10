@@ -69,8 +69,9 @@ function register_acf_blocks() {
   register_block_type(__DIR__ . '/template-parts/blocks/people-by-category');
   register_block_type(__DIR__ . '/template-parts/blocks/team');
   register_block_type(__DIR__ . '/template-parts/blocks/job-list-block');
-  register_block_type(__DIR__ . '/template-parts/blocks/image-with-content');
+  register_block_type(__DIR__ . '/template-parts/blocks/page-header');
   register_block_type(__DIR__ . '/template-parts/blocks/sub-service');
+  register_block_type(__DIR__ . '/template-parts/blocks/image-with-content');
 }
 
 
@@ -101,8 +102,9 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context) {
       'acf/people-by-category',
       'acf/team',
       'acf/job-list-block',
-      'acf/image-with-content',
+      'acf/page-header',
       'acf/sub-service',
+      'acf/image-with-content',
       'gravityforms/form',
     );
   }

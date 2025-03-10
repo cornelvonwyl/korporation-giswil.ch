@@ -1,3 +1,13 @@
+@mixin container() {
+  max-width: 60rem;
+  margin: 0 auto;
+  padding: 0 1rem;
+
+  @include medium-up {
+    padding: 0 2rem;
+  }
+}
+
 @mixin spacing() {
   margin: 4rem 0;
 

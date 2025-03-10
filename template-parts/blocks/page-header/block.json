@@ -1,14 +1,14 @@
 {
-  "name": "acf/image-with-content",
-  "title": "Bild mit Inhalt",
-  "description": "Ein Block zur Anzeige eines Bildes mit Inhalt.",
+  "name": "acf/page-header",
+  "title": "Header Bild mit Inhalt (Dienstleistungen & Standort)",
+  "description": "A block to display a header image with content.",
   "editorStyle": ["file:./style.css"],
   "category": "formatting",
   "icon": "align-pull-left",
   "keywords": ["image", "content", "text", "link"],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "image-with-content.php"
+    "renderTemplate": "page-header.php"
   },
   "supports": {
     "align": ["wide", "full"]
