@@ -13,6 +13,8 @@
 
     <?php get_template_part('template-parts/referenzen/referenzen-by'); ?>
 
+    <?php get_template_part('template-parts/people/people-by'); ?>
+
   </div>
 </main>
 <?php get_footer(); ?>

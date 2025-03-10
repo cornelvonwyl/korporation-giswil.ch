@@ -73,3 +73,9 @@ video {
   opacity: 0.5;
   pointer-events: none;
 }
+
+.swiper-buttons:has(.swiper-button-prev.swiper-button-disabled):has(
+    .swiper-button-next.swiper-button-disabled
+  ) {
+  display: none;
+}
