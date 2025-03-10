@@ -26,20 +26,18 @@ $image = get_field('image');
 $subtitle = get_field('subtitle') ?: ($is_preview ? 'Beispiel Untertitel' : '');
 $title = get_field('title') ?: ($is_preview ? 'Beispiel Titel für den Block' : '');
 $content = get_field('content') ?: ($is_preview ? '<p>Dies ist ein Beispieltext, der angezeigt wird, wenn im Editor kein Inhalt eingegeben wurde. Hier können Beschreibungen, Erklärungen oder andere wichtige Informationen stehen.</p>' : '');
-$link = get_field('link');
 
 // Fallback image for preview
 $has_image = !empty($image);
 ?>
 
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
   <div class="page-header__container">
     <?php if ($has_image): ?>
-      <div class="page-header__image-wrap">
-        <?php
-        echo wp_get_attachment_image($image['ID'], 'full');
-        ?>
-      </div>
+
+      <?php
+      echo wp_get_attachment_image($image['ID'], 'full');
+      ?>
     <?php endif; ?>
 
     <div class="page-header__content">
@@ -48,21 +46,14 @@ $has_image = !empty($image);
       <?php endif; ?>
 
       <?php if ($title): ?>
-        <h2 class="page-header__title"><?php echo esc_html($title); ?></h2>
+        <h1 class="page-header__title"><?php echo esc_html($title); ?></h1>
       <?php endif; ?>
 
       <?php if ($content): ?>
         <div class="page-header__text"><?php echo wp_kses_post($content); ?></div>
       <?php endif; ?>
 
-      <?php if ($link): ?>
-        <a href="<?php echo esc_url($link['url']); ?>" class="page-header__link"
-          target="<?php echo esc_attr($link['target'] ?: '_self'); ?>">
-          <?php echo esc_html($link['title']); ?>
-        </a>
-      <?php elseif ($is_preview): ?>
-        <a href="#" class="page-header__link">Beispiel-Link</a>
-      <?php endif; ?>
+      <a href="#" class="page-header__link">Mehr</a>
     </div>
   </div>
-</div>
+</section>

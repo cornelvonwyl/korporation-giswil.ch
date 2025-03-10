@@ -1,7 +1,36 @@
-/* @font-face {
-  font-family: 'Cadiz';
-  src: url('../assets/fonts/Cadiz-Regular.otf') format('opentype');
-} */
+// Font declarations
+@font-face {
+  font-family: 'Simplon Mono';
+  src: url('../assets/fonts/simplon/SimplonMono-Light.otf') format('opentype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Simplon Mono';
+  src: url('../assets/fonts/simplon/SimplonMono-Medium.otf') format('opentype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Benton Sans';
+  src: url('../assets/fonts/benton-sans/BentonSans-Regular.ttf')
+    format('truetype');
+  font-weight: normal;
+  font-style: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: 'Benton Sans';
+  src: url('../assets/fonts/benton-sans/BentonSans-Bold.ttf') format('truetype');
+  font-weight: bold;
+  font-style: normal;
+  font-display: swap;
+}
 
 * {
   -webkit-font-smoothing: antialiased;
@@ -11,81 +40,37 @@
 
 body {
   font-size: 1rem;
-  line-height: 1.6;
+  line-height: $line-height;
   font-family: $font-family;
+}
 
-  @include medium-up() {
-    font-size: 1.125rem;
-  }
+p:last-child {
+  margin-bottom: 0;
 }
 
 h1,
 .h1 {
-  font-size: 2rem;
-  color: $color-yellow;
-
-  @include medium-up() {
-    font-size: 5rem;
-  }
+  @include h1;
 }
 
 h2 {
-  font-size: 1.25rem;
-
-  @include medium-up() {
-    font-size: 1.5625rem;
-  }
-
-  @include large-up() {
-    font-size: 1.875rem;
-  }
+  @include h2;
 }
 
 h3 {
-  font-size: 1.125rem;
-
-  @include medium-up() {
-    font-size: 1.25rem;
-  }
-
-  @include large-up() {
-    font-size: 1.5625rem;
-  }
+  @include h3;
 }
 
 h4 {
-  font-size: 1.0625rem;
-
-  @include medium-up() {
-    font-size: 1.125rem;
-  }
-
-  @include large-up() {
-    font-size: 1.25rem;
-  }
+  @include h4;
 }
 
 h5 {
-  font-size: 1rem;
-
-  @include medium-up() {
-    font-size: 1.0625rem;
-  }
-
-  @include large-up() {
-    font-size: 1.125rem;
-  }
+  @include h5;
 }
 
 .text-small {
   @include text-small;
-}
-
-.main-wrapper a,
-footer a {
-  text-decoration: none;
-
-  @include hover-effect;
 }
 
 figcaption {
@@ -103,26 +88,12 @@ ul.wp-block-list {
   p,
   ul,
   ol {
-    margin-bottom: 1.5rem;
+    &:not(:last-child) {
+      margin-bottom: 1.5rem;
 
-    @include medium-up {
-      margin-bottom: 2rem;
-    }
-  }
-
-  blockquote {
-    letter-spacing: 2px;
-    line-height: 1.9;
-    text-transform: uppercase;
-    font-size: 1.5625rem;
-    @include spacing;
-
-    @include medium-up {
-      font-size: 1.875rem;
-    }
-
-    @include large-up {
-      font-size: 2.3rem;
+      @include medium-up {
+        margin-bottom: 2rem;
+      }
     }
   }
 }

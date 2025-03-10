@@ -1,26 +1,94 @@
 @mixin container() {
-  max-width: 60rem;
+  max-width: $container;
   margin: 0 auto;
   padding: 0 1rem;
+  width: 100%;
 
   @include medium-up {
     padding: 0 2rem;
   }
 }
 
-@mixin spacing() {
-  margin: 4rem 0;
+.container {
+  @include container;
+}
 
-  @include small-up {
-    margin: 4rem 0;
-  }
+@mixin container-large() {
+  max-width: $container-large;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
 
   @include medium-up {
-    margin: 5rem 0;
+    padding: 0 2rem;
+  }
+}
+
+.container-large {
+  @include container-large;
+}
+
+@mixin container-full() {
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+
+  @include medium-up {
+    padding: 0 2rem;
+  }
+}
+.container-full {
+  @include container-full;
+}
+
+@mixin container-small() {
+  max-width: $container-small;
+  margin: 0 auto;
+  padding: 0 1rem;
+  width: 100%;
+
+  @include medium-up {
+    padding: 0 2rem;
+  }
+}
+.container-small {
+  @include container-small;
+}
+
+@mixin spacing() {
+  margin: 5rem 0;
+
+  @include medium-up {
+    margin: 6rem 0;
   }
 
   @include large-up {
-    margin: 6rem 0;
+    margin: 8rem 0;
+  }
+}
+
+@mixin spacing-bottom() {
+  margin-bottom: 5rem;
+
+  @include medium-up {
+    margin-bottom: 6rem;
+  }
+
+  @include large-up {
+    margin-bottom: 8rem;
+  }
+}
+
+@mixin spacing-top() {
+  margin-top: 5rem;
+
+  @include medium-up {
+    margin-top: 6rem;
+  }
+
+  @include large-up {
+    margin-top: 8rem;
   }
 }
 
@@ -40,12 +108,8 @@
   }
 }
 
-@mixin container-small() {
+@mixin text-max-width() {
   max-width: 40rem;
-
-  @include large-up {
-    max-width: 48rem;
-  }
 }
 
 @mixin transition($property: transform) {
@@ -65,9 +129,127 @@
   }
 }
 
+@mixin subtitle() {
+  font-size: 0.75rem;
+  font-family: $font-family-mono;
+  font-weight: 300;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  margin-bottom: 1rem;
+
+  @include medium-up {
+    font-size: 0.875rem;
+  }
+
+  @include large-up {
+    font-size: 1rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@mixin hero-text() {
+  font-size: 1.75rem;
+
+  @include medium-up {
+    font-size: 2.5rem;
+  }
+}
+
+@mixin hero-text-small() {
+  font-size: 1.125rem;
+
+  @include large-up {
+    font-size: 1.25rem;
+  }
+}
+
 @mixin text-small() {
   font-size: 0.8125rem;
   @include large-up {
     font-size: 0.9375rem;
+  }
+}
+
+@mixin link() {
+  display: block;
+  color: $color-black;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  font-weight: 500;
+  font-size: rem(14px);
+  font-family: $font-family-mono;
+  text-decoration: underline;
+  text-decoration-color: $color-yellow;
+  text-decoration-thickness: 2px;
+  text-underline-offset: 0.5em;
+}
+
+@mixin h1 {
+  font-size: 2rem;
+  color: $color-yellow;
+  font-weight: bold;
+  hyphens: auto;
+  line-height: 1.1;
+  margin-bottom: 1.25rem;
+
+  @include medium-up() {
+    font-size: 4rem;
+  }
+
+  @include large-up() {
+    font-size: 5rem;
+    margin-bottom: 2rem;
+  }
+}
+
+@mixin h2 {
+  font-size: 1.25rem;
+  hyphens: auto;
+  line-height: 1.2;
+
+  @include medium-up() {
+    font-size: 1.5625rem;
+  }
+
+  @include large-up() {
+    font-size: 1.875rem;
+  }
+}
+
+@mixin h3 {
+  font-size: 1.25rem;
+  font-weight: bold;
+  margin-bottom: 0.5rem;
+
+  @include medium-up() {
+    font-size: 1.625rem;
+  }
+
+  @include large-up() {
+    font-size: 1.625rem;
+  }
+}
+
+@mixin h4 {
+  font-size: 1.0625rem;
+
+  @include medium-up() {
+    font-size: 1.125rem;
+  }
+
+  @include large-up() {
+    font-size: 1.25rem;
+  }
+}
+
+@mixin h5 {
+  font-size: 1rem;
+
+  @include medium-up() {
+    font-size: 1.0625rem;
+  }
+
+  @include large-up() {
+    font-size: 1.125rem;
   }
 }

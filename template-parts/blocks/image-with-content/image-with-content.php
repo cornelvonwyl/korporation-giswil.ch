@@ -35,7 +35,7 @@ $class_name .= ' image-with-content--image-' . $image_position;
 $class_name .= ' image-with-content--title-' . $title_variant;
 ?>
 
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
   <div class="image-with-content__container">
     <?php if ($image): ?>
       <div class="image-with-content__image-wrap">
@@ -68,4 +68,4 @@ $class_name .= ' image-with-content--title-' . $title_variant;
       <?php endif; ?>
     </div>
   </div>
-</div>
+</section>

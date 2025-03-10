@@ -19,9 +19,6 @@ $class_name = 'sub-service';
 if (!empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
-if (!empty($block['align'])) {
-  $class_name .= ' align' . $block['align'];
-}
 
 // Load values and assign defaults.
 $icon = get_field('icon');
@@ -31,10 +28,13 @@ $content = get_field('text') ?: ($is_preview ? '<p>Dies ist ein Beispieltext, de
 $link = get_field('link');
 ?>
 
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
+<article id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
   <?php if ($icon): ?>
-    <div class="sub-service__icon">
-      <?php echo wp_get_attachment_image($icon['ID'], 'medium', FALSE, array('class' => 'sub-service__icon-img')); ?>
+    <div class="sub-service__icon" aria-hidden="true">
+      <?php echo wp_get_attachment_image($icon['ID'], 'small', FALSE, array(
+        'class' => 'sub-service__icon-img',
+        'alt' => '',
+      )); ?>
     </div>
   <?php endif; ?>
 
@@ -47,4 +47,4 @@ $link = get_field('link');
       <?php echo wp_kses_post($content); ?>
     </div>
   <?php endif; ?>
-</div>
+</article>

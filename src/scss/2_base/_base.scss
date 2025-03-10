@@ -16,13 +16,8 @@ video {
 }
 
 ::selection {
-  color: $color-white;
-  background: $color-black;
-}
-
-::selection {
-  color: $color-white;
-  background: $color-black;
+  color: $color-black;
+  background: $color-yellow;
 }
 
 .no-scroll {

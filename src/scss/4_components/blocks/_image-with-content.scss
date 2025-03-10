@@ -1,8 +1,12 @@
 .image-with-content {
+  @include spacing;
+
   &__container {
     display: flex;
     flex-direction: column;
     gap: 2rem;
+
+    @include container-large;
 
     @include medium-up {
       flex-direction: row;
@@ -35,9 +39,7 @@
   }
 
   &__title {
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    @include h1;
   }
 
   &__text {

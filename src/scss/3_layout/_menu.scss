@@ -52,7 +52,10 @@
       }
 
       > .menu-item {
-        padding-right: 1rem;
+        &:not(:last-child) {
+          padding-right: 1rem;
+        }
+
         width: fit-content;
 
         &.menu-item-has-children {
@@ -128,22 +131,6 @@
 
           &--show {
             @include transition(max-height);
-          }
-
-          .menu-item {
-            font-size: 0.875rem;
-            line-height: 2;
-            padding-left: 1.5rem;
-            letter-spacing: 0.0625em;
-
-            @include medium-up {
-              padding-left: 0;
-              line-height: 2.5;
-            }
-
-            @include large-up {
-              font-size: 1.0625rem;
-            }
           }
         }
 

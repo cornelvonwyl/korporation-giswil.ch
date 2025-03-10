@@ -1,60 +1,72 @@
 .page-header {
+  @include spacing-bottom;
+
   &__container {
-    display: flex;
-    flex-direction: column;
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: auto;
     gap: 2rem;
+    width: 100%;
 
     @include medium-up {
-      flex-direction: row;
+      grid-template-columns: repeat(12, 1fr);
+      grid-template-rows: auto;
       align-items: center;
+      gap: 0;
     }
   }
 
-  &__image-wrap {
-    flex: 0 0 100%;
-
-    @include medium-up {
-      flex: 0 0 50%;
-    }
-  }
-
-  &__image {
+  img {
     width: 100%;
     height: auto;
     display: block;
+
+    aspect-ratio: 5 / 4;
+    object-fit: cover;
+    object-position: center;
+
+    @include medium-up {
+      grid-column: span 5;
+      min-height: 100%;
+    }
   }
 
   &__content {
-    flex: 1;
-    @include container;
+    @include small-only {
+      @include container;
+    }
+
+    @include medium-up {
+      max-width: calc($container-large / 12 * 7);
+      padding: 2rem 2rem 2rem 4rem;
+      grid-column: span 7;
+    }
+
+    @include large-up {
+      padding: 0 2rem 0 6rem;
+    }
   }
 
   &__subtitle {
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
+    @include subtitle;
   }
 
   &__title {
-    font-size: 1.8rem;
-    margin-top: 0;
-    margin-bottom: 1rem;
+    @include medium-up {
+      margin-left: -16rem;
+    }
   }
 
   &__text {
-    margin-bottom: 1.5rem;
+    @include hero-text-small;
+    @include text-max-width;
+
+    p:last-child {
+      margin-bottom: 2rem;
+    }
   }
 
   &__link {
-    display: inline-block;
-    padding: 0.5rem 1rem;
-    text-decoration: none;
-    background-color: #333;
-    color: #fff;
-    border-radius: 3px;
-    transition: background-color 0.3s;
-
-    &:hover {
-      background-color: #555;
-    }
+    @include link;
   }
 }
