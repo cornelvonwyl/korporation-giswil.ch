@@ -4,11 +4,11 @@
     <style>
       .cls-1 {
         fill: none;
-        stroke: #ab9773;
-        stroke-width: 1.42px;
+        stroke: black;
+        stroke-width: 1.5px;
       }
     </style>
   </defs>
-  <line class="cls-1" x1="3.33" y1="12.5" x2="21.67" y2="12.5"/>
-  <polyline class="cls-1" points="13.98 4.81 21.67 12.5 13.98 20.19"/>
+  <line class="cls-1" x1="3.33" y1="12.5" x2="21.67" y2="12.5" />
+  <polyline class="cls-1" points="13.98 4.81 21.67 12.5 13.98 20.19" />
 </svg>

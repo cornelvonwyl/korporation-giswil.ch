@@ -56,6 +56,18 @@
   @include container-small;
 }
 
+@mixin spacing-inner() {
+  padding: 7rem 0;
+
+  @include medium-up {
+    padding: 8rem 0;
+  }
+
+  @include large-up {
+    padding: 10rem 0;
+  }
+}
+
 @mixin spacing() {
   margin: 7rem 0;
 
@@ -113,7 +125,7 @@
 }
 
 @mixin transition($property: transform) {
-  transition: #{$property} 0.4s ease;
+  transition: #{$property} 0.4s $transition;
 }
 
 @mixin hover-effect() {
@@ -125,6 +137,7 @@
   &:hover {
     @include medium-up {
       filter: brightness(0);
+      @include transition(filter);
     }
   }
 }
@@ -164,9 +177,42 @@
 }
 
 @mixin text-small() {
-  font-size: 0.8125rem;
-  @include large-up {
-    font-size: 0.9375rem;
+  font-size: rem(14px);
+}
+
+@mixin filter-button-label {
+  font-family: $font-family-mono;
+  font-size: rem(14px);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  color: $color-black;
+  text-decoration: none;
+}
+
+@mixin primary-button() {
+  @include filter-button-label();
+  background-color: $color-yellow;
+  color: $color-black;
+  padding: 1rem 2rem;
+  border-radius: 100rem;
+  border: none;
+  cursor: pointer;
+}
+@mixin secondary-button() {
+  @include filter-button-label();
+  background-color: transparent;
+  color: $color-black;
+  padding: 1rem 2rem;
+  border-radius: 100%;
+  border: 1.5px solid $color-black;
+  cursor: pointer;
+  border-radius: 100rem;
+  transition: all 0.3s $transition;
+
+  &:hover {
+    background-color: $color-black;
+    color: $color-white;
   }
 }
 
@@ -203,16 +249,13 @@
 }
 
 @mixin h2 {
-  font-size: 1.25rem;
+  font-size: rem(36px);
   hyphens: auto;
   line-height: 1.2;
+  font-weight: bold;
 
   @include medium-up() {
-    font-size: 1.5625rem;
-  }
-
-  @include large-up() {
-    font-size: 1.875rem;
+    font-size: rem(46px);
   }
 }
 
@@ -232,13 +275,10 @@
 
 @mixin h4 {
   font-size: 1.0625rem;
+  font-weight: bold;
 
   @include medium-up() {
-    font-size: 1.125rem;
-  }
-
-  @include large-up() {
-    font-size: 1.25rem;
+    font-size: rem(22px);
   }
 }
 

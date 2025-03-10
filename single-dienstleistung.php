@@ -11,10 +11,7 @@
       <?php endwhile;
     endif; ?>
 
-
-    <?php
-    include get_template_directory() . '/template-parts/job/job-list.php';
-    ?>
+    <?php get_template_part('template-parts/referenzen/referenzen-by'); ?>
 
   </div>
 </main>

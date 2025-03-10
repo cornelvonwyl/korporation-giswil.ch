@@ -7,7 +7,6 @@
 
 .is-inactive {
   @include medium-up {
-    @include transition(all);
     opacity: 0.4;
   }
 }

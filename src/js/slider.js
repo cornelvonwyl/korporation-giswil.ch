@@ -5,13 +5,13 @@ import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
 
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.post-slider .swiper').forEach((swiperElement) => {
+  document.querySelectorAll('.swiper').forEach((swiperElement) => {
     new Swiper(swiperElement, {
       modules: [Navigation, Autoplay, EffectFade],
       speed: 1000,
       crossFade: true,
       slidesPerView: 3,
-      spaceBetween: 16,
+      spaceBetween: 64,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

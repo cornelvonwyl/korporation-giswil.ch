@@ -1,14 +1,4 @@
 <div class="post-slider">
-  <div class="swiper-buttons">
-    <button type="button" class="swiper-button-prev" aria-label="Vorheriges Bild">
-      <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
-        alt="Pfeil nach links">
-    </button>
-    <button type="button" class="swiper-button-next" aria-label="Nächstes Bild">
-      <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-        alt="Pfeil nach rechts">
-    </button>
-  </div>
 
   <div class="swiper post-slider__container">
     <div class="swiper-wrapper post-slider__wrapper add-hover-effect">
@@ -72,4 +62,16 @@
       ?>
     </div>
   </div>
+
+  <div class="swiper-buttons">
+    <button type="button" class="swiper-button-prev" aria-label="Vorheriges Bild">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
+        alt="Pfeil nach links">
+    </button>
+    <button type="button" class="swiper-button-next" aria-label="Nächstes Bild">
+      <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
+        alt="Pfeil nach rechts">
+    </button>
+  </div>
+
 </div>
