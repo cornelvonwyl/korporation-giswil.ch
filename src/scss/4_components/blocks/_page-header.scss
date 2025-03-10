@@ -5,12 +5,11 @@
     display: grid;
     grid-template-columns: 1fr;
     grid-template-rows: auto;
-    gap: 2rem;
+    gap: 1.5rem;
     width: 100%;
 
     @include medium-up {
       grid-template-columns: repeat(12, 1fr);
-      grid-template-rows: auto;
       align-items: center;
       gap: 0;
     }

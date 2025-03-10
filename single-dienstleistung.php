@@ -8,7 +8,14 @@
         <article class="main-content">
           <?php the_content(); ?>
         </article>
-      <?php endwhile; endif; ?>
+      <?php endwhile;
+    endif; ?>
+
+
+    <?php
+    include get_template_directory() . '/template-parts/job/job-list.php';
+    ?>
+
   </div>
 </main>
 <?php get_footer(); ?>

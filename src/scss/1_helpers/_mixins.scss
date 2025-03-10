@@ -57,46 +57,46 @@
 }
 
 @mixin spacing() {
-  margin: 5rem 0;
+  margin: 7rem 0;
 
   @include medium-up {
-    margin: 6rem 0;
+    margin: 8rem 0;
   }
 
   @include large-up {
-    margin: 8rem 0;
+    margin: 10rem 0;
   }
 }
 
 @mixin spacing-bottom() {
-  margin-bottom: 5rem;
+  margin-bottom: 7rem;
 
   @include medium-up {
-    margin-bottom: 6rem;
+    margin-bottom: 8rem;
   }
 
   @include large-up {
-    margin-bottom: 8rem;
+    margin-bottom: 10rem;
   }
 }
 
 @mixin spacing-top() {
-  margin-top: 5rem;
+  margin-top: 7rem;
 
   @include medium-up {
-    margin-top: 6rem;
+    margin-top: 8rem;
   }
 
   @include large-up {
-    margin-top: 8rem;
+    margin-top: 10rem;
   }
 }
 
 @mixin spacing-small() {
-  margin: 3rem 0;
+  margin: 5rem 0;
 
   @include medium-up {
-    margin: 5rem 0;
+    margin: 7rem 0;
   }
 }
 
@@ -185,7 +185,7 @@
 }
 
 @mixin h1 {
-  font-size: 2rem;
+  font-size: 2.4rem;
   color: $color-yellow;
   font-weight: bold;
   hyphens: auto;

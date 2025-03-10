@@ -39,13 +39,25 @@
 }
 
 body {
-  font-size: 1rem;
+  font-size: 0.9375rem;
   line-height: $line-height;
   font-family: $font-family;
+
+  @include medium-up {
+    font-size: 1rem;
+  }
 }
 
 p:last-child {
   margin-bottom: 0;
+}
+
+p a {
+  @include link;
+}
+
+strong {
+  font-weight: bold;
 }
 
 h1,
@@ -90,10 +102,6 @@ ul.wp-block-list {
   ol {
     &:not(:last-child) {
       margin-bottom: 1.5rem;
-
-      @include medium-up {
-        margin-bottom: 2rem;
-      }
     }
   }
 }

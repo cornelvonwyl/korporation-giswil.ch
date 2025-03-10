@@ -1,36 +1,45 @@
 .image-with-content {
   @include spacing;
+  position: relative;
 
   &__container {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: 1.5rem;
 
     @include container-large;
 
     @include medium-up {
       flex-direction: row;
       align-items: center;
+      gap: 4rem;
     }
-  }
 
-  &__image-wrap {
-    flex: 0 0 100%;
-
-    @include medium-up {
-      flex: 0 0 50%;
+    @include large-up {
+      gap: 6rem;
     }
-  }
 
-  &__image {
-    width: 100%;
-    height: auto;
-    display: block;
+    > img {
+      width: 100%;
+      height: auto;
+      display: block;
+
+      aspect-ratio: 5 / 4;
+      object-fit: cover;
+      object-position: center;
+
+      @include medium-up {
+        min-height: 100%;
+        width: 8 / 12 * 100%;
+        max-width: 100%;
+      }
+    }
   }
 
   &__content {
-    flex: 1;
-    @include container;
+    @include medium-up {
+      width: 4 / 12 * 100%;
+    }
   }
 
   &__subtitle {
@@ -40,6 +49,9 @@
 
   &__title {
     @include h1;
+    white-space: nowrap;
+    position: relative;
+    z-index: 10;
   }
 
   &__text {
@@ -69,31 +81,24 @@
     }
   }
 
-  &--image-left {
-    // Standard Layout, keine besonderen Anpassungen notwendig
-  }
-
   // Title Variant Modifikationen
   &--title-vertical {
+    margin-top: 10rem;
+    @include medium-up {
+      margin-top: 15rem;
+    }
     .image-with-content__title {
+      position: absolute;
+      top: 0%;
+      left: 10%;
       writing-mode: vertical-rl;
-      transform: rotate(180deg);
-      margin-right: 1rem;
-      line-height: 1;
+      transform: rotate(180deg) translateY(20%);
+      margin: 0;
       height: auto;
 
       @include medium-up {
-        float: left;
-        margin-bottom: 0;
+        left: 50%;
       }
     }
-
-    .image-with-content__text {
-      clear: right;
-    }
-  }
-
-  &--title-horizontal {
-    // Standard Layout, keine besonderen Anpassungen notwendig
   }
 }
