@@ -7,33 +7,11 @@
   }
 
   &__header {
-    margin-bottom: 2rem;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
-
-    @include medium-up {
-      margin-bottom: 4rem;
-    }
+    @include title-subtitle-header;
   }
 
   &__subtitle {
     @include subtitle;
-  }
-
-  &__item {
-    text-decoration: none;
-    color: inherit;
-  }
-
-  &__image {
-    margin-bottom: 0.5rem;
-  }
-
-  &__location {
-    opacity: 0.5;
-    @include text-small;
   }
 
   &__button {

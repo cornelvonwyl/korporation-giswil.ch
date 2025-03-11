@@ -15,6 +15,8 @@
 
     <?php get_template_part('template-parts/people/people-by'); ?>
 
+    <?php get_template_part('template-parts/partners/partners-by'); ?>
+
   </div>
 </main>
 <?php get_footer(); ?>

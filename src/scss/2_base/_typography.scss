@@ -52,7 +52,7 @@ p:last-child {
   margin-bottom: 0;
 }
 
-p a {
+p a:not(.tooltiptext) {
   @include link;
 }
 

@@ -15,28 +15,11 @@ if ($referenced_referenzen && !empty($referenced_referenzen)): ?>
 
       <div class="referenzen-by-service__grid swiper">
         <div class="swiper-wrapper">
-          <?php foreach ($referenced_referenzen as $referenz):
-            ?>
-            <a href="<?php echo get_permalink($referenz->ID); ?>" class="referenzen-by-service__item swiper-slide">
-              <div class="referenzen-by-service__image">
-
-                <?php
-                if (has_post_thumbnail($referenz->ID)) {
-                  echo get_the_post_thumbnail($referenz->ID, 'medium');
-                }
-                ?>
-
-              </div>
-
-              <h4><?php echo get_the_title($referenz->ID); ?></h4>
-              <?php if (get_field('location', $referenz->ID)): ?>
-                <p class="referenzen-by-service__location"><?php echo get_field('location', $referenz->ID); ?></p>
-              <?php endif; ?>
-            </a>
+          <?php foreach ($referenced_referenzen as $referenz): ?>
+            <?php get_template_part('template-parts/referenzen/referenz', NULL, ['referenz' => $referenz]); ?>
           <?php endforeach; ?>
         </div>
       </div>
-
 
       <div class="swiper-buttons">
         <button type="button" class="swiper-button-prev" aria-label="Vorheriges Element">
@@ -48,7 +31,6 @@ if ($referenced_referenzen && !empty($referenced_referenzen)): ?>
             alt="Pfeil nach rechts">
         </button>
       </div>
-
 
       <div class="referenzen-by-service__button">
         <a href="/referenzen" class="button">Alle Referenzen</a>
