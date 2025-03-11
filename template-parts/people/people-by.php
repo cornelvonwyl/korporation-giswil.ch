@@ -9,7 +9,7 @@ if ($referenced_people && !empty($referenced_people)): ?>
   <section class="people-by">
     <div class="people-by__container">
       <div class="people-by__header">
-        <p class="people-by__subtitle subtitle">Unsere Profis</p>
+        <p class="people-by__subtitle">Unsere Profis</p>
         <h2>Ansprechpersonen</h2>
       </div>
 

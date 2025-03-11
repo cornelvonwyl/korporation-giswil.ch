@@ -11,7 +11,7 @@ document.addEventListener('DOMContentLoaded', () => {
       speed: 1000,
       crossFade: true,
       slidesPerView: 3,
-      spaceBetween: 64,
+      spaceBetween: 16,
       navigation: {
         nextEl: '.swiper-button-next',
         prevEl: '.swiper-button-prev',

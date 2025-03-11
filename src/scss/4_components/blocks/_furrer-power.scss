@@ -1,0 +1,122 @@
+.section--furrer-power {
+  padding: 100px 0;
+  background-color: var(--color-light);
+
+  .furrer-power-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 64px;
+    align-items: center;
+  }
+
+  .furrer-power-content {
+    &__title {
+      font-size: 2.5rem;
+      line-height: 1.2;
+      color: var(--color-primary);
+      margin-bottom: 24px;
+    }
+
+    &__text {
+      font-size: 1.125rem;
+      line-height: 1.6;
+      color: var(--color-text);
+      margin-bottom: 32px;
+    }
+
+    .button--secondary {
+      display: inline-flex;
+      align-items: center;
+      padding: 14px 28px;
+      background-color: transparent;
+      color: var(--color-primary);
+      text-decoration: none;
+      border: 2px solid var(--color-primary);
+      border-radius: 4px;
+      font-weight: 600;
+      transition: all 0.3s ease;
+
+      &:hover {
+        background-color: var(--color-primary);
+        color: var(--color-white);
+      }
+    }
+  }
+
+  .furrer-power-images {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 24px;
+
+    &__item {
+      position: relative;
+      padding-top: 100%; // 1:1 aspect ratio
+      border-radius: 8px;
+      overflow: hidden;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+
+      &:nth-child(even) {
+        margin-top: 32px;
+      }
+
+      img {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+
+  @media (max-width: 1024px) {
+    padding: 80px 0;
+
+    .furrer-power-content {
+      &__title {
+        font-size: 2rem;
+      }
+
+      &__text {
+        font-size: 1rem;
+      }
+    }
+
+    .furrer-power-images {
+      gap: 16px;
+
+      &__item:nth-child(even) {
+        margin-top: 24px;
+      }
+    }
+  }
+
+  @media (max-width: 768px) {
+    padding: 60px 0;
+
+    .furrer-power-grid {
+      grid-template-columns: 1fr;
+      gap: 40px;
+    }
+
+    .furrer-power-content {
+      text-align: center;
+
+      &__title {
+        font-size: 1.75rem;
+        margin-bottom: 20px;
+      }
+
+      &__text {
+        margin-bottom: 24px;
+      }
+    }
+
+    .furrer-power-images {
+      &__item:nth-child(even) {
+        margin-top: 16px;
+      }
+    }
+  }
+}

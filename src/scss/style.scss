@@ -1,41 +1,58 @@
-// Import Helpers
+// Global Helpers
 @import '1_helpers/variables';
 @import '1_helpers/breakpoints';
 @import '1_helpers/functions';
 @import '1_helpers/mixins';
 @import '1_helpers/reset';
 
-// Import Base Styles
+// Global Base Styles
 @import '2_base/base';
 @import '2_base/typography';
 @import '2_base/hover';
 @import '2_base/animation';
 
-// Import Layout Styles
-@import '3_layout/footer';
+// Global Layout
 @import '3_layout/header';
 @import '3_layout/menu';
+@import '3_layout/footer';
 @import '3_layout/layout';
-@import '3_layout/single-post';
 
-// Import Components
+// Global Components
+@import '4_components/blocks/hero';
+@import '4_components/forms/form';
+@import '4_components/swiper';
+
+// Blog/Posts
+@import '3_layout/single-post';
+@import '4_components/news/news-list';
+
+// Services Pages
+@import '4_components/services/services-list';
+@import '4_components/services/service-card';
+@import '4_components/blocks/sub-service';
+
+// Reference Pages
+@import '4_components/referenz/referenzen-by';
+@import '4_components/referenz/referenzen-overview';
+@import '4_components/referenz/referenzen-single';
+@import '4_components/referenz/referenz';
+
+// Team/People Pages
+@import '4_components/person/people';
+@import '4_components/person/people-by';
+@import '4_components/person/person';
+
+// Partners Page
+@import '4_components/partners/partners-by';
+
+// Jobs Page
+@import '4_components/jobs/job-list';
+
+// Reusable Block Components
+@import '4_components/blocks/furrer-power';
 @import '4_components/blocks/images-block';
 @import '4_components/blocks/images-small-block';
 @import '4_components/blocks/images-link-block';
 @import '4_components/blocks/links-block';
-@import '4_components/blocks/job-list';
-@import '4_components/blocks/post-list';
-@import '4_components/blocks/people';
 @import '4_components/blocks/image-with-content';
 @import '4_components/blocks/page-header';
-@import '4_components/blocks/sub-service';
-@import '4_components/blocks/referenzen-by';
-@import '4_components/blocks/people-by';
-@import '4_components/blocks/partners-by';
-@import '4_components/pages/referenzen-overview';
-@import '4_components/pages/referenzen-single';
-
-@import '4_components/forms/form';
-
-@import '4_components/elements/person/person';
-@import '4_components/elements/referenz/referenz';

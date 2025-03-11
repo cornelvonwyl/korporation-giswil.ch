@@ -6,14 +6,14 @@
 $referenced_referenzen = get_field('referenzen');
 
 if ($referenced_referenzen && !empty($referenced_referenzen)): ?>
-  <section class="referenzen-by-service">
-    <div class="referenzen-by-service__container">
-      <div class="referenzen-by-service__header">
-        <p class="referenzen-by-service__subtitle">Unsere Meisterwerke</p>
+  <section class="referenzen-by">
+    <div class="referenzen-by__container">
+      <div class="referenzen-by__header">
+        <p class="referenzen-by__subtitle">Unsere Meisterwerke</p>
         <h2>Referenzen</h2>
       </div>
 
-      <div class="referenzen-by-service__grid swiper">
+      <div class="referenzen-by__grid swiper">
         <div class="swiper-wrapper">
           <?php foreach ($referenced_referenzen as $referenz): ?>
             <?php get_template_part('template-parts/referenzen/referenz', NULL, ['referenz' => $referenz]); ?>
@@ -32,7 +32,7 @@ if ($referenced_referenzen && !empty($referenced_referenzen)): ?>
         </button>
       </div>
 
-      <div class="referenzen-by-service__button">
+      <div class="referenzen-by__button">
         <a href="/referenzen" class="button">Alle Referenzen</a>
       </div>
     </div>

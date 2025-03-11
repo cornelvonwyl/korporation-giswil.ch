@@ -1,0 +1,27 @@
+.service-card {
+  background-color: $color-white;
+  padding: 2rem;
+
+  @include medium-up {
+    padding: 3rem;
+  }
+
+  &__icon {
+    img {
+      display: block;
+      height: 4rem;
+      width: auto;
+      object-fit: contain;
+      object-position: left bottom;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__teaser {
+    margin-bottom: 1.5rem;
+  }
+
+  &__link {
+    @include link;
+  }
+}

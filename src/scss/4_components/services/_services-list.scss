@@ -1,0 +1,31 @@
+.services {
+  @include spacing-inner;
+  background-color: $color-yellow;
+
+  &__container {
+    @include container-large;
+  }
+
+  &__header {
+    @include title-subtitle-header;
+  }
+
+  &__subtitle {
+    @include subtitle;
+  }
+
+  &__button {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2rem;
+
+    @include medium-up {
+      margin-top: 4rem;
+    }
+
+    a {
+      @include secondary-button;
+    }
+  }
+}

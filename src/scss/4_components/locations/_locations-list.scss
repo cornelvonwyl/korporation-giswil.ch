@@ -1,0 +1,32 @@
+.section--standorte {
+  padding: 80px 0;
+  background-color: var(--color-white);
+
+  .section__title {
+    text-align: center;
+    margin-bottom: 48px;
+    font-size: 2.5rem;
+    color: var(--color-primary);
+  }
+
+  .standorte-list {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 32px;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+
+  @media (max-width: 768px) {
+    padding: 40px 0;
+
+    .section__title {
+      font-size: 2rem;
+      margin-bottom: 32px;
+    }
+
+    .standorte-list {
+      gap: 24px;
+    }
+  }
+}
