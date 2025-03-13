@@ -11,9 +11,10 @@
     transform: rotate(180deg);
     @include h1;
     margin: 0;
+    font-size: 4rem;
 
-    @include small-only {
-      font-size: 4rem;
+    @include small-up {
+      font-size: 5rem;
     }
   }
 

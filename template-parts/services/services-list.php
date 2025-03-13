@@ -15,26 +15,11 @@ $services = new WP_Query($args);
       <h2>Dienstleistungen</h2>
     </div>
     <?php if ($services->have_posts()): ?>
-      <div class="swiper services-slider">
-        <div class="swiper-wrapper">
-          <?php while ($services->have_posts()):
-            $services->the_post(); ?>
-            <div class="swiper-slide">
-              <?php get_template_part('template-parts/services/services-card'); ?>
-            </div>
-          <?php endwhile; ?>
-        </div>
-      </div>
-
-      <div class="swiper-buttons">
-        <button type="button" class="swiper-button-prev" aria-label="Vorheriges Element">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
-            alt="Pfeil nach links">
-        </button>
-        <button type="button" class="swiper-button-next" aria-label="Nächstes Element">
-          <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-            alt="Pfeil nach rechts">
-        </button>
+      <div class="services__grid">
+        <?php while ($services->have_posts()):
+          $services->the_post(); ?>
+          <?php get_template_part('template-parts/services/services-card'); ?>
+        <?php endwhile; ?>
       </div>
     <?php endif; ?>
     <?php wp_reset_postdata(); ?>

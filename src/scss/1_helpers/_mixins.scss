@@ -191,18 +191,18 @@
 }
 
 @mixin hero-text() {
-  font-size: 1.75rem;
+  font-size: rem(24px);
 
   @include medium-up {
-    font-size: 2.5rem;
+    font-size: rem(34px);
   }
 }
 
 @mixin hero-text-small() {
-  font-size: 1.125rem;
+  font-size: rem(18px);
 
   @include large-up {
-    font-size: 1.25rem;
+    font-size: rem(20px);
   }
 }
 

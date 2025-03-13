@@ -1,0 +1,10 @@
+.hero-text {
+  @include spacing-small;
+  &__container {
+    @include container-small;
+
+    p {
+      @include hero-text;
+    }
+  }
+}

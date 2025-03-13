@@ -4,6 +4,18 @@
     <!-- Hero Section -->
     <?php get_template_part('template-parts/frontpage/hero'); ?>
 
+    <div class="hero-text">
+      <div class="hero-text__container">
+
+
+        <p>
+          Bei uns zählen Mensch, Teamgeist und Leidenschaft. Mit Freude, Fantasie und Fortschritt gestalten wir
+          gemeinsam
+          die Zukunft – eifach Furrer.
+        </p>
+      </div>
+    </div>
+
     <!-- Dienstleistungen Section -->
     <?php get_template_part('template-parts/services/services-list'); ?>
 
