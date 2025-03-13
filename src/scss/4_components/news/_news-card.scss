@@ -1,0 +1,43 @@
+.news-card {
+  background-color: $color-white;
+  position: relative;
+  &__icon {
+    img {
+      display: block;
+      height: 4rem;
+      width: auto;
+      object-fit: contain;
+      object-position: left bottom;
+      margin-bottom: 3rem;
+    }
+  }
+
+  &__content {
+    padding: 1rem;
+    @include medium-up {
+      padding: 2rem;
+    }
+  }
+
+  &__categories {
+    display: inline-block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    .category-tag {
+      @include category-tag;
+    }
+  }
+
+  &__excerpt {
+    margin-bottom: 1.5rem;
+    display: -webkit-box;
+    -webkit-box-orient: vertical;
+    -webkit-line-clamp: 2;
+    overflow: hidden;
+  }
+
+  &__link {
+    @include link;
+  }
+}

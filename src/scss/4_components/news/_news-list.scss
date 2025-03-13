@@ -1,52 +1,38 @@
-.section--neuigkeiten {
-  padding: 80px 0;
-  background-color: var(--color-light);
+.news {
+  @include spacing-inner;
+  background-color: $color-grey-light;
 
-  .section__title {
-    text-align: center;
-    margin-bottom: 48px;
-    font-size: 2.5rem;
-    color: var(--color-primary);
+  &__container {
+    @include container-large;
   }
 
-  .neuigkeiten-grid {
+  &__header {
+    @include title-subtitle-header;
+  }
+
+  &__subtitle {
+    @include subtitle;
+  }
+
+  &__grid {
     display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    gap: 32px;
-    margin-bottom: 48px;
-  }
+    grid-template-columns: 1fr;
+    @include gap();
 
-  .neuigkeiten-more {
-    text-align: center;
+    @include medium-up {
+      grid-template-columns: repeat(2, 1fr);
+    }
 
-    .button {
-      display: inline-flex;
-      align-items: center;
-      padding: 12px 24px;
-      background-color: var(--color-primary);
-      color: var(--color-white);
-      text-decoration: none;
-      border-radius: 4px;
-      transition: background-color 0.3s ease;
-
-      &:hover {
-        background-color: var(--color-primary-dark);
-      }
+    @include large-up {
+      grid-template-columns: repeat(3, 1fr);
     }
   }
 
-  @media (max-width: 768px) {
-    padding: 40px 0;
+  &__button {
+    @include more-button;
 
-    .section__title {
-      font-size: 2rem;
-      margin-bottom: 32px;
-    }
-
-    .neuigkeiten-grid {
-      grid-template-columns: 1fr;
-      gap: 24px;
-      margin-bottom: 32px;
+    a {
+      @include primary-button;
     }
   }
 }

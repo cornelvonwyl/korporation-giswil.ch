@@ -7,8 +7,6 @@ get_header();
 
   <div class="referenzen-single">
 
-
-
     <?php if (have_posts()):
       while (have_posts()):
         the_post(); ?>

@@ -15,14 +15,7 @@
   }
 
   &__button {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 2rem;
-
-    @include medium-up {
-      margin-top: 4rem;
-    }
+    @include more-button;
 
     a {
       @include secondary-button;

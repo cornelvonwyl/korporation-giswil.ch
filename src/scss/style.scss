@@ -25,11 +25,14 @@
 // Blog/Posts
 @import '3_layout/single-post';
 @import '4_components/news/news-list';
+@import '4_components/news/news-card';
 
 // Services Pages
 @import '4_components/services/services-list';
 @import '4_components/services/service-card';
 @import '4_components/blocks/sub-service';
+
+@import '4_components/blocks/furrer-power';
 
 // Reference Pages
 @import '4_components/referenz/referenzen-by';
@@ -48,8 +51,12 @@
 // Jobs Page
 @import '4_components/jobs/job-list';
 
+// Locations Page
+@import '4_components/locations/locations-list';
+@import '4_components/locations/location-teaser';
+
 // Reusable Block Components
-@import '4_components/blocks/furrer-power';
+@import '4_components/blocks/hero';
 @import '4_components/blocks/images-block';
 @import '4_components/blocks/images-small-block';
 @import '4_components/blocks/images-link-block';

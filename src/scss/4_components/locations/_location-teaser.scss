@@ -1,0 +1,28 @@
+.location-teaser {
+  display: block;
+  padding: 1rem 0;
+  border-top: $border;
+  text-decoration: none;
+  color: $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  &__title {
+    @include hero-text-small;
+    font-weight: normal;
+    margin: 0;
+  }
+
+  &__icon {
+    width: 1.5rem;
+    height: auto;
+  }
+}
+
+.locations-list__item:last-child {
+  .location-teaser {
+    border-bottom: $border;
+  }
+}
