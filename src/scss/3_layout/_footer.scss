@@ -1,8 +1,63 @@
 .footer {
-  background-color: $color-black;
-  padding: 2rem 1.5rem 3rem;
+  padding: 4rem 0;
+  border-top: $border;
 
-  @include medium-up {
-    padding: 3rem 4rem 3rem;
+  &__container {
+    @include container-large;
+  }
+  &__grid {
+    display: flex;
+    gap: 3rem;
+    flex-direction: column;
+
+    @include medium-up {
+      flex-direction: row;
+      justify-content: space-between;
+    }
+  }
+
+  &__section {
+    &-title {
+      @include subtitle;
+      margin-bottom: 1.5rem;
+    }
+  }
+
+  &__newsletter {
+    input[type='email'] {
+      @include input;
+      margin-bottom: 1rem;
+    }
+
+    button {
+      @include primary-button;
+    }
+  }
+
+  &__links {
+    a {
+      display: block;
+    }
+  }
+
+  &__contact {
+    a {
+      display: block;
+    }
+  }
+
+  &__social {
+    display: flex;
+    gap: 1.5rem;
+
+    a {
+      color: $color-black;
+      text-decoration: none;
+      font-size: 1.5rem;
+
+      &:hover {
+        color: $color-yellow;
+      }
+    }
   }
 }

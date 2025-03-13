@@ -8,7 +8,7 @@ $args = array(
 $standorte = new WP_Query($args);
 ?>
 
-<section class="locations-list" style="margin-bottom: 1000px">
+<section class="locations-list">
   <div class="locations-list__container">
 
     <div class="locations-list__header">

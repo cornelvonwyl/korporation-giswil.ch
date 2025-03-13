@@ -1,33 +1,63 @@
-</div>
+<?php
+/**
+ * Footer template part
+ */
+?>
 
-<!-- <footer>
-    <div class="footer">
-        <div class="footer__content">
-            <div class="footer__branding">
+<footer class="footer">
+    <div class="footer__container">
+        <div class="footer__grid">
+            <!-- Newsletter Section -->
+            <div class="footer__section">
+                <h4 class="footer__section-title">Newsletter abonnieren</h4>
+                <div class="footer__newsletter">
+                    <form action="#" method="POST">
+                        <input type="email" name="email" placeholder="name@mail.ch" required>
+                        <button type="submit">Abonnieren</button>
+                    </form>
+                </div>
+            </div>
 
-                <div class="footer__logo">
-                    <a href="/">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo-gold.svg"
-                            alt="Logo">
+            <!-- Links Section -->
+            <div class="footer__section">
+                <h4 class="footer__section-title">Links</h4>
+                <nav class="footer__links">
+                    <a href="/dienstleistungen">Dienstleistungen</a>
+                    <a href="/uber-uns">Über uns</a>
+                    <a href="/karriere">Karriere</a>
+                    <a href="/kontakt">Kontakt</a>
+                </nav>
+            </div>
+
+            <!-- Contact Section -->
+            <div class="footer__section">
+                <h4 class="footer__section-title">Kontakt</h4>
+                <div class="footer__contact">
+                    <p><a href="tel:+41449054242">+41 44 905 42 42</a></p>
+                    <p><a href="mailto:info@elektro-furrer.ch">info@elektro-furrer.ch</a></p>
+                </div>
+            </div>
+
+            <!-- Social Media Section -->
+            <div class="footer__section">
+                <h4 class="footer__section-title">Social Media</h4>
+                <div class="footer__social">
+                    <a href="https://www.linkedin.com/company/elektro-furrer-ag" target="_blank"
+                        rel="noopener noreferrer">
+                        <i class="fab fa-linkedin-in"></i>
+                    </a>
+                    <a href="https://www.instagram.com/elektrofurrer" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-instagram"></i>
+                    </a>
+                    <a href="https://www.pinterest.ch/elektrofurrer" target="_blank" rel="noopener noreferrer">
+                        <i class="fab fa-pinterest-p"></i>
                     </a>
                 </div>
             </div>
-            <div class="footer__info">
-                <p class="footer__address">
-                    Chilcherlistrasse 4<br>
-                    6055 Alpnach Dorf (CH)<br>
-                    <a href="mailto:info@kueng-holz.ch">info@kueng-holz.ch</a><br>
-                    <a href="tel:+41416727676">041 672 76 76</a>
-                </p>
-
-                <p class="footer__links text-small">
-                    <a href="/impressum">Impressum</a> |
-                    <a href="/datenschutz">Datenschutz</a>
-                </p>
-            </div>
         </div>
     </div>
-</footer> -->
+</footer>
+
 <?php wp_footer(); ?>
 </body>
 

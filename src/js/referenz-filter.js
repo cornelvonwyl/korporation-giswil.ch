@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!form || !referenzenItems) return;
 
   // Set initial state based on URL parameter
-  const initialFilters = urlParams.getAll('leistung') || [];
+  const initialFilters = urlParams.getAll('dienstleistung') || [];
   if (initialFilters.length) {
     initialFilters.forEach((filter) => {
       const checkbox = document.querySelector(`input[value="${filter}"]`);
@@ -20,13 +20,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listener for filter change
   form.addEventListener('change', () => {
     const selectedValues = Array.from(
-      form.querySelectorAll('input[name="referenz"]:checked')
+      form.querySelectorAll('input[name="dienstleistung"]:checked')
     ).map((checkbox) => checkbox.value);
 
     // Update the URL parameter
-    urlParams.delete('leistung');
+    urlParams.delete('dienstleistung');
     selectedValues.forEach((value) => {
-      urlParams.append('leistung', value);
+      urlParams.append('dienstleistung', value);
     });
     window.history.pushState(
       {},
@@ -47,7 +47,7 @@ document.addEventListener('DOMContentLoaded', () => {
     } else {
       referenzenItems.forEach((item) => {
         const hasMatchingFilter = filters.some((filter) =>
-          item.classList.contains(`leistung-${filter}`)
+          item.classList.contains(`service-${filter}`)
         );
 
         item.classList.toggle('is-hidden', !hasMatchingFilter);

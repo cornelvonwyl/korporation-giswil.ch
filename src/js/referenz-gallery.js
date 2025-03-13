@@ -35,7 +35,7 @@ function updateSlideNumbers(swiperInstance) {
   document.querySelector('.total-slides').textContent = totalSlides;
 }
 
-document.addEventListener('DOMContentLoaded', () => {
+/* document.addEventListener('DOMContentLoaded', () => {
   const referenz = document.querySelector('.single-referenz');
 
   if (referenz) {
@@ -47,3 +47,4 @@ document.addEventListener('DOMContentLoaded', () => {
     footer.setAttribute('inert', '');
   }
 });
+ */

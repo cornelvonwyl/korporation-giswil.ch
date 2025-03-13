@@ -1,0 +1,54 @@
+.referenzen {
+  @include spacing-small;
+  &__container {
+    @include container-large;
+  }
+
+  &__header {
+    @include title-subtitle-header;
+  }
+
+  &__subtitle {
+    @include subtitle;
+  }
+
+  .referenzen-list {
+    @include spacing;
+
+    &__container {
+      @include container-large;
+    }
+
+    &__items {
+      display: grid;
+      gap: 3rem;
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+    }
+
+    &__item {
+      display: block;
+
+      &.is-hidden {
+        display: none;
+      }
+    }
+
+    &__thumbnail {
+      position: relative;
+    }
+
+    &__title {
+    }
+
+    &__link {
+      &:hover {
+        filter: none;
+
+        .referenzen-list__title {
+          opacity: 1;
+        }
+      }
+    }
+  }
+}

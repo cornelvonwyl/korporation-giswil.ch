@@ -1,3 +1,13 @@
+@mixin sr-only() {
+  position: absolute;
+  clip: rect(1px, 1px, 1px, 1px);
+  padding: 0;
+  border: 0;
+  height: 1px;
+  width: 1px;
+  overflow: hidden;
+}
+
 @mixin title-subtitle-header() {
   margin-bottom: 3rem;
   display: flex;
@@ -132,10 +142,10 @@
 }
 
 @mixin spacing-small() {
-  margin: 5rem 0;
+  margin: 3rem 0;
 
   @include medium-up {
-    margin: 7rem 0;
+    margin: 5rem 0;
   }
 }
 
@@ -233,6 +243,7 @@
   cursor: pointer;
   display: inline-block;
   transition: all 0.3s $transition;
+  border: none;
 }
 
 @mixin primary-button() {
@@ -363,5 +374,57 @@
 
   @include medium-up {
     gap: 1.5rem;
+  }
+}
+
+@mixin input() {
+  background-color: $color-grey-light;
+  border: none;
+  box-shadow: none;
+  padding: 0.75rem;
+  border-radius: 0;
+  width: 100%;
+  font-family: $font-family;
+
+  &::placeholder {
+    color: $color-grey-dark;
+  }
+
+  &:focus {
+    outline: none;
+    box-shadow: 0 0 0 1.5px $color-yellow;
+  }
+}
+
+@mixin checkbox() {
+  label {
+    @include filter-button-label;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    cursor: pointer;
+    background-color: $color-grey;
+    padding: 0.75rem 1rem;
+    appearance: none;
+    border-radius: 100rem;
+    transition: all 0.3s $transition;
+
+    img {
+      width: 10px;
+      height: auto;
+      transition: transform 0.3s $transition;
+    }
+  }
+
+  input {
+    @include sr-only;
+
+    &:checked + label {
+      background-color: $color-yellow;
+    }
+
+    &:checked + label .referenzen-filter__icon {
+      transform: rotate(45deg);
+    }
   }
 }
