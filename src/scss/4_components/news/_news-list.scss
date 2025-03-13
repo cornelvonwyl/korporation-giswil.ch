@@ -19,11 +19,11 @@
     grid-template-columns: 1fr;
     @include gap();
 
-    @include medium-up {
+    @include small-up {
       grid-template-columns: repeat(2, 1fr);
     }
 
-    @include large-up {
+    @include medium-up {
       grid-template-columns: repeat(3, 1fr);
     }
   }

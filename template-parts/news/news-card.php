@@ -5,8 +5,15 @@ $categories = get_the_category();
 
 <a href="<?php the_permalink(); ?>" class="full-element-link">
   <article class="news-card">
-    <?php if ($thumbnail): ?>
-      <img src="<?php echo esc_url($thumbnail); ?>" alt="<?php echo esc_attr(get_the_title()); ?>">
+    <?php if (has_post_thumbnail()): ?>
+      <?php
+      $image_id = get_post_thumbnail_id();
+
+      echo wp_get_attachment_image($image_id, 'medium', FALSE, [
+        'class' => 'news-card__image',
+        'loading' => 'lazy',
+      ]);
+      ?>
     <?php endif; ?>
 
     <div class="news-card__content">

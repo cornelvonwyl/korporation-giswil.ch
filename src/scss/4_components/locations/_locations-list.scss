@@ -15,8 +15,6 @@
 
   &__header {
     @include title-subtitle-header;
-    align-items: flex-start;
-    text-align: left;
 
     @include medium-up {
       position: sticky;
@@ -24,6 +22,8 @@
       height: fit-content;
       z-index: 1;
       margin: 0;
+      align-items: flex-start;
+      text-align: left;
     }
   }
 
