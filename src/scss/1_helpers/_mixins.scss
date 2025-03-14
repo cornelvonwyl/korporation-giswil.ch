@@ -428,3 +428,19 @@
     }
   }
 }
+
+@mixin card-filter-transition() {
+  display: block;
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.3s $transition, transform 0.3s $transition;
+
+  &.is-hidden {
+    display: block;
+    opacity: 0;
+    transform: translateY(1rem);
+    pointer-events: none;
+    position: absolute;
+    visibility: hidden;
+  }
+}

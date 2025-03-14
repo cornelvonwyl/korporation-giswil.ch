@@ -1,0 +1,24 @@
+.referenz-card {
+  display: block;
+  text-decoration: none;
+  color: inherit;
+
+  &__image {
+    margin-bottom: 0.75rem;
+  }
+
+  &__location {
+    opacity: 0.5;
+    @include text-small;
+  }
+
+  &__categories {
+    display: inline-block;
+    position: absolute;
+    top: 1rem;
+    right: 1rem;
+    .category-tag {
+      @include category-tag;
+    }
+  }
+}

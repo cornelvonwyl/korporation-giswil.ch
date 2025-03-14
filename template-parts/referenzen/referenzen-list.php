@@ -35,26 +35,18 @@
               $service_classes .= ' service-' . esc_attr($service->post_name);
             endforeach;
           endif;
+
+          // Get the current post object
+          $current_referenz = get_post();
           ?>
           <li class="referenzen-list__item<?php echo esc_attr($service_classes); ?>">
-            <a href="<?php the_permalink(); ?>" class="referenzen-list__link">
-              <div class="referenzen-list__thumbnail">
-                <?php if (has_post_thumbnail()): ?>
-                  <?php the_post_thumbnail('huge'); ?>
-                <?php else: ?>
-                  <p>Kein Bild verfügbar.</p>
-                <?php endif; ?>
-              </div>
-
-              <h2 class="referenzen-list__title"><?php the_title(); ?></h2>
-            </a>
+            <?php get_template_part('template-parts/referenzen/referenz-card', NULL, ['referenz' => $current_referenz]); ?>
           </li>
         <?php endwhile;
       else: ?>
         <li class="referenzen-list__item--empty">Aktuell keine Referenzen verfügbar.</li>
       <?php endif;
 
-      // Reset post data
       wp_reset_postdata();
       ?>
     </ul>

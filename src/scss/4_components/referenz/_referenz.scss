@@ -1,13 +1,3 @@
 .referenz {
-  text-decoration: none;
-  color: inherit;
 
-  &__image {
-    margin-bottom: 0.75rem;
-  }
-
-  &__location {
-    opacity: 0.5;
-    @include text-small;
-  }
 }

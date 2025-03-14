@@ -14,11 +14,13 @@ if ($referenced_referenzen && !empty($referenced_referenzen)): ?>
       </div>
 
       <div class="referenzen-by__grid swiper">
-        <div class="swiper-wrapper">
+        <ul class="swiper-wrapper">
           <?php foreach ($referenced_referenzen as $referenz): ?>
-            <?php get_template_part('template-parts/referenzen/referenz', NULL, ['referenz' => $referenz]); ?>
+            <li class="referenzen__item swiper-slide">
+              <?php get_template_part('template-parts/referenzen/referenz-card', NULL, ['referenz' => $referenz]); ?>
+            </li>
           <?php endforeach; ?>
-        </div>
+        </ul>
       </div>
 
       <div class="swiper-buttons">
