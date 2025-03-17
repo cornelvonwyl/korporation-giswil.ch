@@ -1,14 +1,8 @@
 .hero {
   &__container {
     position: relative;
-
-    aspect-ratio: 4 / 5;
-
-    @include small-up {
-      aspect-ratio: 16 / 9;
-      max-height: 65svh;
-      width: 100%;
-    }
+    @include header-image;
+    border-bottom: none;
   }
 
   &__image {

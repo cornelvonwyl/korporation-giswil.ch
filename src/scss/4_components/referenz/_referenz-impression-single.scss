@@ -1,0 +1,10 @@
+.referenz-impression {
+  @include spacing-small;
+  &__content {
+    @include container-small;
+  }
+
+  &__gallery {
+    @include container-large;
+  }
+}

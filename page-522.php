@@ -6,7 +6,7 @@
         <div class="referenzen__container">
           <div class="referenzen__header">
             <p class="referenzen__subtitle">Unsere Meisterwerke</p>
-            <h2>Referenzen</h2>
+            <h1 class="h2">Referenzen</h1>
           </div>
         </div>
 

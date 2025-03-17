@@ -1,6 +1,6 @@
 import './menu.js';
 import './gallery.js';
-import './slider.js';
+import './swiper.js';
 import './referenz-filter.js';
 import './referenz-gallery.js';
 import './hover-effect.js';

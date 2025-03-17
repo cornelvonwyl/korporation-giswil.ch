@@ -11,7 +11,15 @@
       <?php endwhile;
     endif; ?>
 
-    <?php get_template_part('template-parts/referenzen/referenzen-by'); ?>
+
+    <?php
+    $related_referenzen = get_field('referenzen');
+    if (!empty($related_referenzen)) {
+      get_template_part('template-parts/referenzen/referenzen-by', NULL, [
+        'referenzen' => $related_referenzen
+      ]);
+    }
+    ?>
 
     <?php get_template_part('template-parts/people/people-by'); ?>
 

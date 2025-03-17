@@ -24,6 +24,20 @@
   @include title-subtitle-header;
 }
 
+@mixin header-image {
+  width: 100%;
+  max-height: 52rem;
+  object-fit: cover;
+
+  aspect-ratio: 1 / 1;
+
+  border-bottom: 6px solid $color-yellow;
+
+  @include medium-up {
+    aspect-ratio: 16 / 6;
+  }
+}
+
 @mixin container() {
   max-width: $container;
   margin: 0 auto;
@@ -305,6 +319,7 @@
   hyphens: auto;
   line-height: 1.2;
   font-weight: bold;
+  color: $color-black;
 
   @include medium-up() {
     font-size: rem(46px);
@@ -443,4 +458,10 @@
     position: absolute;
     visibility: hidden;
   }
+}
+
+@mixin sticky() {
+  position: sticky;
+  top: calc(#{$content-offset} + 2rem);
+  z-index: 1;
 }

@@ -10,6 +10,7 @@
 @import '2_base/typography';
 @import '2_base/hover';
 @import '2_base/animation';
+@import '2_base/prose';
 
 // Global Layout
 @import '3_layout/header';
@@ -21,6 +22,7 @@
 @import '4_components/blocks/hero';
 @import '4_components/forms/form';
 @import '4_components/swiper';
+@import '4_components/elements/breadcrumb';
 
 // Frontpage
 @import '4_components/frontpage/hero';
@@ -43,8 +45,8 @@
 @import '4_components/referenz/referenzen-list';
 @import '4_components/referenz/referenzen-filter';
 @import '4_components/referenz/referenz-card';
-@import '4_components/referenz/referenzen-single';
-@import '4_components/referenz/referenz';
+@import '4_components/referenz/referenz-impression-single';
+@import '4_components/referenz/referenz-project-single';
 
 // Team/People Pages
 @import '4_components/person/people';

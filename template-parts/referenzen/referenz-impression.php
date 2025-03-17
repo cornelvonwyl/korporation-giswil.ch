@@ -2,47 +2,63 @@
 /**
  * Template part for displaying impression type references
  */
+
+
+$intro_text = get_field('intro_text');
+$service_references = get_field('service_references');
 ?>
 
-<article class="referenz referenz--impression">
-    <div class="referenz__header">
-        <h1 class="referenz__title"><?php the_title(); ?></h1>
-        <?php if ($intro_text = get_field('intro_text')): ?>
-          <div class="referenz__intro">
-              <?php echo $intro_text; ?>
-          </div>
-        <?php endif; ?>
+<?php get_template_part('template-parts/components/breadcrumb', NULL, [
+  'items' => [
+    ['title' => 'Referenzen', 'url' => '/referenzen'],
+  ]
+]); ?>
+
+<article class="referenz-impression">
+  <div class="referenz-impression__container">
+    <div class="referenz-impression__content">
+      <div class="news__header">
+        <p class="news__subtitle">Impression</p>
+        <h1 class="h2"><?php echo the_title(); ?></h1>
+      </div>
     </div>
 
-    <div class="referenz__content">
-        <?php if ($service_references = get_field('service_references')): ?>
-          <div class="referenz__services">
-              <h2>Leistungen</h2>
-              <?php echo $service_references; ?>
+
+    <div class="referenz-impression__wrapper">
+      <div class="referenz-impression__header">
+        <div class="swiper-buttons">
+          <button type="button" class="swiper-button-prev" aria-label="Vorheriges Bild">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
+              alt="Pfeil nach links">
+          </button>
+
+          <button type="button" class="swiper-button-next" aria-label="Nächstes Bild">
+            <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
+              alt="Pfeil nach rechts">
+          </button>
+        </div>
+      </div>
+
+
+      <div class="referenz-impression__gallery">
+        <?php
+        $gallery = get_field('gallery');
+        if ($gallery): ?>
+
+          <div class="swiper">
+            <div class="swiper-wrapper">
+              <?php foreach ($gallery as $image): ?>
+                <div class="swiper-slide">
+                  <?php echo wp_get_attachment_image($image['ID'], 'huge'); ?>
+                </div>
+              <?php endforeach; ?>
+            </div>
           </div>
+        <?php else: ?>
+          <p>Keine Bilder wurden gefunden.</p>
         <?php endif; ?>
 
-        <?php if ($adress = get_field('adress')): ?>
-          <div class="referenz__address">
-              <h2>Adresse</h2>
-              <?php echo $adress; ?>
-          </div>
-        <?php endif; ?>
-
-        <?php if ($time = get_field('time')): ?>
-          <div class="referenz__time">
-              <h2>Bauzeit</h2>
-              <?php echo $time; ?>
-          </div>
-        <?php endif; ?>
-
-        <?php if ($location = get_field('location')): ?>
-          <div class="referenz__location">
-              <h2>Ortschaft</h2>
-              <?php echo $location; ?>
-          </div>
-        <?php endif; ?>
-
-        <?php the_content(); ?>
+      </div>
     </div>
+  </div>
 </article>

@@ -17,10 +17,8 @@
     @include title-subtitle-header;
 
     @include medium-up {
-      position: sticky;
-      top: calc(#{$content-offset} + 2rem);
+      @include sticky;
       height: fit-content;
-      z-index: 1;
       margin: 0;
       align-items: flex-start;
       text-align: left;

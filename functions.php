@@ -94,6 +94,7 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context) {
       'core/list-item',
       'core/quote',
       'core/video',
+      'core/image',
       'acf/images-block',
       'acf/images-small-block',
       'acf/link-block',

@@ -1,21 +1,28 @@
 <?php
 /**
  * Template part for displaying related references by service
+ * 
+ * @param array $args['referenzen'] Optional. Array of referenzen to display.
+ * @param array $args['title'] Optional. Title for the section. Defaults to "Referenzen".
+ * @param array $args['subtitle'] Optional. Subtitle for the section. Defaults to "Unsere Meisterwerke".
  */
 
-$referenced_referenzen = get_field('referenzen');
+$referenzen = isset($args['referenzen']) ? $args['referenzen'] : NULL;
+$title = isset($args['title']) ? $args['title'] : 'Referenzen';
+$subtitle = isset($args['subtitle']) ? $args['subtitle'] : 'Unsere Meisterwerke';
+$button = isset($args['button']) ? $args['button'] : TRUE;
 
-if ($referenced_referenzen && !empty($referenced_referenzen)): ?>
+if ($referenzen && !empty($referenzen)): ?>
   <section class="referenzen-by">
     <div class="referenzen-by__container">
       <div class="referenzen-by__header">
-        <p class="referenzen-by__subtitle">Unsere Meisterwerke</p>
-        <h2>Referenzen</h2>
+        <p class="referenzen-by__subtitle"><?php echo esc_html($subtitle); ?></p>
+        <h2><?php echo esc_html($title); ?></h2>
       </div>
 
       <div class="referenzen-by__grid swiper">
         <ul class="swiper-wrapper">
-          <?php foreach ($referenced_referenzen as $referenz): ?>
+          <?php foreach ($referenzen as $referenz): ?>
             <li class="referenzen__item swiper-slide">
               <?php get_template_part('template-parts/referenzen/referenz-card', NULL, ['referenz' => $referenz]); ?>
             </li>
@@ -34,9 +41,11 @@ if ($referenced_referenzen && !empty($referenced_referenzen)): ?>
         </button>
       </div>
 
-      <div class="referenzen-by__button">
-        <a href="/referenzen" class="button">Alle Referenzen</a>
-      </div>
+      <?php if ($button): ?>
+        <div class="referenzen-by__button">
+          <a href="/referenzen" class="button">Alle Referenzen</a>
+        </div>
+      <?php endif; ?>
     </div>
   </section>
 <?php endif; ?>
