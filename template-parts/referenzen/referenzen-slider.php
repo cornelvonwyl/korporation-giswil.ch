@@ -13,14 +13,14 @@ $subtitle = isset($args['subtitle']) ? $args['subtitle'] : 'Unsere Meisterwerke'
 $button = isset($args['button']) ? $args['button'] : TRUE;
 
 if ($referenzen && !empty($referenzen)): ?>
-  <section class="referenzen-by">
-    <div class="referenzen-by__container">
-      <div class="referenzen-by__header">
-        <p class="referenzen-by__subtitle"><?php echo esc_html($subtitle); ?></p>
+  <section class="referenzen-slider">
+    <div class="referenzen-slider__container">
+      <div class="referenzen-slider__header">
+        <p class="referenzen-slider__subtitle"><?php echo esc_html($subtitle); ?></p>
         <h2><?php echo esc_html($title); ?></h2>
       </div>
 
-      <div class="referenzen-by__grid swiper">
+      <div class="referenzen-slider__grid swiper">
         <ul class="swiper-wrapper">
           <?php foreach ($referenzen as $referenz): ?>
             <li class="referenzen__item swiper-slide">
@@ -42,7 +42,7 @@ if ($referenzen && !empty($referenzen)): ?>
       </div>
 
       <?php if ($button): ?>
-        <div class="referenzen-by__button">
+        <div class="referenzen-slider__button">
           <a href="/referenzen" class="button">Alle Referenzen</a>
         </div>
       <?php endif; ?>

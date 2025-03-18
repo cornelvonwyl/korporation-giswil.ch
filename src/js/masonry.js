@@ -4,9 +4,9 @@ document.addEventListener('DOMContentLoaded', () => {
 });
 
 export default function calculateLayout() {
-  const masonry = document.querySelector('.referenzen-list__items');
+  const masonry = document.querySelector('.referenzen-overview__items');
   const items = Array.from(
-    document.querySelectorAll('.referenzen-list__item')
+    document.querySelectorAll('.referenzen-overview__item')
   ).filter((item) => item.classList.contains('is-hidden') === false);
 
   if (!masonry || !items.length) return;

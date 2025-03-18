@@ -1,6 +1,5 @@
-.news {
-  @include spacing-inner;
-  background-color: $color-grey-light;
+.team-overview {
+  @include spacing-small;
 
   &__container {
     @include container-large;
@@ -14,10 +13,14 @@
     @include subtitle;
   }
 
+  &__items {
+    @include container-large;
+  }
+
   &__grid {
     display: grid;
     grid-template-columns: 1fr;
-    @include gap();
+    gap: 4rem;
 
     @include small-up {
       grid-template-columns: repeat(2, 1fr);
@@ -26,6 +29,14 @@
     @include medium-up {
       grid-template-columns: repeat(3, 1fr);
     }
+
+    @include large-up {
+      grid-template-columns: repeat(5, 1fr);
+    }
+  }
+
+  &__grid-item {
+    @include card-filter-transition;
   }
 
   &__button {

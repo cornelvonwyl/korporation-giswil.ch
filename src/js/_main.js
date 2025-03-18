@@ -8,3 +8,5 @@ import './masonry.js';
 import './fade-in-animation.js';
 import './furrer-power.js';
 import './word-rotate.js';
+import './news-filter.js';
+import './team-filter.js';

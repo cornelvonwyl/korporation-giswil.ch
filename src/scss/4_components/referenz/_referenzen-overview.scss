@@ -12,9 +12,7 @@
     @include subtitle;
   }
 
-  .referenzen-list {
-    @include spacing;
-
+  .referenzen-overview {
     &__container {
       @include container-large;
     }

@@ -16,7 +16,7 @@
   text-align: center;
 
   @include medium-up {
-    margin-bottom: 4rem;
+    margin-bottom: 3rem;
   }
 }
 
@@ -438,7 +438,8 @@
       background-color: $color-yellow;
     }
 
-    &:checked + label .referenzen-filter__icon {
+    &:checked + label .referenzen-filter__icon,
+    &:checked + label .news-filter__icon {
       transform: rotate(45deg);
     }
   }
@@ -464,4 +465,39 @@
   position: sticky;
   top: calc(#{$content-offset} + 2rem);
   z-index: 1;
+}
+
+@mixin filter-component {
+  &__container {
+    @include container-small();
+  }
+
+  &__form {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    margin-bottom: 4rem;
+    justify-content: center;
+  }
+
+  &__checkboxes {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__checkbox {
+    @include checkbox();
+  }
+
+  &__text {
+    text-box: trim-both cap alphabetic;
+  }
+
+  &__item--empty {
+    width: 100%;
+    text-align: center;
+    padding: 2rem;
+    background-color: $color-grey;
+  }
 }

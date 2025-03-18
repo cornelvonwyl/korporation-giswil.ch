@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying referenzen list
+ * Template part for displaying referenzen overview
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -8,11 +8,11 @@
  */
 ?>
 
-<div class="referenzen-list">
-  <div class="referenzen-list__container">
+<div class="referenzen-overview">
+  <div class="referenzen-overview__container">
 
 
-    <ul class="referenzen-list__items">
+    <ul class="referenzen-overview__items">
       <?php
       $args = array(
         'post_type' => 'referenz',
@@ -39,12 +39,12 @@
           // Get the current post object
           $current_referenz = get_post();
           ?>
-          <li class="referenzen-list__item<?php echo esc_attr($service_classes); ?>">
+          <li class="referenzen-overview__item<?php echo esc_attr($service_classes); ?>">
             <?php get_template_part('template-parts/referenzen/referenz-card', NULL, ['referenz' => $current_referenz]); ?>
           </li>
         <?php endwhile;
       else: ?>
-        <li class="referenzen-list__item--empty">Aktuell keine Referenzen verfügbar.</li>
+        <li class="referenzen-overview__item--empty">Aktuell keine Referenzen verfügbar.</li>
       <?php endif;
 
       wp_reset_postdata();

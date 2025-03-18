@@ -30,9 +30,10 @@
 
 // Blog/Posts
 @import '3_layout/single-post';
-@import '4_components/news/news-list';
+@import '4_components/news/news-slider';
 @import '4_components/news/news-card';
-
+@import '4_components/news/news-overview';
+@import '4_components/news/news-filter';
 // Services Pages
 @import '4_components/services/services-list';
 @import '4_components/services/service-card';
@@ -41,17 +42,19 @@
 @import '4_components/blocks/furrer-power';
 
 // Reference Pages
-@import '4_components/referenz/referenzen-by';
-@import '4_components/referenz/referenzen-list';
+@import '4_components/referenz/referenzen-slider';
+@import '4_components/referenz/referenzen-overview';
 @import '4_components/referenz/referenzen-filter';
 @import '4_components/referenz/referenz-card';
 @import '4_components/referenz/referenz-impression-single';
 @import '4_components/referenz/referenz-project-single';
 
 // Team/People Pages
-@import '4_components/person/people';
-@import '4_components/person/people-by';
-@import '4_components/person/person';
+@import '4_components/team/people';
+@import '4_components/team/people-by';
+@import '4_components/team/person';
+@import '4_components/team/team-filter';
+@import '4_components/team/team-overview';
 
 // Partners Page
 @import '4_components/partners/partners-by';

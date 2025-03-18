@@ -22,11 +22,11 @@
       ));
 
       if (!empty($services)): ?>
-        <div class="referenzen-filter__checkboxes" role="group" aria-label="Filteroptionen">
+        <ul class="referenzen-filter__checkboxes" role="group" aria-label="Filteroptionen">
           <?php foreach ($services as $service):
             $checkbox_id = 'filter-' . esc_attr($service->post_name) . '-' . uniqid();
             ?>
-            <div class="referenzen-filter__checkbox">
+            <li class="referenzen-filter__checkbox">
               <input class="referenzen-filter__input" type="checkbox" id="<?php echo $checkbox_id; ?>" name="dienstleistung"
                 value="<?php echo esc_attr($service->post_name); ?>"
                 aria-label="Filter für <?php echo esc_attr($service->post_title); ?>">
@@ -36,9 +36,9 @@
                   src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/plus.svg'); ?>" alt=""
                   aria-hidden="true">
               </label>
-            </div>
+            </li>
           <?php endforeach; ?>
-        </div>
+        </ul>
       <?php else: ?>
         <p class="referenzen-filter__item--empty" role="alert">Keine Referenzen gefunden.</p>
       <?php endif; ?>

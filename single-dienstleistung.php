@@ -21,7 +21,7 @@
     }
     ?>
 
-    <?php get_template_part('template-parts/people/people-by'); ?>
+    <?php get_template_part('template-parts/team/people-by'); ?>
 
     <?php get_template_part('template-parts/partners/partners-by'); ?>
 

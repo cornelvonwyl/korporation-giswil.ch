@@ -15,7 +15,7 @@ if ($referenced_people && !empty($referenced_people)): ?>
 
       <div class="people-by__grid">
         <?php foreach ($referenced_people as $person): ?>
-          <?php get_template_part('template-parts/people/person', NULL, ['person' => $person]); ?>
+          <?php get_template_part('template-parts/team/person', NULL, ['person' => $person]); ?>
         <?php endforeach; ?>
       </div>
     </div>

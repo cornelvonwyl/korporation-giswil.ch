@@ -23,7 +23,7 @@
     <?php get_template_part('template-parts/frontpage/furrer-power'); ?>
 
     <!-- Neuigkeiten Section -->
-    <?php get_template_part('template-parts/news/news-list'); ?>
+    <?php get_template_part('template-parts/news/news-slider'); ?>
 
     <!-- Standorte Section -->
     <?php get_template_part('template-parts/locations/locations-list'); ?>

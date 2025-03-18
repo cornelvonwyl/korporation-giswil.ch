@@ -11,10 +11,10 @@
         </div>
 
         <!-- Referenzen Filter -->
-        <?php include get_template_directory() . '/template-parts/referenzen/referenzen-filter.php'; ?>
+        <?php get_template_part('template-parts/referenzen/referenzen-filter'); ?>
 
         <!-- Referenzen List -->
-        <?php include get_template_directory() . '/template-parts/referenzen/referenzen-list.php'; ?>
+        <?php get_template_part('template-parts/referenzen/referenzen-overview'); ?>
 
       </div>
     </article>

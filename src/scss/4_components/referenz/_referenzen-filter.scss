@@ -1,36 +1,5 @@
 .referenzen {
   .referenzen-filter {
-    &__container {
-      @include container-small();
-    }
-
-    &__form {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-      margin-bottom: 2rem;
-      justify-content: center;
-    }
-
-    &__checkboxes {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 1rem;
-    }
-
-    &__checkbox {
-      @include checkbox();
-    }
-
-    &__text {
-      text-box: trim-both cap alphabetic;
-    }
-
-    &__item--empty {
-      width: 100%;
-      text-align: center;
-      padding: 2rem;
-      background-color: $color-grey;
-    }
+    @include filter-component();
   }
 }

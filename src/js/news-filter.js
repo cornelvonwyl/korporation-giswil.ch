@@ -1,16 +1,12 @@
-import calculateLayout from './masonry';
-
 document.addEventListener('DOMContentLoaded', () => {
-  const form = document.getElementById('referenzen-filter-form');
-  const referenzenItems = document.querySelectorAll(
-    '.referenzen-overview__item'
-  );
+  const form = document.getElementById('news-filter-form');
+  const newsItems = document.querySelectorAll('.news-overview__grid-item');
   const urlParams = new URLSearchParams(window.location.search);
 
-  if (!form || !referenzenItems) return;
+  if (!form || !newsItems) return;
 
   // Set initial state based on URL parameter
-  const initialFilters = urlParams.getAll('dienstleistung') || [];
+  const initialFilters = urlParams.getAll('category') || [];
   if (initialFilters.length) {
     initialFilters.forEach((filter) => {
       const checkbox = document.querySelector(`input[value="${filter}"]`);
@@ -22,13 +18,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listener for filter change
   form.addEventListener('change', () => {
     const selectedValues = Array.from(
-      form.querySelectorAll('input[name="dienstleistung"]:checked')
+      form.querySelectorAll('input[name="category"]:checked')
     ).map((checkbox) => checkbox.value);
 
     // Update the URL parameter
-    urlParams.delete('dienstleistung');
+    urlParams.delete('category');
     selectedValues.forEach((value) => {
-      urlParams.append('dienstleistung', value);
+      urlParams.append('category', value);
     });
     window.history.pushState(
       {},
@@ -43,20 +39,21 @@ document.addEventListener('DOMContentLoaded', () => {
   // Function to show/hide items
   function filterItems(filters) {
     if (filters.length === 0) {
-      referenzenItems.forEach((item) => {
+      newsItems.forEach((item) => {
         item.classList.remove('is-hidden');
       });
     } else {
-      referenzenItems.forEach((item) => {
+      newsItems.forEach((item) => {
+        const itemCategories = Array.from(item.classList)
+          .filter((className) => className.startsWith('category-'))
+          .map((className) => className.replace('category-', ''));
+
         const hasMatchingFilter = filters.some((filter) =>
-          item.classList.contains(`service-${filter}`)
+          itemCategories.includes(filter)
         );
 
         item.classList.toggle('is-hidden', !hasMatchingFilter);
       });
     }
-
-    // Recalculate layout after filtering
-    calculateLayout();
   }
 });

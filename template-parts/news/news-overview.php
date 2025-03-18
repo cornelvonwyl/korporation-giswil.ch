@@ -1,0 +1,45 @@
+<?php
+/**
+ * Template part for displaying news list
+ * 
+ * @package vonweb
+ */
+
+// Query arguments for all posts
+$args = array(
+  'post_type' => 'post',
+  'posts_per_page' => -1,
+  'orderby' => 'date',
+  'order' => 'DESC'
+);
+
+$posts = new WP_Query($args);
+
+if (is_wp_error($posts)) {
+  return;
+}
+?>
+
+<section class="news-overview__items">
+  <?php if ($posts->have_posts()): ?>
+    <div class="news-overview__grid">
+      <?php while ($posts->have_posts()):
+        $posts->the_post();
+        // Get post categories
+        $categories = get_the_category();
+        $category_classes = '';
+        if ($categories) {
+          $category_classes = ' ' . implode(' ', array_map(function ($cat) {
+            return 'category-' . $cat->slug;
+          }, $categories));
+        }
+        ?>
+        <div class="news-overview__grid-item<?php echo esc_attr($category_classes); ?>">
+          <?php get_template_part('template-parts/news/news-card'); ?>
+        </div>
+      <?php endwhile; ?>
+    </div>
+  <?php endif; ?>
+
+  <?php wp_reset_postdata(); ?>
+</section>

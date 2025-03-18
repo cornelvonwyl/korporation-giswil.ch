@@ -2,6 +2,11 @@
   background-color: $color-white;
   position: relative;
 
+  .news-overview & {
+    @include card-filter-transition;
+    background-color: $color-grey-light;
+  }
+
   &__image {
     width: 100%;
     height: auto;
