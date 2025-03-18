@@ -29,8 +29,8 @@
               <label class="news-filter__label" for="<?php echo $checkbox_id; ?>">
                 <span class="news-filter__text"><?php echo esc_html($category->name); ?></span>
                 <img class="news-filter__icon"
-                  src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/plus.svg'); ?>" alt=""
-                  aria-hidden="true">
+                  src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/plus.svg'); ?>"
+                  alt="Symbol für hinzufügen">
               </label>
             </li>
           <?php endforeach; ?>

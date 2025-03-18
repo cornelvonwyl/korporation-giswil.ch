@@ -1,5 +1,5 @@
 .main-wrapper {
   &:not(.home &) {
-    padding: calc($content-offset) 0rem 1.5rem;
+    padding: calc($content-offset) 0 0;
   }
 }

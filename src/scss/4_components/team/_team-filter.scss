@@ -1,3 +1,27 @@
 .team-filter {
   @include filter-component();
+
+  select {
+    @include filter-button-label();
+    appearance: none;
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    background-color: $color-black;
+    background-image: url('../assets/icons/chevron-down.svg');
+    background-repeat: no-repeat;
+    background-position: right 1rem center;
+    background-size: 1rem;
+    padding: 0.75rem 1rem 0.65rem 1rem;
+    padding-right: 2.5rem;
+
+    color: $color-white;
+
+    border: none;
+    border-radius: 100rem;
+    cursor: pointer;
+
+    option {
+      text-transform: none;
+    }
+  }
 }

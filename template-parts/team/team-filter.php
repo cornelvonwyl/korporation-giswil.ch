@@ -52,7 +52,7 @@
       if (!empty($locations)): ?>
         <div class="team-filter__location">
           <select name="location" id="location-filter" class="team-filter__select">
-            <option value="">Alle Standorte</option>
+            <option value="">Standort</option>
             <?php foreach ($locations as $location): ?>
               <option value="<?php echo esc_attr($location->ID); ?>">
                 <?php echo esc_html($location->post_title); ?>

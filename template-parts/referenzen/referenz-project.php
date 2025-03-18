@@ -194,7 +194,7 @@ $primary_term = (!is_wp_error($terms) && !empty($terms)) ? array_shift($terms) :
   }
   ?>
 
-  <?php get_template_part('template-parts/referenzen/referenzen-by', NULL, [
+  <?php get_template_part('template-parts/referenzen/referenzen-slider', NULL, [
     'referenzen' => $related_referenzen,
     'title' => 'Referenzen',
     'subtitle' => 'Weitere',

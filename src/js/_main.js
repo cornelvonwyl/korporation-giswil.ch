@@ -10,3 +10,4 @@ import './furrer-power.js';
 import './word-rotate.js';
 import './news-filter.js';
 import './team-filter.js';
+import './breadcrumb.js';

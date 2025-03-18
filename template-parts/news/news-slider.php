@@ -8,7 +8,7 @@
 // Query arguments for latest posts
 $args = array(
   'post_type' => 'post',
-  'posts_per_page' => 2,
+  'posts_per_page' => 3,
   'orderby' => 'date',
   'order' => 'DESC'
 );

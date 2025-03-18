@@ -28,13 +28,12 @@
   width: 100%;
   max-height: 52rem;
   object-fit: cover;
-
   aspect-ratio: 1 / 1;
-
   border-bottom: 6px solid $color-yellow;
 
   @include medium-up {
-    aspect-ratio: 16 / 6;
+    min-height: 36rem;
+    aspect-ratio: 16 / 5;
   }
 }
 
@@ -247,11 +246,11 @@
   letter-spacing: $letter-spacing;
   color: $color-black;
   text-decoration: none;
-  text-box: trim-both cap alphabetic;
 }
 
 @mixin button() {
   @include filter-button-label();
+  text-box: trim-both cap alphabetic;
   padding: 1.25rem 2rem;
   border-radius: 100rem;
   cursor: pointer;
@@ -380,7 +379,8 @@
   @include filter-button-label;
   font-size: rem(12px);
   background-color: $color-yellow;
-  padding: 0.75rem 0.75rem;
+  padding: 0.65rem 0.65rem 0.55rem 0.65rem;
+  margin: 0 !important;
   display: inline-block;
 }
 
@@ -415,17 +415,18 @@
   label {
     @include filter-button-label;
     display: flex;
-    align-items: center;
     gap: 0.75rem;
     cursor: pointer;
     background-color: $color-grey;
-    padding: 0.75rem 1rem;
+
     appearance: none;
     border-radius: 100rem;
     transition: all 0.3s $transition;
+    padding: 0.75rem 1rem 0.65rem 1rem;
 
     img {
       width: 10px;
+      margin-bottom: 0.125rem;
       height: auto;
       transition: transform 0.3s $transition;
     }
@@ -439,7 +440,8 @@
     }
 
     &:checked + label .referenzen-filter__icon,
-    &:checked + label .news-filter__icon {
+    &:checked + label .news-filter__icon,
+    &:checked + label .team-filter__icon {
       transform: rotate(45deg);
     }
   }
@@ -488,10 +490,6 @@
 
   &__checkbox {
     @include checkbox();
-  }
-
-  &__text {
-    text-box: trim-both cap alphabetic;
   }
 
   &__item--empty {

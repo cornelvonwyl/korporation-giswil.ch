@@ -19,12 +19,12 @@ if (!empty($items)) {
 ?>
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
-    <ul>
-        <?php foreach ($breadcrumb_items as $item): ?>
-          <li>
-              <a href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['title']); ?></a>
-              <span class="breadcrumb-separator">/</span>
-          </li>
-        <?php endforeach; ?>
-    </ul>
+  <ul>
+    <?php foreach ($breadcrumb_items as $item): ?>
+      <li>
+        <a href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['title']); ?></a>
+        <span class="breadcrumb-separator">/</span>
+      </li>
+    <?php endforeach; ?>
+  </ul>
 </nav>

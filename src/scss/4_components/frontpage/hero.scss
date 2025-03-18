@@ -3,6 +3,10 @@
     position: relative;
     @include header-image;
     border-bottom: none;
+
+    @include medium-up {
+      aspect-ratio: 16 / 6;
+    }
   }
 
   &__image {
