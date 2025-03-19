@@ -96,9 +96,17 @@ figcaption {
   color: $color-grey;
 }
 
-ul.wp-block-list {
-  list-style-type: '— ';
-  padding-inline-start: 2.5rem;
+ul {
+  &.wp-block-list {
+    list-style-type: '— ';
+    padding-inline-start: 2rem;
+
+    li {
+      position: relative;
+      padding-left: 0.5rem;
+      margin-bottom: 0.5rem;
+    }
+  }
 }
 
 .main-content {

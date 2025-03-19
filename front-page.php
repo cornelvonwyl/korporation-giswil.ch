@@ -26,7 +26,7 @@
     <?php get_template_part('template-parts/news/news-slider'); ?>
 
     <!-- Standorte Section -->
-    <?php get_template_part('template-parts/locations/locations-list'); ?>
+    <?php get_template_part('template-parts/locations/locations-overview'); ?>
   </div>
 </main>
 <?php get_footer(); ?>

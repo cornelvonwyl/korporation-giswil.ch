@@ -60,10 +60,13 @@
 @import '4_components/partners/partners-by';
 
 // Jobs Page
-@import '4_components/jobs/job-list';
+@import '4_components/jobs/jobs-overview';
+@import '4_components/jobs/jobs-filter';
+@import '4_components/jobs/job-teaser';
+@import '4_components/jobs/job-single';
 
 // Locations Page
-@import '4_components/locations/locations-list';
+@import '4_components/locations/locations-overview';
 @import '4_components/locations/location-teaser';
 
 // Reusable Block Components

@@ -1,0 +1,52 @@
+.job-single {
+  &__container {
+    @include container-small;
+  }
+
+  &__thumbnail {
+    @include header-image;
+  }
+
+  &__date {
+    @include subtitle;
+  }
+
+  &__title {
+    @include h2;
+  }
+
+  &__categories {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+  }
+
+  &__category {
+    @include category-tag;
+  }
+
+  &__content {
+    @include spacing-small;
+  }
+
+  &__details {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+  }
+
+  &__workload,
+  &__location {
+    @include text-with-icon;
+  }
+
+  &__buttons {
+    display: flex;
+    gap: 2rem;
+    flex-wrap: wrap;
+
+    a {
+      @include primary-button;
+    }
+  }
+}

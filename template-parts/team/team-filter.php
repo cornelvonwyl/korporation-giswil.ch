@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template part for displaying the teams category filter.  
  *
@@ -18,11 +19,13 @@
         'order' => 'ASC'
       ));
 
+
+
       if (!empty($categories) && !is_wp_error($categories)): ?>
         <ul class="team-filter__checkboxes" role="group" aria-label="Filteroptionen">
           <?php foreach ($categories as $category):
             $checkbox_id = 'filter-' . esc_attr($category->slug) . '-' . uniqid();
-            ?>
+          ?>
             <li class="team-filter__checkbox">
               <input class="team-filter__input" type="checkbox" id="<?php echo $checkbox_id; ?>" name="category"
                 value="<?php echo esc_attr($category->slug); ?>"
@@ -39,6 +42,7 @@
       <?php else: ?>
         <p class="team-filter__item--empty" role="alert">Keine Kategorien gefunden.</p>
       <?php endif; ?>
+
 
       <?php
       // Get all standort posts

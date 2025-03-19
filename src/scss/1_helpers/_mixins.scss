@@ -251,7 +251,7 @@
 @mixin button() {
   @include filter-button-label();
   text-box: trim-both cap alphabetic;
-  padding: 1.25rem 2rem;
+  padding: 1rem 1.75rem;
   border-radius: 100rem;
   cursor: pointer;
   display: inline-block;
@@ -441,9 +441,34 @@
 
     &:checked + label .referenzen-filter__icon,
     &:checked + label .news-filter__icon,
-    &:checked + label .team-filter__icon {
+    &:checked + label .team-filter__icon,
+    &:checked + label .jobs-filter__icon {
       transform: rotate(45deg);
     }
+  }
+}
+
+@mixin select() {
+  @include filter-button-label();
+  appearance: none;
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  background-color: $color-black;
+  background-image: url('../assets/icons/chevron-down.svg');
+  background-repeat: no-repeat;
+  background-position: right 1rem center;
+  background-size: 1rem;
+  padding: 0.75rem 1rem 0.65rem 1rem;
+  padding-right: 2.5rem;
+
+  color: $color-white;
+
+  border: none;
+  border-radius: 100rem;
+  cursor: pointer;
+
+  option {
+    text-transform: none;
   }
 }
 
@@ -497,5 +522,37 @@
     text-align: center;
     padding: 2rem;
     background-color: $color-grey;
+  }
+}
+
+@mixin list-item-with-icon {
+  display: block;
+  padding: 1rem 0;
+  border-top: $border;
+  text-decoration: none;
+  color: $color-black;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+
+  &__more-icon {
+    width: 1.5rem;
+    height: auto;
+  }
+}
+
+@mixin text-with-icon {
+  display: flex;
+  gap: 0.5rem;
+  align-items: center;
+
+  p {
+    margin: 0;
+  }
+
+  img {
+    width: 1rem;
+    height: auto;
   }
 }

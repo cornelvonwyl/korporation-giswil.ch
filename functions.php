@@ -9,7 +9,8 @@
  *
  * @return void
  */
-function vonweb_theme_setup() {
+function vonweb_theme_setup()
+{
   register_nav_menus(array(
     'primary' => __('Primary Menu', 'vonweb'),
   ));
@@ -28,21 +29,21 @@ add_action('after_setup_theme', 'vonweb_theme_setup');
  *
  * @return void
  */
-function vonweb_enqueue_assets() {
+function vonweb_enqueue_assets()
+{
   wp_enqueue_style('vonweb-style', get_stylesheet_uri());
   wp_enqueue_style('vonweb-main-css', get_template_directory_uri() . '/dist/style.css', array(), '1.0', 'all');
   wp_enqueue_script('vonweb-scripts', get_template_directory_uri() . '/dist/bundle.js', array(), '1.0', TRUE);
-
 }
 add_action('wp_enqueue_scripts', 'vonweb_enqueue_assets');
 
 
-function lr_theme_features() {
+function lr_theme_features()
+{
 
   add_theme_support('wp-block-styles');
 
   add_editor_style('vonweb-editor-style', get_template_directory_uri() . '/dist/style.css', array(), '1.0', 'all');
-
 }
 
 add_action('after_setup_theme', 'lr_theme_features');
@@ -60,7 +61,8 @@ add_action('after_setup_theme', 'lr_theme_features');
  * @return void
  */
 add_action('init', 'register_acf_blocks');
-function register_acf_blocks() {
+function register_acf_blocks()
+{
   register_block_type(__DIR__ . '/template-parts/blocks/images-block');
   register_block_type(__DIR__ . '/template-parts/blocks/images-small-block');
   register_block_type(__DIR__ . '/template-parts/blocks/link-block');
@@ -85,7 +87,8 @@ function register_acf_blocks() {
  * @param WP_Block_Editor_Context $editor_context The current block editor context.
  * @return array The filtered list of allowed block types.
  */
-function wpdocs_allowed_block_types($block_editor_context, $editor_context) {
+function wpdocs_allowed_block_types($block_editor_context, $editor_context)
+{
   if (!empty($editor_context->post)) {
     return array(
       'core/paragraph',
@@ -125,10 +128,12 @@ add_filter('allowed_block_types_all', 'wpdocs_allowed_block_types', 10, 2);
  *
  * These custom sizes can be used in the theme to display images at the specified dimensions.
  */
+add_image_size('tiny', 200, 200);
 add_image_size('small', 600, 600);
 add_image_size('medium', 1000, 1000);
 add_image_size('large', 1600, 1600);
 add_image_size('huge', 2400, 2400);
+add_image_size('extra-large', 3000, 3000);
 
 
 /**
@@ -142,12 +147,3 @@ add_image_size('huge', 2400, 2400);
  * @return bool Always returns true to enable lazy loading.
  */
 add_filter('wp_lazy_loading_enabled', '__return_true');
-
-
-
-
-
-
-
-
-

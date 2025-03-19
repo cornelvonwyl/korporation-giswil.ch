@@ -11,7 +11,6 @@
 <div class="referenzen-filter">
   <div class="referenzen-filter__container">
 
-
     <form id="referenzen-filter-form" class="referenzen-filter__form" role="group" aria-label="Dienstleistungen Filter">
       <?php
       $services = get_posts(array(
