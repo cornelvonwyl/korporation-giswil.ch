@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Image with Content Block Template.
  *

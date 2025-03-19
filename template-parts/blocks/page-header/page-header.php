@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Image with Content Block Template.
  *
@@ -34,15 +35,14 @@ $has_image = !empty($image);
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
   <div class="page-header__container">
     <?php if ($has_image): ?>
-
       <?php
-      echo wp_get_attachment_image($image['ID'], 'full');
+      echo wp_get_attachment_image($image['ID'], 'huge', false, array('class' => 'page-header__image'));
       ?>
     <?php endif; ?>
 
     <div class="page-header__content">
       <?php if ($subtitle): ?>
-        <div class="page-header__subtitle"><?php echo esc_html($subtitle); ?></div>
+        <p class="page-header__subtitle"><?php echo esc_html($subtitle); ?></p>
       <?php endif; ?>
 
       <?php if ($title): ?>

@@ -20,7 +20,15 @@ if (!$person)
     <?php endif; ?>
   </div>
 
-  <h4 class="person__name"><?php echo get_the_title($person->ID); ?></h4>
+  <h4 class="person__name">
+    <?php if (get_field('first_name', $person->ID)): ?>
+      <?php echo esc_html(get_field('first_name', $person->ID)); ?>
+    <?php endif; ?>
+
+    <?php if (get_field('last_name', $person->ID)): ?>
+      <?php echo esc_html(get_field('last_name', $person->ID)); ?>
+    <?php endif; ?>
+  </h4>
 
   <?php if (get_field('function', $person->ID)): ?>
     <p class="person__function"><?php echo get_field('function', $person->ID); ?></p>

@@ -118,6 +118,14 @@
   }
 }
 
+@mixin spacing-inner-medium() {
+  padding: 3rem 0;
+
+  @include medium-up {
+    padding: 5rem 0;
+  }
+}
+
 @mixin spacing() {
   margin: 7rem 0;
 
@@ -154,11 +162,19 @@
   }
 }
 
-@mixin spacing-small() {
+@mixin spacing-medium() {
   margin: 3rem 0;
 
   @include medium-up {
     margin: 5rem 0;
+  }
+}
+
+@mixin spacing-small() {
+  margin: 2rem 0;
+
+  @include medium-up {
+    margin: 3rem 0;
   }
 }
 
@@ -302,6 +318,7 @@
   hyphens: auto;
   line-height: 1.1;
   margin-bottom: 1.25rem;
+  word-wrap: break-word;
 
   @include medium-up() {
     font-size: 4rem;
@@ -322,6 +339,10 @@
 
   @include medium-up() {
     font-size: rem(46px);
+  }
+
+  @include xlarge-up() {
+    font-size: rem(52px);
   }
 }
 

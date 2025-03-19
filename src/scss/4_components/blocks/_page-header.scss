@@ -15,7 +15,7 @@
     }
   }
 
-  img {
+  &__image {
     width: 100%;
     height: auto;
     display: block;
@@ -24,9 +24,12 @@
     object-fit: cover;
     object-position: center;
 
+    max-height: 26rem;
+
     @include medium-up {
       grid-column: span 5;
       min-height: 100%;
+      max-height: unset;
     }
   }
 

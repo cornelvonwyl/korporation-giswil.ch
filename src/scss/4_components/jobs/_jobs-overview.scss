@@ -1,5 +1,5 @@
 .jobs-overview {
-  @include spacing-small;
+  @include spacing-medium;
 
   &__container {
     @include container-large;
@@ -19,5 +19,11 @@
 
   &__grid-item {
     @include card-filter-transition();
+
+    &:last-child {
+      .job-teaser {
+        border-bottom: $border;
+      }
+    }
   }
 }

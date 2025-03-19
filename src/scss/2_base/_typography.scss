@@ -39,13 +39,17 @@
 }
 
 body {
-  font-size: 0.9375rem;
+  font-size: rem(15px);
   line-height: $line-height;
   font-family: $font-family;
 
   @include medium-up {
-    font-size: 1rem;
+    font-size: rem(16px);
   }
+
+  /*   @include large-up {
+    font-size: rem(18px);
+  } */
 }
 
 p:last-child {
@@ -105,16 +109,6 @@ ul {
       position: relative;
       padding-left: 0.5rem;
       margin-bottom: 0.5rem;
-    }
-  }
-}
-
-.main-content {
-  p,
-  ul,
-  ol {
-    &:not(:last-child) {
-      margin-bottom: 1.5rem;
     }
   }
 }
