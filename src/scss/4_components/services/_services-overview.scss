@@ -1,6 +1,10 @@
-.services {
+.services-overview {
   @include spacing-inner;
-  background-color: $color-yellow;
+  background-color: transparent;
+
+  &.has-yellow-bg {
+    background-color: $color-yellow;
+  }
 
   &__container {
     @include container-large;

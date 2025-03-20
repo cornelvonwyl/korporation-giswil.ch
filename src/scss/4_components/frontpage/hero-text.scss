@@ -1,5 +1,5 @@
 .hero-text {
-  @include spacing-medium;
+  @include spacing;
   &__container {
     @include container-small;
 

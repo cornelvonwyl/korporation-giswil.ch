@@ -12,3 +12,5 @@ import './news-filter.js';
 import './team-filter.js';
 import './jobs-filter.js';
 import './breadcrumb.js';
+import './background-observer.js';
+import './animated-word.js';

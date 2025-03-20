@@ -17,7 +17,7 @@
 
             <div class="header__container">
 
-
+            <div class="header__wrapper">
                 <div class="header__logo">
                     <a href="/">
                         <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo.svg" width="100"
@@ -41,5 +41,6 @@
                 <nav class="header__nav header__nav--desktop">
                     <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
                 </nav>
+            </div>
             </div>
         </header>

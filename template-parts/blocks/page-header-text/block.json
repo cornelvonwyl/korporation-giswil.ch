@@ -1,0 +1,15 @@
+{
+  "name": "acf/page-header-text",
+  "title": "Page Header Text",
+  "description": "A text-only page header block with subtitle, title and intro text",
+  "category": "formatting",
+  "icon": "heading",
+  "keywords": ["header", "text", "title"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "page-header-text.php"
+  },
+  "supports": {
+    "align": ["wide", "full"]
+  }
+}

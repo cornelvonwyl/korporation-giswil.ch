@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying news list
  * 
@@ -21,7 +22,7 @@ if (is_wp_error($posts)) {
 }
 ?>
 
-<section class="news-slider">
+<section class="news-slider animate-bg" data-bg-color="#f0f0f0" data-threshold="50">
   <div class="news-slider__container">
     <div class="news-slider__header">
       <p class="news-slider__subtitle">Stories aus der Furrer-Welt</p>

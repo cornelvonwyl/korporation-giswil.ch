@@ -12,3 +12,31 @@
     }
   }
 }
+
+@keyframes height {
+  0% {
+    width: 0;
+  }
+  100% {
+    width: 100%;
+  }
+}
+
+.word-wrapper {
+  display: inline-flex;
+  overflow: hidden;
+  margin-right: 0.205em;
+}
+
+.word {
+  display: inline-block;
+  white-space: nowrap;
+  opacity: 0;
+  transform: translateY(100%);
+}
+
+.word.visible {
+  opacity: 1;
+  transform: translateY(0);
+  transition: opacity 0.75s $transition, transform 0.75s $transition;
+}

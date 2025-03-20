@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+  const scrollThreshold = 100;
+
+  // Add scroll event listener for header background
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > scrollThreshold) {
+      document.body.classList.add('scrolled');
+    } else {
+      document.body.classList.remove('scrolled');
+    }
+  });
+
   const hamburger = document.querySelector('.header__hamburger');
   const nav = document.querySelector('.header__nav--mobile');
   const mainContent = document.querySelector('main');
@@ -51,14 +62,6 @@ document.addEventListener('DOMContentLoaded', () => {
     submenu.style.visibility = 'visible';
     submenu.style.opacity = '1';
 
-    // Measure actual height
-    const subMenuHeight = submenu.offsetHeight; // or scrollHeight
-    item.style.setProperty('--submenu-height', `${subMenuHeight}px`);
-
-    // Get the x positon of the submenu
-    const subMenuPosition = submenu.getBoundingClientRect().left;
-    item.style.setProperty('--submenu-x', `${subMenuPosition}px`);
-
     // If there's a "link"/button, set aria-expanded
     const link = item.querySelector('[role="button"]');
     if (link) link.setAttribute('aria-expanded', 'true');
@@ -68,16 +71,13 @@ document.addEventListener('DOMContentLoaded', () => {
     submenu.style.visibility = 'hidden';
     submenu.style.opacity = '0';
 
-    // Remove or reset the custom property
-    item.style.removeProperty('--submenu-height');
-
     const link = item.querySelector('[role="button"]');
     if (link) link.setAttribute('aria-expanded', 'false');
   }
 
   /**
    * ----------------------------
-   *  DESKTOP: Hover + Focus
+   *  DESKTOP: Simple Hover Mega Menu
    * ----------------------------
    */
   function handleDesktop(item) {
@@ -85,33 +85,44 @@ document.addEventListener('DOMContentLoaded', () => {
     const submenu = item.querySelector('.sub-menu');
     if (!link || !submenu) return;
 
-    // Remove href so it's not a real link
+    // Remove href and make it a button for accessibility
     link.removeAttribute('href');
-    // Turn it into a keyboard-focusable toggle
     link.setAttribute('role', 'button');
     link.setAttribute('tabindex', '0');
     link.setAttribute('aria-haspopup', 'true');
     link.setAttribute('aria-expanded', 'false');
 
-    // Hover in => show submenu
+    // Simple hover behavior
     item.addEventListener('mouseenter', () => {
       showSubmenu(item, submenu);
+
+      // Add is-sibling class to previous and next siblings
+      const prevSibling = item.previousElementSibling;
+      const nextSibling = item.nextElementSibling;
+      if (prevSibling) prevSibling.classList.add('is-sibling-before');
+      if (nextSibling) nextSibling.classList.add('is-sibling-after');
     });
 
-    // Hover out => hide submenu
     item.addEventListener('mouseleave', () => {
       hideSubmenu(item, submenu);
+
+      // Remove is-sibling class from previous and next siblings
+      const prevSibling = item.previousElementSibling;
+      const nextSibling = item.nextElementSibling;
+      if (prevSibling) prevSibling.classList.remove('is-sibling-before');
+      if (nextSibling) nextSibling.classList.remove('is-sibling-after');
     });
 
-    // Keyboard focus => show
-    link.addEventListener('focus', () => {
-      showSubmenu(item, submenu);
-    });
-
-    // Focus leaves the entire <li> => hide
-    item.addEventListener('focusout', (e) => {
-      if (!item.contains(e.relatedTarget)) {
-        hideSubmenu(item, submenu);
+    // Keyboard support
+    link.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        const isExpanded = link.getAttribute('aria-expanded') === 'true';
+        if (isExpanded) {
+          hideSubmenu(item, submenu);
+        } else {
+          showSubmenu(item, submenu);
+        }
       }
     });
   }

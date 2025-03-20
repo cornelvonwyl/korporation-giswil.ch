@@ -8,16 +8,22 @@
       <div class="hero-text__container">
 
 
-        <p>
-          Bei uns zählen Mensch, Teamgeist und Leidenschaft. Mit Freude, Fantasie und Fortschritt gestalten wir
-          gemeinsam
-          die Zukunft – eifach Furrer.
+        <p class="animated-text">
+          Bei uns zählen Mensch, Teamgeist und Leidenschaft. Mit Freude, Fantasie und Fortschritt gestalten wir gemeinsam die Zukunft – eifach Furrer.
         </p>
+
+
+        <!-- 
+        <p id="animated-text" class="animated-text">
+          Bei uns zählen Mensch, Teamgeist und Leidenschaft. Mit Freude, Fantasie und Fortschritt gestalten wir
+          gemeinsam die Zukunft – eifach Furrer.
+        </p> -->
+
       </div>
     </div>
 
     <!-- Dienstleistungen Section -->
-    <?php get_template_part('template-parts/services/services-list'); ?>
+    <?php get_template_part('template-parts/services/services-overview'); ?>
 
     <!-- Furrer Power Section -->
     <?php get_template_part('template-parts/frontpage/furrer-power'); ?>

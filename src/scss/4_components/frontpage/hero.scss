@@ -1,11 +1,15 @@
 .hero {
   &__container {
     position: relative;
-    @include header-image;
     border-bottom: none;
+    height: 32rem;
+    width: 100%;
 
     @include medium-up {
-      aspect-ratio: 16 / 6;
+      aspect-ratio: 16 / 7;
+      max-height: 52rem;
+      min-height: 38rem;
+      height: auto;
     }
   }
 
@@ -38,15 +42,14 @@
   }
 
   &__title {
-    font-size: rem(42px);
     font-weight: normal;
     line-height: 1;
     margin: 0;
     color: $color-white;
     position: relative;
     overflow: hidden;
-    height: 40px;
-    font-size: rem(36px);
+    height: 50px;
+    font-size: clamp(2rem, 12vw, 10rem);
     margin-bottom: 2rem;
 
     @include small-up {
@@ -80,10 +83,10 @@
   &__links {
     display: flex;
     gap: 1rem;
+    flex-wrap: wrap;
 
     @include small-up {
-      gap: 2rem;
-
+      gap: 1rem;
       flex-direction: row;
     }
   }

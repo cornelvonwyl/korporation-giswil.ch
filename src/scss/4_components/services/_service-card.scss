@@ -1,6 +1,7 @@
 .service-card {
   background-color: $color-white;
   padding: 2rem;
+  height: 100%;
 
   @include medium-up {
     padding: 3rem;

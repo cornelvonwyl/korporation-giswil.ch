@@ -5,14 +5,27 @@
   top: 0;
   left: 0;
   background-color: $color-white;
+  transition: color 0.3s $transition, background-color 0.3s $transition;
+
+  .home:not(.scrolled) & {
+    background-color: transparent;
+  }
+
+  body.header--scrolled & {
+    background-color: $color-white;
+  }
 
   &__container {
     @include container-large;
+  }
+
+  &__wrapper {
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 100%;
-    height: 5rem;
+    position: relative;
+    height: $content-offset;
   }
 
   .logged-in & {
@@ -29,7 +42,7 @@
 
   &__logo {
     img {
-      width: 10rem;
+      width: 12rem;
       height: auto;
 
       @include medium-up {
@@ -63,6 +76,10 @@
       position: absolute;
       left: 0;
       @include transition(all);
+
+      .home:not(.scrolled) & {
+        background-color: $color-white;
+      }
 
       &:nth-child(1) {
         top: 0;

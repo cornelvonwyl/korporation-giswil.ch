@@ -36,7 +36,7 @@ $breakpoint-large-max: ($breakpoint-xlarge - 1);
 // -------
 $container: 60rem;
 $container-small: 46rem;
-$container-large: 80rem;
+$container-large: 84rem;
 
 // Border
 // -------
@@ -44,7 +44,7 @@ $border: solid 1.5px $color-yellow;
 
 // Transition
 // -------
-$transition: cubic-bezier(0.65, 0, 0.35, 1);
+$transition: cubic-bezier(0.625, 0.05, 0, 1);
 
 // Navigation height
 // -------

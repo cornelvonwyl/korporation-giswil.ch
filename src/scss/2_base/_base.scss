@@ -3,6 +3,10 @@ html {
   scroll-behavior: smooth;
 }
 
+base {
+  will-change: background-color;
+}
+
 * {
   box-sizing: border-box;
   scroll-margin-top: $content-offset;

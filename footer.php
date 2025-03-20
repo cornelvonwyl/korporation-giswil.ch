@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Footer template part
  */
@@ -56,6 +57,8 @@
             </div>
         </div>
     </div>
+
+    <p class="footer__typo">Eifach Furrer</p>
 </footer>
 
 <?php wp_footer(); ?>

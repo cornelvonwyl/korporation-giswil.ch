@@ -1,0 +1,37 @@
+.page-header-text {
+  @include spacing-medium;
+  &__container {
+    @include container;
+    max-width: $container-small;
+    margin: 0 auto;
+    padding: 0 1rem;
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    text-align: center;
+  }
+
+  &__subtitle {
+    @include subtitle;
+  }
+
+  &__title {
+    @include h2;
+    margin-bottom: 1.25rem;
+
+    @include medium-up {
+      margin-bottom: 2rem;
+    }
+  }
+
+  &__text {
+    @include hero-text-small;
+    @include text-max-width;
+
+    p:last-child {
+      margin-bottom: 0;
+    }
+  }
+}

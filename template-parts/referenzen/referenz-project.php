@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying project insight type references
  */
@@ -75,7 +76,7 @@ $primary_term = (!is_wp_error($terms) && !empty($terms)) ? array_shift($terms) :
               <?php foreach ($project_managers as $manager):
                 $portrait_id = get_field('portrait', $manager->ID);
                 $manager_title = esc_html($manager->post_title);
-                ?>
+              ?>
                 <div class="referenz-project__project-manager-item">
                   <?php if ($portrait_id): ?>
                     <div class="referenz-project__project-manager-image">
@@ -108,7 +109,7 @@ $primary_term = (!is_wp_error($terms) && !empty($terms)) ? array_shift($terms) :
               <?php foreach ($service_references as $service):
                 $service_link = get_permalink($service->ID);
                 $service_title = get_the_title($service);
-                ?>
+              ?>
                 <li>
                   <a href="<?php echo esc_url($service_link); ?>">
                     <?php echo esc_html($service_title); ?>

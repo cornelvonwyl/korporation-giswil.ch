@@ -1,12 +1,4 @@
 .header {
-  a {
-    text-decoration: none;
-
-    &:hover {
-      color: $color-black;
-    }
-  }
-
   &__nav {
     &--mobile {
       display: flex;
@@ -48,61 +40,91 @@
 
       @include medium-up {
         flex-direction: row;
-        gap: 1rem;
       }
 
       > .menu-item {
-        &:not(:last-child) {
-          padding-right: 1rem;
-        }
-
         width: fit-content;
 
-        &.menu-item-has-children {
-          // DESKTOP
-          @include medium-up {
-            position: relative;
+        @include medium-up {
+          height: $content-offset;
+          cursor: pointer;
+          padding: 0 1.75rem;
 
+          display: flex;
+          align-items: center;
+          justify-content: center;
+        }
+
+        &.is-sibling-before {
+          @include medium-up {
+            padding-right: 0;
+          }
+        }
+
+        &.is-sibling-after {
+          @include medium-up {
+            padding-left: 0;
+          }
+        }
+
+        &.menu-item-has-children {
+          position: relative;
+
+          &:hover {
+            padding: 0 3.5rem;
+          }
+
+          > a {
+            display: flex;
+            gap: 0.5rem;
+            align-items: center;
             &::after {
               content: '';
-              position: absolute;
-              background-color: blue;
-              left: 0;
-              bottom: 0;
-              width: 0;
-              width: calc(var(--submenu-x, 500px) - 2rem);
-              height: calc(
-                var(--submenu-height, 500px) -
-                  calc(var(--submenu-height, 500px) / 4)
-              );
-              clip-path: polygon(100% 0%, 100% 100%, 0% 100%);
-              display: none;
-            }
+              width: 0.75rem;
+              height: 0.75rem;
+              border-radius: 100%;
+              background: $color-black;
+              mask-image: url('../assets/icons/plus-thin.svg');
+              mask-repeat: no-repeat;
+              mask-position: center;
+              mask-size: contain;
+              transition: all 0.3s $transition;
 
-            &:hover {
-              &::after {
-                display: block;
-              }
-              & > a {
-                &::after {
-                  width: 3rem;
-                }
+              .home:not(.scrolled) & {
+                background: $color-white;
               }
             }
 
-            & > a {
-              display: block;
-
+            &[aria-expanded='true'] {
               &::after {
-                content: '';
-                height: 1px;
-                width: 0px;
-                position: absolute;
-                top: 50%;
-                right: -0.5rem;
-                transform: translateX(100%) translateY(-50%);
-                @include transition(width);
+                transform: rotate(45deg);
               }
+            }
+          }
+        }
+
+        &:last-child {
+          @include medium-up {
+            padding-right: 0;
+          }
+
+          > a {
+            @include primary-button;
+            height: unset;
+            color: $color-black !important;
+          }
+        }
+
+        > a {
+          @include medium-up {
+            height: 100%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: color 0.3s $transition;
+
+            .home:not(.scrolled) & {
+              color: $color-white;
             }
           }
         }
@@ -117,16 +139,42 @@
           @include medium-up {
             z-index: 1000;
             position: absolute;
-            bottom: 0;
-            transform: translateY(100%);
+            top: calc(#{$content-offset});
+            left: 50%;
+            transform: translateX(-50%);
             background: $color-white;
-            padding: 1rem 1.5rem;
-            width: max-content;
+            padding: 3rem;
+            width: 50%;
+            min-width: 42rem;
             max-height: unset;
             z-index: 100;
             box-shadow: 0 1px 10px 0 #0000000f;
             opacity: 0;
             visibility: hidden;
+
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 0 3rem;
+          }
+
+          > .menu-item {
+            a {
+              @include medium-up {
+                padding: 1rem 0;
+                border-bottom: $border;
+                display: block;
+                @include hero-text-small;
+              }
+            }
+
+            &:nth-child(1),
+            &:nth-child(2) {
+              a {
+                @include medium-up {
+                  padding-top: 0;
+                }
+              }
+            }
           }
 
           &--show {

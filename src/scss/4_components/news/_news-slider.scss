@@ -1,6 +1,5 @@
 .news-slider {
   @include spacing-inner;
-  background-color: $color-grey-light;
 
   &__container {
     @include container-large;

@@ -8,14 +8,14 @@ $args = array(
 $services = new WP_Query($args);
 ?>
 
-<section class="services">
-  <div class="services__container">
-    <div class="services__header">
-      <p class="services__subtitle">Mehr als ein Elektriker</p>
+<section class="services-overview animate-bg" data-bg-color="#ffed00" data-threshold="50">
+  <div class="services-overview__container">
+    <div class="services-overview__header">
+      <p class="services-overview__subtitle">Mehr als ein Elektriker</p>
       <h2>Dienstleistungen</h2>
     </div>
     <?php if ($services->have_posts()): ?>
-      <div class="services__grid">
+      <div class="services-overview__grid">
         <?php while ($services->have_posts()):
           $services->the_post(); ?>
           <?php get_template_part('template-parts/services/services-card'); ?>

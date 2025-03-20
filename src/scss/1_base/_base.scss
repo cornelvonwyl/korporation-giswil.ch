@@ -1,0 +1,8 @@
+body {
+  transition: background-color 0.3s ease;
+  background-color: white;
+
+  &.has-yellow-section {
+    background-color: rgba($color-yellow, var(--yellow-opacity, 0));
+  }
+}

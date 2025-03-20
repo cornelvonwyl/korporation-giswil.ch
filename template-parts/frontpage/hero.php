@@ -14,7 +14,7 @@
       </p>
 
       <h1 class="hero__title">
-        <span class="hero__title--highlight">Elektroinstallationen</span>
+        <span class="hero__title--highlight">Elektriker:innen</span>
         <span class="hero__title--highlight">Planung</span>
         <span class="hero__title--highlight">Beratung</span>
         <span class="hero__title--highlight">Eifach Furrer</span>

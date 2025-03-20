@@ -67,14 +67,29 @@ body {
     }
     .gform_footer {
       input[type='submit'] {
-        @include primary-button;
+        font-family: $font-family-mono !important;
+        font-size: rem(14px) !important;
+        line-height: 1 !important;
+        font-weight: 500 !important;
+        text-transform: uppercase !important;
+        letter-spacing: $letter-spacing !important;
+        color: $color-black !important;
+        text-decoration: none !important;
+        text-box: trim-both cap alphabetic !important;
+        padding: 1rem 1.75rem !important;
+        border-radius: 100rem !important;
+        cursor: pointer !important;
+        display: inline-block !important;
+        transition: all 0.3s $transition !important;
+        border: none !important;
+        background-color: transparent !important;
+        color: $color-black !important;
+        border: 1.5px solid $color-black !important;
 
-        background-color: pink !important;
-      }
-
-      input[type='submit'] {
-        padding: 1rem 2rem !important;
-        border-radius: 0 !important;
+        &:hover {
+          background-color: $color-black !important;
+          color: $color-white !important;
+        }
       }
     }
 
