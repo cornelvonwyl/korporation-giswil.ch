@@ -3,7 +3,7 @@ html {
   scroll-behavior: smooth;
 }
 
-base {
+body {
   will-change: background-color;
 }
 
@@ -33,6 +33,8 @@ video {
   color: inherit;
   text-decoration: none;
   display: block;
+
+  @include hover-scale;
 }
 
 * {

@@ -1,0 +1,25 @@
+/* .animated-button {
+  @include primary-button;
+
+  &__text {
+    position: relative;
+    overflow: hidden;
+  }
+
+  span {
+    position: relative;
+    display: block;
+    transition: all 0.5s $transition;
+    transform: translateY(0%) rotate(0.001deg);
+  }
+
+  span:last-child {
+    position: absolute;
+    top: 100%;
+  }
+
+  &:hover span {
+    transform: translateY(-100%) rotate(0.001deg);
+  }
+}
+ */

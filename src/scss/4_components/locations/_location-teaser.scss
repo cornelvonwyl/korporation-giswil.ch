@@ -1,11 +1,15 @@
 .location-teaser {
   @include list-item-with-icon;
+  text-decoration: none;
+  color: inherit;
 
   &__title {
     @include hero-text-small;
     font-weight: normal;
     margin: 0;
   }
+
+  @include arrow-hover-effect;
 }
 
 .locations-overview__item:last-child {

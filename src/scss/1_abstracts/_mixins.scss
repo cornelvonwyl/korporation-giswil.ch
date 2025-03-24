@@ -1,0 +1,33 @@
+@mixin arrow-hover-effect($arrow-size: 16px, $transition-duration: 0.5s) {
+  &__arrow-container {
+    position: relative;
+    overflow: hidden;
+    width: $arrow-size;
+    height: $arrow-size;
+  }
+
+  &__arrow {
+    width: $arrow-size;
+    height: $arrow-size;
+    transition: all $transition-duration ease;
+
+    &--primary {
+      position: relative;
+      transform: translateX(0);
+    }
+
+    &--secondary {
+      position: absolute;
+      top: 0;
+      transform: translateX(-150%);
+    }
+  }
+
+  .group:hover &__arrow--primary {
+    transform: translateX(150%);
+  }
+
+  .group:hover &__arrow--secondary {
+    transform: translateX(0);
+  }
+}

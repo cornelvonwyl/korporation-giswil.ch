@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying related references by service
  * 
@@ -13,7 +14,7 @@ $subtitle = isset($args['subtitle']) ? $args['subtitle'] : 'Unsere Meisterwerke'
 $button = isset($args['button']) ? $args['button'] : TRUE;
 
 if ($referenzen && !empty($referenzen)): ?>
-  <section class="referenzen-slider">
+  <section class="referenzen-slider animate-bg" data-bg-color="#ffed00" data-threshold="50">
     <div class="referenzen-slider__container">
       <div class="referenzen-slider__header">
         <p class="referenzen-slider__subtitle"><?php echo esc_html($subtitle); ?></p>
@@ -43,7 +44,7 @@ if ($referenzen && !empty($referenzen)): ?>
 
       <?php if ($button): ?>
         <div class="referenzen-slider__button">
-          <a href="/referenzen" class="button">Alle Referenzen</a>
+          <a href="/referenzen" class="button animated-button">Alle Referenzen</a>
         </div>
       <?php endif; ?>
     </div>

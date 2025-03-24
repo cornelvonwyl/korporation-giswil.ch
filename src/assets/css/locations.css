@@ -1,0 +1,44 @@
+.location-teaser {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  text-decoration: none;
+  color: inherit;
+  transition: color 0.5s ease;
+}
+
+.location-teaser:hover {
+  color: var(--color-blue);
+}
+
+.location-teaser__arrow-container {
+  position: relative;
+  overflow: hidden;
+  width: 16px;
+  height: 16px;
+}
+
+.location-teaser__arrow {
+  width: 16px;
+  height: 16px;
+  transition: all 0.5s ease;
+}
+
+.location-teaser__arrow--primary {
+  position: relative;
+  transform: translateX(0);
+}
+
+.location-teaser__arrow--secondary {
+  position: absolute;
+  top: 0;
+  transform: translateX(-150%);
+}
+
+.group:hover .location-teaser__arrow--primary {
+  transform: translateX(150%);
+}
+
+.group:hover .location-teaser__arrow--secondary {
+  transform: translateX(0);
+}

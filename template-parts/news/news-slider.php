@@ -54,7 +54,7 @@ if (is_wp_error($posts)) {
         </div>
 
         <div class="news-slider__button">
-          <a href="/neuigkeiten">
+          <a class="animated-button" href="/neuigkeiten">
             Mehr Neuigkeiten
           </a>
         </div>

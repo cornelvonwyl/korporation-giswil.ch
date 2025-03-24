@@ -17,30 +17,33 @@
 
             <div class="header__container">
 
-            <div class="header__wrapper">
-                <div class="header__logo">
-                    <a href="/">
-                        <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo.svg" width="100"
-                            height="14" alt="Logo Elektro Furrer AG">
-                    </a>
+                <div class="header__wrapper">
+                    <div class="header__logo">
+                        <a href="/">
+                            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo.svg" width="100"
+                                height="14" alt="Logo Elektro Furrer AG">
+                        </a>
+                    </div>
+
+                    <button class="header__hamburger" aria-label="Menü öffnen" aria-expanded="false">
+                        <span></span>
+                        <span></span>
+                        <span></span>
+                        <span></span>
+
+                    </button>
+
+
+                    <nav class="header__nav header__nav--mobile">
+                        <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+
+                        <a class="animated-button" href="/kontakt">Kontakt</a>
+                    </nav>
+
+                    <nav class="header__nav header__nav--desktop">
+                        <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
+                        <a class="animated-button" href="/kontakt">Kontakt</a>
+                    </nav>
                 </div>
-
-                <button class="header__hamburger" aria-label="Menü öffnen" aria-expanded="false">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                    <span></span>
-
-                </button>
-
-
-                <nav class="header__nav header__nav--mobile">
-                    <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-                </nav>
-
-                <nav class="header__nav header__nav--desktop">
-                    <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-                </nav>
-            </div>
             </div>
         </header>

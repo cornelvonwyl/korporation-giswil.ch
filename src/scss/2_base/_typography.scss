@@ -56,10 +56,6 @@ p:last-child {
   margin-bottom: 0;
 }
 
-p a:not(.tooltiptext) {
-  @include link;
-}
-
 strong {
   font-weight: bold;
 }

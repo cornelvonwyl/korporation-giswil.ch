@@ -1,10 +1,15 @@
 document.addEventListener('DOMContentLoaded', function () {
+  // Find all sections with the animate-bg class
+  const animatedSections = document.querySelectorAll('.animate-bg');
+
+  // Only proceed if there are animated sections
+  if (animatedSections.length === 0) {
+    return;
+  }
+
   // Initial background color
   const defaultBgColor = '#ffffff';
   document.body.style.backgroundColor = defaultBgColor;
-
-  // Find all sections with the animate-bg class
-  const animatedSections = document.querySelectorAll('.animate-bg');
 
   // Function to convert hex to RGB for interpolation
   function hexToRgb(hex) {
@@ -78,13 +83,6 @@ document.addEventListener('DOMContentLoaded', function () {
         activeSectionThreshold = threshold;
         activeSectionCoverage = coverage;
       }
-
-      // Optional: Log each section's coverage
-      console.log(
-        `Section ${section.className}: ${coverage.toFixed(
-          2
-        )}% (threshold: ${threshold}%)`
-      );
     });
 
     // If we have an active section that meets its threshold

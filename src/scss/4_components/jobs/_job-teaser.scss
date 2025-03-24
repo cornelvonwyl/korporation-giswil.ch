@@ -1,5 +1,6 @@
 .job-teaser {
   @include list-item-with-icon;
+  @include arrow-hover-effect;
   padding: 1.5rem 0;
 
   &__details {

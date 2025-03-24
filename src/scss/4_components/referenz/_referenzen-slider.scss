@@ -1,6 +1,5 @@
 .referenzen-slider {
   @include spacing-inner;
-  background-color: $color-yellow;
 
   &__container {
     @include container-large;

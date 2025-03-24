@@ -31,6 +31,9 @@
 
       @include medium-up {
         display: block;
+        display: flex;
+        align-items: center;
+        gap: 3.5rem;
       }
     }
 
@@ -55,7 +58,7 @@
           justify-content: center;
         }
 
-        &.is-sibling-before {
+        /*         &.is-sibling-before {
           @include medium-up {
             padding-right: 0;
           }
@@ -66,18 +69,19 @@
             padding-left: 0;
           }
         }
-
+ */
         &.menu-item-has-children {
           position: relative;
 
-          &:hover {
+          /*           &:hover {
             padding: 0 3.5rem;
-          }
+          } */
 
           > a {
             display: flex;
             gap: 0.5rem;
             align-items: center;
+
             &::after {
               content: '';
               width: 0.75rem;
@@ -107,12 +111,6 @@
           @include medium-up {
             padding-right: 0;
           }
-
-          > a {
-            @include primary-button;
-            height: unset;
-            color: $color-black !important;
-          }
         }
 
         > a {
@@ -141,20 +139,27 @@
             position: absolute;
             top: calc(#{$content-offset});
             left: 50%;
-            transform: translateX(-50%);
+            transform: translateX(-50%) scale3d(0.97, 0.97, 1);
             background: $color-white;
             padding: 3rem;
-            width: 50%;
+            width: 100%;
             min-width: 42rem;
             max-height: unset;
             z-index: 100;
-            box-shadow: 0 1px 10px 0 #0000000f;
             opacity: 0;
             visibility: hidden;
-
+            box-shadow: inset 0px 0px 0 0.5px $color-grey-dark;
             display: grid;
             grid-template-columns: repeat(2, 1fr);
             gap: 0 3rem;
+            transition: none;
+
+            &--show {
+              visibility: visible;
+              opacity: 1;
+              transform: translateX(-50%) scale3d(1, 1, 1);
+              transition: all 0.5s $transition;
+            }
           }
 
           > .menu-item {
@@ -175,10 +180,6 @@
                 }
               }
             }
-          }
-
-          &--show {
-            @include transition(max-height);
           }
         }
 

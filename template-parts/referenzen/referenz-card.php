@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying a single reference
  * 
@@ -12,7 +13,7 @@ if (!$referenz)
   return;
 ?>
 
-<a href="<?php echo get_permalink($referenz->ID); ?>" class="referenz-card">
+<a href="<?php echo get_permalink($referenz->ID); ?>" class="referenz-card full-element-link">
   <div class="referenz-card__image">
     <?php
     if (has_post_thumbnail($referenz->ID)) {

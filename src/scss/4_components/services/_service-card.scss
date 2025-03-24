@@ -1,5 +1,5 @@
 .service-card {
-  background-color: $color-white;
+  background-color: $color-grey-light;
   padding: 2rem;
   height: 100%;
 
@@ -23,6 +23,6 @@
   }
 
   &__link {
-    @include link;
+    @include underlined-link;
   }
 }

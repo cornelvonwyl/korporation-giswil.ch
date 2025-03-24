@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Furrer Power Component
  * 
@@ -28,7 +29,7 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
         Unser Team ist das Resultat einer 35-jährigen Suche nach den besten Fachleuten
       </p>
       <div class="furrer-power__cta">
-        <a href="/team">Team</a>
+        <a class="animated-button" href="/team">Team</a>
       </div>
     </div>
 
@@ -40,7 +41,7 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
     <?php
     foreach (array_slice($attachment_ids, 0, 4) as $index => $attachment_id) {
       $position = $index + 1;
-      ?>
+    ?>
       <div class="furrer-power__image active" data-image-item data-position="<?php echo $position; ?>">
         <?php
         echo wp_get_attachment_image($attachment_id, 'medium', FALSE, array(
@@ -48,12 +49,12 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
         ));
         ?>
       </div>
-      <?php
+    <?php
     }
 
     // Output remaining images (hidden)
     foreach (array_slice($attachment_ids, 4) as $attachment_id) {
-      ?>
+    ?>
       <div class="furrer-power__image" data-image-item>
         <?php
         echo wp_get_attachment_image($attachment_id, 'medium', FALSE, array(
@@ -61,7 +62,7 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
         ));
         ?>
       </div>
-      <?php
+    <?php
     }
     ?>
   </div>

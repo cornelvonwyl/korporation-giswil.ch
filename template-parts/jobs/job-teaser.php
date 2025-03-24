@@ -37,8 +37,13 @@ $workload = get_field('workload');
     </div>
   </div>
 
-  <img class="job-teaser__more-icon"
-    src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-    alt="Pfeil nach rechts">
+  <span class="job-teaser__arrow-container">
+    <img class="job-teaser__arrow job-teaser__arrow--primary"
+      src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
+      alt="Pfeil nach rechts">
+    <img class="job-teaser__arrow job-teaser__arrow--secondary"
+      src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
+      alt="Pfeil nach rechts">
+  </span>
 
 </a>

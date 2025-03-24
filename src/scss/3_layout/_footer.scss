@@ -32,7 +32,8 @@
     }
 
     button {
-      @include primary-button;
+      @include animated-button;
+      @include secondary-button;
     }
   }
 

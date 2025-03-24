@@ -58,18 +58,14 @@ document.addEventListener('DOMContentLoaded', () => {
    * ----------------------------
    */
   function showSubmenu(item, submenu) {
-    // Make submenu visible
-    submenu.style.visibility = 'visible';
-    submenu.style.opacity = '1';
+    submenu.classList.add('sub-menu--show');
 
-    // If there's a "link"/button, set aria-expanded
     const link = item.querySelector('[role="button"]');
     if (link) link.setAttribute('aria-expanded', 'true');
   }
 
   function hideSubmenu(item, submenu) {
-    submenu.style.visibility = 'hidden';
-    submenu.style.opacity = '0';
+    submenu.classList.remove('sub-menu--show');
 
     const link = item.querySelector('[role="button"]');
     if (link) link.setAttribute('aria-expanded', 'false');

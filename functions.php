@@ -26,14 +26,15 @@ add_action('after_setup_theme', 'vonweb_theme_setup');
  * This function registers and enqueues the necessary CSS and JavaScript files for the theme.
  * It is hooked into the 'wp_enqueue_scripts' action to ensure the assets are loaded properly.
  *
- *
+
  * @return void
  */
 function vonweb_enqueue_assets()
 {
   wp_enqueue_style('vonweb-style', get_stylesheet_uri());
   wp_enqueue_style('vonweb-main-css', get_template_directory_uri() . '/dist/style.css', array(), '1.0', 'all');
-  wp_enqueue_script('vonweb-scripts', get_template_directory_uri() . '/dist/bundle.js', array(), '1.0', TRUE);
+  wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', true);
+  wp_enqueue_script('vonweb-scripts', get_template_directory_uri() . '/dist/bundle.js', array('gsap'), '1.0', TRUE);
 }
 add_action('wp_enqueue_scripts', 'vonweb_enqueue_assets');
 
@@ -57,7 +58,7 @@ add_action('after_setup_theme', 'lr_theme_features');
  * `register_block_type` function, which takes the path to the block's
  * configuration file.
  *
- *
+
  * @return void
  */
 add_action('init', 'register_acf_blocks');
@@ -72,8 +73,10 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/template-parts/blocks/team');
   register_block_type(__DIR__ . '/template-parts/blocks/job-list-block');
   register_block_type(__DIR__ . '/template-parts/blocks/page-header');
+  register_block_type(__DIR__ . '/template-parts/blocks/page-header-text');
   register_block_type(__DIR__ . '/template-parts/blocks/sub-service');
   register_block_type(__DIR__ . '/template-parts/blocks/image-with-content');
+  register_block_type(__DIR__ . '/template-parts/blocks/magnetic-button');
 }
 
 
@@ -87,7 +90,7 @@ function register_acf_blocks()
  * @param WP_Block_Editor_Context $editor_context The current block editor context.
  * @return array The filtered list of allowed block types.
  */
-function wpdocs_allowed_block_types($block_editor_context, $editor_context)
+/* function wpdocs_allowed_block_types($block_editor_context, $editor_context)
 {
   if (!empty($editor_context->post)) {
     return array(
@@ -107,6 +110,7 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context)
       'acf/team',
       'acf/job-list-block',
       'acf/page-header',
+      'acf/page-header-text',
       'acf/sub-service',
       'acf/image-with-content',
       'gravityforms/form',
@@ -116,7 +120,7 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context)
   return $block_editor_context;
 }
 add_filter('allowed_block_types_all', 'wpdocs_allowed_block_types', 10, 2);
-
+ */
 /**
  * Adds custom image sizes for the WordPress theme.
  *

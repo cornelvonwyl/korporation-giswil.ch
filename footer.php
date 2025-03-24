@@ -14,7 +14,7 @@
                 <div class="footer__newsletter">
                     <form action="#" method="POST">
                         <input type="email" name="email" placeholder="name@mail.ch" required>
-                        <button type="submit">Abonnieren</button>
+                        <button class="animated-button" type="submit">Abonnieren</button>
                     </form>
                 </div>
             </div>

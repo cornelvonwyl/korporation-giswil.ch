@@ -43,6 +43,6 @@
   }
 
   &__link {
-    @include link;
+    @include underlined-link;
   }
 }
