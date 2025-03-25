@@ -1,0 +1,16 @@
+{
+  "name": "acf/team-overview",
+  "title": "Team Übersicht",
+  "description": "Zeigt alle Team-Mitglieder mit Filterfunktion an",
+  "category": "theme",
+  "icon": "groups",
+  "keywords": ["team", "mitarbeiter", "filter", "übersicht"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  },
+  "supports": {
+    "align": false,
+    "anchor": true
+  }
+}

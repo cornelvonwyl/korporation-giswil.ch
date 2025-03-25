@@ -1,5 +1,6 @@
 .referenzen {
   @include spacing-medium;
+
   &__container {
     @include container-large;
   }

@@ -1,0 +1,16 @@
+{
+  "name": "acf/referenzen-overview",
+  "title": "Referenzen Übersicht",
+  "description": "Zeigt alle Referenzen mit Filterfunktion an",
+  "category": "theme",
+  "icon": "admin-home",
+  "keywords": ["referenzen", "filter", "übersicht"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  },
+  "supports": {
+    "align": false,
+    "anchor": true
+  }
+}

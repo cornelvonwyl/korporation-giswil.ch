@@ -1,0 +1,18 @@
+{
+  "name": "acf/history",
+  "title": "Geschichte",
+  "description": "Zeigt die Firmengeschichte in chronologischer Reihenfolge an",
+  "category": "theme",
+  "icon": "clock",
+  "keywords": ["geschichte", "timeline", "chronologie"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  },
+  "align": "full",
+  "supports": {
+    "align": true,
+    "mode": false,
+    "jsx": true
+  }
+}

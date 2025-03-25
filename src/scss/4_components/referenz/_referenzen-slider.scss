@@ -1,5 +1,5 @@
 .referenzen-slider {
-  @include spacing-inner;
+  @include spacing;
 
   &__container {
     @include container-large;

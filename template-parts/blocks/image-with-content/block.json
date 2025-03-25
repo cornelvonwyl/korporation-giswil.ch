@@ -1,16 +1,17 @@
 {
   "name": "acf/image-with-content",
   "title": "Bild mit Inhalt",
-  "description": "Ein Block zur Anzeige eines Bildes mit Inhalt.",
+  "description": "Zeigt ein Bild mit begleitendem Text und Link an",
   "editorStyle": ["file:./style.css"],
-  "category": "formatting",
-  "icon": "align-pull-left",
+  "category": "theme",
+  "icon": "align-pull-right",
   "keywords": ["image", "content", "text", "link"],
   "acf": {
     "mode": "preview",
     "renderTemplate": "image-with-content.php"
   },
   "supports": {
-    "align": ["wide", "full"]
+    "align": false,
+    "anchor": true
   }
 }

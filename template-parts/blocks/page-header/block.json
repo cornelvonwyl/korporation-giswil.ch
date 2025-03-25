@@ -1,9 +1,9 @@
 {
   "name": "acf/page-header",
-  "title": "Header Bild mit Inhalt (Dienstleistungen & Standort)",
-  "description": "A block to display a header image with content.",
+  "title": "Header mit Bild und Inhalt (Dienstleistungen & Standort)",
+  "description": "Zeigt einen Seitenkopf mit Hintergrundbild und Inhalt an",
   "editorStyle": ["file:./style.css"],
-  "category": "formatting",
+  "category": "theme",
   "icon": "align-pull-left",
   "keywords": ["image", "content", "text", "link"],
   "acf": {
@@ -11,6 +11,7 @@
     "renderTemplate": "page-header.php"
   },
   "supports": {
-    "align": ["wide", "full"]
+    "align": false,
+    "anchor": true
   }
 }

@@ -66,17 +66,15 @@ function register_acf_blocks()
 {
   register_block_type(__DIR__ . '/template-parts/blocks/images-block');
   register_block_type(__DIR__ . '/template-parts/blocks/images-small-block');
-  register_block_type(__DIR__ . '/template-parts/blocks/link-block');
-  register_block_type(__DIR__ . '/template-parts/blocks/images-link-block');
-  register_block_type(__DIR__ . '/template-parts/blocks/post-list-block');
-  register_block_type(__DIR__ . '/template-parts/blocks/people-by-category');
-  register_block_type(__DIR__ . '/template-parts/blocks/team');
-  register_block_type(__DIR__ . '/template-parts/blocks/job-list-block');
   register_block_type(__DIR__ . '/template-parts/blocks/page-header');
   register_block_type(__DIR__ . '/template-parts/blocks/page-header-text');
   register_block_type(__DIR__ . '/template-parts/blocks/sub-service');
   register_block_type(__DIR__ . '/template-parts/blocks/image-with-content');
-  register_block_type(__DIR__ . '/template-parts/blocks/magnetic-button');
+  register_block_type(__DIR__ . '/template-parts/blocks/referenzen-overview');
+  register_block_type(__DIR__ . '/template-parts/blocks/news-overview');
+  register_block_type(__DIR__ . '/template-parts/blocks/jobs-overview');
+  register_block_type(__DIR__ . '/template-parts/blocks/team-overview');
+  register_block_type(__DIR__ . '/template-parts/blocks/history');
 }
 
 
@@ -90,7 +88,7 @@ function register_acf_blocks()
  * @param WP_Block_Editor_Context $editor_context The current block editor context.
  * @return array The filtered list of allowed block types.
  */
-/* function wpdocs_allowed_block_types($block_editor_context, $editor_context)
+function wpdocs_allowed_block_types($block_editor_context, $editor_context)
 {
   if (!empty($editor_context->post)) {
     return array(
@@ -103,24 +101,25 @@ function register_acf_blocks()
       'core/image',
       'acf/images-block',
       'acf/images-small-block',
-      'acf/link-block',
-      'acf/images-link-block',
-      'acf/post-list-block',
-      'acf/people-by-category',
-      'acf/team',
-      'acf/job-list-block',
       'acf/page-header',
       'acf/page-header-text',
       'acf/sub-service',
       'acf/image-with-content',
+      'acf/referenzen-overview',
+      'acf/news-overview',
+      'acf/jobs-overview',
+      'acf/team-overview',
+      'acf/history',
+      'core/shortcode',
       'gravityforms/form',
+      'filebird/gallery',
     );
   }
 
   return $block_editor_context;
 }
 add_filter('allowed_block_types_all', 'wpdocs_allowed_block_types', 10, 2);
- */
+
 /**
  * Adds custom image sizes for the WordPress theme.
  *

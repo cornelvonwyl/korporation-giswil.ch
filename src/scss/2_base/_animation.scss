@@ -1,6 +1,8 @@
 .main-content {
-  & > *:not(.page-header),
-  .person-card {
+  &
+    > *:not(.page-header):not(.team-overview):not(.news-overview):not(
+      .services-overview
+    ):not(.referenzen):not(.jobs-overview) {
     opacity: 0;
     transform: translateY(10px);
     transition: opacity 1s $transition, transform 1s $transition;

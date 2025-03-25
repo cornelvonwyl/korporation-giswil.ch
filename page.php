@@ -1,4 +1,7 @@
-<?php get_header(); ?>
+<?php 
+global $wp_query;
+get_header(); 
+?>
 <main>
 
   <div class="main-wrapper">

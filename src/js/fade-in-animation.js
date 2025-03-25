@@ -1,6 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   const elementsToAnimate = document.querySelectorAll(
-    '.main-content > *:not(.page-header)'
+    '.main-content > *:not(.page-header), .full-element-link'
   );
 
   // Function to run when elements intersect with the viewport

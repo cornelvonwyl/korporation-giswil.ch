@@ -1,9 +1,9 @@
 {
   "name": "acf/images-block",
-  "title": "Bild(er)",
-  "description": "Dieser Block stellt ein Bild gross dar oder eine Galerie von Bildern als Slider.",
+  "title": "Große Bilder",
+  "description": "Zeigt ein großes Bild oder eine Bildergalerie als Slider an",
   "editorStyle": ["file:./style.css"],
-  "category": "media",
+  "category": "theme",
   "icon": "format-gallery",
   "keywords": ["image", "gallery"],
   "acf": {
@@ -11,8 +11,6 @@
   },
   "supports": {
     "align": false,
-    "multiple": true,
-    "alignWide": false,
-    "mode": false
+    "anchor": true
   }
 }

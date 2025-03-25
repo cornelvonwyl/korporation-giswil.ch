@@ -7,7 +7,7 @@
     <div class="hero-text">
       <div class="hero-text__container">
 
-        <p class="animated-text">
+        <p>
           Bei uns zählen Mensch, Teamgeist und Leidenschaft. Mit Freude, Fantasie und Fortschritt gestalten wir gemeinsam die Zukunft – eifach Furrer.
         </p>
 

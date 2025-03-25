@@ -1,0 +1,16 @@
+{
+  "name": "acf/news-overview",
+  "title": "News Übersicht",
+  "description": "Zeigt alle News mit Filterfunktion an",
+  "category": "theme",
+  "icon": "admin-post",
+  "keywords": ["news", "neuigkeiten", "filter", "übersicht"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "block.php"
+  },
+  "supports": {
+    "align": false,
+    "anchor": true
+  }
+}
