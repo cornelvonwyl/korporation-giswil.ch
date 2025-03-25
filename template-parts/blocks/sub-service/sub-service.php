@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Sub Service Block Template.
  *
@@ -22,10 +23,8 @@ if (!empty($block['className'])) {
 
 // Load values and assign defaults.
 $icon = get_field('icon');
-$subtitle = get_field('subtitle') ?: ($is_preview ? 'Beispiel Untertitel' : '');
-$title = get_field('title') ?: ($is_preview ? 'Beispiel Titel für den Block' : '');
-$content = get_field('text') ?: ($is_preview ? '<p>Dies ist ein Beispieltext, der angezeigt wird, wenn im Editor kein Inhalt eingegeben wurde. Hier können Beschreibungen, Erklärungen oder andere wichtige Informationen stehen.</p>' : '');
-$link = get_field('link');
+$title = get_field('title');
+$content = get_field('text');
 ?>
 
 <article id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">

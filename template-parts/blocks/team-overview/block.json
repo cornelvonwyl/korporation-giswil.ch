@@ -9,8 +9,14 @@
     "mode": "preview",
     "renderTemplate": "block.php"
   },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
   "supports": {
-    "align": false,
+    "align": ["full"],
     "anchor": true
   }
 }

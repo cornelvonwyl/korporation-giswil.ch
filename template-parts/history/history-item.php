@@ -1,14 +1,3 @@
-/**
-* Template part for displaying history items
-*
-* This template is responsible for rendering individual history entries with their
-* associated year, text content, and images. It's typically used within a loop
-* of history items.
-*
-* @package vonweb
-* @since 1.0.0
-*/
-
 <?php
 $year = get_field('year', get_the_ID());
 $text = get_field('text', get_the_ID());
@@ -16,8 +5,6 @@ $images = get_field('images', get_the_ID());
 ?>
 
 <article class="history-item">
-
-
     <?php if ($year) : ?>
         <div class="history-year">
             <h3><?php echo esc_html($year); ?></h3>

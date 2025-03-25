@@ -1,4 +1,5 @@
 <?php
+
 /**
  * News Overview Block Template.
  *
@@ -33,4 +34,4 @@ if (!empty($block['align'])) {
         <!-- News List -->
         <?php get_template_part('template-parts/news/news-overview'); ?>
     </div>
-</div> 
+</div>

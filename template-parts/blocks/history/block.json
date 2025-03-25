@@ -9,10 +9,14 @@
     "mode": "preview",
     "renderTemplate": "block.php"
   },
-  "align": "full",
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
   "supports": {
-    "align": true,
-    "mode": false,
-    "jsx": true
+    "align": ["full"],
+    "anchor": true
   }
 }

@@ -1,15 +1,17 @@
 <?php
 
 /**
- * Image with Content Block Template.
+ * Page Header Block Template.
  *
  * @param   array $block The block settings and attributes.
  * @param   string $content The block inner HTML (empty).
  * @param   bool $is_preview True during backend preview render.
+ * @return  void
  */
 
 // Create id attribute allowing for custom "anchor" value
 $id = 'page-header-' . $block['id'];
+
 if (!empty($block['anchor'])) {
   $id = $block['anchor'];
 }
@@ -19,22 +21,17 @@ $class_name = 'page-header';
 if (!empty($block['className'])) {
   $class_name .= ' ' . $block['className'];
 }
-if (!empty($block['align'])) {
-  $class_name .= ' align' . $block['align'];
-}
 
+// Get field values
 $image = get_field('image');
-$subtitle = get_field('subtitle') ?: ($is_preview ? 'Beispiel Untertitel' : '');
-$title = get_field('title') ?: ($is_preview ? 'Beispiel Titel für den Block' : '');
-$content = get_field('content') ?: ($is_preview ? '<p>Dies ist ein Beispieltext, der angezeigt wird, wenn im Editor kein Inhalt eingegeben wurde. Hier können Beschreibungen, Erklärungen oder andere wichtige Informationen stehen.</p>' : '');
-
-// Fallback image for preview
-$has_image = !empty($image);
+$subtitle = get_field('subtitle');
+$title = get_field('title');
+$content = get_field('content');
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
   <div class="page-header__container">
-    <?php if ($has_image): ?>
+    <?php if ($image): ?>
       <?php
       echo wp_get_attachment_image($image['ID'], 'huge', false, array('class' => 'page-header__image'));
       ?>

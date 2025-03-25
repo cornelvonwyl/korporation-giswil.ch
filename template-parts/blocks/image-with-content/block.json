@@ -10,8 +10,14 @@
     "mode": "preview",
     "renderTemplate": "image-with-content.php"
   },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    }
+  },
   "supports": {
-    "align": false,
+    "align": ["wide"],
     "anchor": true
   }
 }

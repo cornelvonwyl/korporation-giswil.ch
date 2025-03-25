@@ -49,6 +49,7 @@
 
   &__title {
     @include h1;
+    color: $color-yellow;
     white-space: nowrap;
     position: relative;
     z-index: 10;

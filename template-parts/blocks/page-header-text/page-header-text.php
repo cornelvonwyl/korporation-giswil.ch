@@ -16,13 +16,10 @@ if (!empty($block['anchor'])) {
     $id = $block['anchor'];
 }
 
-// Create class attribute allowing for custom "className" and "align" values.
+// Create class attribute allowing for custom "className".
 $className = 'page-header-text';
 if (!empty($block['className'])) {
     $className .= ' ' . $block['className'];
-}
-if (!empty($block['align'])) {
-    $className .= ' align' . $block['align'];
 }
 
 // Define variables
@@ -30,14 +27,6 @@ $subtitle = get_field('subtitle');
 $title = get_field('title');
 $title_tag = get_field('title_tag');
 $intro_text = get_field('intro_text');
-
-// Preview fallbacks
-if ($is_preview) {
-    $subtitle = $subtitle ?: 'Untertitel';
-    $title = $title ?: 'Haupttitel';
-    $title_tag = $title_tag ?: 'h1';
-    $intro_text = $intro_text ?: 'Lorem ipsum dolor sit amet, consectetur adipiscing elit. Ut elit tellus, luctus nec ullamcorper mattis, pulvinar dapibus leo.';
-}
 ?>
 
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">

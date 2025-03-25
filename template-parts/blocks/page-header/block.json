@@ -2,7 +2,6 @@
   "name": "acf/page-header",
   "title": "Header mit Bild (Dienstleistungen & Standort)",
   "description": "Zeigt einen Seitenkopf mit Hintergrundbild und Inhalt an",
-  "editorStyle": ["file:./style.css"],
   "category": "theme",
   "icon": "align-pull-left",
   "keywords": ["image", "content", "text", "link"],
@@ -10,8 +9,14 @@
     "mode": "preview",
     "renderTemplate": "page-header.php"
   },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "full"
+    }
+  },
   "supports": {
-    "align": false,
+    "align": ["full"],
     "anchor": true
   }
 }

@@ -40,3 +40,9 @@ video {
 * {
   accent-color: $color-yellow !important;
 }
+
+.editor-visual-editor {
+  .wp-block-post-title {
+    font-size: 2rem;
+  }
+}
