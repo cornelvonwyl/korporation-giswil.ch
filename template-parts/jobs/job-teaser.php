@@ -7,9 +7,9 @@
  */
 
 // Get job fields
-$location = get_field('location');
-$person = get_field('person');
-$workload = get_field('workload');
+$location = get_field('location', get_the_ID());
+$person = get_field('person', get_the_ID());
+$workload = get_field('workload', get_the_ID());
 ?>
 
 <a href="<?php the_permalink(); ?>" class="job-teaser">

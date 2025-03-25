@@ -1,6 +1,6 @@
 {
   "name": "acf/page-header",
-  "title": "Header mit Bild und Inhalt (Dienstleistungen & Standort)",
+  "title": "Header mit Bild (Dienstleistungen & Standort)",
   "description": "Zeigt einen Seitenkopf mit Hintergrundbild und Inhalt an",
   "editorStyle": ["file:./style.css"],
   "category": "theme",

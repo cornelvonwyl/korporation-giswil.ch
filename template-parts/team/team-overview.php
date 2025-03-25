@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying team list
  * 
@@ -13,18 +14,18 @@ $args = array(
   'order' => 'ASC'
 );
 
-$posts = new WP_Query($args);
+$team_query = new WP_Query($args);
 
-if (is_wp_error($posts)) {
+if (is_wp_error($team_query)) {
   return;
 }
 ?>
 
 <section class="team-overview__items">
-  <?php if ($posts->have_posts()): ?>
+  <?php if ($team_query->have_posts()): ?>
     <ul class="team-overview__grid">
-      <?php while ($posts->have_posts()):
-        $posts->the_post();
+      <?php while ($team_query->have_posts()):
+        $team_query->the_post();
         // Get person categories
         $categories = get_the_terms(get_the_ID(), 'person-category');
         $category_classes = '';
@@ -43,7 +44,7 @@ if (is_wp_error($posts)) {
           }, $locations);
         }
         $location_data = $location_ids ? 'data-locations="' . esc_attr(implode(',', $location_ids)) . '"' : '';
-        ?>
+      ?>
         <li class="team-overview__grid-item<?php echo esc_attr($category_classes); ?>" <?php echo $location_data; ?>>
           <?php
           get_template_part('template-parts/team/person', NULL, array(

@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying news list
  * 
@@ -10,31 +11,32 @@ $args = array(
   'post_type' => 'post',
   'posts_per_page' => -1,
   'orderby' => 'date',
-  'order' => 'DESC'
+  'order' => 'DESC',
+  'post_status' => 'publish'
 );
 
+$news_query = new WP_Query($args);
 
-$posts = new WP_Query($args);
-
-if (is_wp_error($posts)) {
+if (is_wp_error($news_query)) {
   return;
 }
 ?>
 
 <section class="news-overview__items">
-  <?php if ($posts->have_posts()): ?>
+  <?php if ($news_query->have_posts()): ?>
     <div class="news-overview__grid">
-      <?php while ($posts->have_posts()):
-        $posts->the_post();
+      <?php while ($news_query->have_posts()):
+        $news_query->the_post();
         // Get post categories
         $categories = get_the_category();
+
         $category_classes = '';
         if ($categories) {
           $category_classes = ' ' . implode(' ', array_map(function ($cat) {
             return 'category-' . $cat->slug;
           }, $categories));
         }
-        ?>
+      ?>
         <div class="news-overview__grid-item<?php echo esc_attr($category_classes); ?>">
           <?php get_template_part('template-parts/news/news-card'); ?>
         </div>

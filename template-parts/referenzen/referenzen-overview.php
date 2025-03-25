@@ -1,4 +1,5 @@
 <?php
+
 /**
  * Template part for displaying referenzen overview
  *
@@ -27,7 +28,8 @@
       if ($referenzen->have_posts()):
         while ($referenzen->have_posts()):
           $referenzen->the_post();
-          $service_references = get_field('service_references');
+          $service_references = get_field('service_references', get_the_ID());
+
           $service_classes = '';
 
           if ($service_references):
@@ -38,7 +40,7 @@
 
           // Get the current post object
           $current_referenz = get_post();
-          ?>
+      ?>
           <li class="referenzen-overview__item<?php echo esc_attr($service_classes); ?>">
             <?php get_template_part('template-parts/referenzen/referenz-card', NULL, ['referenz' => $current_referenz]); ?>
           </li>

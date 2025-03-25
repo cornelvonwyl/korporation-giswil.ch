@@ -27,26 +27,10 @@ $standorte = new WP_Query($args);
             <?php get_template_part('template-parts/locations/location-teaser'); ?>
           </li>
         <?php endwhile; ?>
-        <?php while ($standorte->have_posts()):
-          $standorte->the_post(); ?>
-          <li class="locations-overview__item">
-            <?php get_template_part('template-parts/locations/location-teaser'); ?>
-          </li>
-        <?php endwhile; ?>
-        <?php while ($standorte->have_posts()):
-          $standorte->the_post(); ?>
-          <li class="locations-overview__item">
-            <?php get_template_part('template-parts/locations/location-teaser'); ?>
-          </li>
-        <?php endwhile; ?>
-        <?php while ($standorte->have_posts()):
-          $standorte->the_post(); ?>
-          <li class="locations-overview__item">
-            <?php get_template_part('template-parts/locations/location-teaser'); ?>
-          </li>
-        <?php endwhile; ?>
+
+        <?php wp_reset_postdata(); ?>
+      </ul>
   </div>
 <?php endif; ?>
-<?php wp_reset_postdata(); ?>
 </div>
 </section>
