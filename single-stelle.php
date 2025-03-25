@@ -44,12 +44,12 @@
 
             <div class="job-single__buttons">
 
-              <a href="#apply" class="button job-single__apply">Jetzt bewerben</a>
+              <a href="#apply" class="animated-button job-single__apply">Jetzt bewerben</a>
 
 
               <?php if (get_field('pdf')): ?>
                 <div class="job-single__pdf">
-                  <a href="<?php echo get_field('pdf')['url']; ?>" target="_blank" class="button job-single__pdf-button">Inserat Download</a>
+                  <a href="<?php echo get_field('pdf')['url']; ?>" target="_blank" class="animated-button job-single__pdf-button">Inserat Download</a>
                 </div>
               <?php endif; ?>
             </div>

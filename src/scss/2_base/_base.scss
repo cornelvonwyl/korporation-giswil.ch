@@ -25,8 +25,7 @@ video {
 }
 
 .no-scroll {
-  overflow: hidden;
-  height: 100svh;
+  overflow: hidden !important;
 }
 
 .full-element-link {
@@ -45,4 +44,12 @@ video {
   .wp-block-post-title {
     font-size: 2rem;
   }
+}
+
+.edit-post-sidebar,
+.editor-sidebar,
+.interface-interface-skeleton__sidebar,
+.interface-complementary-area__fill,
+.edit-post-layout__content {
+  width: 500px !important;
 }

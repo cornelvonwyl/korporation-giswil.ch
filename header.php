@@ -30,14 +30,15 @@
                         <span></span>
                         <span></span>
                         <span></span>
-
                     </button>
 
 
                     <nav class="header__nav header__nav--mobile">
                         <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
 
-                        <a class="animated-button" href="/kontakt">Kontakt</a>
+                        <div class="header__contact">
+                            <a class="animated-button" href="/kontakt">Kontakt</a>
+                        </div>
                     </nav>
 
                     <nav class="header__nav header__nav--desktop">

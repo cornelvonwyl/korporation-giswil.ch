@@ -34,8 +34,7 @@ function vonweb_enqueue_assets()
 {
   wp_enqueue_style('vonweb-style', get_stylesheet_uri());
   wp_enqueue_style('vonweb-main-css', get_template_directory_uri() . '/dist/style.css', array(), '1.0', 'all');
-  wp_enqueue_script('gsap', 'https://cdn.jsdelivr.net/npm/gsap@3.12.5/dist/gsap.min.js', array(), '3.12.5', true);
-  wp_enqueue_script('vonweb-scripts', get_template_directory_uri() . '/dist/bundle.js', array('gsap'), '1.0', TRUE);
+  wp_enqueue_script('vonweb-scripts', get_template_directory_uri() . '/dist/bundle.js', array(), '1.0', TRUE);
 }
 add_action('wp_enqueue_scripts', 'vonweb_enqueue_assets');
 

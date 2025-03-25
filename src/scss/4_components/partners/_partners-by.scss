@@ -1,4 +1,5 @@
 .partners-by {
+  @include spacing;
   &__container {
     @include container-large;
   }
@@ -14,10 +15,9 @@
   }
 
   &__item {
+    transition: transform 0.5s $transition;
 
-    &:hover {
-      transform: translateY(-5px);
-    }
+    @include hover-scale;
   }
 
   &__image {

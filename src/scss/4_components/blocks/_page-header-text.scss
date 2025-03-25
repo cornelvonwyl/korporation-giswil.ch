@@ -1,5 +1,7 @@
 .page-header-text {
   @include spacing-medium;
+  @include spacing-small-bottom;
+
   &__container {
     @include container;
     max-width: $container-small;

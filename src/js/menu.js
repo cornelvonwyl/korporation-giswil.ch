@@ -28,7 +28,7 @@ document.addEventListener('DOMContentLoaded', () => {
       nav.classList.toggle('header__nav--show');
 
       // Prevent scrolling when menu is open
-      document.body.classList.toggle('no-scroll', !isExpanded);
+      document.documentElement.classList.toggle('no-scroll', !isExpanded);
 
       // Use 'inert' to disable main content and footer interaction
       if (mainContent) {

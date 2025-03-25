@@ -1,15 +1,16 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Find all sections with the animate-bg class
   const animatedSections = document.querySelectorAll('.animate-bg');
+  const mainElement = document.querySelector('main');
 
-  // Only proceed if there are animated sections
-  if (animatedSections.length === 0) {
+  // Only proceed if there are animated sections and main element exists
+  if (animatedSections.length === 0 || !mainElement) {
     return;
   }
 
   // Initial background color
   const defaultBgColor = '#ffffff';
-  document.body.style.backgroundColor = defaultBgColor;
+  mainElement.style.backgroundColor = defaultBgColor;
 
   // Function to convert hex to RGB for interpolation
   function hexToRgb(hex) {
@@ -100,10 +101,10 @@ document.addEventListener('DOMContentLoaded', function () {
       );
 
       // Apply the color
-      document.body.style.backgroundColor = backgroundColor;
+      mainElement.style.backgroundColor = backgroundColor;
     } else {
       // Reset to default if no section meets threshold
-      document.body.style.backgroundColor = defaultBgColor;
+      mainElement.style.backgroundColor = defaultBgColor;
     }
   }
 

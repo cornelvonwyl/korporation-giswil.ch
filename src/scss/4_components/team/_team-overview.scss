@@ -1,5 +1,6 @@
 .team-overview {
-  @include spacing-medium;
+  @include spacing-small-top;
+  @include spacing-medium-bottom;
 
   &__container {
     @include container-large;
@@ -11,10 +12,6 @@
 
   &__subtitle {
     @include subtitle;
-  }
-
-  &__items {
-    @include container-large;
   }
 
   &__grid {
@@ -31,7 +28,7 @@
     }
 
     @include large-up {
-      grid-template-columns: repeat(5, 1fr);
+      grid-template-columns: repeat(4, 1fr);
     }
   }
 

@@ -1,0 +1,21 @@
+.history-timeline {
+  display: flex;
+  flex-direction: column;
+  gap: 6rem;
+  position: relative;
+
+  @include spacing-medium;
+
+  // Timeline line
+  &::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 50%;
+    width: 2px;
+    height: 100%;
+    background-color: $color-yellow;
+    transform: translateX(-50%);
+    z-index: 0;
+  }
+}

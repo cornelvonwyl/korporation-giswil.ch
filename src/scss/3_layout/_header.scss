@@ -13,9 +13,10 @@
     box-shadow: none;
   }
 
-  body.scrolled & {
-    background-color: $color-white;
-    box-shadow: 0px 0px 0 0.5px $color-grey-dark;
+  body.scrolled &,
+  .no-scroll & {
+    background-color: $color-white !important;
+    box-shadow: 0px 0px 0 0.5px $color-grey-dark !important;
   }
 
   &__container {
@@ -69,6 +70,12 @@
 
     @include medium-up {
       display: none;
+    }
+
+    &--active {
+      span {
+        background-color: $color-black !important;
+      }
     }
 
     span {
