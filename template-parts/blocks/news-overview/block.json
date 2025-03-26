@@ -7,7 +7,7 @@
   "keywords": ["news", "neuigkeiten", "filter", "übersicht"],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "block.php"
+    "renderTemplate": "news-overview.php"
   },
   "attributes": {
     "align": {

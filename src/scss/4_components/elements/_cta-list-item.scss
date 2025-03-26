@@ -1,4 +1,5 @@
-/* .location-teaser {
+.cta-list-item {
+  @include arrow-hover-effect;
   @include list-item-with-icon;
   text-decoration: none;
   color: inherit;
@@ -8,13 +9,4 @@
     font-weight: normal;
     margin: 0;
   }
-
-  @include arrow-hover-effect;
 }
-
-.locations-overview__item:last-child {
-  .location-teaser {
-    border-bottom: $border;
-  }
-}
- */

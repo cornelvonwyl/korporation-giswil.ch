@@ -2,18 +2,6 @@
   @include spacing-small-top;
   @include spacing-medium-bottom;
 
-  &__container {
-    @include container-large;
-  }
-
-  &__header {
-    @include title-subtitle-header;
-  }
-
-  &__subtitle {
-    @include subtitle;
-  }
-
   .referenzen-overview {
     &__container {
       @include container-large;

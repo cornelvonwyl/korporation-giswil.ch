@@ -79,6 +79,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/template-parts/blocks/jobs-overview');
   register_block_type(__DIR__ . '/template-parts/blocks/team-overview');
   register_block_type(__DIR__ . '/template-parts/blocks/history');
+  register_block_type(__DIR__ . '/template-parts/blocks/sponsoring-overview');
 }
 
 
@@ -114,6 +115,7 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context)
       'acf/jobs-overview',
       'acf/team-overview',
       'acf/history',
+      'acf/sponsoring-overview',
       'core/shortcode',
       'gravityforms/form',
       'filebird/gallery',

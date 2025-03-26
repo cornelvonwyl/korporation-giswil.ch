@@ -7,7 +7,7 @@
   "keywords": ["team", "mitarbeiter", "filter", "übersicht"],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "block.php"
+    "renderTemplate": "team-overview.php"
   },
   "attributes": {
     "align": {

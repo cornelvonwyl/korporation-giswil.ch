@@ -1,4 +1,5 @@
 <?php
+
 /**
  * The template part for displaying the news category filter.  
  *
@@ -21,7 +22,7 @@
         <ul class="news-filter__checkboxes" role="group" aria-label="Filteroptionen">
           <?php foreach ($categories as $category):
             $checkbox_id = 'filter-' . esc_attr($category->slug) . '-' . uniqid();
-            ?>
+          ?>
             <li class="news-filter__checkbox">
               <input class="news-filter__input" type="checkbox" id="<?php echo $checkbox_id; ?>" name="category"
                 value="<?php echo esc_attr($category->slug); ?>"

@@ -7,7 +7,7 @@
   "keywords": ["geschichte", "timeline", "chronologie"],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "block.php"
+    "renderTemplate": "history.php"
   },
   "attributes": {
     "align": {

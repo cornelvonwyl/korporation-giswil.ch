@@ -7,7 +7,7 @@
   "keywords": ["jobs", "stellen", "karriere", "filter", "übersicht"],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "block.php"
+    "renderTemplate": "jobs-overview.php"
   },
   "supports": {
     "align": false,

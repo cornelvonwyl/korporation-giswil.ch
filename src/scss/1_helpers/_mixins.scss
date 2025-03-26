@@ -730,10 +730,6 @@
 }
 
 @mixin arrow-hover-effect() {
-  &__title {
-    transition: transform 0.5s $transition;
-  }
-
   &__arrow-container {
     position: relative;
     overflow: hidden;
@@ -758,11 +754,25 @@
     }
   }
 
-  &:hover &__arrow--primary {
+  // Internal link animation (right)
+  &:not(.cta-list-item--external):hover &__arrow--primary {
     transform: translateX(150%);
   }
 
-  &:hover &__arrow--secondary {
+  &:not(.cta-list-item--external):hover &__arrow--secondary {
     transform: translateX(0);
+  }
+
+  &.cta-list-item--external &__arrow--secondary {
+    transform: translate(-100%, 100%);
+  }
+
+  // External link animation (right and up)
+  &.cta-list-item--external:hover &__arrow--primary {
+    transform: translate(150%, -150%);
+  }
+
+  &.cta-list-item--external:hover &__arrow--secondary {
+    transform: translate(0, 0);
   }
 }

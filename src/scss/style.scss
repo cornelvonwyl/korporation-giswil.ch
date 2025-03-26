@@ -23,6 +23,7 @@
 @import '4_components/swiper';
 @import '4_components/elements/breadcrumb';
 @import '4_components/elements/button';
+@import '4_components/elements/cta-list-item';
 
 // Frontpage
 @import '4_components/frontpage/hero';
@@ -76,6 +77,9 @@
 // History Page
 @import '4_components/history/history-item';
 @import '4_components/history/history-overview';
+
+// Sponsorings
+@import '4_components/sponsorings/sponsorings-overview';
 
 // Reusable Block Components
 @import '4_components/blocks/images-block';

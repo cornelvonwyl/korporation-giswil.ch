@@ -51,7 +51,6 @@ class WordRotate {
     if (this.intervalId) {
       clearInterval(this.intervalId);
       this.intervalId = null;
-      console.log('WordRotate cleanup: interval cleared');
     }
   }
 }

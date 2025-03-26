@@ -1,0 +1,16 @@
+{
+  "name": "acf/sponsoring-overview",
+  "title": "Sponsoring Übersicht",
+  "description": "Zeigt alle Sponsoring-Einträge an",
+  "category": "theme",
+  "icon": "money-alt",
+  "keywords": ["sponsoring", "übersicht", "partner"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "sponsoring-overview.php"
+  },
+  "supports": {
+    "align": false,
+    "anchor": true
+  }
+}

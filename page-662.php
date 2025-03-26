@@ -19,24 +19,21 @@
               </h3>
 
               <div class="contact-page__contact">
+                <?php
+                get_template_part('template-parts/elements/cta-list-item', null, array(
+                    'title' => '041 662 00 70',
+                    'link' => 'tel:+41416620070',
+                    'is_external' => true
+                ));
+                ?>
 
-                <a href="tel:+41416620070" class="contact-page__link">
-                  <p class="contact-page__link-text">041 662 00 70</p>
-
-                  <img class="contact-page__link__more-icon"
-                    src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-                    alt="Pfeil nach rechts">
-                </a>
-
-                <a href="mailto:info@elektrofurrer.ch" class="contact-page__link">
-                  <p class="contact-page__link-text">info@elektrofurrer.ch</p>
-
-                  <img class="contact-page__link__more-icon"
-                    src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-                    alt="Pfeil nach rechts">
-                </a>
-
-
+                <?php
+                get_template_part('template-parts/elements/cta-list-item', null, array(
+                    'title' => 'info@elektrofurrer.ch',
+                    'link' => 'mailto:info@elektrofurrer.ch',
+                    'is_external' => true
+                ));
+                ?>
               </div>
 
               <h3 class="contact-page__subtitle">
@@ -44,18 +41,14 @@
               </h3>
 
               <div class="contact-page__contact">
-
-                <a href="tel:+41416620077" class="contact-page__link">
-                  <p class="contact-page__link-text">041 662 00 77</p>
-
-                  <img class="contact-page__link__more-icon"
-                    src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-                    alt="Pfeil nach rechts">
-                </a>
+                <?php
+                get_template_part('template-parts/elements/cta-list-item', null, array(
+                    'title' => '041 662 00 77',
+                    'link' => 'tel:+41416620077',
+                    'is_external' => true
+                ));
+                ?>
               </div>
-
-
-
             </div>
           </div>
         </section>

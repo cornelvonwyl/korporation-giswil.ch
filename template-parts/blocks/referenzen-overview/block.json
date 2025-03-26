@@ -7,7 +7,7 @@
   "keywords": ["referenzen", "filter", "übersicht"],
   "acf": {
     "mode": "preview",
-    "renderTemplate": "block.php"
+    "renderTemplate": "referenzen-overview.php"
   },
   "attributes": {
     "align": {

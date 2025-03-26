@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', () => {
   const serviceTabsContainers = document.querySelectorAll('.sub-services');
 
-  console.log(serviceTabsContainers);
-
   if (!serviceTabsContainers.length) return;
 
   serviceTabsContainers.forEach((container) => {
