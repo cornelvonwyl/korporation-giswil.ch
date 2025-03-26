@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', () => {
   if (!form || !referenzenItems) return;
 
   // Set initial state based on URL parameter
-  const initialFilters = urlParams.getAll('dienstleistung') || [];
+  const initialFilters = urlParams.getAll('service') || [];
   if (initialFilters.length) {
     initialFilters.forEach((filter) => {
       const checkbox = document.querySelector(`input[value="${filter}"]`);
@@ -22,13 +22,13 @@ document.addEventListener('DOMContentLoaded', () => {
   // Event listener for filter change
   form.addEventListener('change', () => {
     const selectedValues = Array.from(
-      form.querySelectorAll('input[name="dienstleistung"]:checked')
+      form.querySelectorAll('input[name="service"]:checked')
     ).map((checkbox) => checkbox.value);
 
     // Update the URL parameter
-    urlParams.delete('dienstleistung');
+    urlParams.delete('service');
     selectedValues.forEach((value) => {
-      urlParams.append('dienstleistung', value);
+      urlParams.append('service', value);
     });
     window.history.pushState(
       {},

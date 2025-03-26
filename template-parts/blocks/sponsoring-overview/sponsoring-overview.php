@@ -36,21 +36,27 @@ $sponsoring_query = new WP_Query($args);
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="sponsoring-overview__container">
         <?php if ($sponsoring_query->have_posts()) : ?>
-            <div class="sponsoring-overview__items">
+            <ul class="sponsoring-overview__items">
                 <?php while ($sponsoring_query->have_posts()) : $sponsoring_query->the_post(); ?>
                     <?php
                     $link = get_field('link', get_the_ID());
 
                     if ($link) :
-                        get_template_part('template-parts/elements/cta-list-item', null, array(
-                            'title' => get_the_title(),
-                            'link' => $link,
-                            'is_external' => true
-                        ));
+                    ?>
+                        <li class="sponsoring-overview__item">
+                            <?php
+                            get_template_part('template-parts/elements/cta-list-item', null, array(
+                                'title' => get_the_title(),
+                                'link' => $link,
+                                'is_external' => true
+                            ));
+                            ?>
+                        </li>
+                    <?php
                     endif;
                     ?>
                 <?php endwhile; ?>
-            </div>
+            </ul>
         <?php else : ?>
             <p class="sponsoring-overview__no-items">Keine Sponsoring-Einträge gefunden.</p>
         <?php endif; ?>

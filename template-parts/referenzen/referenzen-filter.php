@@ -26,7 +26,7 @@
             $checkbox_id = 'filter-' . esc_attr($service->post_name) . '-' . uniqid();
             ?>
             <li class="referenzen-filter__checkbox">
-              <input class="referenzen-filter__input" type="checkbox" id="<?php echo $checkbox_id; ?>" name="dienstleistung"
+              <input class="referenzen-filter__input" type="checkbox" id="<?php echo $checkbox_id; ?>" name="service"
                 value="<?php echo esc_attr($service->post_name); ?>"
                 aria-label="Filter für <?php echo esc_attr($service->post_title); ?>">
               <label class="referenzen-filter__label" for="<?php echo $checkbox_id; ?>">

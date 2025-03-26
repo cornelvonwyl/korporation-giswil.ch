@@ -24,6 +24,7 @@
       // Create a new WP_Query instance
       $referenzen = new WP_Query($args);
 
+
       // Start the Loop
       if ($referenzen->have_posts()):
         while ($referenzen->have_posts()):
