@@ -10,6 +10,7 @@
 
           <?php
           $related_referenzen = get_field('referenzen');
+
           if (!empty($related_referenzen)) {
             get_template_part('template-parts/referenzen/referenzen-slider', NULL, [
               'referenzen' => $related_referenzen

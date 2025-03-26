@@ -1,0 +1,56 @@
+.sub-services {
+  @include container-small;
+
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  &__tabs {
+    display: flex;
+    @include spacing-medium-bottom();
+  }
+
+  &__tab {
+    @include primary-button();
+
+    padding-right: 2rem;
+    padding-left: 2rem;
+    background-color: $color-grey;
+
+    @include small-only {
+      font-size: clamp(0.25rem, 3vw, 0.75rem);
+    }
+
+    @include medium-up {
+      padding-right: 3rem;
+      padding-left: 3rem;
+    }
+
+    &:first-child {
+      margin-right: -0.75rem;
+
+      @include medium-up {
+        margin-right: -1.125rem;
+      }
+    }
+
+    &:last-child {
+      margin-left: -0.75rem;
+
+      @include medium-up {
+        margin-left: -1.125rem;
+      }
+    }
+
+    &.is-active {
+      background-color: $color-yellow;
+      z-index: 10;
+    }
+  }
+
+  &__panel {
+    @include card-filter-transition();
+    position: relative;
+    visibility: visible;
+  }
+}

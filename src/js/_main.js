@@ -15,3 +15,4 @@ import './breadcrumb.js';
 import './background-observer.js';
 import './animated-word.js';
 import './animated-button.js';
+import './service-tabs.js';

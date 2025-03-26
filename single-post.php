@@ -42,11 +42,11 @@
                   <p class="news-single__category">
                     #<?php echo esc_html($category->name); ?>
                   </p>
-                <?php endforeach;
+              <?php endforeach;
               endif; ?>
             </div>
 
-            <div class="news-single__content">
+            <div class="news-single__content prose">
 
 
               <?php the_content(); ?>
@@ -54,7 +54,8 @@
           </div>
         </article>
 
-      <?php endwhile; endif; ?>
+    <?php endwhile;
+    endif; ?>
 
   </div>
 

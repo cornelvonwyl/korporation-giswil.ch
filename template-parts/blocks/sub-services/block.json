@@ -1,0 +1,16 @@
+{
+  "name": "acf/sub-services",
+  "title": "Services",
+  "description": "Zeigt Teilleistungen mit Icon, Titel und Inhalt an",
+  "category": "theme",
+  "icon": "admin-tools",
+  "keywords": ["sub-service", "service", "feature"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "sub-services.php"
+  },
+  "supports": {
+    "align": false,
+    "anchor": true
+  }
+}
