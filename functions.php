@@ -107,7 +107,6 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context)
       'acf/images-small-block',
       'acf/page-header',
       'acf/page-header-text',
-      'acf/sub-service',
       'acf/sub-services',
       'acf/image-with-content',
       'acf/referenzen-overview',
