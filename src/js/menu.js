@@ -1,14 +1,20 @@
 document.addEventListener('DOMContentLoaded', () => {
   const scrollThreshold = 100;
 
-  // Add scroll event listener for header background
-  window.addEventListener('scroll', () => {
+  // Function to check scroll position and update header
+  const checkScroll = () => {
     if (window.scrollY > scrollThreshold) {
       document.body.classList.add('scrolled');
     } else {
       document.body.classList.remove('scrolled');
     }
-  });
+  };
+
+  // Check on page load
+  checkScroll();
+
+  // Check on scroll
+  window.addEventListener('scroll', checkScroll);
 
   const hamburger = document.querySelector('.header__hamburger');
   const nav = document.querySelector('.header__nav--mobile');
