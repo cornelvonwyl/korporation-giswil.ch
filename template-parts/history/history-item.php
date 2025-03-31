@@ -20,7 +20,7 @@ $images = get_field('images', get_the_ID());
             <div class="history-item__images">
                 <?php foreach ($images as $image) : ?>
                     <figure class="history-item__figure">
-                        <?php echo wp_get_attachment_image($image['ID'], 'medium'); ?>
+                        <?php echo wp_get_attachment_image($image['ID'], 'medium-size'); ?>
                         <?php if ($image['caption']) : ?>
                             <figcaption class="history-item__caption"><?php echo esc_html($image['caption']); ?></figcaption>
                         <?php endif; ?>

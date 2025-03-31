@@ -17,7 +17,7 @@ if (!$referenz)
   <div class="referenz-card__image">
     <?php
     if (has_post_thumbnail($referenz->ID)) {
-      echo get_the_post_thumbnail($referenz->ID, 'medium');
+      echo get_the_post_thumbnail($referenz->ID, 'medium-size');
     }
     ?>
   </div>

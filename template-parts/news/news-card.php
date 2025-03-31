@@ -9,7 +9,7 @@ $categories = get_the_category();
       <?php
       $image_id = get_post_thumbnail_id();
 
-      echo wp_get_attachment_image($image_id, 'medium', FALSE, [
+      echo wp_get_attachment_image($image_id, 'small', FALSE, [
         'class' => 'news-card__image',
         'loading' => 'lazy',
       ]);

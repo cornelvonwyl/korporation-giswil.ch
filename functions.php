@@ -131,7 +131,7 @@ add_filter('allowed_block_types_all', 'wpdocs_allowed_block_types', 10, 2);
  *
  * The following image sizes are added:
  * - 'small': 600x600 pixels
- * - 'medium': 1000x1000 pixels
+ * - 'medium-size': 1000x1000 pixels
  * - 'large': 1600x1600 pixels
  * - 'huge': 2400x2400 pixels
  *
@@ -139,20 +139,7 @@ add_filter('allowed_block_types_all', 'wpdocs_allowed_block_types', 10, 2);
  */
 add_image_size('tiny', 200, 200);
 add_image_size('small', 600, 600);
-add_image_size('medium', 1000, 1000);
+add_image_size('medium-size', 1000, 1000);
 add_image_size('large', 1600, 1600);
 add_image_size('huge', 2400, 2400);
 add_image_size('extra-large', 3000, 3000);
-
-
-/**
- * Enables lazy loading for all images and iframes in WordPress.
- *
- * This filter hook modifies the default behavior of WordPress to enable lazy loading,
- * which can improve page load times by deferring the loading of images and iframes
- * until they are about to enter the viewport.
- *
- * @param bool $enabled Whether lazy loading is enabled. Default true.
- * @return bool Always returns true to enable lazy loading.
- */
-add_filter('wp_lazy_loading_enabled', '__return_true');

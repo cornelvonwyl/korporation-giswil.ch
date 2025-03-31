@@ -35,7 +35,7 @@ $class_name .= ' image-with-content--title-' . $title_variant;
   <div class="image-with-content__container">
     <?php if ($image): ?>
       <?php
-      echo wp_get_attachment_image($image['ID'], 'medium');
+      echo wp_get_attachment_image($image['ID'], 'medium-size');
       ?>
     <?php endif; ?>
 

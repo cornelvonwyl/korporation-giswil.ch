@@ -27,7 +27,7 @@ $images = get_field('images') ?: array(
     <figure class="images-small-block__image">
       <?php
       $caption = esc_html($image['caption'] ?? '');
-      echo wp_get_attachment_image($image['ID'], 'medium');
+      echo wp_get_attachment_image($image['ID'], 'medium-size');
       ?>
 
       <?php if (!empty($caption)): ?>
