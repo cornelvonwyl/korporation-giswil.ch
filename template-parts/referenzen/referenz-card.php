@@ -23,8 +23,8 @@ if (!$referenz)
   </div>
 
   <h4 class="referenz-card__title"><?php echo get_the_title($referenz->ID); ?></h4>
-  <?php if (get_field('location', $referenz->ID)): ?>
-    <p class="referenz-card__location"><?php echo get_field('location', $referenz->ID); ?></p>
+  <?php if (get_field('city', $referenz->ID)): ?>
+    <p class="referenz-card__location"><?php echo get_field('city', $referenz->ID); ?></p>
   <?php endif; ?>
 
   <?php

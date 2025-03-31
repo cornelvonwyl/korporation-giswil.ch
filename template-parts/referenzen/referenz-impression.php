@@ -1,11 +1,24 @@
 <?php
+
 /**
  * Template part for displaying impression type references
  */
 
+if (!class_exists('FileBird\Classes\Helpers')) {
+  return;
+}
+
+use FileBird\Classes\Helpers as Helpers;
 
 $intro_text = get_field('intro_text');
 $service_references = get_field('service_references');
+$gallery = get_field('gallery');
+
+// Get attachment IDs from FileBird folder
+$attachment_ids = [];
+if (!empty($gallery[0])) {
+  $attachment_ids = Helpers::getAttachmentIdsByFolderId($gallery[0]);
+}
 ?>
 
 <?php get_template_part('template-parts/components/breadcrumb', NULL, [
@@ -41,15 +54,14 @@ $service_references = get_field('service_references');
 
 
       <div class="referenz-impression__gallery">
-        <?php
-        $gallery = get_field('gallery');
-        if ($gallery): ?>
-
+        <?php if (!empty($attachment_ids)): ?>
           <div class="swiper">
             <div class="swiper-wrapper">
-              <?php foreach ($gallery as $image): ?>
+              <?php foreach ($attachment_ids as $attachment_id): ?>
                 <div class="swiper-slide">
-                  <?php echo wp_get_attachment_image($image['ID'], 'huge'); ?>
+                  <?php echo wp_get_attachment_image($attachment_id, 'huge', false, array(
+                    'loading' => 'lazy',
+                  )); ?>
                 </div>
               <?php endforeach; ?>
             </div>
