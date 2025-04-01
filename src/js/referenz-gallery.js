@@ -1,4 +1,4 @@
-import Swiper from 'swiper';
+/* import Swiper from 'swiper';
 import 'swiper/css';
 import 'swiper/css/autoplay';
 import 'swiper/css/effect-fade';
@@ -31,6 +31,10 @@ document.addEventListener('DOMContentLoaded', () => {
 function updateSlideNumbers(swiperInstance) {
   const currentSlide = swiperInstance.realIndex + 1;
   const totalSlides = swiperInstance.slides.length;
-  document.querySelector('.current-slide').textContent = currentSlide;
-  document.querySelector('.total-slides').textContent = totalSlides;
+  const currentSlideEl = document.querySelector('.current-slide');
+  const totalSlidesEl = document.querySelector('.total-slides');
+
+  if (currentSlideEl) currentSlideEl.textContent = currentSlide;
+  if (totalSlidesEl) totalSlidesEl.textContent = totalSlides;
 }
+ */

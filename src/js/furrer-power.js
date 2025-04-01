@@ -7,6 +7,7 @@ class FurrerPower {
       this.imageContainer.querySelectorAll('[data-image-item]')
     );
     this.isTransitioning = false;
+    this.intervalId = null;
     this.initialize();
   }
 
@@ -74,7 +75,14 @@ class FurrerPower {
 
   initialize() {
     this.rotateImages();
-    setInterval(() => this.rotateImages(), 12000); // Complete cycle + extra delay
+    this.intervalId = setInterval(() => this.rotateImages(), 12000); // Complete cycle + extra delay
+  }
+
+  destroy() {
+    if (this.intervalId) {
+      clearInterval(this.intervalId);
+      this.intervalId = null;
+    }
   }
 }
 
