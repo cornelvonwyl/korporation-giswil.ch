@@ -11,7 +11,6 @@
     opacity: 0;
     transform: translateY(10px) translateZ(0);
     transition: opacity 0.75s $transition, transform 0.75s $transition;
-    contain: content;
     will-change: transform, opacity;
 
     &.in-view {
