@@ -9,10 +9,7 @@
 </head>
 
 <body <?php body_class(); ?>>
-
     <div class="layout">
-
-
         <header class="header">
 
             <div class="header__container">

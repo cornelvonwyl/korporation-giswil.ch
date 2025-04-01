@@ -28,26 +28,4 @@
   &__subtitle {
     @include subtitle;
   }
-
-  &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
-    @include gap();
-
-    @include medium-up {
-      grid-template-columns: repeat(2, 1fr);
-    }
-
-    @include large-up {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-
-  &__button {
-    @include more-button;
-
-    a {
-      @include primary-button;
-    }
-  }
 }

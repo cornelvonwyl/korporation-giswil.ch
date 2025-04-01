@@ -5,6 +5,7 @@ $args = array(
   'orderby' => 'menu_order',
   'order' => 'ASC'
 );
+
 $services = new WP_Query($args);
 ?>
 

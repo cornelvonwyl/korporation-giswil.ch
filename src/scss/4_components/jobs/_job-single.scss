@@ -26,7 +26,8 @@
   }
 
   &__content {
-    @include spacing-medium;
+    @include spacing;
+    @include spacing-medium-top;
   }
 
   &__details {
@@ -58,19 +59,29 @@
   }
 
   &__contact {
-    @include spacing-inner-medium;
-    background-color: $color-yellow;
+    @include spacing-inner;
   }
 
   &__contact-container {
     @include container-large;
+
+    display: grid;
+    grid-template-columns: 1fr;
+    @include gap();
+
+    @include medium-up {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 10rem;
+    }
   }
 
   &__contact-header {
     @include title-subtitle-header;
+    margin-bottom: 2rem !important;
   }
 
   &__contact-title {
+    text-align: center;
     @include h3;
   }
 
@@ -80,17 +91,25 @@
 
   &__contact-content {
     display: flex;
-    justify-content: center;
     align-items: center;
+    justify-content: center;
+    .person {
+      @include medium-up {
+        width: 50%;
+      }
+    }
   }
 
-  &__contact-image {
-    img {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      object-fit: cover;
-      aspect-ratio: 1 / 1;
-    }
+  &__contact-text {
+    @include hero-text-small;
+    text-align: center;
+  }
+
+  &__contact-cta {
+    @include spacing-top;
+  }
+
+  &__contact-cta-container {
+    @include container-small;
   }
 }

@@ -1,6 +1,5 @@
 body {
   .gform_wrapper {
-    @include spacing;
     .gform_heading {
       .gform_required_legend {
         display: none;

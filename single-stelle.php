@@ -52,7 +52,7 @@
 
             <div class="job-single__buttons">
 
-              <a href="#apply" class="animated-button job-single__apply">Jetzt bewerben</a>
+              <a href="mailto:hr@elektrofurrer.ch" class="animated-button job-single__apply">Jetzt bewerben</a>
 
 
               <?php if (get_field('pdf')): ?>
@@ -79,24 +79,58 @@
 
             $portrait = get_field('portrait', $person);
           ?>
-            <div class="job-single__contact">
+            <div class="job-single__contact animate-bg" data-bg-color="#f0f0f0" data-threshold="25">
 
               <div class="job-single__contact-container">
-                <div class="job-single__contact-header">
+                <div>
+                  <div class="job-single__contact-header">
+                    <p class="job-single__contact-subtitle">Fragen?</p>
+                    <h2 class="job-single__contact-title">Melde dich bei <?php echo esc_html($first_name); ?> </h2>
+                  </div>
 
 
-                  <p class="job-single__contact-subtitle">Fragen?</p>
-                  <h2 class="job-single__contact-title">Melde dich bei <?php echo esc_html($first_name); ?> </h2>
+
+                  <div class="job-single__contact-content">
+                    <?php
+                    get_template_part('template-parts/team/person', NULL, array(
+                      'person' => $person,
+                    ));
+                    ?>
+
+
+                  </div>
                 </div>
-                <div class="job-single__contact-content">
-                  <?php
-                  get_template_part('template-parts/team/person', NULL, array(
-                    'person' => $person,
-                  ));
-                  ?>
+
+
+                <div>
+
+
+                  <div class="job-single__contact-header">
+                    <p class="job-single__contact-subtitle">Alternative</p>
+                    <h2 class="job-single__contact-title">Wir melden uns bei dir</h2>
+                  </div>
+
+                  <?php gravity_form(4, false, false, false, '', true); ?>
+
                 </div>
 
-                <?php gravity_form(4, false, false, false, '', true); ?>
+              </div>
+
+              <div class="job-single__contact-cta">
+                <div class="job-single__contact-cta-container">
+
+
+                  <div class="job-single__contact-header">
+                    <p class="job-single__contact-subtitle">Überzogen?</p>
+                    <h2>Bewirb dich jetzt</h2>
+                  </div>
+
+                  <div class="prose">
+                    <p class="job-single__contact-text ">
+                      Schick deine Bewerbung an <a href="mailto:hr@elektrofurrer.ch">hr@elektrofurrer.ch</a>
+                    </p>
+                  </div>
+                </div>
               </div>
             </div>
           <?php endif; ?>

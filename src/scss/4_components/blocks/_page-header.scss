@@ -71,5 +71,6 @@
 
   &__link {
     @include underlined-link;
+    @include underlined-link-mono;
   }
 }

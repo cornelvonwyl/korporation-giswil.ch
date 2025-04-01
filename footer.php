@@ -4,7 +4,6 @@
  * Footer template part
  */
 ?>
-
 <footer class="footer">
     <div class="footer__container">
         <div class="footer__grid">
@@ -62,6 +61,8 @@
 </footer>
 
 <?php wp_footer(); ?>
+
+</div>
 </body>
 
 </html>

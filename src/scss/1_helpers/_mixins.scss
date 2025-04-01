@@ -375,6 +375,10 @@
   text-underline-offset: 0.5em;
   line-height: 2.4;
 
+  .animate-bg-yellow & {
+    text-decoration-color: $color-black;
+  }
+
   @include medium-up() {
     font-size: rem(14px);
   }
@@ -662,30 +666,24 @@
 @mixin underlined-link() {
   text-decoration: none;
   position: relative;
-  display: block;
-  color: $color-black;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  font-weight: 500;
-  font-size: rem(12px);
-  font-family: $font-family-mono;
-  line-height: 2;
-  width: fit-content;
+  display: inline-block;
 
-  @include medium-up() {
-    font-size: rem(14px);
-  }
+  color: $color-black;
 
   &::before,
   &::after {
     content: '';
     position: absolute;
-    bottom: 0em;
+    bottom: 1px;
     left: 0;
     width: 100%;
-    height: 0.15em;
+    height: 1.5px;
     background-color: $color-yellow;
     transition: transform 0.5s $transition;
+
+    .animate-bg-yellow & {
+      background-color: $color-black;
+    }
   }
 
   &::before {
@@ -712,20 +710,37 @@
     }
   }
 
-  &.is-link {
-    &:hover {
-      &::before {
-        transform-origin: right;
-        transform: scaleX(0) rotate(0.001deg);
-        transition-delay: 0s;
-      }
-
-      &::after {
-        transform-origin: left;
-        transform: scaleX(1) rotate(0.001deg);
-        transition-delay: 0.3s;
-      }
+  &:hover {
+    &::before {
+      transform-origin: right;
+      transform: scaleX(0) rotate(0.001deg);
+      transition-delay: 0s;
     }
+
+    &::after {
+      transform-origin: left;
+      transform: scaleX(1) rotate(0.001deg);
+      transition-delay: 0.3s;
+    }
+  }
+}
+
+@mixin underlined-link-mono() {
+  display: block;
+  text-transform: uppercase;
+  letter-spacing: $letter-spacing;
+  font-weight: 500;
+  font-size: rem(12px);
+  font-family: $font-family-mono;
+  line-height: 2;
+  width: fit-content;
+  @include medium-up() {
+    font-size: rem(14px);
+  }
+
+  &::before,
+  &::after {
+    height: 0.15em;
   }
 }
 
