@@ -4,7 +4,7 @@ $categories = get_the_category();
 ?>
 
 <a href="<?php the_permalink(); ?>" class="full-element-link">
-  <article class="news-card">
+  <article class="news-card animation-on-scroll">
     <?php if (has_post_thumbnail()): ?>
       <?php
       $image_id = get_post_thumbnail_id();

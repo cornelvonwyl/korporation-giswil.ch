@@ -16,12 +16,12 @@ $services = new WP_Query($args);
       <h2>Dienstleistungen</h2>
     </div>
     <?php if ($services->have_posts()): ?>
-      <div class="services-overview__grid">
+      <ul class="services-overview__grid">
         <?php while ($services->have_posts()):
           $services->the_post(); ?>
           <?php get_template_part('template-parts/services/services-card'); ?>
         <?php endwhile; ?>
-      </div>
+      </ul>
     <?php endif; ?>
     <?php wp_reset_postdata(); ?>
   </div>

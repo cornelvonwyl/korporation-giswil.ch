@@ -8,7 +8,7 @@ $args = array(
 $standorte = new WP_Query($args);
 ?>
 
-<section class="locations-overview">
+<section class="locations-overview animation-on-scroll">
   <div class="locations-overview__container">
     <div class="locations-overview__header">
       <p class="locations-overview__subtitle">

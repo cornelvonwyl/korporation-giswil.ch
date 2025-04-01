@@ -4,15 +4,22 @@
  * Template part for displaying team list
  * 
  * @package vonweb
+ * 
+ * @param array $args Query arguments for WP_Query
+ * @param array $options Additional options for display
  */
 
-// Query arguments for all team members
-$args = array(
+// Default query arguments
+$default_args = array(
   'post_type' => 'person',
   'posts_per_page' => -1,
   'orderby' => 'menu_order',
   'order' => 'ASC'
 );
+
+// Merge with provided arguments, ensuring post__in is preserved
+$args = isset($args['args']) ? $args['args'] : $default_args;
+
 
 $team_query = new WP_Query($args);
 

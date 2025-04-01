@@ -4,4 +4,16 @@
   select {
     @include select();
   }
+
+  &__location {
+    .single-standort & {
+      display: none;
+    }
+  }
+
+  &__checkboxes {
+    .single-dienstleistung & {
+      display: none;
+    }
+  }
 }

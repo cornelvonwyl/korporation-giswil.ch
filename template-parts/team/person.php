@@ -13,7 +13,7 @@ if (!$person)
   return;
 ?>
 
-<div class="person">
+<div class="person animation-on-scroll">
   <div class="person__image">
     <?php if (get_field('portrait', $person->ID)): ?>
       <?php echo wp_get_attachment_image(get_field('portrait', $person->ID), 'small'); ?>

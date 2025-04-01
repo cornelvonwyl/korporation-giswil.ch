@@ -9,7 +9,7 @@ body {
 
 * {
   box-sizing: border-box;
-  scroll-margin-top: $content-offset;
+  scroll-margin-top: calc($content-offset + 3rem);
 }
 
 img,
@@ -32,6 +32,7 @@ video {
   color: inherit;
   text-decoration: none;
   display: block;
+  height: 100%;
 
   @include hover-scale;
 }

@@ -47,7 +47,7 @@ endif;
 
 ?>
 
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
+<div id="sub-services" class="<?php echo esc_attr($class_name); ?>">
   <?php if (count($target_groups) > 1): ?>
     <div class="sub-services__tabs" role="tablist">
       <?php foreach ($target_groups as $index => $group): ?>
@@ -79,7 +79,7 @@ endif;
       role="tabpanel"
       data-group="<?php echo esc_attr($group); ?>">
       <?php foreach ($grouped_services[$group] as $service): ?>
-        <article class="sub-service">
+        <article class="sub-service animation-on-scroll">
           <?php if ($service['icon']): ?>
             <div class="sub-service__icon" aria-hidden="true">
               <?php echo wp_get_attachment_image($service['icon']['ID'], 'small', FALSE, array(

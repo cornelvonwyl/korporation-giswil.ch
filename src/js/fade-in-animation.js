@@ -1,8 +1,6 @@
 document.addEventListener('DOMContentLoaded', function () {
   // Match the exact selector from SCSS
-  const elementsToAnimate = document.querySelectorAll(
-    '.main-content > *:not(:first-child):not(.page-header):not(.team-overview):not(.news-overview):not(.services-overview):not(.referenzen):not(.jobs-overview):not(.sub-services), .sub-service, .full-element-link, .person'
-  );
+  const elementsToAnimate = document.querySelectorAll('.animation-on-scroll');
 
   // Add a small delay to prevent initial animation on page load
   setTimeout(() => {

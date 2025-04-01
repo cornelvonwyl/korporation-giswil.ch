@@ -1,31 +1,22 @@
-.main-content {
-  &
-    > *:not(:first-child):not(.page-header):not(.team-overview):not(
-      .news-overview
-    ):not(.services-overview):not(.referenzen):not(.jobs-overview):not(
-      .sub-services
-    ),
-  .sub-service,
-  .full-element-link,
-  .person {
-    opacity: 0;
-    transform: translateY(10px) translateZ(0);
-    transition: opacity 0.75s $transition, transform 0.75s $transition;
-    will-change: transform, opacity;
+.animation-on-scroll {
+  opacity: 0;
+  transform: translateY(10px) translateZ(0);
+  transition: opacity 0.75s $transition, transform 0.75s $transition;
+  will-change: transform, opacity;
 
-    &.in-view {
-      opacity: 1;
-      transform: translateY(0) translateZ(0);
-    }
+  &.in-view {
+    opacity: 1;
+    transform: translateY(0) translateZ(0);
+  }
 
-    // Add staggered delay based on nth-child
-    @for $i from 1 through 10 {
-      &:nth-child(#{$i}) {
-        transition-delay: #{$i * 0.05}s;
-      }
+  // Add staggered delay based on nth-child
+  @for $i from 1 through 10 {
+    &:nth-child(#{$i}) {
+      transition-delay: #{$i * 0.05}s;
     }
   }
 }
+
 .word-wrapper {
   display: inline-flex;
   overflow: hidden;

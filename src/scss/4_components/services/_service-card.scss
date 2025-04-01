@@ -5,6 +5,10 @@
 
   @include medium-up {
     padding: 3rem;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
   }
 
   &__icon {
@@ -19,7 +23,7 @@
   }
 
   &__teaser {
-    margin-bottom: 1.5rem;
+    margin-bottom: 1.5rem !important;
   }
 
   &__link {

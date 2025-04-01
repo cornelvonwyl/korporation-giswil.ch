@@ -2,4 +2,13 @@
   &:not(.home &) {
     padding: calc($content-offset) 0 0;
   }
+
+  .main-content {
+    & > p,
+    & > ul,
+    & > ol,
+    & > figure {
+      @include container-small;
+    }
+  }
 }

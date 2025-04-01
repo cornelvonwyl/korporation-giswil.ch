@@ -31,7 +31,7 @@ $class_name .= ' image-with-content--image-' . $image_position;
 $class_name .= ' image-with-content--title-' . $title_variant;
 ?>
 
-<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?> animation-on-scroll">
   <div class="image-with-content__container">
     <?php if ($image): ?>
       <?php
