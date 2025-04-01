@@ -11,7 +11,6 @@ $categories = get_the_category();
 
       echo wp_get_attachment_image($image_id, 'small', FALSE, [
         'class' => 'news-card__image',
-        'loading' => 'lazy',
       ]);
       ?>
     <?php endif; ?>

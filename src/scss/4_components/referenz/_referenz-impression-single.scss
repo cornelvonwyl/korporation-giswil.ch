@@ -1,5 +1,14 @@
 .referenz-impression {
   @include spacing-medium;
+
+  &__header {
+    @include title-subtitle-header;
+  }
+
+  &__subtitle {
+    @include subtitle;
+  }
+
   &__content {
     @include container-small;
   }

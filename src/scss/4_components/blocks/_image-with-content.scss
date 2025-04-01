@@ -50,7 +50,6 @@
   &__title {
     @include h1;
     color: $color-yellow;
-    white-space: nowrap;
     position: relative;
     z-index: 10;
   }
@@ -73,11 +72,25 @@
     }
   }
 
+  &--image-left {
+    .image-with-content__title {
+      @include medium-up {
+        margin-left: -16rem;
+      }
+    }
+  }
+
   // Image Position Modifikationen
   &--image-right {
-    @include medium-up {
-      .image-with-content__container {
+    .image-with-content__container {
+      @include medium-up {
         flex-direction: row-reverse;
+      }
+    }
+
+    .image-with-content__title {
+      @include medium-up {
+        margin-right: -16rem;
       }
     }
   }
