@@ -4,7 +4,7 @@ $text = get_field('text', get_the_ID());
 $images = get_field('images', get_the_ID());
 ?>
 
-<article class="history-item">
+<article class="history-item animation-on-scroll">
     <?php if ($year) : ?>
         <h3 class="history-item__year"><?php echo esc_html($year); ?></h3>
     <?php endif; ?>

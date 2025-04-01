@@ -3,7 +3,6 @@
   position: relative;
 
   .news-overview & {
-    @include card-filter-transition;
     background-color: $color-grey-light;
   }
 

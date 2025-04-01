@@ -12,11 +12,16 @@ document.addEventListener('DOMContentLoaded', function () {
     const windowHeight = window.innerHeight;
 
     // Calculate how far the timeline is in the viewport
-    let timelineProgress =
-      (window.scrollY - timelineTop) / (timelineHeight - windowHeight);
+    let timelineProgress = window.scrollY / (timelineHeight - windowHeight);
+
+    console.log(`Timeline Progress: ${timelineProgress}`);
+    console.log(`Timeline Top: ${timelineTop}`);
+    console.log(`Timeline Height: ${timelineHeight}`);
+    console.log(`Window Height: ${windowHeight}`);
+    console.log(`Window Scroll Y: ${window.scrollY}`);
 
     // Add 2% to the progress and ensure it doesn't exceed 100%
-    timelineProgress = Math.min(timelineProgress + 0.02, 100);
+    timelineProgress = Math.min(timelineProgress, 1);
 
     // Apply the animation with a delay
     requestAnimationFrame(() => {

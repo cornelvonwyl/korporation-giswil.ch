@@ -50,7 +50,7 @@ $content = get_field('content');
         <div class="page-header__text"><?php echo wp_kses_post($content); ?></div>
       <?php endif; ?>
 
-      <a href="#" class="page-header__link is-link">Mehr</a>
+      <a href="#sub-services" class="page-header__link is-link">Mehr</a>
     </div>
   </div>
 </section>

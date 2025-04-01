@@ -24,7 +24,7 @@ if (is_wp_error($news_query)) {
 
 <section class="news-overview__items">
   <?php if ($news_query->have_posts()): ?>
-    <div class="news-overview__grid">
+    <ul class="news-overview__grid">
       <?php while ($news_query->have_posts()):
         $news_query->the_post();
         // Get post categories
@@ -37,11 +37,11 @@ if (is_wp_error($news_query)) {
           }, $categories));
         }
       ?>
-        <div class="news-overview__grid-item<?php echo esc_attr($category_classes); ?>">
+        <li class="news-overview__grid-item<?php echo esc_attr($category_classes); ?>">
           <?php get_template_part('template-parts/news/news-card'); ?>
-        </div>
+        </li>
       <?php endwhile; ?>
-    </div>
+    </ul>
   <?php endif; ?>
 
   <?php wp_reset_postdata(); ?>
