@@ -60,6 +60,11 @@
     }
 
     @include medium-up {
+      font-size: rem(80px);
+      height: 90px;
+    }
+
+    @include large-up {
       font-size: rem(100px);
       height: 110px;
     }

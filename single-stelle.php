@@ -8,6 +8,14 @@
         the_post(); ?>
         <article class="main-content">
 
+          <?php if (has_post_thumbnail()): ?>
+            <div class="job-single__image">
+              <?php echo get_the_post_thumbnail(get_the_ID(), 'huge', [
+                'class' => 'job-single__thumbnail',
+              ]); ?>
+            </div>
+          <?php endif; ?>
+
 
           <?php get_template_part('template-parts/components/breadcrumb', NULL, [
             'items' => [

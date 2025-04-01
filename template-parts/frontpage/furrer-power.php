@@ -44,7 +44,9 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
     ?>
       <div class="furrer-power__image active" data-image-item data-position="<?php echo $position; ?>">
         <?php
-        echo wp_get_attachment_image($attachment_id, 'small');
+        echo wp_get_attachment_image($attachment_id, 'medium-size', FALSE, [
+          'loading' => 'lazy',
+        ]);
         ?>
       </div>
     <?php
@@ -55,7 +57,9 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
     ?>
       <div class="furrer-power__image" data-image-item>
         <?php
-        echo wp_get_attachment_image($attachment_id, 'small');
+        echo wp_get_attachment_image($attachment_id, 'medium-size', FALSE, [
+          'loading' => 'lazy',
+        ]);
         ?>
       </div>
     <?php

@@ -14,9 +14,19 @@
       </p>
 
       <h1 class="hero__title">
-        <span class="hero__title--highlight">Elektriker:innen</span>
-        <span class="hero__title--highlight">Planung</span>
-        <span class="hero__title--highlight">Beratung</span>
+        <span class="hero__title--highlight">Stromer</span>
+        <span class="hero__title--highlight">Solar-Spezialistä</span>
+        <span class="hero__title--highlight">Schaltahlage-Strategä</span>
+        <span class="hero__title--highlight">Strom-Architektä</span>
+        <span class="hero__title--highlight">Automation-Genies</span>
+        <span class="hero__title--highlight">Büro-Heldä</span>
+        <span class="hero__title--highlight">Schwachströmler</span>
+        <span class="hero__title--highlight">IT-Gurus</span>
+        <span class="hero__title--highlight">Kabler</span>
+        <span class="hero__title--highlight">Chrampfer</span>
+        <span class="hero__title--highlight">Macher</span>
+        <span class="hero__title--highlight">FurrerFighters</span>
+        <span class="hero__title--highlight">Handwärcher</span>
         <span class="hero__title--highlight">Eifach Furrer</span>
       </h1>
 
