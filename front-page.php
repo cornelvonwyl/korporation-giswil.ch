@@ -1,8 +1,9 @@
 <?php get_header(); ?>
 <main>
   <div class="main-wrapper">
-    <!-- Hero Section -->
-    <?php get_template_part('template-parts/frontpage/hero'); ?>
+    <div class="main-content">
+      <!-- Hero Section -->
+      <?php get_template_part('template-parts/frontpage/hero'); ?>
 
     <section class="hero-text">
       <div class="hero-text__container">
@@ -23,6 +24,7 @@
 
     <!-- Standorte Section -->
     <?php get_template_part('template-parts/locations/locations-overview'); ?>
+  </div>
   </div>
 </main>
 <?php get_footer(); ?>

@@ -26,7 +26,7 @@ if (!empty($block['align'])) {
 }
 ?>
 
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="team-overview__container">
         <!-- Team Filter -->
         <?php get_template_part('template-parts/team/team-filter'); ?>
@@ -34,4 +34,4 @@ if (!empty($block['align'])) {
         <!-- Team Overview -->
         <?php get_template_part('template-parts/team/team-overview'); ?>
     </div>
-</div>
+</section>

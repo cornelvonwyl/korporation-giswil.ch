@@ -44,13 +44,11 @@
     pointer-events: none;
     transform: translateY(20px);
     transition: opacity 0.5s $transition, transform 0.5s $transition;
-    visibility: hidden;
 
     &.active {
       opacity: 1;
       pointer-events: auto;
       transform: translateY(0);
-      visibility: visible;
     }
 
     @include medium-up {

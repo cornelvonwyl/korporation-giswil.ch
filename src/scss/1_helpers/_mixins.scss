@@ -667,19 +667,18 @@
   text-decoration: none;
   position: relative;
   display: inline-block;
-
   color: $color-black;
+  width: fit-content;
 
   &::before,
   &::after {
     content: '';
     position: absolute;
-    bottom: 1px;
+    bottom: 2px;
     left: 0;
     width: 100%;
-    height: 1.5px;
+    height: 0.075em;
     background-color: $color-yellow;
-    transition: transform 0.5s $transition;
 
     .animate-bg-yellow & {
       background-color: $color-black;
@@ -690,6 +689,7 @@
     transform-origin: left;
     transform: scaleX(1) rotate(0.001deg);
     transition-delay: 0.3s;
+    transition: transform 0.5s $transition;
 
     .full-element-link:hover & {
       transform-origin: right;
@@ -702,6 +702,7 @@
     transform-origin: right;
     transform: scaleX(0) rotate(0.001deg);
     transition-delay: 0s;
+    transition: transform 0.5s $transition;
 
     .full-element-link:hover & {
       transform-origin: left;
@@ -733,7 +734,7 @@
   font-size: rem(12px);
   font-family: $font-family-mono;
   line-height: 2;
-  width: fit-content;
+
   @include medium-up() {
     font-size: rem(14px);
   }

@@ -45,13 +45,13 @@
 
   &__title {
     font-weight: normal;
-    line-height: 1;
+    line-height: 1.1;
     margin: 0;
     color: $color-white;
     position: relative;
     overflow: hidden;
-    height: 50px;
-    font-size: clamp(2rem, 12vw, 10rem);
+    height: calc(90px + 5vw);
+    font-size: clamp(2rem, 12vw, 4rem);
     margin-bottom: 2rem;
 
     @include small-up {

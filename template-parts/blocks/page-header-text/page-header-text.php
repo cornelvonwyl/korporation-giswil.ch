@@ -29,7 +29,7 @@ $title_tag = get_field('title_tag');
 $intro_text = get_field('intro_text');
 ?>
 
-<div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
+<section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="page-header-text__container">
         <?php if ($subtitle) : ?>
             <p class="page-header-text__subtitle"><?php echo esc_html($subtitle); ?></p>
@@ -43,4 +43,4 @@ $intro_text = get_field('intro_text');
             <div class="page-header-text__text"><?php echo $intro_text; ?></div>
         <?php endif; ?>
     </div>
-</div>
+</section>
