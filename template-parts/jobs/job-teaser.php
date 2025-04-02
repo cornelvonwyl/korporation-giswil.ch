@@ -22,7 +22,9 @@ $workload = get_field('workload', get_the_ID());
         <div class="job-teaser__workload">
           <img class="job-teaser__location-icon"
             src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/clock.svg'); ?>"
-            alt="Symbol für Pensum">
+            alt="Symbol für Pensum"
+            width="16"
+            height="16">
           <p><?php echo esc_html($workload); ?></p>
         </div>
       <?php endif; ?>
@@ -30,20 +32,26 @@ $workload = get_field('workload', get_the_ID());
         <div class="job-teaser__location">
           <img class="job-teaser__location-icon"
             src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/map.svg'); ?>"
-            alt="Symbol für Standort">
+            alt="Symbol für Standort"
+            width="16"
+            height="16">
           <p><?php echo get_the_title($location); ?></p>
         </div>
       <?php endif; ?>
     </div>
   </div>
 
-  <span class="job-teaser__arrow-container">
+  <div class="job-teaser__arrow-container">
     <img class="job-teaser__arrow job-teaser__arrow--primary"
       src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-      alt="Pfeil nach rechts">
+      alt="Pfeil nach rechts"
+      width="24"
+      height="24">
     <img class="job-teaser__arrow job-teaser__arrow--secondary"
       src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-      alt="Pfeil nach rechts">
-  </span>
+      alt="Pfeil nach rechts"
+      width="24"
+      height="24">
+  </div>
 
 </a>

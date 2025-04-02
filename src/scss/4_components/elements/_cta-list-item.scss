@@ -1,5 +1,5 @@
 .cta-list-item {
-  @include arrow-hover-effect;
+  @include arrow-hover-effect('internal');
   @include list-item-with-icon;
   text-decoration: none;
   color: inherit;

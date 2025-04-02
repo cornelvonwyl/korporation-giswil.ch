@@ -31,7 +31,9 @@
                 <span class="news-filter__text"><?php echo esc_html($category->name); ?></span>
                 <img class="news-filter__icon"
                   src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/plus.svg'); ?>"
-                  alt="Symbol für hinzufügen">
+                  alt="Symbol für hinzufügen"
+                  aria-hidden="true"
+                  width="12" height="12">
               </label>
             </li>
           <?php endforeach; ?>

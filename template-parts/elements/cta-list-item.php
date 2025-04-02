@@ -24,19 +24,23 @@ $alt_text    = $is_external ? 'Pfeil nach oben rechts' : 'Pfeil nach rechts';
 ?>
 
 <a href="<?php echo esc_url($link_url); ?>"
-    class="cta-list-item<?php echo $is_external ? ' cta-list-item--external' : ''; ?>"
+    class="cta-list-item <?php echo $is_external ? ' cta-list-item--external' : ' cta-list-item--internal'; ?>"
     <?php echo $is_external ? 'target="_blank"' : ''; ?>>
 
     <h3 class="cta-list-item__title">
         <?php echo esc_html($args['title']); ?>
     </h3>
 
-    <span class="cta-list-item__arrow-container<?php echo $is_external ? ' cta-list-item__arrow-container--external' : ''; ?>">
+    <span class="cta-list-item__arrow-container <?php echo $is_external ? ' cta-list-item__arrow-container--external' : ' cta-list-item__arrow-container--internal'; ?>">
         <img class="cta-list-item__arrow cta-list-item__arrow--primary"
             src="<?php echo esc_url($icon_url); ?>"
-            alt="<?php echo esc_attr($alt_text); ?>">
+            alt="<?php echo esc_attr($alt_text); ?>"
+            width="24"
+            height="24">
         <img class="cta-list-item__arrow cta-list-item__arrow--secondary"
             src="<?php echo esc_url($icon_url); ?>"
-            alt="<?php echo esc_attr($alt_text); ?>">
+            alt="<?php echo esc_attr($alt_text); ?>"
+            width="24"
+            height="24">
     </span>
 </a>

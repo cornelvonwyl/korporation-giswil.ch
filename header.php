@@ -17,8 +17,8 @@
                 <div class="header__wrapper">
                     <div class="header__logo">
                         <a href="/">
-                            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo.svg" width="100"
-                                height="14" alt="Logo Elektro Furrer AG">
+                            <img src="<?php echo get_template_directory_uri(); ?>/src/assets/images/logo.svg" width="240"
+                                height="32" alt="Logo Elektro Furrer AG">
                         </a>
                     </div>
 

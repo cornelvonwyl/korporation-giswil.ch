@@ -53,8 +53,8 @@
                             <img class="footer__social-icon"
                                 src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/ninja-remote.png'); ?>"
                                 alt="Ninja Remote Icon"
-                                width="24"
-                                height="24">
+                                width="28"
+                                height="28">
                         </a>
                     </li>
 
@@ -66,8 +66,8 @@
                             <img class="footer__social-icon"
                                 src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/instagram.svg'); ?>"
                                 alt="Instagram Icon"
-                                width="24"
-                                height="24">
+                                width="28"
+                                height="28">
                         </a>
                     </li>
 
@@ -79,8 +79,8 @@
                             <img class="footer__social-icon"
                                 src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/facebook.svg'); ?>"
                                 alt="Facebook Icon"
-                                width="24"
-                                height="24">
+                                width="28"
+                                height="28">
                         </a>
                     </li>
 
@@ -92,8 +92,8 @@
                             <img class="footer__social-icon"
                                 src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/linkedin.svg'); ?>"
                                 alt="LinkedIn Icon"
-                                width="24"
-                                height="24">
+                                width="28"
+                                height="28">
                         </a>
                     </li>
                 </ul>

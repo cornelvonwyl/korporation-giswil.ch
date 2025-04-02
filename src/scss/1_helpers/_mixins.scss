@@ -745,7 +745,7 @@
   }
 }
 
-@mixin arrow-hover-effect() {
+@mixin arrow-hover-effect($type: 'interal') {
   &__arrow-container {
     position: relative;
     overflow: hidden;
@@ -770,13 +770,32 @@
     }
   }
 
-  // Internal link animation (right)
-  &:not(.cta-list-item--external):hover &__arrow--primary {
-    transform: translateX(150%);
+  @if $type == 'internal' {
+    &__arrow--secondary {
+      transform: translateX(-150%);
+    }
+
+    &:hover &__arrow--primary {
+      transform: translateX(150%);
+    }
+
+    &:hover &__arrow--secondary {
+      transform: translateX(0);
+    }
   }
 
-  &:not(.cta-list-item--external):hover &__arrow--secondary {
-    transform: translateX(0);
+  @if $type == 'external' {
+    &__arrow--secondary {
+      transform: translate(-100%, 100%);
+    }
+
+    &:hover &__arrow--primary {
+      transform: translate(150%, -150%);
+    }
+
+    &:hover &__arrow--secondary {
+      transform: translate(0, 0);
+    }
   }
 
   &.cta-list-item--external &__arrow--secondary {
@@ -790,5 +809,19 @@
 
   &.cta-list-item--external:hover &__arrow--secondary {
     transform: translate(0, 0);
+  }
+
+  @if $type == 'down' {
+    &__arrow--secondary {
+      transform: translateY(-150%);
+    }
+
+    &:hover &__arrow--primary {
+      transform: translateY(150%);
+    }
+
+    &:hover &__arrow--secondary {
+      transform: translateY(0);
+    }
   }
 }

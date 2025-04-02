@@ -24,7 +24,7 @@
         <ul class="referenzen-filter__checkboxes" role="group" aria-label="Filteroptionen">
           <?php foreach ($services as $service):
             $checkbox_id = 'filter-' . esc_attr($service->post_name) . '-' . uniqid();
-            ?>
+          ?>
             <li class="referenzen-filter__checkbox">
               <input class="referenzen-filter__input" type="checkbox" id="<?php echo $checkbox_id; ?>" name="service"
                 value="<?php echo esc_attr($service->post_name); ?>"
@@ -32,8 +32,9 @@
               <label class="referenzen-filter__label" for="<?php echo $checkbox_id; ?>">
                 <span class="referenzen-filter__text"><?php echo esc_html($service->post_title); ?></span>
                 <img class="referenzen-filter__icon"
-                  src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/plus.svg'); ?>" alt=""
-                  aria-hidden="true">
+                  src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/plus.svg'); ?>" alt="Symobl für hinzufügen"
+                  aria-hidden="true"
+                  width="12" height="12">
               </label>
             </li>
           <?php endforeach; ?>

@@ -33,7 +33,9 @@
                 <div class="job-single__workload">
                   <img class="job-single__workload-icon"
                     src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/clock.svg'); ?>"
-                    alt="Symbol für Pensum">
+                    alt="Symbol für Pensum"
+                    width="16"
+                    height="16">
 
                   <p class="job-single__workload-text"><?php echo $workload; ?></p>
                 </div>
@@ -44,7 +46,9 @@
                 <div class="job-single__location">
                   <img class="job-single__location-icon"
                     src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/map.svg'); ?>"
-                    alt="Symbol für Pensum">
+                    alt="Symbol für Pensum"
+                    width="16"
+                    height="16">
                   <p class="job-single__location-text"><?php echo get_the_title($location); ?></p>
                 </div>
               <?php endif; ?>

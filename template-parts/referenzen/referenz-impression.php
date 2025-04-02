@@ -38,12 +38,14 @@ if (!empty($gallery[0])) {
       <div class="swiper-buttons">
         <button type="button" class="swiper-button-prev" aria-label="Vorheriges Bild">
           <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
-            alt="Pfeil nach links">
+            alt="Pfeil nach links"
+            width="24" height="24">
         </button>
 
         <button type="button" class="swiper-button-next" aria-label="Nächstes Bild">
           <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-            alt="Pfeil nach rechts">
+            alt="Pfeil nach rechts"
+            width="24" height="24">
         </button>
       </div>
 

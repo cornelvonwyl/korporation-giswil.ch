@@ -20,7 +20,7 @@ $available_locations = $args['available_locations'] ?? array();
           <?php foreach ($available_locations as $location_id):
             $location = get_post($location_id);
             if (!$location) continue;
-            
+
             $checkbox_id = 'location-' . esc_attr($location->ID);
           ?>
             <li class="jobs-filter__checkbox">
@@ -30,8 +30,10 @@ $available_locations = $args['available_locations'] ?? array();
               <label class="jobs-filter__label" for="<?php echo $checkbox_id; ?>">
                 <span class="jobs-filter__text"><?php echo esc_html($location->post_title); ?></span>
                 <img class="jobs-filter__icon"
-                  src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/plus.svg'); ?>" alt=""
-                  aria-hidden="true">
+                  src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/plus.svg'); ?>"
+                  alt="Symbol für hinzufügen"
+                  aria-hidden="true"
+                  width="24" height="24">
               </label>
             </li>
           <?php endforeach; ?>
