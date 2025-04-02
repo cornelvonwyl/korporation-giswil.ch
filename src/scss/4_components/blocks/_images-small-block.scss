@@ -1,7 +1,0 @@
-.images-small-block {
-  @include spacing;
-
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 2rem 1rem;
-}

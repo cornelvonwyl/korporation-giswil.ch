@@ -95,10 +95,17 @@ h5 {
   @include text-small;
 }
 
-figcaption {
-  font-size: 0.9375rem;
-  margin-top: 0.75rem;
-  color: $color-grey;
+figure {
+  text-align: center;
+  figcaption {
+    font-size: rem(12px);
+    margin-top: 0.75rem;
+    color: $color-grey-dark;
+
+    @include medium-up {
+      font-size: rem(14px);
+    }
+  }
 }
 
 ul {

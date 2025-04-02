@@ -1,12 +1,9 @@
 .images-block {
-  @include spacing;
+  @include spacing-medium;
 
-  &:has(.swiper) {
-    margin: 1.5rem 0;
-
-    @include medium-up {
-      margin: 3.5rem 0;
-    }
+  @include medium-up() {
+    margin-left: -10vw;
+    margin-right: -10vw;
   }
 
   &:first-child {
@@ -25,25 +22,12 @@
       object-position: center;
 
       @include small-up {
-        aspect-ratio: 16 / 9;
+        aspect-ratio: 3 / 2;
       }
     }
   }
 
-  .swiper {
-    padding-bottom: 2.5rem;
-
-    @include medium-up {
-      padding-bottom: 2rem;
-    }
-  }
-
   .swiper-buttons {
-    position: absolute;
-    bottom: 0;
-    right: 0;
-    z-index: 10;
-    display: flex;
-    gap: 0.5rem;
+    margin: 1rem 0;
   }
 }

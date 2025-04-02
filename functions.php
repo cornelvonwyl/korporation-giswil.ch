@@ -68,7 +68,6 @@ add_action('init', 'register_acf_blocks');
 function register_acf_blocks()
 {
   register_block_type(__DIR__ . '/template-parts/blocks/images-block');
-  register_block_type(__DIR__ . '/template-parts/blocks/images-small-block');
   register_block_type(__DIR__ . '/template-parts/blocks/page-header');
   register_block_type(__DIR__ . '/template-parts/blocks/page-header-text');
   register_block_type(__DIR__ . '/template-parts/blocks/sub-service');
@@ -103,9 +102,7 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context)
       'core/list-item',
       'core/quote',
       'core/video',
-      'core/image',
       'acf/images-block',
-      'acf/images-small-block',
       'acf/page-header',
       'acf/page-header-text',
       'acf/sub-services',

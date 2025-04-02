@@ -1,12 +1,12 @@
 {
   "name": "acf/images-block",
-  "title": "Große Bilder",
-  "description": "Zeigt ein großes Bild oder eine Bildergalerie als Slider an",
-  "editorStyle": ["file:./style.css"],
+  "title": "Bild oder Bildergalerie",
+  "description": "Zeigt ein grosses Bild oder eine Bildergalerie als Slider an",
   "category": "theme",
   "icon": "format-gallery",
   "keywords": ["image", "gallery"],
   "acf": {
+    "mode": "preview",
     "renderTemplate": "images-block.php"
   },
   "supports": {
