@@ -33,7 +33,7 @@ $content = get_field('content');
   <div class="page-header__container">
     <?php if ($image): ?>
       <?php
-      echo wp_get_attachment_image($image['ID'], 'huge', false, array('class' => 'page-header__image'));
+      echo wp_get_attachment_image($image['ID'], 'large', false, array('class' => 'page-header__image'));
       ?>
     <?php endif; ?>
 
