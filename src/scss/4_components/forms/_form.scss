@@ -9,6 +9,8 @@ body {
     }
 
     .gform_body {
+      @include spacing-medium;
+
       .gform_fields {
         row-gap: 2rem;
         .gfield {
