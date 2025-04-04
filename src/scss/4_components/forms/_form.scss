@@ -64,7 +64,8 @@ body {
             padding: 1rem;
           }
 
-          .gfield_radio {
+          .gfield_radio,
+          .gfield_checkbox {
             > .gchoice {
               align-items: center;
             }
