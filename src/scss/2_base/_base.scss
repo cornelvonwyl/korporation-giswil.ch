@@ -45,6 +45,11 @@ video {
   .wp-block-post-title {
     font-size: 2rem;
   }
+
+  .animation-on-scroll {
+    opacity: 1 !important;
+    transform: translateY(0) !important;
+  }
 }
 
 .edit-post-sidebar,

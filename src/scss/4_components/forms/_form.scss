@@ -1,5 +1,7 @@
 body {
   .gform_wrapper {
+    @include container;
+
     .gform_heading {
       .gform_required_legend {
         display: none;

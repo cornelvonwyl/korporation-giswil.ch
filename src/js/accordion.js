@@ -13,7 +13,6 @@ document.addEventListener('DOMContentLoaded', function () {
     // Set initial state
     content.style.maxHeight = '0px';
     content.style.overflow = 'hidden';
-    content.style.transition = 'max-height 0.3s ease-out';
 
     // Ensure proper initial ARIA state
     trigger.setAttribute('aria-expanded', 'false');

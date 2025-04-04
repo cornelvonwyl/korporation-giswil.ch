@@ -12,18 +12,14 @@
 
   &__image {
     position: relative;
-    overflow: hidden;
+
+    aspect-ratio: 3 / 2;
 
     img {
       width: 100%;
-      height: auto;
-      aspect-ratio: 1 / 1;
-      object-fit: cover;
+      height: 100%;
+      object-fit: contain;
       object-position: center;
-
-      @include small-up {
-        aspect-ratio: 3 / 2;
-      }
     }
   }
 
