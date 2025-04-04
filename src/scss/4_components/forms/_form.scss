@@ -16,7 +16,8 @@ body {
       .gform_fields {
         row-gap: 2rem;
         .gfield {
-          h3 {
+          h3,
+          h4 {
             margin: 1rem 0 -0.75rem 0;
           }
 
@@ -48,6 +49,7 @@ body {
             font-size: 1rem;
             border-radius: 0;
             border: none;
+            width: 100%;
 
             &::placeholder {
               color: $color-grey-dark;
