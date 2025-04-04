@@ -2,6 +2,10 @@ body {
   .gform_wrapper {
     @include container;
 
+    > form {
+      @include spacing-medium;
+    }
+
     .gform_heading {
       .gform_required_legend {
         display: none;
@@ -9,8 +13,6 @@ body {
     }
 
     .gform_body {
-      @include spacing-medium;
-
       .gform_fields {
         row-gap: 2rem;
         .gfield {
