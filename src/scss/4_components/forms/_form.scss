@@ -1,10 +1,7 @@
 body {
   .gform_wrapper {
     @include spacing-medium;
-
-    > form {
-      @include container;
-    }
+    @include container;
 
     .gform_heading {
       .gform_required_legend {
@@ -74,6 +71,7 @@ body {
     .gform_footer {
       input[type='submit'].gform_button {
         @include primary-button;
+        background-color: pink !important;
       }
     }
 
