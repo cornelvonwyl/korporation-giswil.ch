@@ -4,7 +4,7 @@
   src: url('../assets/fonts/simplon/SimplonMono-Light.otf') format('opentype');
   font-weight: 300;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -12,7 +12,7 @@
   src: url('../assets/fonts/simplon/SimplonMono-Medium.otf') format('opentype');
   font-weight: 500;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -21,7 +21,7 @@
     format('truetype');
   font-weight: normal;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
 @font-face {
@@ -29,13 +29,12 @@
   src: url('../assets/fonts/benton-sans/BentonSans-Bold.ttf') format('truetype');
   font-weight: bold;
   font-style: normal;
-  font-display: swap;
+  font-display: optional;
 }
 
-* {
+body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  font-smooth: never;
 }
 
 body:not(.block-editor-page) {

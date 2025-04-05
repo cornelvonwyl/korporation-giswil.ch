@@ -14,13 +14,17 @@
   &__icon {
     img {
       display: block;
-      height: 3.5rem;
-      max-width: 4.75rem;
-      max-width: 5rem;
+      height: 3rem;
+      max-width: 4rem;
       width: auto;
       object-fit: contain;
-      object-position: left bottom;
+      object-position: left top;
       margin-bottom: 3rem;
+
+      @include medium-up {
+        height: 3.5rem;
+        max-width: 4.75rem;
+      }
     }
   }
 
