@@ -1,5 +1,5 @@
 .sub-service {
-  margin-bottom: 5rem;
+  margin-bottom: 6rem;
 
   &__icon {
     margin-bottom: 1.5rem;
@@ -7,18 +7,10 @@
 
   &__icon-img {
     display: block;
-    height: auto;
+    height: 3rem;
     max-width: 3.5rem;
-    width: auto;
-    max-height: 3rem;
     object-fit: contain;
     object-position: left bottom;
-
-    @include medium-up {
-      height: 3rem;
-      max-width: 4rem;
-      max-height: unset;
-    }
   }
 
   &__content {

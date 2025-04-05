@@ -1,3 +1,7 @@
+.block-history {
+  @include container-large;
+}
+
 .history-timeline {
   display: flex;
   flex-direction: column;

@@ -35,14 +35,12 @@ $history_query = new WP_Query($args);
 ?>
 
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
-    <div class="container">
-        <?php if ($history_query->have_posts()) : ?>
-            <div class="history-timeline">
-                <?php while ($history_query->have_posts()) : $history_query->the_post(); ?>
-                    <?php get_template_part('template-parts/history/history-item', null, ['post' => get_post()]); ?>
-                <?php endwhile; ?>
-            </div>
-        <?php endif; ?>
-        <?php wp_reset_postdata(); ?>
-    </div>
+    <?php if ($history_query->have_posts()) : ?>
+        <div class="history-timeline">
+            <?php while ($history_query->have_posts()) : $history_query->the_post(); ?>
+                <?php get_template_part('template-parts/history/history-item', null, ['post' => get_post()]); ?>
+            <?php endwhile; ?>
+        </div>
+    <?php endif; ?>
+    <?php wp_reset_postdata(); ?>
 </div>
