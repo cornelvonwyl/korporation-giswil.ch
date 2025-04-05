@@ -30,7 +30,7 @@
 
       @include medium-up {
         min-height: 100%;
-        width: 8 / 12 * 100%;
+        width: 7.5 / 12 * 100%;
         max-width: 100%;
       }
     }
@@ -38,7 +38,7 @@
 
   &__content {
     @include medium-up {
-      width: calc(4 / 12 * 100%);
+      width: calc(5.5 / 12 * 100%);
     }
   }
 

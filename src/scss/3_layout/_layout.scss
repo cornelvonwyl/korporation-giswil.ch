@@ -5,7 +5,7 @@
 
   .main-content {
     & > p,
-    & > ul,
+    & > ul:not(.filebird-block-filebird-gallery),
     & > ol,
     & > figure,
     & > blockquote,
