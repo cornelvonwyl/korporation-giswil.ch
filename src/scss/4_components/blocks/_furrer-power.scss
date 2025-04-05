@@ -12,10 +12,18 @@
     @include h1;
     color: $color-yellow;
     margin: 0;
-    font-size: 3rem;
+    text-align: center;
+    height: clamp(15rem, 80vw, 100rem);
+    font-size: clamp(2rem, 7vw, 5rem);
 
     @include small-up {
-      font-size: 5rem;
+      height: 80vw;
+      font-size: clamp(3.4rem, 8vw, 8rem);
+    }
+
+    @include medium-up {
+      height: unset;
+      font-size: clamp(3.4rem, 5vw, 7rem);
     }
   }
 
@@ -75,9 +83,9 @@
     }
 
     &[data-position='2'] {
-      top: 4rem;
+      top: 0rem;
       right: 6vw;
-      width: 25%;
+      width: 30%;
       aspect-ratio: 4/5;
 
       @include medium-up {
@@ -90,9 +98,12 @@
     &[data-position='3'] {
       bottom: 40%;
       left: 4vw;
-      width: 25%;
+      width: 30%;
       aspect-ratio: 4/5;
 
+      @include small-up {
+        bottom: 35%;
+      }
       @include medium-up {
         bottom: 6rem;
         left: 8vw;
@@ -101,10 +112,14 @@
     }
 
     &[data-position='4'] {
-      bottom: 50%;
-      right: 2vw;
-      width: 35%;
+      bottom: 45%;
+      right: 0;
+      width: 40%;
       aspect-ratio: 3/2;
+
+      @include small-up {
+        bottom: 30%;
+      }
 
       @include medium-up {
         bottom: 8vw;
