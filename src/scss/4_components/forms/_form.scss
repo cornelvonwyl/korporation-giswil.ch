@@ -1,9 +1,9 @@
 body {
   .gform_wrapper {
-    @include container;
+    @include spacing-medium;
 
     > form {
-      @include spacing-medium;
+      @include container;
     }
 
     .gform_heading {
@@ -72,7 +72,7 @@ body {
       }
     }
     .gform_footer {
-      input[type='submit'] {
+      input[type='submit'].gform_button {
         @include primary-button;
       }
     }
