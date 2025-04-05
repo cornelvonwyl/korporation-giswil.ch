@@ -7,12 +7,18 @@
 
   &__icon-img {
     display: block;
-    height: 100%;
+    height: auto;
+    max-width: 3.5rem;
+    width: auto;
     max-height: 3rem;
-    max-width: 4.5rem;
-    width: 100%;
     object-fit: contain;
     object-position: left bottom;
+
+    @include medium-up {
+      height: 3rem;
+      max-width: 4rem;
+      max-height: unset;
+    }
   }
 
   &__content {
