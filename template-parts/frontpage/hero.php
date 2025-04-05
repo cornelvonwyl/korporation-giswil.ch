@@ -20,7 +20,7 @@
         <span class="hero__title--highlight">Strom-Architektä</span>
         <span class="hero__title--highlight">Automation-Genies</span>
         <span class="hero__title--highlight">Büro-Heldä</span>
-        <span class="hero__title--highlight">Schwachströmler</span>
+        <span class="hero__title--highlight">Schwach-Strömler</span>
         <span class="hero__title--highlight">IT-Gurus</span>
         <span class="hero__title--highlight">Kabler</span>
         <span class="hero__title--highlight">Chrampfer</span>

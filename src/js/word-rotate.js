@@ -13,9 +13,9 @@ class WordRotate {
       if (index !== 0) {
         el.style.opacity = '0';
         el.style.display = 'block';
-        el.style.transform = 'translateY(50%)';
+        el.style.transform = 'translateY(100%)';
       } else {
-        el.style.transform = 'translateY(-50%)';
+        el.style.transform = 'translateY(0%)';
         el.style.opacity = '1';
       }
     });
@@ -35,12 +35,12 @@ class WordRotate {
       }
 
       currentElement.style.opacity = '0';
-      currentElement.style.transform = 'translateY(-150%)';
+      currentElement.style.transform = 'translateY(-100%)';
 
       // Animate in next element
       setTimeout(() => {
         nextElement.style.opacity = '1';
-        nextElement.style.transform = 'translateY(-50%)';
+        nextElement.style.transform = 'translateY(0%)';
       }, 100);
 
       this.currentIndex++;

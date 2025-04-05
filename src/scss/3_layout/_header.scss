@@ -46,10 +46,11 @@
 
   &__logo {
     img {
-      width: 12rem;
-      height: auto;
+      height: 1.5rem;
+      width: auto;
 
       @include large-up {
+        height: auto;
         width: 15rem;
       }
     }
