@@ -2,6 +2,8 @@ body {
   .gform_wrapper {
     @include spacing-medium;
     @include container;
+    height: 300px;
+    background-color: blue;
 
     .gform_heading {
       .gform_required_legend {
