@@ -39,7 +39,8 @@
 
 @mixin container() {
   max-width: $container;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1rem;
   width: 100%;
 
@@ -54,7 +55,8 @@
 
 @mixin container-large() {
   max-width: $container-large;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1rem;
   width: 100%;
 
@@ -69,7 +71,8 @@
 
 @mixin container-full() {
   max-width: 100%;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1rem;
   width: 100%;
 
@@ -83,7 +86,8 @@
 
 @mixin container-small() {
   max-width: $container-small;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1rem;
   width: 100%;
 
@@ -97,7 +101,8 @@
 
 @mixin container-extra-small() {
   max-width: 26rem;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
   padding: 0 1rem;
   width: 100%;
 
@@ -197,10 +202,12 @@
 }
 
 @mixin spacing-small() {
-  margin: 2rem 0;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
 
   @include medium-up {
-    margin: 3rem 0;
+    margin-top: 3rem;
+    margin-bottom: 3rem;
   }
 }
 
