@@ -7,30 +7,17 @@
  *
  * @package your-theme-name
  */
+
+// Get referenzen from passed arguments
+$referenzen = isset($args['referenzen']) ? $args['referenzen'] : array();
 ?>
 
 <div class="referenzen-overview">
   <div class="referenzen-overview__container">
-
-
     <ul class="referenzen-overview__items">
-      <?php
-      $args = array(
-        'post_type' => 'referenz',
-        'post_status' => 'publish',
-        'posts_per_page' => -1,
-      );
-
-      // Create a new WP_Query instance
-      $referenzen = new WP_Query($args);
-
-
-      // Start the Loop
-      if ($referenzen->have_posts()):
-        while ($referenzen->have_posts()):
-          $referenzen->the_post();
-          $service_references = get_field('service_references', get_the_ID());
-
+      <?php if (!empty($referenzen)):
+        foreach ($referenzen as $referenz):
+          $service_references = get_field('service_references', $referenz->ID);
           $service_classes = '';
 
           if ($service_references):
@@ -38,20 +25,14 @@
               $service_classes .= ' service-' . esc_attr($service->post_name);
             endforeach;
           endif;
-
-          // Get the current post object
-          $current_referenz = get_post();
       ?>
           <li class="referenzen-overview__item<?php echo esc_attr($service_classes); ?>">
-            <?php get_template_part('template-parts/referenzen/referenz-card', NULL, ['referenz' => $current_referenz]); ?>
+            <?php get_template_part('template-parts/referenzen/referenz-card', NULL, ['referenz' => $referenz]); ?>
           </li>
-        <?php endwhile;
+        <?php endforeach;
       else: ?>
         <li class="referenzen-overview__item--empty">Aktuell keine Referenzen verfügbar.</li>
-      <?php endif;
-
-      wp_reset_postdata();
-      ?>
+      <?php endif; ?>
     </ul>
   </div>
 </div>

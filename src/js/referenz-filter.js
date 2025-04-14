@@ -5,58 +5,51 @@ document.addEventListener('DOMContentLoaded', () => {
   const referenzenItems = document.querySelectorAll(
     '.referenzen-overview__item'
   );
+
+  if (!form || referenzenItems.length === 0) return;
+
   const urlParams = new URLSearchParams(window.location.search);
 
-  if (!form || !referenzenItems) return;
-
-  // Set initial state based on URL parameter
-  const initialFilters = urlParams.getAll('service') || [];
-  if (initialFilters.length) {
+  // === Apply initial filters from URL ===
+  const initialFilters = urlParams.getAll('service');
+  if (initialFilters.length > 0) {
     initialFilters.forEach((filter) => {
-      const checkbox = document.querySelector(`input[value="${filter}"]`);
+      const checkbox = form.querySelector(
+        `input[name="service"][value="${filter}"]`
+      );
       if (checkbox) checkbox.checked = true;
     });
-    filterItems(initialFilters);
+    applyFilters(initialFilters);
   }
 
-  // Event listener for filter change
+  // === Handle filter changes ===
   form.addEventListener('change', () => {
-    const selectedValues = Array.from(
+    const selectedFilters = Array.from(
       form.querySelectorAll('input[name="service"]:checked')
     ).map((checkbox) => checkbox.value);
 
-    // Update the URL parameter
-    urlParams.delete('service');
-    selectedValues.forEach((value) => {
-      urlParams.append('service', value);
-    });
-    window.history.pushState(
-      {},
-      '',
-      `${window.location.pathname}?${urlParams}`
-    );
-
-    // Filter items
-    filterItems(selectedValues);
+    updateURL(selectedFilters);
+    applyFilters(selectedFilters);
   });
 
-  // Function to show/hide items
-  function filterItems(filters) {
-    if (filters.length === 0) {
-      referenzenItems.forEach((item) => {
-        item.classList.remove('is-hidden');
-      });
-    } else {
-      referenzenItems.forEach((item) => {
-        const hasMatchingFilter = filters.some((filter) =>
-          item.classList.contains(`service-${filter}`)
-        );
+  // === Show/hide items based on filters ===
+  function applyFilters(filters) {
+    referenzenItems.forEach((item) => {
+      const match =
+        filters.length === 0 ||
+        filters.some((filter) => item.classList.contains(`service-${filter}`));
+      item.classList.toggle('is-hidden', !match);
+    });
 
-        item.classList.toggle('is-hidden', !hasMatchingFilter);
-      });
-    }
-
-    // Recalculate layout after filtering
     calculateLayout();
+  }
+
+  // === Sync selected filters with the URL ===
+  function updateURL(filters) {
+    const newParams = new URLSearchParams();
+    filters.forEach((filter) => newParams.append('service', filter));
+
+    const newUrl = `${window.location.pathname}?${newParams.toString()}`;
+    window.history.pushState({}, '', newUrl);
   }
 });

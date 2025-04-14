@@ -7,17 +7,21 @@
  *
  * @package your-theme-name
  */
+
+// Get available service IDs from passed arguments
+$available_service_ids = isset($args['available_service_ids']) ? $args['available_service_ids'] : array();
 ?>
+
 <div class="referenzen-filter">
   <div class="referenzen-filter__container">
-
     <form id="referenzen-filter-form" class="referenzen-filter__form" role="group" aria-label="Dienstleistungen Filter">
       <?php
       $services = get_posts(array(
         'post_type' => 'dienstleistung',
         'posts_per_page' => -1,
         'orderby' => 'title',
-        'order' => 'ASC'
+        'order' => 'ASC',
+        'post__in' => $available_service_ids // Only get services that have references
       ));
 
       if (!empty($services)): ?>
