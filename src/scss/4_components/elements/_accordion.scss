@@ -8,6 +8,10 @@
   }
 
   &__trigger {
+    -webkit-font-smoothing: inherit;
+    -moz-osx-font-smoothing: inherit;
+    -webkit-appearance: none;
+    appearance: none;
     padding: 0;
     margin: 0;
     width: 100%;
@@ -19,14 +23,7 @@
     justify-content: space-between;
     align-items: center;
     padding: 1.5rem 0;
-
-    /* Corrects font smoothing for webkit */
-    -webkit-font-smoothing: inherit;
-    -moz-osx-font-smoothing: inherit;
-
-    /* Corrects inability to style clickable `input` types in iOS */
-    -webkit-appearance: none;
-    appearance: none;
+    color: $color-black;
   }
 
   &__title {
