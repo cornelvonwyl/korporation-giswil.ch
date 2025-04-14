@@ -37,6 +37,10 @@
     @include card-filter-transition;
   }
 
+  &__empty {
+    text-align: center;
+  }
+
   &__button {
     @include more-button;
 

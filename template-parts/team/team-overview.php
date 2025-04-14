@@ -5,36 +5,21 @@
  * 
  * @package vonweb
  * 
- * @param array $args Query arguments for WP_Query
- * @param array $options Additional options for display
+ * @param array $args Array containing the people data
  */
 
-// Default query arguments
-$default_args = array(
-  'post_type' => 'person',
-  'posts_per_page' => -1,
-  'orderby' => 'menu_order',
-  'order' => 'ASC'
-);
-
-// Merge with provided arguments, ensuring post__in is preserved
-$args = isset($args['args']) ? $args['args'] : $default_args;
-
-
-$team_query = new WP_Query($args);
-
-if (is_wp_error($team_query)) {
-  return;
-}
+// Get the passed people
+$people = isset($args['people']) ? $args['people'] : array();
 ?>
 
 <section class="team-overview__items">
-  <?php if ($team_query->have_posts()): ?>
+  <?php if (!empty($people)): ?>
     <ul class="team-overview__grid">
-      <?php while ($team_query->have_posts()):
-        $team_query->the_post();
+      <?php foreach ($people as $person):
+        $post_id = $person->ID;
+        
         // Get person categories
-        $categories = get_the_terms(get_the_ID(), 'person-category');
+        $categories = get_the_terms($post_id, 'person-category');
         $category_classes = '';
         if ($categories && !is_wp_error($categories)) {
           $category_classes = ' ' . implode(' ', array_map(function ($cat) {
@@ -43,7 +28,7 @@ if (is_wp_error($team_query)) {
         }
 
         // Get person locations
-        $locations = get_field('location', get_the_ID());
+        $locations = get_field('location', $post_id);
         $location_ids = [];
         if ($locations) {
           $location_ids = array_map(function ($location) {
@@ -55,12 +40,16 @@ if (is_wp_error($team_query)) {
         <li class="team-overview__grid-item<?php echo esc_attr($category_classes); ?>" <?php echo $location_data; ?>>
           <?php
           get_template_part('template-parts/team/person', NULL, array(
-            'person' => get_post()
+            'person' => $person
           ));
           ?>
         </li>
-      <?php endwhile; ?>
+      <?php endforeach; ?>
     </ul>
+
+    <div class="team-overview__empty" style="display: none;">
+      <p>Für den gewählten Standort wurden keine Ergebnisse gefunden. Bitte wähle einen anderen Standort.</p>
+    </div>
   <?php endif; ?>
 
   <?php wp_reset_postdata(); ?>

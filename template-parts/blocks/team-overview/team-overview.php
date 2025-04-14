@@ -24,14 +24,43 @@ if (!empty($block['className'])) {
 if (!empty($block['align'])) {
     $className .= ' align' . $block['align'];
 }
+
+// Query all people
+$args = array(
+    'post_type' => 'person',
+    'posts_per_page' => -1,
+    'orderby' => 'menu_order',
+    'order' => 'ASC'
+);
+
+$team_query = new WP_Query($args);
+$all_people = $team_query->have_posts() ? $team_query->posts : array();
+
+// Get unique location IDs from all people
+$available_location_ids = array();
+foreach ($all_people as $person) {
+    $locations = get_field('location', $person->ID);
+    if ($locations) {
+        foreach ($locations as $location) {
+            if (is_object($location) && isset($location->ID)) {
+                $available_location_ids[] = $location->ID;
+            }
+        }
+    }
+}
+$available_location_ids = array_unique($available_location_ids);
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="team-overview__container">
         <!-- Team Filter -->
-        <?php get_template_part('template-parts/team/team-filter'); ?>
+        <?php get_template_part('template-parts/team/team-filter', null, array(
+            'available_location_ids' => $available_location_ids
+        )); ?>
 
         <!-- Team Overview -->
-        <?php get_template_part('template-parts/team/team-overview'); ?>
+        <?php get_template_part('template-parts/team/team-overview', null, array(
+            'people' => $all_people
+        )); ?>
     </div>
 </section>

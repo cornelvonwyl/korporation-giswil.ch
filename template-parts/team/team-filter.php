@@ -7,6 +7,9 @@
  *
  * @package vonweb
  */
+
+// Get available location IDs from passed data
+$available_location_ids = isset($args['available_location_ids']) ? $args['available_location_ids'] : array();
 ?>
 <div class="team-filter">
   <div class="team-filter__container">
@@ -18,8 +21,6 @@
         'orderby' => 'name',
         'order' => 'ASC'
       ));
-
-
 
       if (!empty($categories) && !is_wp_error($categories)): ?>
         <ul class="team-filter__checkboxes" role="group" aria-label="Filteroptionen">
@@ -44,48 +45,27 @@
         <p class="team-filter__item--empty" role="alert">Keine Kategorien gefunden.</p>
       <?php endif; ?>
 
+      <div class="team-filter__location">
+        <select name="location" id="location-filter" class="team-filter__select">
+          <option value="">Standort</option>
+          <?php 
+          // Only show locations that are available in the current set of people
+          $locations = get_posts(array(
+            'post_type' => 'standort',
+            'posts_per_page' => -1,
+            'orderby' => 'title',
+            'order' => 'ASC',
+            'post__in' => $available_location_ids
+          ));
+          
+          foreach ($locations as $location): ?>
+            <option value="<?php echo esc_attr($location->ID); ?>">
+              <?php echo esc_html($location->post_title); ?>
+            </option>
+          <?php endforeach; ?>
+        </select>
+      </div>
 
-      <?php
-      // Get all standort posts
-      $locations = get_posts(array(
-        'post_type' => 'standort',
-        'posts_per_page' => -1,
-        'orderby' => 'title',
-        'order' => 'ASC'
-      ));
-
-      // Filter locations to only include those with associated people
-      $locations_with_people = array();
-      foreach ($locations as $location) {
-        $args = array(
-          'post_type' => 'person',
-          'posts_per_page' => 1,
-          'meta_query' => array(
-            array(
-              'key' => 'location',
-              'value' => '"' . $location->ID . '"',
-              'compare' => 'LIKE'
-            )
-          )
-        );
-        $people = get_posts($args);
-        if (!empty($people)) {
-          $locations_with_people[] = $location;
-        }
-      }
-
-      if (!empty($locations_with_people)): ?>
-        <div class="team-filter__location">
-          <select name="location" id="location-filter" class="team-filter__select">
-            <option value="">Standort</option>
-            <?php foreach ($locations_with_people as $location): ?>
-              <option value="<?php echo esc_attr($location->ID); ?>">
-                <?php echo esc_html($location->post_title); ?>
-              </option>
-            <?php endforeach; ?>
-          </select>
-        </div>
-      <?php endif; ?>
     </form>
   </div>
 </div>

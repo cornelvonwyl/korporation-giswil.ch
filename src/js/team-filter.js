@@ -3,6 +3,8 @@ document.addEventListener('DOMContentLoaded', () => {
   const teamItems = document.querySelectorAll('.team-overview__grid-item');
   const locationSelect = document.getElementById('location-filter');
   const urlParams = new URLSearchParams(window.location.search);
+  const teamGrid = document.querySelector('.team-overview__grid');
+  const emptyState = document.querySelector('.team-overview__empty');
 
   if (!form || !teamItems) return;
 
@@ -21,8 +23,39 @@ document.addEventListener('DOMContentLoaded', () => {
     locationSelect.value = initialLocation;
   }
 
+  // Function to update location filter options based on visible people
+  function updateLocationOptions() {
+    if (!locationSelect) return;
+
+    // Get all visible people after category filtering
+    const visiblePeople = Array.from(teamItems).filter(
+      (item) => !item.classList.contains('is-hidden')
+    );
+
+    // Get all unique location IDs from visible people
+    const visibleLocationIds = new Set();
+    visiblePeople.forEach((person) => {
+      const locations = person.getAttribute('data-locations');
+      if (locations) {
+        locations.split(',').forEach((id) => visibleLocationIds.add(id));
+      }
+    });
+
+    // Update location select options
+    Array.from(locationSelect.options).forEach((option) => {
+      if (option.value === '') return; // Keep the "Standort" option
+      option.style.display = visibleLocationIds.has(option.value) ? '' : 'none';
+    });
+
+    // Reset location selection if current selection is no longer available
+    if (locationSelect.value && !visibleLocationIds.has(locationSelect.value)) {
+      locationSelect.value = '';
+    }
+  }
+
   // Initial filter
   filterItems(initialCategories, initialLocation);
+  updateLocationOptions();
 
   // Event listener for filter changes
   form.addEventListener('change', () => {
@@ -54,10 +87,13 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // Filter items
     filterItems(selectedCategories, selectedLocation);
+    updateLocationOptions();
   });
 
   // Function to show/hide items
   function filterItems(categories, location) {
+    let visibleCount = 0;
+
     teamItems.forEach((item) => {
       // Check categories
       const itemCategories = Array.from(item.classList)
@@ -73,10 +109,17 @@ document.addEventListener('DOMContentLoaded', () => {
       const matchesLocation = !location || itemLocations.includes(location);
 
       // Show/hide based on both filters
-      item.classList.toggle(
-        'is-hidden',
-        !(matchesCategories && matchesLocation)
-      );
+      const isVisible = matchesCategories && matchesLocation;
+      item.classList.toggle('is-hidden', !isVisible);
+
+      if (isVisible) {
+        visibleCount++;
+      }
     });
+
+    // Handle empty state
+    if (emptyState) {
+      emptyState.style.display = visibleCount === 0 ? 'block' : 'none';
+    }
   }
 });
