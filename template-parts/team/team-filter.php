@@ -54,11 +54,31 @@
         'order' => 'ASC'
       ));
 
-      if (!empty($locations)): ?>
+      // Filter locations to only include those with associated people
+      $locations_with_people = array();
+      foreach ($locations as $location) {
+        $args = array(
+          'post_type' => 'person',
+          'posts_per_page' => 1,
+          'meta_query' => array(
+            array(
+              'key' => 'location',
+              'value' => '"' . $location->ID . '"',
+              'compare' => 'LIKE'
+            )
+          )
+        );
+        $people = get_posts($args);
+        if (!empty($people)) {
+          $locations_with_people[] = $location;
+        }
+      }
+
+      if (!empty($locations_with_people)): ?>
         <div class="team-filter__location">
           <select name="location" id="location-filter" class="team-filter__select">
             <option value="">Standort</option>
-            <?php foreach ($locations as $location): ?>
+            <?php foreach ($locations_with_people as $location): ?>
               <option value="<?php echo esc_attr($location->ID); ?>">
                 <?php echo esc_html($location->post_title); ?>
               </option>
