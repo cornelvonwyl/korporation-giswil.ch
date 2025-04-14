@@ -2,11 +2,11 @@
   @include spacing-small-top;
   @include spacing-medium-bottom;
 
-  &__container {
-    @include container-large;
-  }
-
   .referenzen-overview {
+    &__container {
+      @include container-large;
+    }
+
     &__items {
       display: grid;
       gap: 3rem;
