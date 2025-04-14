@@ -67,7 +67,7 @@
                 <div class="footer__contact" aria-labelledby="footer-contact">
                     <ul class="contact-list">
                         <li><a href="tel:+41416620070" aria-label="Rufen Sie uns an: 041 662 00 70">041 662 00 70</a></li>
-                        <li><a href="mailto:info@elektro-furrer.ch" aria-label="Schreiben Sie uns eine E-Mail: info@elektro-furrer.ch">info@elektro-furrer.ch</a></li>
+                        <li><a href="mailto:info@elektrofurrer.ch" aria-label="Schreiben Sie uns eine E-Mail: info@elektrofurrer.ch">info@elektrofurrer.ch</a></li>
                     </ul>
                 </div>
             </div>

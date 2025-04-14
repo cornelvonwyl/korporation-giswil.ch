@@ -74,7 +74,7 @@ document.addEventListener('DOMContentLoaded', function () {
     // Check each section to find the one with highest coverage
     animatedSections.forEach((section) => {
       const coverage = calculateViewportCoverage(section);
-      const threshold = parseFloat(section.dataset.threshold || 25);
+      const threshold = parseFloat(section.dataset.threshold || 50);
       const bgColor = section.dataset.bgColor;
 
       // Only consider sections with a valid color that meet their threshold
