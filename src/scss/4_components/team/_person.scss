@@ -45,9 +45,12 @@
         line-height: 1;
       }
 
-      &:hover .tooltiptext {
-        visibility: visible;
-        opacity: 1;
+      // Tooltip-Hover nur auf Geräten mit Hover-Unterstützung aktivieren
+      @media (hover: hover) {
+        &:hover .tooltiptext {
+          visibility: visible;
+          opacity: 1;
+        }
       }
     }
   }
