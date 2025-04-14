@@ -3,7 +3,9 @@
   @include spacing-medium-bottom;
 
   &__items {
-    @include container-large;
+    .page-id-631 & {
+      @include container-large;
+    }
   }
 
   &__grid {
