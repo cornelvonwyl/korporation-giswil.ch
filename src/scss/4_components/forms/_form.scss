@@ -1,5 +1,87 @@
 body {
   .gform-theme {
+    --gf-color-primary: #ffed00 !important;
+    --gf-color-primary-rgb: 255, 237, 0 !important;
+    --gf-color-primary-contrast: #000000 !important;
+    --gf-color-primary-contrast-rgb: 0, 0, 0 !important;
+    --gf-color-primary-darker: #d6c900 !important; /* Slightly darker yellow */
+    --gf-color-primary-lighter: #fff533 !important; /* Slightly lighter yellow */
+
+    --gf-color-secondary: #ffffff !important;
+    --gf-color-secondary-rgb: 255, 255, 255 !important;
+    --gf-color-secondary-contrast: #000000 !important;
+    --gf-color-secondary-contrast-rgb: 0, 0, 0 !important;
+    --gf-color-secondary-darker: #f0f0f0 !important;
+    --gf-color-secondary-lighter: #ffffff !important;
+
+    --gf-color-out-ctrl-light: rgba(0, 0, 0, 0.1) !important;
+    --gf-color-out-ctrl-light-rgb: 0, 0, 0 !important;
+    --gf-color-out-ctrl-light-darker: rgba(174, 185, 194, 0.35) !important;
+    --gf-color-out-ctrl-light-lighter: #f0f0f0 !important;
+
+    --gf-color-out-ctrl-dark: #aeb9c2 !important;
+    --gf-color-out-ctrl-dark-rgb: 174, 185, 194 !important;
+    --gf-color-out-ctrl-dark-darker: #000000 !important;
+    --gf-color-out-ctrl-dark-lighter: rgba(0, 0, 0, 0.65) !important;
+
+    --gf-color-in-ctrl: #ffffff !important;
+    --gf-color-in-ctrl-rgb: 255, 255, 255 !important;
+    --gf-color-in-ctrl-contrast: #000000 !important;
+    --gf-color-in-ctrl-contrast-rgb: 0, 0, 0 !important;
+    --gf-color-in-ctrl-darker: #f0f0f0 !important;
+    --gf-color-in-ctrl-lighter: #ffffff !important;
+
+    --gf-color-in-ctrl-primary: #ffed00 !important;
+    --gf-color-in-ctrl-primary-rgb: 255, 237, 0 !important;
+    --gf-color-in-ctrl-primary-contrast: #000000 !important;
+    --gf-color-in-ctrl-primary-contrast-rgb: 0, 0, 0 !important;
+    --gf-color-in-ctrl-primary-darker: #d6c900 !important;
+    --gf-color-in-ctrl-primary-lighter: #fff533 !important;
+
+    --gf-color-in-ctrl-light: rgba(0, 0, 0, 0.1) !important;
+    --gf-color-in-ctrl-light-rgb: 0, 0, 0 !important;
+    --gf-color-in-ctrl-light-darker: rgba(174, 185, 194, 0.35) !important;
+    --gf-color-in-ctrl-light-lighter: #f0f0f0 !important;
+
+    --gf-color-in-ctrl-dark: #aeb9c2 !important;
+    --gf-color-in-ctrl-dark-rgb: 174, 185, 194 !important;
+    --gf-color-in-ctrl-dark-darker: #000000 !important;
+    --gf-color-in-ctrl-dark-lighter: rgba(0, 0, 0, 0.65) !important;
+
+    --gf-radius: 3px !important;
+    --gf-font-size-secondary: 14px !important;
+    --gf-font-size-tertiary: 13px !important;
+    --gf-label-space-y-secondary: var(
+      --gf-label-space-y-md-secondary
+    ) !important;
+    --gf-ctrl-border-color: #aeb9c2 !important;
+    --gf-ctrl-size: var(--gf-ctrl-size-md) !important;
+    --gf-ctrl-label-color-primary: #000000 !important;
+    --gf-ctrl-label-color-secondary: #000000 !important;
+    --gf-ctrl-choice-size: var(--gf-ctrl-choice-size-md) !important;
+    --gf-ctrl-checkbox-check-size: var(
+      --gf-ctrl-checkbox-check-size-md
+    ) !important;
+    --gf-ctrl-radio-check-size: var(--gf-ctrl-radio-check-size-md) !important;
+    --gf-ctrl-btn-font-size: var(--gf-ctrl-btn-font-size-md) !important;
+    --gf-ctrl-btn-padding-x: var(--gf-ctrl-btn-padding-x-md) !important;
+    --gf-ctrl-btn-size: var(--gf-ctrl-btn-size-md) !important;
+    --gf-ctrl-btn-border-color-secondary: #aeb9c2 !important;
+    --gf-ctrl-file-btn-bg-color-hover: #f6f6f6 !important;
+
+    --gf-field-img-choice-size: var(--gf-field-img-choice-size-md) !important;
+    --gf-field-img-choice-card-space: var(
+      --gf-field-img-choice-card-space-md
+    ) !important;
+    --gf-field-img-choice-check-ind-size: var(
+      --gf-field-img-choice-check-ind-size-md
+    ) !important;
+    --gf-field-img-choice-check-ind-icon-size: var(
+      --gf-field-img-choice-check-ind-icon-size-md
+    ) !important;
+
+    --gf-field-pg-steps-number-color: rgba(0, 0, 0, 0.8) !important;
+
     @include small-only {
       --gf-field-img-choice-size-md: calc(50% - 6px) !important;
     }
@@ -51,6 +133,10 @@ body {
             border-radius: 0;
             border: none;
             width: 100%;
+
+            .single-stelle & {
+              background-color: pink !important;
+            }
 
             &::placeholder {
               color: $color-grey-dark;
@@ -112,6 +198,19 @@ body {
       padding: 2rem;
       color: $color-black;
     }
+  }
+}
+
+.single-stelle {
+  input[type='text'],
+  input[type='email'],
+  input[type='tel'],
+  input[type='number'],
+  input[type='password'],
+  input[type='url'],
+  textarea,
+  select {
+    background-color: $color-white !important;
   }
 }
 

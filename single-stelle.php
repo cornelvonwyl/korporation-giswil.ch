@@ -108,12 +108,6 @@
               ?>
             </div>
 
-
-
-
-
-
-
           </div>
 
           <?php
@@ -135,8 +129,6 @@
                     <p class="job-single__contact-subtitle">Fragen?</p>
                     <h2 class="job-single__contact-title">Melde dich bei <?php echo esc_html($first_name); ?> </h2>
                   </div>
-
-
 
                   <div class="job-single__contact-content">
                     <?php
@@ -169,7 +161,7 @@
 
 
                   <div class="job-single__contact-header">
-                    <p class="job-single__contact-subtitle">Überzogen?</p>
+                    <p class="job-single__contact-subtitle">Überzeugt?</p>
                     <h2>Bewirb dich jetzt</h2>
                   </div>
 

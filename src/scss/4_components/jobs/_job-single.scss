@@ -67,7 +67,7 @@
 
     display: grid;
     grid-template-columns: 1fr;
-    @include gap();
+    gap: 4rem;
 
     @include medium-up {
       grid-template-columns: repeat(2, 1fr);

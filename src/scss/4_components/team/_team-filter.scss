@@ -2,7 +2,7 @@
   @include filter-component();
 
   &__container {
-    @include container;
+    @include container-large;
   }
 
   .single-dienstleistung:not(.postid-549) & {

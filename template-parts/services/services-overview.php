@@ -9,7 +9,7 @@ $args = array(
 $services = new WP_Query($args);
 ?>
 
-<section class="services-overview animate-bg" data-bg-color="#ffed00" data-threshold="50">
+<section class="services-overview animate-bg" data-bg-color="#ffed00">
   <div class="services-overview__container">
     <div class="services-overview__header">
       <p class="services-overview__subtitle">Mehr als ein Elektriker</p>
