@@ -76,7 +76,11 @@
 
   &__contact-header {
     @include title-subtitle-header;
-    margin-bottom: 2rem !important;
+    margin-bottom: 2rem;
+
+    @include medium-up {
+      margin-bottom: 3rem;
+    }
   }
 
   &__contact-title {

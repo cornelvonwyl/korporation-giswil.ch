@@ -40,7 +40,7 @@
 
                         <script type="text/javascript">
                             var inputReferrer = document.getElementById('data_referrer');
-                            console.log('inputReferrer', inputReferrer);
+
                             if (inputReferrer) {
                                 inputReferrer.value = window.location.href;
                             }

@@ -109,6 +109,7 @@
       transform: rotate(180deg) translateY(20%);
       margin: 0;
       height: auto;
+      white-space: nowrap;
 
       @include medium-up {
         left: 50%;

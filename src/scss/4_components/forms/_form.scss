@@ -87,9 +87,13 @@ body {
     }
   }
 
+  #gform_wrapper_4 {
+    padding: 0;
+    margin: 0;
+  }
+
   .gform_wrapper {
     @include spacing-medium;
-    @include container;
 
     .gform_heading {
       .gform_required_legend {
