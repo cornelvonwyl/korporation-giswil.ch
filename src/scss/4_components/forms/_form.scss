@@ -94,6 +94,7 @@ body {
 
   .gform_wrapper {
     @include spacing-medium;
+    @include container;
 
     .gform_heading {
       .gform_required_legend {
