@@ -5,7 +5,10 @@
  * 
  * @package vonweb
  * 
- * @param array $args Array containing the people data
+ * @param array $args {
+ *     Array containing the people data
+ *     @type array $people Array of WP_Post objects representing team members
+ * }
  */
 
 // Get the passed people
@@ -17,7 +20,7 @@ $people = isset($args['people']) ? $args['people'] : array();
     <ul class="team-overview__grid">
       <?php foreach ($people as $person):
         $post_id = $person->ID;
-        
+
         // Get person categories
         $categories = get_the_terms($post_id, 'person-category');
         $category_classes = '';
@@ -39,7 +42,7 @@ $people = isset($args['people']) ? $args['people'] : array();
       ?>
         <li class="team-overview__grid-item<?php echo esc_attr($category_classes); ?>" <?php echo $location_data; ?>>
           <?php
-          get_template_part('template-parts/team/person', NULL, array(
+          get_template_part('template-parts/team/person', null, array(
             'person' => $person
           ));
           ?>
