@@ -48,6 +48,7 @@ endif;
 ?>
 
 <div id="sub-services" class="<?php echo esc_attr($class_name); ?>">
+  <h2 class="sr-only">Unsere Leistungen im Bereich <?php echo get_the_title(); ?></h2>
   <?php if (count($target_groups) > 1): ?>
     <div class="sub-services__tabs" role="tablist">
       <?php foreach ($target_groups as $index => $group): ?>

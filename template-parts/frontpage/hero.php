@@ -13,7 +13,7 @@
         Elektro Furrer AG - Wir sind
       </p>
 
-      <h1 class="hero__title">
+      <p class="hero__title">
         <span class="hero__title--highlight">Stromer</span>
         <span class="hero__title--highlight">Solar-Spezialistä</span>
         <span class="hero__title--highlight">Schaltahlage-Strategä</span>
@@ -28,7 +28,7 @@
         <span class="hero__title--highlight">FurrerFighters</span>
         <span class="hero__title--highlight">Handwärcher</span>
         <span class="hero__title--highlight">Eifach Furrer</span>
-      </h1>
+      </p>
 
       <div class="hero__links">
         <a href="/service-buchen/" class="hero__link animated-button">

@@ -6,6 +6,8 @@
 ?>
 <footer class="footer animate-bg-yellow" role="contentinfo">
     <div class="footer__container">
+
+        <h2 class="sr-only">Die Fusszeile</h2>
         <div class="footer__grid">
             <!-- Newsletter Section -->
             <div class="footer__section">

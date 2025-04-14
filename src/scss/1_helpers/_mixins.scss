@@ -8,6 +8,10 @@
   overflow: hidden;
 }
 
+.sr-only {
+  @include sr-only;
+}
+
 @mixin title-subtitle-header() {
   margin-bottom: 3rem;
   display: flex;
