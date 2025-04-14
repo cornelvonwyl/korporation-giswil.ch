@@ -1,26 +1,67 @@
 class WordRotate {
   constructor(container) {
     this.duration = 2000;
-    this.elements = container.querySelectorAll('.hero__title--highlight');
+    this.terms = [
+      'Stromer',
+      'Solar-Spezialistä',
+      'Schaltahlage-Strategä',
+      'Strom-Architektä',
+      'Automation-Genies',
+      'Büro-Heldä',
+      'Schwach-Strömler',
+      'IT-Gurus',
+      'Kabler',
+      'Chrampfer',
+      'Macher',
+      'FurrerFighters',
+      'Handwärcher',
+    ];
+    this.container = container;
+    this.elements = [];
     this.intervalId = null;
-
-    // Only proceed if elements exist
-    if (this.elements.length === 0) return;
-
     this.currentIndex = 0;
 
-    this.elements.forEach((el, index) => {
-      if (index !== 0) {
-        el.style.opacity = '0';
-        el.style.display = 'block';
-        el.style.transform = 'translateY(100%)';
-      } else {
-        el.style.transform = 'translateY(0%)';
-        el.style.opacity = '1';
-      }
+    this.initializeElements();
+    this.startRotation();
+  }
+
+  initializeElements() {
+    const titleContainer = this.container.querySelector('.hero__title');
+    const lastElement = titleContainer.querySelector('.hero__title--highlight');
+
+    // Remove the last element temporarily
+    lastElement.remove();
+
+    // Select 4 random terms
+    const randomTerms = this.getRandomTerms(4);
+
+    // Create spans for random terms
+    randomTerms.forEach((term) => {
+      const span = document.createElement('span');
+      span.className = 'hero__title--highlight';
+      span.textContent = term;
+      span.style.opacity = '0';
+      span.style.display = 'block';
+      span.style.transform = 'translateY(100%)';
+      titleContainer.appendChild(span);
+      this.elements.push(span);
     });
 
-    this.startRotation();
+    // Add back the last element
+    lastElement.style.opacity = '0';
+    lastElement.style.display = 'block';
+    lastElement.style.transform = 'translateY(100%)';
+    titleContainer.appendChild(lastElement);
+    this.elements.push(lastElement);
+
+    // Show first element
+    this.elements[0].style.opacity = '1';
+    this.elements[0].style.transform = 'translateY(0%)';
+  }
+
+  getRandomTerms(count) {
+    const shuffled = [...this.terms].sort(() => 0.5 - Math.random());
+    return shuffled.slice(0, count);
   }
 
   startRotation() {
@@ -28,7 +69,6 @@ class WordRotate {
       const currentElement = this.elements[this.currentIndex];
       const nextElement = this.elements[this.currentIndex + 1];
 
-      // Add safety check for elements
       if (!currentElement || !nextElement) {
         this.cleanup();
         return;
@@ -37,7 +77,6 @@ class WordRotate {
       currentElement.style.opacity = '0';
       currentElement.style.transform = 'translateY(-100%)';
 
-      // Animate in next element
       setTimeout(() => {
         nextElement.style.opacity = '1';
         nextElement.style.transform = 'translateY(0%)';
@@ -58,11 +97,7 @@ class WordRotate {
 // Initialize when DOM is loaded
 document.addEventListener('DOMContentLoaded', () => {
   const heroSections = document.querySelectorAll('.hero');
-
-  // Initialize word rotation for each hero section independently
   heroSections.forEach((heroSection) => {
-    if (heroSection.querySelectorAll('.hero__title--highlight').length > 1) {
-      new WordRotate(heroSection);
-    }
+    new WordRotate(heroSection);
   });
 });

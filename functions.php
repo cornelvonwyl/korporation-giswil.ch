@@ -140,3 +140,21 @@ add_image_size('medium-size', 1000, 1000);
 add_image_size('large', 1600, 1600);
 add_image_size('huge', 2400, 2400);
 add_image_size('extra-large', 3000, 3000);
+
+
+/**
+ * Adds Gravity Forms full access capability to the Editor role.
+ * 
+ * This function grants editors complete access to Gravity Forms functionality
+ * by adding the 'gform_full_access' capability to the editor role.
+ * The function is hooked to 'admin_init' action hook which runs on every admin page load.
+ *
+ * @since 1.0.0
+ * @return void
+ */
+function add_gf_cap()
+{
+  $role = get_role('editor');
+  $role->add_cap('gform_full_access');
+}
+add_action('admin_init', 'add_gf_cap');

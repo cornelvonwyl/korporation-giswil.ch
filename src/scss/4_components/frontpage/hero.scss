@@ -52,11 +52,10 @@
     font-size: clamp(2rem, 12vw, 4rem);
     line-height: 1.2;
     height: clamp(4.8rem, 28.8vw, 9.6rem);
-    margin-bottom: 0;
     hyphens: none;
     overflow-wrap: break-word;
     word-break: break-word;
-    margin-bottom: 1rem;
+    margin-bottom: 0.5rem;
 
     @include small-up {
       font-size: rem(60px);
