@@ -1,4 +1,10 @@
 body {
+  .gform-theme {
+    @include small-only {
+      --gf-field-img-choice-size-md: calc(50% - 6px) !important;
+    }
+  }
+
   .gform_wrapper {
     @include spacing-medium;
     @include container;
