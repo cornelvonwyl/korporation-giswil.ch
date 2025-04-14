@@ -13,9 +13,38 @@
             <div class="footer__section">
                 <h4 class="footer__section-title" id="newsletter-title">Newsletter abonnieren</h4>
                 <div class="footer__newsletter">
-                    <form action="#" method="POST">
-                        <input type="email" name="email" placeholder="name@mail.ch" required>
-                        <button class="animated-button" type="submit">Abonnieren</button>
+
+                    <form data-form-language="de" id="contact_form_2_de"
+                        class="contact_form contact_form_de validate_type_all contact_form_cols_1"
+                        action="//web.swissnewsletter.ch/e/3a6566480fd96137/form/de/anmeldeformular_elektrofurrer_ch.html"
+                        method="post" novalidate="novalidate">
+                        <ul class="field_errors"></ul>
+                        <div class="col_0">
+
+                            <div class="field_container contact_field_container"
+                                id="contact_field_email_container">
+                                <label for="data_contact_email" class="sr-only">E-Mail Adresse <span class="required">*</span></label>
+                                <ul class="field_errors"></ul>
+                                <input type="email" placeholder="name@mail.ch" id="data_contact_email" name="data[contact][email]" required="required">
+                            </div>
+                            <div class="submit_container">
+                                <input class="submit_button animated-button" id="submit_button_11" type="submit" value="Abonnieren">
+                            </div>
+                        </div>
+                        <input type="hidden" id="data_form_version" name="data[form_version]" value="5_0">
+                        <input type="hidden" id="data_referrer" name="data[referrer]">
+                        <input type="hidden" id="data_form_validate_data" name="form_validate_data"
+                            value='{"data_contact_email":{"constrains":{"required":true}}}'>
+                        <input type="hidden" id="data_form_id" name="data[form_id]" value="2">
+                        <input type="hidden" id="data_form_language" name="data[form_language]" value="de">
+
+                        <script type="text/javascript">
+                            var inputReferrer = document.getElementById('data_referrer');
+                            console.log('inputReferrer', inputReferrer);
+                            if (inputReferrer) {
+                                inputReferrer.value = window.location.href;
+                            }
+                        </script>
                     </form>
                 </div>
             </div>

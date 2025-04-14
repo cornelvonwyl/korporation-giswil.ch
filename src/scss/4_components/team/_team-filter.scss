@@ -1,6 +1,10 @@
 .team-filter {
   @include filter-component();
 
+  .single-dienstleistung:not(.postid-549) & {
+    display: none;
+  }
+
   select {
     @include select();
   }

@@ -93,11 +93,6 @@
                     'content' => 'Profitiere von diversen internen und externen Weiterbildungsmöglichkeiten, ganz nach deinen Interessen und Zielen. Wir begleiten dich auf dem Weg zu deiner Traumausbildung und bieten dir die Chance, dich fachlich und persönlich weiterzuentwickeln. Ob spezialisierte Schulungen, persönliche Kurse oder langfristige Karriereplanung: wir unterstützen dich dabei. So kannst du dein volles Potenzial ausschöpfen, denn dein Erfolg ist auch unserer.'
                   ],
                   [
-                    'category' => 'VERGÜTUNG & EXTRAS',
-                    'title' => 'Vorteile, die sich lohnen',
-                    'content' => 'XXXX'
-                  ],
-                  [
                     'category' => 'ARBEITSSICHERHEIT & GESUNDHEIT',
                     'title' => 'Sicher arbeiten, Gesund bleiben',
                     'content' => 'Sicheres Arbeiten hat bei uns oberste Priorität! Wir sorgen dafür, dass du bestmöglich geschützt bist, dank optimaler Ausrüstung, modernen Sicherheitsstandards und regelmässige Schulungen. Durch kontinuierliche Weiterbildungen halten wir unser Team auf dem neusten Stand und minimieren Risiken. Denn deine Gesundheit ist uns wichtig, heute und in Zukunft.'

@@ -19,6 +19,10 @@
   }
 
   &__section {
+    @include medium-up {
+      max-width: 30%;
+    }
+
     &-title {
       @include subtitle;
       margin-bottom: 1.5rem;
@@ -26,12 +30,17 @@
   }
 
   &__newsletter {
+    .field_errors {
+      @include text-small;
+      margin-bottom: 0.5rem;
+    }
+
     input[type='email'] {
       @include input;
       margin-bottom: 1rem;
     }
 
-    button {
+    .animated-button {
       @include animated-button;
       @include secondary-button;
     }

@@ -6,6 +6,8 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php wp_title('|', TRUE, 'right'); ?></title>
     <?php wp_head(); ?>
+
+    <script charset="UTF-8" type="text/javascript" src="//web.swissnewsletter.ch/bundles/mailxpertcore/form/5_0/validation.js"></script>
 </head>
 
 <body <?php body_class(); ?>>
