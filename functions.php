@@ -195,5 +195,7 @@ function vonweb_display_links()
   echo '<ul>';
   echo '<li><a href="https://track.toggl.com/shared-report/b12646c0a7719c2c63c72ce0af74f691/detailed" target="_blank">⏰ Service-Paket</a></li>';
   echo '<li><a href="https://analytics.google.com/" target="_blank">📊 Google Analytics</a></li>';
+  echo '<li><a href="https://search.google.com/search-console" target="_blank">📈 Google Search Console</a></li>';
+  echo '<li><a href="https://www.privacybee.io/ch/" target="_blank">🔒 Privacy Bee</a></li>';
   echo '</ul>';
 }
