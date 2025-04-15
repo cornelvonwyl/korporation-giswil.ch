@@ -18,3 +18,4 @@ import './animated-button.js';
 import './service-tabs.js';
 import './timeline-animation.js';
 import './accordion.js';
+import './page-header-scroll.js';
