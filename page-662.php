@@ -12,7 +12,7 @@
             ?>
             <div class="page-header__content">
               <p class="page-header__subtitle">Wir freuen uns</p>
-              <h1>Kontakt</h1>
+              <h1 class="page-header__title">Kontakt</h1>
 
               <h3 class="contact-page__subtitle">
                 Telefon & E-Mail

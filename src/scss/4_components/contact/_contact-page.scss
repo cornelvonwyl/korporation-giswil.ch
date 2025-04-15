@@ -1,8 +1,8 @@
 .contact-page {
-  h1 {
+  /*   h1 {
     @include h2;
     margin-bottom: 3rem;
-  }
+  } */
 
   &__subtitle {
     @include subtitle;
