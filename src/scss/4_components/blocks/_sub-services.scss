@@ -1,5 +1,6 @@
 .sub-services {
   @include container-small;
+  @include spacing;
 
   display: flex;
   flex-direction: column;
