@@ -11,8 +11,8 @@
             echo wp_get_attachment_image(1649, 'large', false, array('class' => 'page-header__image'));
             ?>
             <div class="page-header__content">
-              <p class="page-header__subtitle">Wir freuen uns</p>
-              <h1 class="page-header__title">Kontakt</h1>
+              <p class="page-header__subtitle">Kontakt</p>
+              <h1 class="page-header__title">Wir freuen uns</h1>
 
               <h3 class="contact-page__subtitle">
                 Telefon & E-Mail
