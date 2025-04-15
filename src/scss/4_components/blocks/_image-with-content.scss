@@ -84,10 +84,8 @@
   // Title Variant Modifikationen
   &--title-vertical {
     margin-top: 10rem;
-    margin-bottom: 10rem;
     @include medium-up {
       margin-top: 15rem;
-      margin-bottom: 15rem;
     }
     .image-with-content__title {
       position: absolute;
