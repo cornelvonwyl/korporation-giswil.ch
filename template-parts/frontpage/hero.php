@@ -2,10 +2,9 @@
   <div class="hero__container">
 
     <?php
-    $image_id = 561;
+    $image_id = 1647;
     echo wp_get_attachment_image($image_id, 'huge', FALSE, ['class' => 'hero__image']);
     ?>
-
 
     <div class="hero__content">
 
