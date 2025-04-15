@@ -59,7 +59,7 @@ $available_location_ids = isset($args['available_location_ids']) ? $args['availa
 
       <div class="team-filter__location">
         <select name="location" id="location-filter" class="team-filter__select">
-          <option value="">Standort</option>
+          <option value="">Alle Standorte</option>
           <?php
           // Only show locations that are available in the current set of people
           $locations = get_posts(array(

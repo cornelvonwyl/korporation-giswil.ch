@@ -1,6 +1,10 @@
 .referenzen-slider {
   @include spacing-inner-medium;
 
+  .swiper-wrapper {
+    align-items: center;
+  }
+
   &__container {
     @include container-large;
   }
