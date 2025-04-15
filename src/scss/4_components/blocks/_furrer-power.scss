@@ -2,6 +2,7 @@
   position: relative;
   overflow: hidden;
   @include spacing-inner;
+  @include spacing-top;
 
   &__container {
     @include container-extra-small;
@@ -83,7 +84,7 @@
     }
 
     &[data-position='2'] {
-      top: 0rem;
+      top: 1rem;
       right: 6vw;
       width: 30%;
       aspect-ratio: 4/5;

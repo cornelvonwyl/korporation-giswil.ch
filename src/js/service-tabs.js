@@ -43,6 +43,9 @@ document.addEventListener('DOMContentLoaded', () => {
             panel.classList.remove('is-hidden');
           }
         });
+
+        // Scroll to top of the sub-services container
+        container.scrollIntoView({ behavior: 'smooth' });
       });
     });
   });
