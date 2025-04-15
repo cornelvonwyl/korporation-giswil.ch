@@ -3,6 +3,7 @@
 
   &__header {
     @include title-subtitle-header;
+    @include container-small;
   }
 
   &__subtitle {
@@ -15,5 +16,7 @@
 
   &__gallery {
     @include container-large;
+
+
   }
 }
