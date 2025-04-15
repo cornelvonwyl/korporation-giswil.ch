@@ -78,31 +78,32 @@
               get_template_part('template-parts/components/accordion', NULL, [
                 'items' => [
                   [
-                    'category' => 'ARBEITEN & LEBEN',
-                    'title' => 'Zeit für das was zählt',
-                    'content' => 'Job und Privatleben sollen sich nicht im Weg stehen, deshalb bieten wir flexible Arbeitszeiten, Teilzeitmöglichkeiten oder Mami/Papi-Pausen. Mit unserer 40-Stunden-Woche und der Option auf unbezahlten Urlaub hast du noch mehr Freiraum. Unsere massgeschneiderten Arbeitsmodelle passen sich deinen Lebensumständen an.'
+                    'category' => 'Arbeiten und Leben',
+                    'title' => 'Zeit für das, was zählt',
+                    'content' => 'Job und Privatleben sollen sich nicht im Weg stehen, deshalb bieten wir flexible Arbeitszeiten, Teilzeitmöglichkeiten oder Mami-/Papi-Pausen. Mit unserer 40-Stunden-Woche und der Option auf unbezahlten Urlaub hast du noch mehr Freiraum. Unsere massgeschneiderten Arbeitsmodelle passen sich deinen Lebensumständen an.'
                   ],
                   [
-                    'category' => 'TEAM & UNTERNEHMEN',
-                    'title' => 'Gemeinsam stark, Gemeinsam erfolgreich',
-                    'content' => 'Ist dir Teamspirit wichtig? Dann bist du bei uns genau richtig! Wir packen gemeinsam an und schaffen Grosses. Bei uns arbeitest du dich wohlfühlt, ein einem familiären Umfeld mit flachen Hierarchien. Wir geben dir Raum, dich zu entfalten, eigene Ideen einzubringen und dich weiterzuentwickeln. Und weil ein starkes Team nicht nur bei der Arbeit zählt, gibt es bei uns regelmässige Mitarbeiterevents, für gute Gespräche, viel Spass und noch mehr Zusammenhalt.'
+                    'category' => 'Team und Unternehmen',
+                    'title' => 'Gemeinsam stark, gemeinsam erfolgreich',
+                    'content' => 'Ist dir Teamspirit wichtig? Dann bist du bei uns genau richtig! Wir packen gemeinsam an und schaffen Grosses. Bei uns arbeitest du dort, wo du dich wohlfühlst, in einem familiären Umfeld mit flachen Hierarchien. Wir geben dir Raum, dich zu entfalten, eigene Ideen einzubringen und dich weiterzuentwickeln. Und weil ein starkes Team nicht nur bei der Arbeit zählt, gibt es bei uns regelmässig Mitarbeiterevents für gute Gespräche, viel Spass und noch mehr Zusammenhalt.'
                   ],
                   [
-                    'category' => 'WEITERBILDUNG & ENTWICKLUNG',
+                    'category' => 'Weiterbildung und Entwicklung',
                     'title' => 'Lernen, wachsen, weiterkommen',
-                    'content' => 'Profitiere von diversen internen und externen Weiterbildungsmöglichkeiten, ganz nach deinen Interessen und Zielen. Wir begleiten dich auf dem Weg zu deiner Traumausbildung und bieten dir die Chance, dich fachlich und persönlich weiterzuentwickeln. Ob spezialisierte Schulungen, persönliche Kurse oder langfristige Karriereplanung: wir unterstützen dich dabei. So kannst du dein volles Potenzial ausschöpfen, denn dein Erfolg ist auch unserer.'
+                    'content' => 'Profitiere von diversen internen und externen Weiterbildungsmöglichkeiten, ganz nach deinen Interessen und Zielen. Wir begleiten dich auf dem Weg zu deiner Traumausbildung und bieten dir die Chance, dich fachlich und persönlich weiterzuentwickeln. Ob spezialisierte Schulungen, praxisnahe Kurse oder langfristige Karriereplanung, wir unterstützen dich dabei. So kannst du dein volles Potenzial ausschöpfen, denn dein Erfolg ist auch unserer.'
                   ],
                   [
-                    'category' => 'ARBEITSSICHERHEIT & GESUNDHEIT',
-                    'title' => 'Sicher arbeiten, Gesund bleiben',
-                    'content' => 'Sicheres Arbeiten hat bei uns oberste Priorität! Wir sorgen dafür, dass du bestmöglich geschützt bist, dank optimaler Ausrüstung, modernen Sicherheitsstandards und regelmässige Schulungen. Durch kontinuierliche Weiterbildungen halten wir unser Team auf dem neusten Stand und minimieren Risiken. Denn deine Gesundheit ist uns wichtig, heute und in Zukunft.'
+                    'category' => 'Arbeitssicherheit und Gesundheit',
+                    'title' => 'Sicher arbeiten, gesund bleiben',
+                    'content' => 'Sicheres Arbeiten hat bei uns oberste Priorität! Wir sorgen dafür, dass du bestmöglich geschützt bist – dank optimaler Ausrüstung, modernen Sicherheitsstandards und regelmässigen Schulungen. Durch kontinuierliche Weiterbildungen halten wir unser Team auf dem neusten Stand und minimieren Risiken. Denn deine Gesundheit ist uns wichtig, heute und in Zukunft.'
                   ],
                   [
-                    'category' => 'INNOVATION & PROJEKTE',
+                    'category' => 'Innovation und spannende Projekte',
                     'title' => 'Immer am Puls der Zeit',
-                    'content' => 'Neue Technologien, spannende Projekte und ein digitaler Workflow sorgen dafür, dass du bei uns immer am Puls der Zeit arbeitest. Unsere komplett digitalisierten Arbeitsabläufe erleichtern dir den Alltag und machen dein Arbeiten effizienter und moderner. Und Abwechslung? Die ist garantiert, denn wir machen alles in house!'
+                    'content' => 'Neue Technologien, spannende Projekte und ein digitaler Workflow sorgen dafür, dass du bei uns immer am Puls der Zeit arbeitest. Unsere komplett digitalisierten Arbeitsabläufe erleichtern dir den Alltag und machen dein Arbeiten effizienter und moderner. Und Abwechslung? Die ist garantiert, denn wir machen alles inhouse!'
                   ]
                 ],
+
                 'class' => 'benefits-accordion'
               ]);
               ?>

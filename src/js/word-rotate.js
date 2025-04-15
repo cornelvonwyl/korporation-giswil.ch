@@ -4,16 +4,16 @@ class WordRotate {
     this.terms = [
       'Stromer',
       'Solar-Spezialistä',
-      'Schaltahlage-Strategä',
+      'Schaltalage-Strategä',
       'Strom-Architektä',
-      'Automation-Genies',
+      'Automations-Genies',
       'Büro-Heldä',
       'Schwach-Strömler',
       'IT-Gurus',
       'Kabler',
       'Chrampfer',
       'Macher',
-      'FurrerFighters',
+      'Furrer-Fighters',
       'Handwärcher',
     ];
     this.container = container;

@@ -38,7 +38,8 @@ if (have_rows('services')):
       $grouped_services[$target_group][] = array(
         'icon' => get_sub_field('icon'),
         'title' => get_sub_field('title'),
-        'content' => get_sub_field('text')
+        'content' => get_sub_field('text'),
+        'text_big' => get_sub_field('text_big')
       );
     endif;
   endwhile;
@@ -95,7 +96,7 @@ endif;
           <?php endif; ?>
 
           <?php if ($service['content']): ?>
-            <div class="sub-service__content prose">
+            <div class="sub-service__content prose <?php echo $service['text_big'] ? 'sub-service__content--big' : ''; ?>">
               <?php echo wp_kses_post($service['content']); ?>
             </div>
           <?php endif; ?>
