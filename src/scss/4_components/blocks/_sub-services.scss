@@ -8,6 +8,9 @@
   &__tabs {
     display: flex;
     @include spacing-medium-bottom();
+    position: sticky;
+    top: calc($content-offset + 1rem);
+    z-index: 90;
   }
 
   &__tab {

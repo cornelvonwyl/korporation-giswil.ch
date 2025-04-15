@@ -25,6 +25,10 @@
     a {
       @include underlined-link;
     }
+
+    &:last-child {
+      margin-bottom: 0;
+    }
   }
 
   ul,

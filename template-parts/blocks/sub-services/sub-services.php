@@ -95,7 +95,7 @@ endif;
           <?php endif; ?>
 
           <?php if ($service['content']): ?>
-            <div class="sub-service__content">
+            <div class="sub-service__content prose">
               <?php echo wp_kses_post($service['content']); ?>
             </div>
           <?php endif; ?>
