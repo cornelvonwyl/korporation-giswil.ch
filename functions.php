@@ -158,3 +158,42 @@ function add_gf_cap()
   $role->add_cap('gform_full_access');
 }
 add_action('admin_init', 'add_gf_cap');
+
+
+// Remove all default WordPress dashboard widgets
+function vonweb_remove_default_dashboard_widgets()
+{
+  // Core widgets
+  remove_meta_box('dashboard_right_now', 'dashboard', 'normal');    // At a Glance
+  remove_meta_box('dashboard_activity', 'dashboard', 'normal');     // Activity
+  remove_meta_box('dashboard_quick_press', 'dashboard', 'side');    // Quick Draft
+  remove_meta_box('dashboard_primary', 'dashboard', 'side');        // WordPress News
+  remove_meta_box('dashboard_secondary', 'dashboard', 'side');      // Secondary News
+
+  // Additional common plugin widgets (optional, remove if unused)
+  remove_meta_box('yoast_db_widget', 'dashboard', 'normal');        // Yoast SEO
+  remove_meta_box('dashboard_site_health', 'dashboard', 'normal');  // Site Health
+}
+add_action('wp_dashboard_setup', 'vonweb_remove_default_dashboard_widgets', 20);
+
+
+// Add custom dashboard widget with important links
+function vonweb_add_custom_dashboard_widget()
+{
+  wp_add_dashboard_widget(
+    'vonweb_important_links', // Widget slug
+    '📌 Wichtige Links',       // Widget title
+    'vonweb_display_links'    // Display function
+  );
+}
+add_action('wp_dashboard_setup', 'vonweb_add_custom_dashboard_widget', 10);
+
+
+// Display the custom dashboard widget content
+function vonweb_display_links()
+{
+  echo '<ul>';
+  echo '<li><a href="https://track.toggl.com/shared-report/b12646c0a7719c2c63c72ce0af74f691/detailed" target="_blank">⏰ Service-Paket</a></li>';
+  echo '<li><a href="https://analytics.google.com/" target="_blank">📊 Google Analytics</a></li>';
+  echo '</ul>';
+}
