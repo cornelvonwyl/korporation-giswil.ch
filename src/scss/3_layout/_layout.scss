@@ -24,5 +24,28 @@
         @include spacing-medium-bottom;
       }
     }
+
+    .filebird-block-filebird-gallery {
+      --columns: 2 !important;
+      --space: 1rem !important;
+      --min-width: 0px;
+
+      margin-top: 4rem !important;
+      margin-bottom: 6rem !important;
+
+      @include large-up {
+        margin-top: 5rem !important;
+        margin-bottom: 10rem !important;
+      }
+
+      @include container-large;
+      padding: 0 1rem !important;
+
+      @include medium-up {
+        padding: 0 2rem !important;
+        --columns: 2 !important;
+        --space: 10rem !important;
+      }
+    }
   }
 }
