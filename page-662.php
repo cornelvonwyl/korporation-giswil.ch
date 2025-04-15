@@ -8,7 +8,7 @@
           <div class="page-header__container">
 
             <?php
-            echo wp_get_attachment_image(1649, 'huge', false, array('class' => 'page-header__image'));
+            echo wp_get_attachment_image(1649, 'large', false, array('class' => 'page-header__image'));
             ?>
             <div class="page-header__content">
               <p class="page-header__subtitle">Wir freuen uns</p>
