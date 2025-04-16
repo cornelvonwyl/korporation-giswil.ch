@@ -41,7 +41,6 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
         echo wp_get_attachment_image($attachment_id, 'small', false, [
           'loading' => 'lazy',
           'decoding' => 'async',
-          'sizes' => '(max-width: 480px) 50vw, 50vw',
         ]);
         ?>
       </div>
@@ -56,7 +55,6 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
         echo wp_get_attachment_image($attachment_id, 'small', false, [
           'loading' => 'lazy',
           'decoding' => 'async',
-          'sizes' => '(max-width: 480px) 50vw, 50vw',
         ]);
         ?>
       </div>
