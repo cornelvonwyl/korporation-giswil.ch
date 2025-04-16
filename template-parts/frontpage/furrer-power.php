@@ -55,9 +55,7 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
     ?>
       <div class="furrer-power__image" data-image-item>
         <?php
-        echo wp_get_attachment_image($attachment_id, 'medium-size', FALSE, array(
-          'loading' => 'lazy',
-        ));
+        echo wp_get_attachment_image($attachment_id, 'small');
         ?>
       </div>
     <?php
