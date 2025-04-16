@@ -313,7 +313,7 @@
 
 @mixin button() {
   @include filter-button-label();
-  padding: 0.9rem 1.5rem 0.8rem 1.5rem;
+  padding: 0.9rem 1.5rem 0.9rem 1.5rem;
   border-radius: 100rem;
   cursor: pointer;
   display: inline-block;
@@ -324,7 +324,7 @@
   @include hover-scale();
 
   @include large-up {
-    padding: 1rem 1.75rem 0.9rem 1.75rem;
+    padding: 0.9rem 1.75rem 0.9rem 1.75rem;
   }
 }
 

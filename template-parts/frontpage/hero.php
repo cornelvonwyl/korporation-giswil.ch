@@ -2,7 +2,7 @@
   <div class="hero__container">
 
     <?php
-    $image_id = 1647;
+    $image_id = 1790;
     echo wp_get_attachment_image($image_id, 'extra-large', FALSE, ['class' => 'hero__image']);
     ?>
 
