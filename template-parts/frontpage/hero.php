@@ -3,7 +3,12 @@
 
     <?php
     $image_id = 1790;
-    echo wp_get_attachment_image($image_id, 'extra-large', FALSE, ['class' => 'hero__image']);
+    echo wp_get_attachment_image($image_id, 'extra-large', FALSE, [
+      'class' => 'hero__image',
+      'sizes' => '(max-width: 768px) 150vw, 1200px',
+      'loading' => 'eager',
+      'decoding' => 'async'
+    ]);
     ?>
 
     <div class="hero__content">
