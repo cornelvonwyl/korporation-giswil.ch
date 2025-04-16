@@ -6,20 +6,17 @@
  * @package Vonweb
  */
 
-
 if (!class_exists('FileBird\Classes\Helpers')) {
   return;
 }
 
 use FileBird\Classes\Helpers as Helpers;
 
-
 $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
 ?>
 
 <section class="furrer-power">
   <div class="furrer-power__container">
-
     <div class="furrer-power__content">
       <h2 class="furrer-power__title">
         Furrer-Power
@@ -32,7 +29,6 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
         <a class="animated-button" href="/team">Team</a>
       </div>
     </div>
-
   </div>
 
   <div class="furrer-power__images" data-image-rotation>
@@ -42,9 +38,11 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
     ?>
       <div class="furrer-power__image active" data-image-item data-position="<?php echo $position; ?>">
         <?php
-        echo wp_get_attachment_image($attachment_id, 'medium-size', FALSE, array(
+        echo wp_get_attachment_image($attachment_id, 'small', false, [
           'loading' => 'lazy',
-        ));
+          'decoding' => 'async',
+          'sizes' => '(max-width: 480px) 50vw, 50vw',
+        ]);
         ?>
       </div>
     <?php
@@ -55,7 +53,11 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
     ?>
       <div class="furrer-power__image" data-image-item>
         <?php
-        echo wp_get_attachment_image($attachment_id, 'small');
+        echo wp_get_attachment_image($attachment_id, 'small', false, [
+          'loading' => 'lazy',
+          'decoding' => 'async',
+          'sizes' => '(max-width: 480px) 50vw, 50vw',
+        ]);
         ?>
       </div>
     <?php

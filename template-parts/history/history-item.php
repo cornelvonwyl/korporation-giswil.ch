@@ -22,6 +22,8 @@ $images = get_field('images', get_the_ID());
                     <figure class="history-item__figure">
                         <?php echo wp_get_attachment_image($image['ID'], 'small', false, [
                             'loading' => 'lazy',
+                            'decoding' => 'async',
+                            'sizes' => '(max-width: 768px) 100vw, 50vw'
                         ]); ?>
                         <?php if ($image['caption']) : ?>
                             <figcaption class="history-item__caption"><?php echo esc_html($image['caption']); ?></figcaption>
