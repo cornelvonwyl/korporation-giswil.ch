@@ -76,6 +76,12 @@
     object-fit: cover;
   }
 
+  &__location {
+    a {
+      @include underlined-link;
+    }
+  }
+
   &__content {
     @include spacing;
   }

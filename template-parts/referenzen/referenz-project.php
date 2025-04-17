@@ -151,7 +151,9 @@ $primary_term = (!is_wp_error($terms) && !empty($terms)) ? array_shift($terms) :
           <div class="referenz-project__location referenz-project__facts-item">
             <h3>Standort</h3>
             <p class="referenz-project__facts-content">
-              <?php echo esc_html($location); ?>
+              <a href="<?php echo esc_url(get_permalink($location->ID)); ?>">
+                <?php echo esc_html($location->post_title); ?>
+              </a>
             </p>
           </div>
         <?php endif; ?>
