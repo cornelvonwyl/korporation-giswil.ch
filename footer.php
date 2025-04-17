@@ -38,20 +38,30 @@
                         <input type="hidden" id="data_form_id" name="data[form_id]" value="2">
                         <input type="hidden" id="data_form_language" name="data[form_language]" value="de">
                         <script>
+                            var inputReferrer = document.getElementById('data_referrer');
+
+                            if (inputReferrer) {
+                                inputReferrer.value = window.location.href;
+                            }
+
+
                             document.addEventListener('DOMContentLoaded', function() {
-                                const form = document.getElementById('contact_form_2_de');
-                                const errorFields = form.querySelectorAll('.field_errors li');
+                                setTimeout(function() {
+                                    const form = document.getElementById('contact_form_2_de');
+                                    const errorFields = form.querySelectorAll('.field_errors li');
 
-                                console.log(errorFields);
+                                    console.log(errorFields);
 
-                                if (errorFields.length > 0) {
-                                    form.scrollIntoView({
-                                        behavior: 'smooth',
-                                        block: 'start'
-                                    });
-                                }
+                                    if (errorFields.length > 0) {
+                                        form.scrollIntoView({
+                                            behavior: 'smooth',
+                                            block: 'start'
+                                        });
+                                    }
+                                }, 1000);
                             });
                         </script>
+
 
 
                     </form>
