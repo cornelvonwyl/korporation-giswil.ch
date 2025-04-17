@@ -12,6 +12,9 @@
             <div class="news-single__image">
               <?php echo get_the_post_thumbnail(get_the_ID(), 'huge', [
                 'class' => 'news-single__thumbnail',
+                'sizes' => '(max-width: 768px) 150vw, 100vw',
+                'loading' => 'eager',
+                'decoding' => 'async'
               ]); ?>
             </div>
           <?php endif; ?>

@@ -40,12 +40,12 @@ $unique_id = uniqid('images-block-');
       </div>
 
       <div class="swiper-buttons">
-        <button type="button" class="swiper-button-prev" aria-label="Vorheriges Element">
+        <button type="button" class="swiper-button-prev-gallery" aria-label="Vorheriges Element">
           <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
             alt="Pfeil nach links"
             width="24" height="24">
         </button>
-        <button type="button" class="swiper-button-next" aria-label="Nächstes Element">
+        <button type="button" class="swiper-button-next-gallery" aria-label="Nächstes Element">
           <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
             alt="Pfeil nach rechts"
             width="24" height="24">

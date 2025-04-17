@@ -5,7 +5,7 @@
     $image_id = 1790;
     echo wp_get_attachment_image($image_id, 'extra-large', FALSE, [
       'class' => 'hero__image',
-      'sizes' => '(max-width: 768px) 150vw, 1200px',
+      'sizes' => '(max-width: 768px) 150vw, 100vw',
       'loading' => 'eager',
       'decoding' => 'async'
     ]);

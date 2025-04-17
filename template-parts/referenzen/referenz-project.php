@@ -13,6 +13,8 @@ $address = get_field('adress');
 $time = get_field('time');
 $location = get_field('location');
 
+
+
 // Get the reference thumbnail with proper alt text
 $reference_image = '';
 if (has_post_thumbnail()) {
