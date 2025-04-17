@@ -4,6 +4,10 @@
   }
 
   .main-content {
+    privacybee-widget {
+      display: block;
+    }
+
     & > p,
     & > ul:not(.filebird-block-filebird-gallery),
     & > ol,
@@ -13,7 +17,8 @@
     & > h2,
     & > h3,
     & > h4,
-    & > h5 {
+    & > h5,
+    & > privacybee-widget {
       @include container-small;
 
       &:first-child {
