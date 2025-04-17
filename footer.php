@@ -42,6 +42,8 @@
                                 const form = document.getElementById('contact_form_2_de');
                                 const errorFields = form.querySelectorAll('.field_errors li');
 
+                                console.log(errorFields);
+
                                 if (errorFields.length > 0) {
                                     form.scrollIntoView({
                                         behavior: 'smooth',
