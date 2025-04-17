@@ -2,7 +2,6 @@ import './menu.js';
 import './gallery.js';
 import './swiper.js';
 import './referenz-filter.js';
-import './referenz-gallery.js';
 import './hover-effect.js';
 import './masonry.js';
 import './fade-in-animation.js';

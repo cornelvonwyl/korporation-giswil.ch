@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         speed: 500,
         loop: true,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next-gallery',
+          prevEl: '.swiper-button-prev-gallery',
         },
       });
     });

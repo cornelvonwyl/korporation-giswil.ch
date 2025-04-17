@@ -13,8 +13,8 @@ document.addEventListener('DOMContentLoaded', () => {
         slidesPerView: 3,
         spaceBetween: 24,
         navigation: {
-          nextEl: '.swiper-button-next',
-          prevEl: '.swiper-button-prev',
+          nextEl: '.swiper-button-next-slider',
+          prevEl: '.swiper-button-prev-slider',
         },
         breakpoints: {
           0: {

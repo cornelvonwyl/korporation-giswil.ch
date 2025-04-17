@@ -36,13 +36,13 @@ if (!empty($gallery[0])) {
 
     <div class="referenz-impression__wrapper">
       <div class="swiper-buttons">
-        <button type="button" class="swiper-button-prev" aria-label="Vorheriges Bild">
+        <button type="button" class="swiper-button-prev swiper-button-prev-slider" aria-label="Vorheriges Bild">
           <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
             alt="Pfeil nach links"
             width="24" height="24">
         </button>
 
-        <button type="button" class="swiper-button-next" aria-label="Nächstes Bild">
+        <button type="button" class="swiper-button-next swiper-button-next-slider" aria-label="Nächstes Bild">
           <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
             alt="Pfeil nach rechts"
             width="24" height="24">
