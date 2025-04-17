@@ -38,13 +38,20 @@
                         <input type="hidden" id="data_form_id" name="data[form_id]" value="2">
                         <input type="hidden" id="data_form_language" name="data[form_language]" value="de">
 
-                        <script type="text/javascript">
-                            var inputReferrer = document.getElementById('data_referrer');
+                        <script>
+                            document.addEventListener('DOMContentLoaded', function() {
+                                var inputReferrer = document.getElementById('data_referrer');
+                                const errorFields = inputReferrer.querySelectorAll('.field_errors li');
 
-                            if (inputReferrer) {
-                                inputReferrer.value = window.location.href;
-                            }
+                                if (errorFields.length > 0) {
+                                    form.scrollIntoView({
+                                        behavior: 'smooth',
+                                        block: 'start'
+                                    });
+                                }
+                            });
                         </script>
+
                     </form>
                 </div>
             </div>
