@@ -37,11 +37,10 @@
                             value='{"data_contact_email":{"constrains":{"required":true}}}'>
                         <input type="hidden" id="data_form_id" name="data[form_id]" value="2">
                         <input type="hidden" id="data_form_language" name="data[form_language]" value="de">
-
                         <script>
                             document.addEventListener('DOMContentLoaded', function() {
-                                var inputReferrer = document.getElementById('data_referrer');
-                                const errorFields = inputReferrer.querySelectorAll('.field_errors li');
+                                const form = document.getElementById('contact_form_2_de');
+                                const errorFields = form.querySelectorAll('.field_errors li');
 
                                 if (errorFields.length > 0) {
                                     form.scrollIntoView({
@@ -51,6 +50,7 @@
                                 }
                             });
                         </script>
+
 
                     </form>
                 </div>
