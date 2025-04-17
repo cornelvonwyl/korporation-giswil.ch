@@ -25,7 +25,7 @@ if (is_wp_error($posts)) {
 <section class="news-slider animate-bg animation-on-scroll" data-bg-color="#f0f0f0">
   <div class="news-slider__container">
     <div class="news-slider__header">
-      <p class="news-slider__subtitle">Stories aus der Furrer-Welt</p>
+      <p class="news-slider__subtitle">Storys aus der Furrer-Welt</p>
       <h2>Neuigkeiten</h2>
     </div>
 
