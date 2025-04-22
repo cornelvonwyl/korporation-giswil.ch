@@ -12,6 +12,10 @@
 
   select {
     @include select();
+
+    @-moz-document url-prefix() {
+      width: 110%;
+    }
   }
 
   &__location {
