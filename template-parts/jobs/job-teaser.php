@@ -6,6 +6,10 @@
  * @package vonweb
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Get job fields
 $location = get_field('location', get_the_ID());
 $person = get_field('person', get_the_ID());

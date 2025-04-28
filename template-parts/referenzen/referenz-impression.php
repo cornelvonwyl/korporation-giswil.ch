@@ -4,6 +4,10 @@
  * Template part for displaying impression type references
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 if (!class_exists('FileBird\Classes\Helpers')) {
   return;
 }

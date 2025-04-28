@@ -1,4 +1,10 @@
-<?php get_header(); ?>
+<?php
+
+if (! defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
+get_header(); ?>
 <main>
 
   <div class="main-wrapper news-single">

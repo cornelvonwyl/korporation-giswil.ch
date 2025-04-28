@@ -11,6 +11,11 @@
  * }
  */
 
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Get available location IDs from passed data
 $available_location_ids = isset($args['available_location_ids']) ? $args['available_location_ids'] : array();
 ?>

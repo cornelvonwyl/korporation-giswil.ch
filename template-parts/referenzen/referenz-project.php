@@ -4,6 +4,11 @@
  * Template part for displaying project insight type references
  */
 
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Get all field values at the beginning
 $intro_text = get_field('intro_text');
 $project_managers = get_field('project_manager');
@@ -12,7 +17,6 @@ $service_references = get_field('service_references');
 $address = get_field('adress');
 $time = get_field('time');
 $location = get_field('location');
-
 
 
 // Get the reference thumbnail with proper alt text

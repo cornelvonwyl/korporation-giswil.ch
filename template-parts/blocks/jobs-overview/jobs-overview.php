@@ -1,13 +1,14 @@
 <?php
+
 /**
- * Jobs Overview Block Template.
- *
- * @param array $block The block settings and attributes.
- * @param string $content The block inner HTML (empty).
- * @param bool $is_preview True during backend preview render.
- * @param int $post_id The post ID the block is rendering content from.
- * @param array $context The context provided to the block by the post or its parent block.
+ * Template Name: Jobs Overview Block
+ * Description: Displays a list of job postings with filtering capabilities.
+ * @package vonweb
  */
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
 
 // Create id attribute allowing for custom "anchor" value.
 $id = 'jobs-overview-' . $block['id'];
@@ -64,4 +65,4 @@ if ($jobs_query->have_posts()) {
             'jobs_query' => $jobs_query
         )); ?>
     </div>
-</div> 
+</div>

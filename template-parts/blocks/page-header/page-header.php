@@ -9,6 +9,11 @@
  * @return  void
  */
 
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Create id attribute allowing for custom "anchor" value
 $id = 'page-header-' . $block['id'];
 

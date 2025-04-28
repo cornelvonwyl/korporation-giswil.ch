@@ -10,6 +10,10 @@
  * 2. Displaying people referenced directly in a post
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Get the current post type
 $current_post_type = get_post_type();
 

@@ -1,13 +1,13 @@
 <?php
 
 /**
- * The template for displaying 404 pages (Not Found).
- *
+ * Template Name: 404 Page
+ * Description: Template for displaying 404 error pages (Not Found).
  * @package GeneratePress
  */
 
 if (!defined('ABSPATH')) {
-  exit; // Exit if accessed directly.
+    exit; // Exit if accessed directly.
 }
 
 get_header(); ?>

@@ -1,12 +1,18 @@
 <?php
 
 /**
- * Image with Content Block Template.
+ * Template Name: Image with Content Block
+ * 
+ * A flexible block template that displays an image alongside content with configurable layout options.
+ * The image can be positioned on either side, and the title can be displayed in different variants.
  *
- * @param   array $block The block settings and attributes.
- * @param   string $content The block inner HTML (empty).
- * @param   bool $is_preview True during backend preview render.
+ * @package vonweb
  */
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 
 // Create id attribute allowing for custom "anchor" value
 $id = 'image-with-content-' . $block['id'];
@@ -26,9 +32,9 @@ $title = get_field('title');
 $title_variant = get_field('title_variant') ?: 'horizontal';
 $content = get_field('content');
 
-// Füge Klassenmodifizierer hinzu
-$class_name .= ' image-with-content--image-' . $image_position;
-$class_name .= ' image-with-content--title-' . $title_variant;
+// Add class modifiers
+$class_name .= ' image-with-content--image-' . esc_attr($image_position);
+$class_name .= ' image-with-content--title-' . esc_attr($title_variant);
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?> animation-on-scroll">

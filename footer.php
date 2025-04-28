@@ -1,8 +1,8 @@
 <?php
 
-/**
- * Footer template part
- */
+if (! defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
 ?>
 <footer class="footer animate-bg-yellow" role="contentinfo">
     <div class="footer__container">

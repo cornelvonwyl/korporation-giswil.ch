@@ -1,3 +1,9 @@
+<?php
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+?>
+
 <section class="hero">
   <div class="hero__container">
 

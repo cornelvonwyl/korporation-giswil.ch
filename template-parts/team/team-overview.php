@@ -11,6 +11,10 @@
  * }
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Get the passed people
 $people = isset($args['people']) ? $args['people'] : array();
 ?>

@@ -7,7 +7,13 @@
  *
  * @package vonweb
  */
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
 ?>
+
+
 <div class="news-filter">
   <div class="news-filter__container">
     <form id="news-filter-form" class="news-filter__form" role="group" aria-label="Kategorien Filter">

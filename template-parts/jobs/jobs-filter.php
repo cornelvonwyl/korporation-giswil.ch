@@ -8,6 +8,10 @@
  * @package vonweb
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 $args = $args ?? array();
 $available_locations = $args['available_locations'] ?? array();
 ?>

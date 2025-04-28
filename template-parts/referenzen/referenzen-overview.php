@@ -8,6 +8,10 @@
  * @package your-theme-name
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Get referenzen from passed arguments
 $referenzen = isset($args['referenzen']) ? $args['referenzen'] : array();
 ?>

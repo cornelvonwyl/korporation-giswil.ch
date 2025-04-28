@@ -6,6 +6,10 @@
  * @param array $args Template arguments
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Extract referenz from passed arguments
 $referenz = isset($args['referenz']) ? $args['referenz'] : NULL;
 

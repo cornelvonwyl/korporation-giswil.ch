@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 $images = $images ?? get_field('images') ?: array(
   array(
     'ID' => 58,

@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 $args = array(
   'post_type' => 'dienstleistung',
   'posts_per_page' => -1,

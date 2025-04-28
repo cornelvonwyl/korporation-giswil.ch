@@ -8,6 +8,10 @@
  * @param array $args['subtitle'] Optional. Subtitle for the section. Defaults to "Unsere Meisterwerke".
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 $referenzen = isset($args['referenzen']) ? $args['referenzen'] : NULL;
 $title = isset($args['title']) ? $args['title'] : 'Referenzen';
 $subtitle = isset($args['subtitle']) ? $args['subtitle'] : 'Unsere Meisterwerke';

@@ -1,4 +1,8 @@
 <?php
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 $year = get_field('year', get_the_ID());
 $text = get_field('text', get_the_ID());
 $images = get_field('images', get_the_ID());

@@ -1,3 +1,18 @@
+<?php
+
+/**
+ * The header template file
+ *
+ * This template displays the site header including navigation and logo
+ *
+ * @package vonweb
+ */
+
+if (! defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+?>
+
 <!DOCTYPE html>
 <html <?php language_attributes(); ?>>
 

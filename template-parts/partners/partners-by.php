@@ -1,10 +1,8 @@
 <?php
-/**
- * Template part for displaying partners
- */
 
-if (!function_exists('have_rows'))
-  return;
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
 
 if (have_rows('partners')): ?>
   <section class="partners-by">

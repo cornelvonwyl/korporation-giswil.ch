@@ -9,6 +9,10 @@
  * @param   int $post_id The post ID the block is rendering content against.
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Create id attribute allowing for custom "anchor" value.
 $id = 'sub-services-' . $block['id'];
 if (!empty($block['anchor'])) {
@@ -44,7 +48,6 @@ if (have_rows('services')):
     endif;
   endwhile;
 endif;
-
 
 ?>
 

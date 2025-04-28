@@ -1,4 +1,16 @@
-<?php get_header(); ?>
+<?php
+
+/**
+ * Template Name: Contact Page
+ * Description: Template for displaying the contact page with contact information and locations
+ * @package vonweb
+ */
+
+if (! defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
+get_header(); ?>
 <main>
   <div class="main-wrapper">
     <article class="main-content">
@@ -8,7 +20,11 @@
           <div class="page-header__container">
 
             <?php
-            echo wp_get_attachment_image(1649, 'large', false, array('class' => 'page-header__image'));
+            $image_id = 1649;
+            $image_attributes = array(
+              'class' => 'page-header__image'
+            );
+            echo wp_get_attachment_image($image_id, 'large', false, $image_attributes);
             ?>
             <div class="page-header__content">
               <p class="page-header__subtitle">Kontakt</p>

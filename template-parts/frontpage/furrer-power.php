@@ -1,10 +1,15 @@
 <?php
 
 /**
- * Furrer Power Component
- * 
+ * Template Name: Furrer Power Section
+ * Description: Displays the Furrer Power section with team information and rotating images
+ *
  * @package Vonweb
  */
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
 
 if (!class_exists('FileBird\Classes\Helpers')) {
   return;

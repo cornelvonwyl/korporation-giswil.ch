@@ -6,6 +6,11 @@
  * @param array $args Template arguments
  */
 
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Extract person from passed arguments
 $person = isset($args['person']) ? $args['person'] : NULL;
 

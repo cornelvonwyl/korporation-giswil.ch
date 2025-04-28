@@ -1,14 +1,13 @@
 <?php
 
 /**
- *
- * @param   array $block The block settings and attributes.
- * @param   string $content The block inner HTML (empty).
- * @param   bool $is_preview True during backend preview render.
- * @param   int $post_id The post ID the block is rendering content against.
- *          This is either the post ID currently being displayed inside a query loop,
- *          or the post ID of the post hosting this block.
- * @param   array $context The context provided to the block by the post or its parent block.
+ * Template Name: Images Block
+ * Description: A block template for displaying a gallery of images
+ * @package vonweb
  */
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
 
 include get_template_directory() . '/template-parts/components/gallery.php';

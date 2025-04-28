@@ -6,6 +6,10 @@
  * @package vonweb
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Query arguments for latest posts
 $args = array(
   'post_type' => 'post',

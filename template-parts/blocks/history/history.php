@@ -1,9 +1,15 @@
 <?php
 
 /**
- * Block Name: Geschichte
- * Description: Zeigt eine chronologische Übersicht der Firmengeschichte an.
+ * Template part for displaying the history block
+ *
+ * @package vonweb
  */
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 $block_classes = ['block-history'];
 
 // Create id attribute allowing for custom "anchor" value.

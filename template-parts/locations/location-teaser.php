@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 // Get arguments if provided, otherwise use current post data
 $title = isset($args['title']) ? $args['title'] : get_the_title();
 $link = isset($args['link']) ? $args['link'] : get_permalink();

@@ -1,4 +1,17 @@
-<?php get_header(); ?>
+<?php
+
+/**
+ * Template Name: Single Reference Post
+ * Description: Template for displaying individual reference pages
+ * @package vonweb
+ */
+
+if (! defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
+
+get_header(); ?>
 <main>
   <div class="main-wrapper">
     <?php if (have_posts()):

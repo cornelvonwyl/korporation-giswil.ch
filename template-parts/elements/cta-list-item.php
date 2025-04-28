@@ -8,6 +8,10 @@
  * @param bool $is_external  Whether the link is external
  */
 
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 // Set default arguments
 $args = wp_parse_args($args, array(
     'title'       => '',

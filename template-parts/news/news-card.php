@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 $thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
 $categories = get_the_category();
 ?>

@@ -10,6 +10,10 @@
  * @param array $context The context provided to the block by the post or its parent block.
  */
 
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 // Create id attribute allowing for custom "anchor" value.
 $id = 'references-section-' . $block['id'];
 if (!empty($block['anchor'])) {
@@ -52,6 +56,7 @@ $available_service_ids = array_unique($available_service_ids);
 
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="referenzen__container">
+
         <!-- Referenzen Filter -->
         <?php get_template_part('template-parts/referenzen/referenzen-filter', NULL, array(
             'available_service_ids' => $available_service_ids

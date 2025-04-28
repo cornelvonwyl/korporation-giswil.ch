@@ -1,4 +1,9 @@
 <?php
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 $icon = get_field('icon');
 $teaser = get_field('teaser_text');
 ?>

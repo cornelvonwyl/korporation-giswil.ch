@@ -10,6 +10,10 @@
  * @param array $context The context provided to the block by the post or its parent block.
  */
 
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 // Create id attribute allowing for custom "anchor" value.
 $id = 'news-overview-' . $block['id'];
 if (!empty($block['anchor'])) {

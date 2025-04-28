@@ -6,6 +6,11 @@
  * @package vonweb
  */
 
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 $args = $args ?? array();
 $jobs_query = $args['jobs_query'] ?? null;
 

@@ -1,13 +1,22 @@
-<?php get_header(); ?>
+<?php
+
+/**
+ * Template Name: Single Job Post
+ * Description: Template for displaying individual job postings
+ * @package vonweb
+ */
+
+if (! defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
+get_header(); ?>
 <main>
-
   <div class="main-wrapper job-single">
-
     <?php if (have_posts()):
       while (have_posts()):
         the_post(); ?>
         <article class="main-content">
-
           <?php if (has_post_thumbnail()): ?>
             <div class="job-single__image">
               <?php echo get_the_post_thumbnail(get_the_ID(), 'huge', [
@@ -18,7 +27,6 @@
               ]); ?>
             </div>
           <?php endif; ?>
-
 
           <?php get_template_part('template-parts/components/breadcrumb', NULL, [
             'items' => [
@@ -40,7 +48,7 @@
                     width="16"
                     height="16">
 
-                  <p class="job-single__workload-text"><?php echo $workload; ?></p>
+                  <p class="job-single__workload-text"><?php echo esc_html($workload); ?></p>
                 </div>
               <?php endif; ?>
               <?php
@@ -52,7 +60,7 @@
                     alt="Symbol für Pensum"
                     width="16"
                     height="16">
-                  <p class="job-single__location-text"><?php echo get_the_title($location); ?></p>
+                  <p class="job-single__location-text"><?php echo esc_html(get_the_title($location)); ?></p>
                 </div>
               <?php endif; ?>
             </div>
@@ -62,13 +70,16 @@
               <a href="mailto:hr@elektrofurrer.ch" class="animated-button job-single__apply">Jetzt bewerben</a>
 
 
-              <?php if (get_field('pdf')): ?>
+              <?php
+              $pdf = get_field('pdf');
+              if ($pdf): ?>
                 <div class="job-single__pdf">
-                  <a href="<?php echo get_field('pdf')['url']; ?>" target="_blank" class="animated-button job-single__pdf-button">Inserat Download</a>
+                  <a href="<?php echo esc_url($pdf['url']); ?>" target="_blank" class="animated-button job-single__pdf-button">
+                    Inserat Download
+                  </a>
                 </div>
               <?php endif; ?>
             </div>
-
 
             <div class="job-single__content prose">
               <?php the_content(); ?>
@@ -81,37 +92,35 @@
               get_template_part('template-parts/components/accordion', NULL, [
                 'items' => [
                   [
-                    'category' => 'Arbeiten und Leben',
-                    'title' => 'Zeit für das, was zählt',
-                    'content' => 'Job und Privatleben sollen sich nicht im Weg stehen, deshalb bieten wir flexible Arbeitszeiten, Teilzeitmöglichkeiten oder Mami-/Papi-Pausen. Mit unserer 40-Stunden-Woche und der Option auf unbezahlten Urlaub hast du noch mehr Freiraum. Unsere massgeschneiderten Arbeitsmodelle passen sich deinen Lebensumständen an.'
+                    'category' => esc_html__('Arbeiten und Leben', 'vonweb'),
+                    'title' => esc_html__('Zeit für das, was zählt', 'vonweb'),
+                    'content' => esc_html__('Job und Privatleben sollen sich nicht im Weg stehen, deshalb bieten wir flexible Arbeitszeiten, Teilzeitmöglichkeiten oder Mami-/Papi-Pausen. Mit unserer 40-Stunden-Woche und der Option auf unbezahlten Urlaub hast du noch mehr Freiraum. Unsere massgeschneiderten Arbeitsmodelle passen sich deinen Lebensumständen an.', 'vonweb')
                   ],
                   [
-                    'category' => 'Team und Unternehmen',
-                    'title' => 'Gemeinsam stark, gemeinsam erfolgreich',
-                    'content' => 'Ist dir Teamspirit wichtig? Dann bist du bei uns genau richtig! Wir packen gemeinsam an und schaffen Grosses. Bei uns arbeitest du dort, wo du dich wohlfühlst, in einem familiären Umfeld mit flachen Hierarchien. Wir geben dir Raum, dich zu entfalten, eigene Ideen einzubringen und dich weiterzuentwickeln. Und weil ein starkes Team nicht nur bei der Arbeit zählt, gibt es bei uns regelmässig Mitarbeiterevents für gute Gespräche, viel Spass und noch mehr Zusammenhalt.'
+                    'category' => esc_html__('Team und Unternehmen', 'vonweb'),
+                    'title' => esc_html__('Gemeinsam stark, gemeinsam erfolgreich', 'vonweb'),
+                    'content' => esc_html__('Ist dir Teamspirit wichtig? Dann bist du bei uns genau richtig! Wir packen gemeinsam an und schaffen Grosses. Bei uns arbeitest du dort, wo du dich wohlfühlst, in einem familiären Umfeld mit flachen Hierarchien. Wir geben dir Raum, dich zu entfalten, eigene Ideen einzubringen und dich weiterzuentwickeln. Und weil ein starkes Team nicht nur bei der Arbeit zählt, gibt es bei uns regelmässig Mitarbeiterevents für gute Gespräche, viel Spass und noch mehr Zusammenhalt.', 'vonweb')
                   ],
                   [
-                    'category' => 'Weiterbildung und Entwicklung',
-                    'title' => 'Lernen, wachsen, weiterkommen',
-                    'content' => 'Profitiere von diversen internen und externen Weiterbildungsmöglichkeiten, ganz nach deinen Interessen und Zielen. Wir begleiten dich auf dem Weg zu deiner Traumausbildung und bieten dir die Chance, dich fachlich und persönlich weiterzuentwickeln. Ob spezialisierte Schulungen, praxisnahe Kurse oder langfristige Karriereplanung, wir unterstützen dich dabei. So kannst du dein volles Potenzial ausschöpfen, denn dein Erfolg ist auch unserer.'
+                    'category' => esc_html__('Weiterbildung und Entwicklung', 'vonweb'),
+                    'title' => esc_html__('Lernen, wachsen, weiterkommen', 'vonweb'),
+                    'content' => esc_html__('Profitiere von diversen internen und externen Weiterbildungsmöglichkeiten, ganz nach deinen Interessen und Zielen. Wir begleiten dich auf dem Weg zu deiner Traumausbildung und bieten dir die Chance, dich fachlich und persönlich weiterzuentwickeln. Ob spezialisierte Schulungen, praxisnahe Kurse oder langfristige Karriereplanung, wir unterstützen dich dabei. So kannst du dein volles Potenzial ausschöpfen, denn dein Erfolg ist auch unserer.', 'vonweb')
                   ],
                   [
-                    'category' => 'Arbeitssicherheit und Gesundheit',
-                    'title' => 'Sicher arbeiten, gesund bleiben',
-                    'content' => 'Sicheres Arbeiten hat bei uns oberste Priorität! Wir sorgen dafür, dass du bestmöglich geschützt bist – dank optimaler Ausrüstung, modernen Sicherheitsstandards und regelmässigen Schulungen. Durch kontinuierliche Weiterbildungen halten wir unser Team auf dem neusten Stand und minimieren Risiken. Denn deine Gesundheit ist uns wichtig, heute und in Zukunft.'
+                    'category' => esc_html__('Arbeitssicherheit und Gesundheit', 'vonweb'),
+                    'title' => esc_html__('Sicher arbeiten, gesund bleiben', 'vonweb'),
+                    'content' => esc_html__('Sicheres Arbeiten hat bei uns oberste Priorität! Wir sorgen dafür, dass du bestmöglich geschützt bist – dank optimaler Ausrüstung, modernen Sicherheitsstandards und regelmässigen Schulungen. Durch kontinuierliche Weiterbildungen halten wir unser Team auf dem neusten Stand und minimieren Risiken. Denn deine Gesundheit ist uns wichtig, heute und in Zukunft.', 'vonweb')
                   ],
                   [
-                    'category' => 'Innovation und spannende Projekte',
-                    'title' => 'Immer am Puls der Zeit',
-                    'content' => 'Neue Technologien, spannende Projekte und ein digitaler Workflow sorgen dafür, dass du bei uns immer am Puls der Zeit arbeitest. Unsere komplett digitalisierten Arbeitsabläufe erleichtern dir den Alltag und machen dein Arbeiten effizienter und moderner. Und Abwechslung? Die ist garantiert, denn wir machen alles inhouse!'
+                    'category' => esc_html__('Innovation und spannende Projekte', 'vonweb'),
+                    'title' => esc_html__('Immer am Puls der Zeit', 'vonweb'),
+                    'content' => esc_html__('Neue Technologien, spannende Projekte und ein digitaler Workflow sorgen dafür, dass du bei uns immer am Puls der Zeit arbeitest. Unsere komplett digitalisierten Arbeitsabläufe erleichtern dir den Alltag und machen dein Arbeiten effizienter und moderner. Und Abwechslung? Die ist garantiert, denn wir machen alles inhouse!', 'vonweb')
                   ]
                 ],
-
                 'class' => 'benefits-accordion'
               ]);
               ?>
             </div>
-
           </div>
 
           <?php
@@ -122,11 +131,9 @@
             $phone = get_field('phone', $person);
             $first_name = get_field('first_name', $person);
             $last_name = get_field('last_name', $person);
-
             $portrait = get_field('portrait', $person);
           ?>
             <div class="job-single__contact animate-bg" data-bg-color="#f0f0f0" data-threshold="25">
-
               <div class="job-single__contact-container">
                 <div>
                   <div class="job-single__contact-header">
@@ -140,30 +147,23 @@
                       'person' => $person,
                     ));
                     ?>
-
-
                   </div>
                 </div>
 
-
                 <div>
-
-
                   <div class="job-single__contact-header">
                     <p class="job-single__contact-subtitle">Alternative</p>
                     <h2 class="job-single__contact-title">Wir melden uns bei dir</h2>
                   </div>
 
-                  <?php gravity_form(4, false, false, false, '', true); ?>
-
+                  <?php if (function_exists('gravity_form')): ?>
+                    <?php gravity_form(4, false, false, false, '', true); ?>
+                  <?php endif; ?>
                 </div>
-
               </div>
 
               <div class="job-single__contact-cta">
                 <div class="job-single__contact-cta-container">
-
-
                   <div class="job-single__contact-header">
                     <p class="job-single__contact-subtitle">Überzeugt?</p>
                     <h2>Bewirb dich jetzt</h2>
@@ -178,11 +178,9 @@
               </div>
             </div>
           <?php endif; ?>
-
         </article>
     <?php endwhile;
     endif; ?>
-
   </div>
 </main>
 <?php get_footer(); ?>

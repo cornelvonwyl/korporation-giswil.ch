@@ -9,6 +9,10 @@
  * }
  */
 
+if (!defined('ABSPATH')) {
+    exit; // Exit if accessed directly.
+}
+
 if (!isset($args['items']) || empty($args['items'])) {
     return;
 }

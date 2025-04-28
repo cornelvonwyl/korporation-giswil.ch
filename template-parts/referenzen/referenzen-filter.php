@@ -8,6 +8,10 @@
  * @package your-theme-name
  */
 
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
+
 // Get available service IDs from passed arguments
 $available_service_ids = isset($args['available_service_ids']) ? $args['available_service_ids'] : array();
 ?>

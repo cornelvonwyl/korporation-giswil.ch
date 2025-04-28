@@ -1,9 +1,14 @@
 <?php
+
 /**
  * Template part for displaying breadcrumb navigation
  * 
  * @param array $items Optional. Array of breadcrumb items. Each item should have 'title' and 'url' (optional) keys.
  */
+
+if (!defined('ABSPATH')) {
+  exit; // Exit if accessed directly.
+}
 
 $items = isset($args['items']) ? $args['items'] : [];
 
