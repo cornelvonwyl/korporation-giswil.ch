@@ -198,7 +198,7 @@ add_action('wp_dashboard_setup', 'vonweb_add_custom_dashboard_widget', 10);
 function vonweb_display_links()
 {
   echo '<ul>';
-  echo '<li><a href="https://track.toggl.com/shared-report/b12646c0a7719c2c63c72ce0af74f691/detailed" target="_blank">⏰ Service-Paket</a></li>';
+  echo '<li><a href="https://track.toggl.com/shared-report/3b52d925468726e0af3c7e3618adbe20/detailed/period/thisYear" target="_blank">⏰ Service-Paket</a></li>';
   echo '<li><a href="https://analytics.google.com/" target="_blank">📊 Google Analytics</a></li>';
   echo '<li><a href="https://search.google.com/search-console" target="_blank">📈 Google Search Console</a></li>';
   echo '<li><a href="https://www.privacybee.io/ch/" target="_blank">🔒 Privacy Bee</a></li>';
