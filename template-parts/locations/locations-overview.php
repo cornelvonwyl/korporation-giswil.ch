@@ -4,13 +4,22 @@ if (!defined('ABSPATH')) {
   exit; // Exit if accessed directly.
 }
 
-$args = array(
+// Get the exclude_current parameter from get_template_part
+$exclude_current = isset($args) && isset($args['exclude_current']) ? $args['exclude_current'] : false;
+
+$query_args = array(
   'post_type' => 'standort',
   'posts_per_page' => -1,
   'orderby' => 'menu_order',
   'order' => 'ASC'
 );
-$standorte = new WP_Query($args);
+
+// Exclude current post if exclude_current is set to true
+if ($exclude_current === true) {
+  $query_args['post__not_in'] = array(get_the_ID());
+}
+
+$standorte = new WP_Query($query_args);
 ?>
 
 <section class="locations-overview animation-on-scroll">

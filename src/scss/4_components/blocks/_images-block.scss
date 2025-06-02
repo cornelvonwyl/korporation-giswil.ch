@@ -11,16 +11,23 @@
   }
 
   &__image {
-    position: relative;
-
-    aspect-ratio: 3 / 2;
+    @include medium-up() {
+      position: relative;
+      aspect-ratio: 3 / 2;
+    }
 
     img {
-      width: 100%;
-      height: 100%;
-      object-fit: contain;
-      object-position: center;
+      @include medium-up() {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+        object-position: center;
+      }
     }
+  }
+
+  .swiper-wrapper {
+    align-items: center;
   }
 
   .swiper-buttons {

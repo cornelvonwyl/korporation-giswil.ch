@@ -19,12 +19,12 @@ get_header(); ?>
         <article class="main-content">
           <?php the_content(); ?>
 
-
           <?php get_template_part('template-parts/services/services-overview'); ?>
 
           <?php get_template_part('template-parts/team/people-by'); ?>
 
-          <?php get_template_part('template-parts/partners/partners-by'); ?>
+
+          <?php get_template_part('template-parts/locations/locations-overview', null, array('exclude_current' => true)); ?>
         </article>
     <?php endwhile;
     endif; ?>

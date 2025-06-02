@@ -93,18 +93,6 @@ if (! defined('ABSPATH')) {
             <div class="footer__section">
                 <h4 class="footer__section-title" id="footer-social">Social Media</h4>
                 <ul class="footer__social" aria-labelledby="footer-social">
-                    <li>
-                        <a href="https://furrerag.rmmservice.eu/connect/#/4440936652"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Ninja Remote - Öffnet in neuem Tab">
-                            <img class="footer__social-icon"
-                                src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/ninja-remote.png'); ?>"
-                                alt="Ninja Remote Icon"
-                                width="28"
-                                height="28">
-                        </a>
-                    </li>
 
                     <li>
                         <a href="https://www.instagram.com/elektrofurrer/"
@@ -144,6 +132,23 @@ if (! defined('ABSPATH')) {
                                 height="28">
                         </a>
                     </li>
+                </ul>
+
+                <h4 class="footer__section-title">Support</h4>
+                <ul class="footer__support">
+                    <li>
+                        <a href="https://furrerag.rmmservice.eu/connect/#/4440936652"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            aria-label="Ninja Remote - Öffnet in neuem Tab">
+                            <img class="footer__social-icon"
+                                src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/ninja-remote.png'); ?>"
+                                alt="Ninja Remote Icon"
+                                width="28"
+                                height="28">
+                        </a>
+                    </li>
+
                 </ul>
             </div>
         </div>

@@ -55,7 +55,7 @@ $people = isset($args['people']) ? $args['people'] : array();
     </ul>
 
     <div class="team-overview__empty" style="display: none;">
-      <p>Für den gewählten Standort wurden keine Ergebnisse gefunden. Bitte wähle einen anderen Standort.</p>
+      <p>Diese Abteilung hat ihren Hauptsitz an einem anderen Standort, unsere Dienstleistung stehen euch jedoch standortübergreifend zur Verfügung.</p>
     </div>
   <?php endif; ?>
 
