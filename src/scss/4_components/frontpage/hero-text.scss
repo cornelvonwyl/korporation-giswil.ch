@@ -1,7 +1,7 @@
 .hero-text {
   @include spacing;
   &__container {
-    @include container-small;
+    @include container;
 
     p {
       @include hero-text;

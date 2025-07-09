@@ -1,6 +1,6 @@
 .job-single {
   &__container {
-    @include container-small;
+    @include container;
   }
 
   &__thumbnail {
@@ -69,7 +69,7 @@
   }
 
   &__benefits {
-    @include container-small;
+    @include container;
   }
 
   &__contact {
@@ -126,6 +126,6 @@
   }
 
   &__contact-cta-container {
-    @include container-small;
+    @include container;
   }
 }

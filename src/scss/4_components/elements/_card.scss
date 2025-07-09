@@ -7,7 +7,7 @@
 
   &:has(.card__link:hover) {
     box-shadow: $box-shadow-hover;
-    transform: translate(4px, 4px);
+    transform: translate(3px, 3px);
   }
 
   &__link {
@@ -35,7 +35,7 @@
 
   &__date {
     @include text-small;
-    font-weight: 500;
+    color: $color-blue-light;
   }
 
   &__title {
@@ -45,15 +45,14 @@
   &__category {
     @include text-small;
     color: $color-green;
-    font-weight: 500;
   }
 
   &__arrow {
     background-color: $color-blue;
     border-radius: 50%;
-    width: 2.5rem;
-    min-width: 2.5rem;
-    height: 2.5rem;
+    width: 2rem;
+    min-width: 2rem;
+    height: 2rem;
     padding: 0.5rem;
     transform: rotate(0deg);
     @include transition(all);

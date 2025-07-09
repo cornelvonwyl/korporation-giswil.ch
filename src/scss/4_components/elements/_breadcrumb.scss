@@ -2,17 +2,36 @@
   @include container-large;
   @include text-small;
 
+  color: $color-blue-light;
+
   ul {
     display: flex;
-    gap: 0.5rem;
+    gap: 0.35rem;
     list-style: none;
     padding: 0;
     margin: 0;
-    margin: 1rem 0 2rem;
+    margin: 2rem 0 4rem;
+
+    li {
+      display: flex;
+      align-items: center;
+      gap: 0.35rem;
+
+      &:last-child {
+        .breadcrumb-separator {
+          display: none;
+        }
+      }
+    }
   }
 
   a {
-    color: $color-black;
+    color: $color-blue-light;
     text-decoration: none;
+    @include transition(color);
+
+    &:hover {
+      color: $color-black;
+    }
   }
 }

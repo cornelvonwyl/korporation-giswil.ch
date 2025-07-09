@@ -34,6 +34,10 @@
 // Blog/Posts
 @import '4_components/news/news-list';
 
+// Events
+@import '4_components/events/events-list';
+@import '4_components/events/events-single';
+
 @import '4_components/news/news-overview';
 @import '4_components/news/news-filter';
 @import '4_components/news/news-single';
@@ -71,7 +75,6 @@
 
 // Locations Page
 @import '4_components/locations/locations-overview';
-
 
 // Contact Page
 @import '4_components/contact/contact-page';

@@ -32,22 +32,22 @@ if (is_wp_error($posts)) {
       <h2>Neuigkeiten</h2>
       <div>
         <?php if ($posts->have_posts()): ?>
-          <div class="news-list__cards">
+          <ul class="news-list__cards">
             <?php while ($posts->have_posts()): $posts->the_post(); ?>
-              <div class="news-list__card">
+              <li class="news-list__card">
                 <?php get_template_part('template-parts/news/news-card'); ?>
-              </div>
+              </li>
             <?php endwhile; ?>
-          </div>
+          </ul>
+          <a class="news-list__more" href="/neuigkeiten">
+            Mehr Neuigkeiten
+          </a>
         <?php endif; ?>
+
+
         <?php wp_reset_postdata(); ?>
       </div>
     </div>
 
-    <div class="news-list__button">
-      <a class="primary-button" href="/neuigkeiten">
-        Mehr Neuigkeiten
-      </a>
-    </div>
   </div>
 </section>

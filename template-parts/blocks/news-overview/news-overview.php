@@ -37,7 +37,7 @@ if (!empty($block['align'])) {
             <div class="news-overview__header">
                 <h1>Neuigkeiten</h1>
                 <!-- News Filter -->
-                <?php get_template_part('template-parts/news/news-filter'); ?>
+                <!-- <?php get_template_part('template-parts/news/news-filter'); ?> -->
             </div>
 
             <!-- News List -->

@@ -69,10 +69,6 @@ body:not(.block-editor-page) {
   @include medium-up {
     font-size: rem(16px);
   }
-
-  /*   @include large-up {
-    font-size: rem(18px);
-  } */
 }
 
 body.block-editor-page {

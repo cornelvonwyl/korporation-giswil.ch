@@ -24,7 +24,7 @@ get_header(); ?>
           <div class="news-single__container">
 
             <div class="news-single__header">
-              <div class="news-single__categories">
+              <!--               <div class="news-single__categories">
                 <?php
                 $fields = get_field('fields');
                 if ($fields):
@@ -38,7 +38,8 @@ get_header(); ?>
                     Allgemein
                   </p>
                 <?php endif; ?>
-              </div>
+              </div> -->
+
 
               <h1 class="news-single__title">
                 <?php the_title(); ?>
@@ -47,6 +48,8 @@ get_header(); ?>
               <p class="news-single__date">
                 <?php echo get_the_date('j. F Y'); ?>
               </p>
+
+              <hr>
             </div>
 
 

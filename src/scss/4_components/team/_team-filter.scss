@@ -7,7 +7,7 @@
   }
 
   &__container {
-    @include container-small;
+    @include container;
   }
 
   select {

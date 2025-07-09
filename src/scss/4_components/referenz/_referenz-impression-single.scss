@@ -2,7 +2,7 @@
   @include spacing-medium;
 
   &__header {
-    @include container-small;
+    @include container;
   }
 
   &__subtitle {
@@ -10,7 +10,7 @@
   }
 
   &__content {
-    @include container-small;
+    @include container;
   }
 
   &__gallery {

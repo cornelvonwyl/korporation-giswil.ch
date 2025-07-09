@@ -1,11 +1,11 @@
 body {
   .gform-theme {
-    --gf-color-primary: #ffed00 !important;
+    --gf-color-primary: #{$color-white} !important;
     --gf-color-primary-rgb: 255, 237, 0 !important;
     --gf-color-primary-contrast: #000000 !important;
     --gf-color-primary-contrast-rgb: 0, 0, 0 !important;
-    --gf-color-primary-darker: #d6c900 !important; /* Slightly darker yellow */
-    --gf-color-primary-lighter: #fff533 !important; /* Slightly lighter yellow */
+    --gf-color-primary-darker: #{$color-green} !important; /* Slightly darker yellow */
+    --gf-color-primary-lighter: #{$color-green} !important; /* Slightly lighter yellow */
 
     --gf-color-secondary: #ffffff !important;
     --gf-color-secondary-rgb: 255, 255, 255 !important;
@@ -31,12 +31,12 @@ body {
     --gf-color-in-ctrl-darker: #f0f0f0 !important;
     --gf-color-in-ctrl-lighter: #ffffff !important;
 
-    --gf-color-in-ctrl-primary: #ffed00 !important;
+    --gf-color-in-ctrl-primary: #{$color-green} !important;
     --gf-color-in-ctrl-primary-rgb: 255, 237, 0 !important;
     --gf-color-in-ctrl-primary-contrast: #000000 !important;
     --gf-color-in-ctrl-primary-contrast-rgb: 0, 0, 0 !important;
-    --gf-color-in-ctrl-primary-darker: #d6c900 !important;
-    --gf-color-in-ctrl-primary-lighter: #fff533 !important;
+    --gf-color-in-ctrl-primary-darker: #{$color-green} !important;
+    --gf-color-in-ctrl-primary-lighter: #{$color-green} !important;
 
     --gf-color-in-ctrl-light: rgba(0, 0, 0, 0.1) !important;
     --gf-color-in-ctrl-light-rgb: 0, 0, 0 !important;
@@ -94,7 +94,6 @@ body {
 
   .gform_wrapper {
     @include spacing-medium;
-    @include container;
 
     .gform_heading {
       .gform_required_legend {
@@ -139,10 +138,6 @@ body {
             border: none;
             width: 100%;
 
-            .single-stelle & {
-              background-color: pink !important;
-            }
-
             &::placeholder {
               color: $color-grey-dark;
             }
@@ -167,32 +162,21 @@ body {
     }
     .gform_footer {
       input[type='submit'].gform_button {
-        background-color: $color-green !important;
-        color: $color-black !important;
-        border: none !important;
-        box-shadow: none !important;
-        padding: 0.9rem 1.5rem 0.8rem 1.5rem !important;
+        padding: 0.75rem 1.75rem 0.75rem 1.75rem !important;
         border-radius: 100rem !important;
-        font-weight: 500 !important;
-        text-transform: uppercase !important;
-        letter-spacing: $letter-spacing !important;
-        font-size: rem(12px) !important;
-        line-height: 1.5 !important;
-        width: fit-content !important;
         cursor: pointer !important;
         display: inline-block !important;
-        transition: transform 0.5s $transition !important;
-
-        @include medium-up {
-          font-size: rem(14px) !important;
-        }
-
-        @include large-up {
-          padding: 1rem 1.75rem 0.9rem 1.75rem !important;
-        }
+        border: none !important;
+        line-height: 1.5 !important;
+        width: fit-content !important;
+        text-decoration: none !important;
+        transition: all 0.5s $transition !important;
+        background-color: $color-blue !important;
+        color: $color-white !important;
 
         &:hover {
-          transform: scale3d(0.97, 0.97, 1) !important;
+          transform: translate(0px, -2px) !important;
+          background-color: $color-blue-dark !important;
         }
       }
     }
@@ -217,67 +201,3 @@ body {
     background-color: $color-white !important;
   }
 }
-
-/* input:not(input[type='checkbox'], input[type='submit']),
-textarea {
-  display: block;
-  background: none;
-  border-top: 0;
-  border-left: 0;
-  border-right: 0;
-  padding: 0.5rem 0;
-  margin-bottom: 0.6rem;
-  line-height: 1.2rem;
-  width: 100%;
-  transition: all 0.3s $transition;
-  color: $color-black;
-
-  &:focus {
-  }
-}
-
-textarea {
-  margin-top: 0.5rem;
-  padding: 0.5rem;
-}
- */
-/* .checkbox-wrapper {
-  display: flex;
-  align-items: center;
-  gap: 0.5rem;
-  color: $color-green;
-
-  input[type='checkbox'] {
-    appearance: none;
-    width: 1rem;
-    height: 1rem;
-    min-width: 1rem;
-    min-height: 1rem;
-    cursor: pointer;
-    position: relative;
-    margin: 0;
-    padding: 0;
-    border-radius: 100%;
-    border: $border;
-
-    &:checked {
-      &::after {
-        width: 1rem;
-        height: 1rem;
-        border-radius: 100%;
-      }
-    }
-
-    &::after {
-      content: '';
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0;
-      height: 0;
-      background: $color-green;
-      transform: translate(-50%, -50%);
-      transition: all 0.3s ease;
-    }
-  }
-} */

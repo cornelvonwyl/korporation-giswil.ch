@@ -18,7 +18,7 @@ $subtitle = isset($args['subtitle']) ? $args['subtitle'] : 'Unsere Meisterwerke'
 $button = isset($args['button']) ? $args['button'] : TRUE;
 
 if ($referenzen && !empty($referenzen)): ?>
-  <section class="referenzen-slider " data-bg-color="#ffed00">
+  <section class="referenzen-slider ">
     <div class="referenzen-slider__container">
       <div class="referenzen-slider__header">
         <p class="referenzen-slider__subtitle"><?php echo esc_html($subtitle); ?></p>

@@ -3,7 +3,7 @@
   @include spacing-small-bottom;
 
   &__container {
-    @include container-small;
+    @include container;
     display: flex;
     flex-direction: column;
     align-items: center;

@@ -27,8 +27,7 @@ if (!empty($items)) {
   <ul>
     <?php foreach ($breadcrumb_items as $item): ?>
       <li>
-        <a href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['title']); ?></a>
-        <span class="breadcrumb-separator">></span>
+        <a href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['title']); ?></a><span class="breadcrumb-separator">→</span>
       </li>
     <?php endforeach; ?>
   </ul>

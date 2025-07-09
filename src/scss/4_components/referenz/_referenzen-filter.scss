@@ -3,7 +3,7 @@
     @include filter-component();
 
     &__container {
-      @include container-small;
+      @include container;
     }
   }
 }

@@ -1,11 +1,6 @@
 .images-block {
   @include spacing-medium;
 
-  @include medium-up() {
-    margin-left: -10vw;
-    margin-right: -10vw;
-  }
-
   &:first-child {
     margin-top: 0;
   }

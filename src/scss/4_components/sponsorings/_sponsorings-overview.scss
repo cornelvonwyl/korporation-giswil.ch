@@ -3,6 +3,6 @@
   @include spacing-medium-bottom;
 
   &__items {
-    @include container-small;
+    @include container;
   }
 }

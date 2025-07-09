@@ -53,3 +53,9 @@ video {
 .edit-post-layout__content {
   width: 460px !important;
 }
+
+hr {
+  border: none;
+  border-top: $border;
+  margin: 0;
+}

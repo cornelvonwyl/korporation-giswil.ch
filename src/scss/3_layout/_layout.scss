@@ -15,7 +15,7 @@
     & > h4,
     & > h5,
     & > privacybee-widget {
-      @include container-small;
+      @include container;
 
       &:first-child {
         @include spacing-medium-top;

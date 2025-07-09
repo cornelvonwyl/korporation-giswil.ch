@@ -1,15 +1,15 @@
 .news-single {
-  &__container {
-    @include container-small;
-  }
-
   &__header {
-    @include spacing-inner-medium;
-    padding-top: 0 !important;
-    border-bottom: $border;
+    @include container-large;
   }
 
-  &__categories {
+  &__date {
+    @include spacing-medium-bottom;
+  }
+
+
+
+  /*   &__categories {
     display: flex;
     flex-wrap: wrap;
     gap: 1rem;
@@ -17,14 +17,19 @@
 
   &__category {
     color: $color-green;
-  }
-
-  &__title {
-    @include h2;
-    @include spacing-small;
-  }
+  } */
 
   &__content {
     @include spacing-medium;
+    @include container;
+
+    @include medium-up {
+      font-size: rem(18px);
+    }
+  }
+
+  &__more {
+    @include primary-button;
+    margin-top: 4rem;
   }
 }
