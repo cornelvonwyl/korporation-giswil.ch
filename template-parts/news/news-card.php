@@ -1,43 +1,32 @@
 <?php
 
 if (!defined('ABSPATH')) {
-  exit; // Exit if accessed directly.
+  exit;
 }
 
-$thumbnail = get_the_post_thumbnail_url(get_the_ID(), 'large');
-$categories = get_the_category();
-?>
+$date = get_the_date('j. F Y');
+$title = get_the_title();
+$fields = get_field('fields', get_the_ID());
+$link = get_permalink();
 
-<a href="<?php the_permalink(); ?>" class="full-element-link">
-  <article class="news-card animation-on-scroll">
-    <?php if (has_post_thumbnail()): ?>
-      <?php
-      $image_id = get_post_thumbnail_id();
+// Get field titles if fields exist
+$category = null;
 
-      echo wp_get_attachment_image($image_id, 'small', false, [
-        'class' => 'news-card__image',
-        'loading' => 'lazy',
-      ]);
-      ?>
-    <?php endif; ?>
+if (!empty($fields)) {
+  $field_titles = [];
+  foreach ($fields as $field) {
+    $field_titles[] = get_the_title($field);
+  }
+  // Create a mock category object to match the card component's expected structure
+  $category = (object) ['name' => implode(', ', $field_titles)];
+} else {
+  // Set default category when no fields are available
+  $category = (object) ['name' => 'Allgemein'];
+}
 
-    <div class="news-card__content">
-      <?php if (!empty($categories)): ?>
-        <div class="news-card__categories">
-          <?php foreach ($categories as $category): ?>
-            <p class="category-tag"><?php echo esc_html($category->name); ?></p>
-          <?php endforeach; ?>
-        </div>
-      <?php endif; ?>
-
-      <h3 class="news-card__title">
-        <?php the_title(); ?>
-      </h3>
-      <div class="news-card__excerpt"><?php the_excerpt(); ?></div>
-
-      <p class="news-card__link">
-        Mehr
-      </p>
-    </div>
-  </article>
-</a>
+get_template_part('template-parts/components/card', null, [
+  'date' => $date,
+  'title' => $title,
+  'category' => $category,
+  'link' => $link
+]);

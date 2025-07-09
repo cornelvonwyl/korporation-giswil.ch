@@ -1,21 +1,22 @@
-.news-slider {
+.news-list {
   @include spacing-inner;
 
   &__container {
     @include container-large;
   }
 
-  &__header {
-    @include title-subtitle-header;
+  &__wrapper {
+    @include two-column-grid;
   }
 
-  &__subtitle {
-    @include subtitle;
+  &__cards {
+    display: flex;
+    flex-direction: column;
+    gap: 2rem;
   }
 
   &__button {
     @include more-button;
-
     a {
       @include primary-button;
     }

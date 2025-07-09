@@ -12,22 +12,6 @@
   @include sr-only;
 }
 
-@mixin title-subtitle-header() {
-  margin-bottom: 3rem;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-
-  @include medium-up {
-    margin-bottom: 4rem;
-  }
-}
-
-.title-subtitle-header {
-  @include title-subtitle-header;
-}
-
 @mixin header-image {
   width: 100%;
   max-height: 52rem;
@@ -101,6 +85,16 @@
 }
 .container-small {
   @include container-small;
+}
+
+@mixin two-column-grid() {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 2rem;
+
+  @include medium-up {
+    grid-template-columns: 40% 60%;
+  }
 }
 
 @mixin container-extra-small() {
@@ -235,7 +229,6 @@
 
 @mixin subtitle() {
   font-size: rem(13px);
-  font-weight: 300;
   text-transform: uppercase;
   letter-spacing: $letter-spacing;
   margin-bottom: 1rem;
@@ -452,12 +445,11 @@
 
     appearance: none;
     border-radius: 100rem;
-    transition: all 0.3s $transition;
-    padding: 0.75rem 1rem 0.65rem 1rem;
+    @include transition(all);
+    padding: 0.5rem 1rem 0.5rem 1rem;
 
     img {
       width: rem(8px);
-      margin-bottom: 0.125rem;
       height: auto;
       transition: transform 0.3s $transition;
 
@@ -471,7 +463,7 @@
     @include sr-only;
 
     &:checked + label {
-      background-color: $color-green;
+      background-color: $color-grey-dark;
     }
 
     &:checked + label .referenzen-filter__icon,
@@ -508,17 +500,9 @@
 
 @mixin card-filter-transition() {
   display: block;
-  opacity: 1;
-  transform: translateY(0);
-  transition: opacity 0.5s $transition, transform 0.5s $transition;
 
   &.is-hidden {
-    display: block;
-    opacity: 0;
-    transform: scale3d(0.98, 0.98, 1);
-    pointer-events: none;
-    position: absolute;
-    visibility: hidden;
+    display: none;
   }
 }
 
@@ -533,8 +517,6 @@
     display: flex;
     flex-wrap: wrap;
     gap: 1.5rem;
-    justify-content: center;
-    @include spacing-medium-bottom();
 
     @include medium-up {
       gap: 2rem;
@@ -600,166 +582,14 @@
   text-decoration: none;
   position: relative;
   display: inline-block;
-  color: $color-black;
   width: fit-content;
-
-  &::before,
-  &::after {
-    content: '';
-    position: absolute;
-    bottom: 2px;
-    left: 0;
-    width: 100%;
-    height: 0.1em;
-    background-color: $color-green;
-
-    .-yellow & {
-      background-color: $color-black;
-    }
-  }
-
-  &::before {
-    transform-origin: left;
-    transform: scaleX(1) rotate(0.001deg);
-    transition-delay: 0.3s;
-    transition: transform 0.5s $transition;
-
-    .full-element-link:hover & {
-      transform-origin: right;
-      transform: scaleX(0) rotate(0.001deg);
-      transition-delay: 0s;
-    }
-  }
-
-  &::after {
-    transform-origin: right;
-    transform: scaleX(0) rotate(0.001deg);
-    transition-delay: 0s;
-    transition: transform 0.5s $transition;
-
-    .full-element-link:hover & {
-      transform-origin: left;
-      transform: scaleX(1) rotate(0.001deg);
-      transition-delay: 0.3s;
-    }
-  }
+  color: $color-green;
+  text-decoration: underline;
+  text-underline-offset: 0.25em;
+  text-decoration-thickness: 0.075em;
+  text-decoration-color: $color-green;
 
   &:hover {
-    &::before {
-      transform-origin: right;
-      transform: scaleX(0) rotate(0.001deg);
-      transition-delay: 0s;
-    }
-
-    &::after {
-      transform-origin: left;
-      transform: scaleX(1) rotate(0.001deg);
-      transition-delay: 0.3s;
-    }
-  }
-}
-
-@mixin underlined-link-mono() {
-  display: block;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-  font-weight: 500;
-  font-size: rem(12px);
-  line-height: 2;
-
-  @include medium-up() {
-    font-size: rem(14px);
-  }
-
-  &::before,
-  &::after {
-    height: 0.15em;
-  }
-}
-
-@mixin arrow-hover-effect($type: 'interal') {
-  &__arrow-container {
-    position: relative;
-    overflow: hidden;
-    width: 1.5rem;
-    height: 1.5rem;
-  }
-
-  &__arrow {
-    width: 1.5rem;
-    height: 1.5rem;
-
-    transition: transform 0s $transition;
-
-    &--primary {
-      position: relative;
-      transform: translateX(0);
-    }
-
-    &--secondary {
-      position: absolute;
-      top: 0;
-      transform: translateX(-150%);
-    }
-  }
-
-  &:hover &__arrow--primary,
-  &:hover &__arrow--secondary {
-    transition: transform 0.5s $transition;
-  }
-
-  @if $type == 'internal' {
-    &__arrow--secondary {
-      transform: translateX(-150%);
-    }
-
-    &:hover &__arrow--primary {
-      transform: translateX(150%);
-    }
-
-    &:hover &__arrow--secondary {
-      transform: translateX(0);
-    }
-  }
-
-  @if $type == 'external' {
-    &__arrow--secondary {
-      transform: translate(-100%, 100%);
-    }
-
-    &:hover &__arrow--primary {
-      transform: translate(150%, -150%);
-    }
-
-    &:hover &__arrow--secondary {
-      transform: translate(0, 0);
-    }
-  }
-
-  &.cta-list-item--external &__arrow--secondary {
-    transform: translate(-100%, 100%);
-  }
-
-  // External link animation (right and up)
-  &.cta-list-item--external:hover &__arrow--primary {
-    transform: translate(150%, -150%);
-  }
-
-  &.cta-list-item--external:hover &__arrow--secondary {
-    transform: translate(0, 0);
-  }
-
-  @if $type == 'down' {
-    &__arrow--secondary {
-      transform: translateY(-150%);
-    }
-
-    &:hover &__arrow--primary {
-      transform: translateY(150%);
-    }
-
-    &:hover &__arrow--secondary {
-      transform: translateY(0);
-    }
+    text-decoration: none;
   }
 }

@@ -32,7 +32,7 @@
 @import '4_components/frontpage/hero-text';
 
 // Blog/Posts
-@import '4_components/news/news-slider';
+@import '4_components/news/news-list';
 
 @import '4_components/news/news-overview';
 @import '4_components/news/news-filter';
@@ -71,7 +71,7 @@
 
 // Locations Page
 @import '4_components/locations/locations-overview';
-@import '4_components/locations/location-teaser';
+
 
 // Contact Page
 @import '4_components/contact/contact-page';
@@ -86,5 +86,6 @@
 // Reusable Block Components
 @import '4_components/blocks/images-block';
 @import '4_components/blocks/image-with-content';
+@import '4_components/blocks/downloads';
 @import '4_components/blocks/page-header';
 @import '4_components/blocks/page-header-text';

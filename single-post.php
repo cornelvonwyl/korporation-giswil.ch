@@ -32,8 +32,12 @@ get_header(); ?>
                     <p class="news-single__category">
                       <?php echo esc_html(get_the_title($field)); ?>
                     </p>
-                <?php endforeach;
-                endif; ?>
+                  <?php endforeach;
+                else: ?>
+                  <p class="news-single__category">
+                    Allgemein
+                  </p>
+                <?php endif; ?>
               </div>
 
               <h1 class="news-single__title">
@@ -48,8 +52,6 @@ get_header(); ?>
 
 
             <div class="news-single__content prose">
-
-
               <?php the_content(); ?>
             </div>
           </div>

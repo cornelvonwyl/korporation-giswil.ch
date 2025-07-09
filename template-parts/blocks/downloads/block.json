@@ -1,0 +1,23 @@
+{
+  "name": "acf/downloads",
+  "title": "Downloads",
+  "description": "Zeigt eine Liste von herunterladbaren Dokumenten an",
+  "editorStyle": ["file:./style.css"],
+  "category": "theme",
+  "icon": "download",
+  "keywords": ["downloads", "documents", "files", "links"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "downloads.php"
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    }
+  },
+  "supports": {
+    "align": ["wide"],
+    "anchor": true
+  }
+}

@@ -4,9 +4,6 @@
     @include container-large;
   }
 
-  &__header {
-    @include title-subtitle-header;
-  }
 
   &__grid {
     display: grid;

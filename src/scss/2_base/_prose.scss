@@ -22,10 +22,6 @@
   p {
     margin-bottom: 1.5rem;
 
-    a {
-      @include underlined-link;
-    }
-
     &:last-child {
       margin-bottom: 0;
     }
@@ -85,6 +81,9 @@
 }
 
 .prose {
+  a {
+    @include underlined-link;
+  }
   .wp-block-video {
     @include medium-up {
       margin-left: -10vw;

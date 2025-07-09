@@ -55,7 +55,7 @@ get_header(); ?>
 
 
       <!-- Neuigkeiten Section -->
-      <?php get_template_part('template-parts/news/news-slider'); ?>
+      <?php get_template_part('template-parts/news/news-list'); ?>
 
       <!-- Standorte Section -->
       <?php get_template_part('template-parts/locations/locations-overview'); ?>

@@ -14,7 +14,6 @@
   }
 
   &__header {
-    @include title-subtitle-header;
 
     @include medium-up {
       @include sticky;

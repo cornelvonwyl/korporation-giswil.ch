@@ -1,6 +1,4 @@
 .accordion {
-  @include arrow-hover-effect('down');
-
   border-top: $border;
 
   &:last-child {

@@ -77,6 +77,7 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/template-parts/blocks/sub-service');
   register_block_type(__DIR__ . '/template-parts/blocks/sub-services');
   register_block_type(__DIR__ . '/template-parts/blocks/image-with-content');
+  register_block_type(__DIR__ . '/template-parts/blocks/downloads');
   register_block_type(__DIR__ . '/template-parts/blocks/referenzen-overview');
   register_block_type(__DIR__ . '/template-parts/blocks/news-overview');
   register_block_type(__DIR__ . '/template-parts/blocks/jobs-overview');
@@ -111,6 +112,7 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context)
       'acf/page-header-text',
       'acf/sub-services',
       'acf/image-with-content',
+      'acf/downloads',
       'acf/referenzen-overview',
       'acf/news-overview',
       'acf/jobs-overview',

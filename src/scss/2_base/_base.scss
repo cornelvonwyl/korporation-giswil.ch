@@ -3,10 +3,6 @@ html {
   scroll-behavior: smooth;
 }
 
-body {
-  will-change: background-color;
-}
-
 * {
   box-sizing: border-box;
   scroll-margin-top: calc($content-offset + 3rem);

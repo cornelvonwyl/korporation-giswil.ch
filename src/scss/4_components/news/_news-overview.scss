@@ -1,35 +1,33 @@
 .news-overview {
-  @include spacing-small-top;
-  @include spacing-medium-bottom;
+  @include spacing-medium;
 
-  &__items {
+  &__container {
     @include container-large;
   }
 
+  &__wrapper {
+    @include two-column-grid;
+  }
+
+  &__header {
+    @include large-up {
+      position: sticky;
+      top: calc($content-offset + 1rem);
+      height: max-content;
+    }
+
+    h1 {
+      @include h2;
+    }
+  }
+
   &__grid {
-    display: grid;
-    grid-template-columns: 1fr;
+    display: flex;
+    flex-direction: column;
     gap: 2rem;
-
-    @include small-up {
-      grid-template-columns: repeat(2, 1fr);
-      gap: 1.5rem;
-    }
-
-    @include medium-up {
-      grid-template-columns: repeat(3, 1fr);
-    }
   }
 
   &__grid-item {
     @include card-filter-transition;
-  }
-
-  &__button {
-    @include more-button;
-
-    a {
-      @include primary-button;
-    }
   }
 }

@@ -32,10 +32,16 @@ if (!empty($block['align'])) {
 
 <div id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($className); ?>">
     <div class="news-overview__container">
-        <!-- News Filter -->
-        <?php get_template_part('template-parts/news/news-filter'); ?>
 
-        <!-- News List -->
-        <?php get_template_part('template-parts/news/news-overview'); ?>
+        <div class="news-overview__wrapper">
+            <div class="news-overview__header">
+                <h1>Neuigkeiten</h1>
+                <!-- News Filter -->
+                <?php get_template_part('template-parts/news/news-filter'); ?>
+            </div>
+
+            <!-- News List -->
+            <?php get_template_part('template-parts/news/news-overview'); ?>
+        </div>
     </div>
 </div>
