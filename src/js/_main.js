@@ -14,3 +14,4 @@ import './service-tabs.js';
 import './timeline-animation.js';
 import './accordion.js';
 import './page-header-scroll.js';
+import './swiper.js';

@@ -13,10 +13,7 @@
   }
 
   &__summary {
-    border: $border;
-    box-shadow: $box-shadow;
-    background-color: $color-white;
-    padding: 1.5rem;
+    @include box;
 
     @include medium-up {
       padding: 2rem;
@@ -36,9 +33,5 @@
   &__content {
     @include spacing-medium;
     @include container;
-
-    @include medium-up {
-      font-size: rem(18px);
-    }
   }
 }

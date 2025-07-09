@@ -37,8 +37,6 @@ $accordion_id = isset($args['id']) ? $args['id'] : uniqid('accordion-');
     </button>
 
     <div class="accordion__content"
-        id="<?php echo esc_attr($id); ?>-content-<?php echo $index; ?>"
-        aria-labelledby="<?php echo esc_attr($id); ?>-trigger-<?php echo $index; ?>"
         role="region"
         hidden>
         <?php if ($args['text']): ?>

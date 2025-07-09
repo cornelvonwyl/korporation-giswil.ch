@@ -7,8 +7,6 @@
     @include spacing-medium-bottom;
   }
 
-
-
   /*   &__categories {
     display: flex;
     flex-wrap: wrap;
@@ -22,10 +20,6 @@
   &__content {
     @include spacing-medium;
     @include container;
-
-    @include medium-up {
-      font-size: rem(18px);
-    }
   }
 
   &__more {

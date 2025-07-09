@@ -81,6 +81,10 @@
 }
 
 .prose {
+  @include medium-up {
+    font-size: rem(18px);
+  }
+
   a {
     @include underlined-link;
   }

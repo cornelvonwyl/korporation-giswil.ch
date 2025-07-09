@@ -1,8 +1,7 @@
 .card {
   position: relative;
-  border: $border;
-  box-shadow: $box-shadow;
-  background-color: $color-white;
+  @include box;
+  padding: 0;
   @include transition(all);
 
   &:has(.card__link:hover) {

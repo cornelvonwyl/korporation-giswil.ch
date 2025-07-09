@@ -1,2 +1,100 @@
-.bereich-single {
+.department {
+  &__hero {
+    width: 100%;
+    padding: 0 1rem;
+
+    @include medium-up {
+      padding: 0 3rem;
+    }
+  }
+
+  &__hero-container {
+    @include header-image;
+  }
+
+  &__hero-content {
+    @include container-large;
+    position: relative;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: -2rem;
+
+    h1 {
+      color: $color-white;
+      text-align: center;
+      margin: 0;
+
+      font-size: rem(32px);
+
+      @include medium-up {
+        font-size: rem(80px);
+      }
+    }
+  }
+
+  &__navigation {
+    @include box;
+    padding: 1.25rem 2.5rem;
+    border-radius: 100rem;
+    width: fit-content;
+    transform: translateY(50%);
+
+    ul {
+      display: flex;
+      gap: 2rem;
+    }
+  }
+
+  &__container {
+    @include container-large;
+  }
+
+  &__wrapper {
+    @include spacing;
+  }
+
+  &__content {
+    @include two-column-grid(50%, 50%);
+  }
+
+  &__sidebar {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+  }
+
+  &__persons {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__person {
+    display: flex;
+    gap: 1rem;
+    @include box;
+
+    img {
+      width: 5rem;
+      height: 5rem;
+      object-fit: cover;
+      border-radius: 50%;
+    }
+  }
+
+  &__address-content {
+    @include box;
+  }
+
+  &__accordions {
+    @include spacing;
+    @include container;
+    padding: 0 !important;
+
+    h2 {
+      text-align: center;
+    }
+  }
 }
