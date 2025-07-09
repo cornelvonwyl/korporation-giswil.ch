@@ -22,21 +22,37 @@ get_header(); ?>
       <!-- Hero Section -->
       <?php get_template_part('template-parts/frontpage/hero'); ?>
 
-      <h1 class="sr-only">Elektro Furrer AG – Ihr Partner für Elektroinstallationen, Erneuerbare Energien, E-Mobilität, Gebäudeautomation, Informatik, Multimedia & Telematik, Schaltanlagen und Elektroplanung in der Zentralschweiz</h1>
+      <!-- Cards Section -->
+      <section class="cards-section">
+        <div class="container">
+          <div class="cards-grid">
+            <?php
+            // Card 1
+            global $post;
+            $temp_post = (object) array(
+              'ID' => 1,
+              'post_title' => 'Innovative Lösungen für moderne Unternehmen'
+            );
+            $post = $temp_post;
 
-      <section class="hero-text animation-on-scroll">
-        <div class="hero-text__container">
-          <p>
-            Bei uns zählen Mensch, Teamgeist und Leidenschaft. Mit Freude, Fantasie und Fortschritt gestalten wir gemeinsam die Zukunft – eifach Furrer.
-          </p>
+            get_template_part('template-parts/components/card', NULL, [
+              'date' => '23. Dezember 2024',
+              'title' => 'Christbaumverkauf',
+              'category' => (object) array('name' => 'Innovation'),
+              'link' => '#'
+            ]);
+            ?>
+          </div>
         </div>
       </section>
 
-      <!-- Dienstleistungen Section -->
-      <?php get_template_part('template-parts/services/services-overview'); ?>
 
-      <!-- Furrer Power Section -->
-      <?php get_template_part('template-parts/frontpage/furrer-power'); ?>
+      <a href="/news" class="primary-button">
+        Alle Neuigkeiten
+      </a>
+
+
+
 
       <!-- Neuigkeiten Section -->
       <?php get_template_part('template-parts/news/news-slider'); ?>

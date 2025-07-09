@@ -16,8 +16,6 @@
 
   &__item {
     transition: transform 0.5s $transition;
-
-    @include hover-scale;
   }
 
   &__image {

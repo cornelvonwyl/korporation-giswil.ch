@@ -1,14 +1,6 @@
 .breadcrumb {
-  font-family: $font-family-mono;
-  font-size: rem(12px);
-  font-weight: 300;
-  text-transform: uppercase;
-  letter-spacing: $letter-spacing;
-
   @include container-large;
-  @include medium-up {
-    font-size: rem(14px);
-  }
+  @include text-small;
 
   ul {
     display: flex;

@@ -167,13 +167,12 @@ body {
     }
     .gform_footer {
       input[type='submit'].gform_button {
-        background-color: $color-yellow !important;
+        background-color: $color-green !important;
         color: $color-black !important;
         border: none !important;
         box-shadow: none !important;
         padding: 0.9rem 1.5rem 0.8rem 1.5rem !important;
         border-radius: 100rem !important;
-        font-family: $font-family-mono !important;
         font-weight: 500 !important;
         text-transform: uppercase !important;
         letter-spacing: $letter-spacing !important;
@@ -199,7 +198,7 @@ body {
     }
 
     .gform_confirmation_message {
-      background-color: $color-yellow;
+      background-color: $color-green;
       padding: 2rem;
       color: $color-black;
     }
@@ -246,7 +245,7 @@ textarea {
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  color: $color-yellow;
+  color: $color-green;
 
   input[type='checkbox'] {
     appearance: none;
@@ -276,7 +275,7 @@ textarea {
       left: 50%;
       width: 0;
       height: 0;
-      background: $color-yellow;
+      background: $color-green;
       transform: translate(-50%, -50%);
       transition: all 0.3s ease;
     }

@@ -4,7 +4,7 @@ if (! defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 ?>
-<footer class="footer animate-bg-yellow" role="contentinfo">
+<footer class="footer -yellow" role="contentinfo">
     <div class="footer__container">
 
         <h2 class="sr-only">Die Fusszeile</h2>
@@ -28,7 +28,7 @@ if (! defined('ABSPATH')) {
                                 <input type="email" placeholder="name@mail.ch" id="data_contact_email" name="data[contact][email]" required="required">
                             </div>
                             <div class="submit_container">
-                                <input class="submit_button animated-button" id="submit_button_11" type="submit" value="Abonnieren">
+                                <input class="submit_button primary-button" id="submit_button_11" type="submit" value="Abonnieren">
                             </div>
                         </div>
                         <input type="hidden" id="data_form_version" name="data[form_version]" value="5_0">

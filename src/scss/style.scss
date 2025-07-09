@@ -25,6 +25,7 @@
 @import '4_components/elements/button';
 @import '4_components/elements/cta-list-item';
 @import '4_components/elements/accordion';
+@import '4_components/elements/card';
 
 // Frontpage
 @import '4_components/frontpage/hero';
@@ -32,7 +33,7 @@
 
 // Blog/Posts
 @import '4_components/news/news-slider';
-@import '4_components/news/news-card';
+
 @import '4_components/news/news-overview';
 @import '4_components/news/news-filter';
 @import '4_components/news/news-single';

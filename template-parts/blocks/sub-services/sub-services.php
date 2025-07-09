@@ -57,7 +57,7 @@ endif;
     <div class="sub-services__tabs" role="tablist">
       <?php foreach ($target_groups as $index => $group): ?>
         <button
-          class="sub-services__tab animated-button <?php echo $group === 'privat' ? 'is-active' : ''; ?>"
+          class="sub-services__tab primary-button <?php echo $group === 'privat' ? 'is-active' : ''; ?>"
           role="tab"
           aria-selected="<?php echo $group === 'privat' ? 'true' : 'false'; ?>"
           data-target="<?php echo esc_attr($group); ?>">

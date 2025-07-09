@@ -1,7 +1,7 @@
 .footer {
   border-top: $border;
   overflow: hidden;
-  background-color: $color-yellow;
+  background-color: $color-green;
 
   &__container {
     @include container-large;
@@ -40,10 +40,6 @@
       margin-bottom: 1rem;
     }
 
-    .animated-button {
-      @include animated-button;
-      @include secondary-button;
-    }
   }
 
   &__links {

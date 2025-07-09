@@ -31,7 +31,7 @@ $attachment_ids = Helpers::getAttachmentIdsByFolderId(1);
         Unser Team ist das Resultat einer <?php echo date('Y') - 1991; ?>-jährigen Suche nach den besten Fachleuten
       </p>
       <div class="furrer-power__cta">
-        <a class="animated-button" href="/team">Team</a>
+        <a class="primary-button" href="/team">Team</a>
       </div>
     </div>
   </div>

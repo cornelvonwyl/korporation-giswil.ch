@@ -1,0 +1,60 @@
+.card {
+  position: relative;
+  border: $border;
+  box-shadow: $box-shadow;
+  background-color: $color-white;
+  @include transition(all);
+
+  &:has(.card__link:hover) {
+    box-shadow: $box-shadow-hover;
+    transform: translate(4px, 4px);
+  }
+
+  &__link {
+    display: block;
+    text-decoration: none;
+    padding: 1.5rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    justify-content: space-between;
+
+    &:hover {
+      .card__arrow {
+        background-color: $color-blue-dark;
+        transform: rotate(45deg);
+      }
+    }
+  }
+
+  &__content {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+  }
+
+  &__date {
+    @include text-small;
+    font-weight: 500;
+  }
+
+  &__title {
+    margin: 0;
+  }
+
+  &__category {
+    @include text-small;
+    color: $color-green;
+    font-weight: 500;
+  }
+
+  &__arrow {
+    background-color: $color-blue;
+    border-radius: 50%;
+    width: 2.5rem;
+    height: 2.5rem;
+    padding: 0.5rem;
+    transform: rotate(0deg);
+    @include transition(all);
+  }
+}

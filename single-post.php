@@ -14,17 +14,6 @@ get_header(); ?>
         the_post(); ?>
         <article class="main-content">
 
-          <?php if (has_post_thumbnail()): ?>
-            <div class="news-single__image">
-              <?php echo get_the_post_thumbnail(get_the_ID(), 'huge', [
-                'class' => 'news-single__thumbnail',
-                'sizes' => '(max-width: 768px) 150vw, 100vw',
-                'loading' => 'eager',
-                'decoding' => 'async'
-              ]); ?>
-            </div>
-          <?php endif; ?>
-
 
           <?php get_template_part('template-parts/components/breadcrumb', NULL, [
             'items' => [
@@ -34,26 +23,29 @@ get_header(); ?>
 
           <div class="news-single__container">
 
-            <p class="news-single__date">
-              <?php echo get_the_date('d.m.Y'); ?>
-            </p>
+            <div class="news-single__header">
+              <div class="news-single__categories">
+                <?php
+                $fields = get_field('fields');
+                if ($fields):
+                  foreach ($fields as $field): ?>
+                    <p class="news-single__category">
+                      <?php echo esc_html(get_the_title($field)); ?>
+                    </p>
+                <?php endforeach;
+                endif; ?>
+              </div>
 
+              <h1 class="news-single__title">
+                <?php the_title(); ?>
+              </h1>
 
-            <h1 class="news-single__title">
-              <?php the_title(); ?>
-            </h1>
-
-            <div class="news-single__categories">
-              <?php
-              $categories = get_the_category();
-              if ($categories):
-                foreach ($categories as $category): ?>
-                  <p class="news-single__category">
-                    #<?php echo esc_html($category->name); ?>
-                  </p>
-              <?php endforeach;
-              endif; ?>
+              <p class="news-single__date">
+                <?php echo get_the_date('j. F Y'); ?>
+              </p>
             </div>
+
+
 
             <div class="news-single__content prose">
 

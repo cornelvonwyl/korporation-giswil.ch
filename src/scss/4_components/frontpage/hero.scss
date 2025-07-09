@@ -1,15 +1,21 @@
 .hero {
+  width: 100%;
+  padding: 0 1rem;
+
+  @include medium-up {
+    padding: 0 3rem;
+  }
+
   &__container {
     position: relative;
-    border-bottom: none;
-    height: 34rem;
     width: 100%;
+    aspect-ratio: 1/1;
+    display: flex;
+    align-items: flex-end;
 
     @include medium-up {
-      aspect-ratio: 16 / 7;
-      max-height: 52rem;
-      min-height: 38rem;
-      height: auto;
+      aspect-ratio: 16 / 9;
+      max-height: 54rem;
     }
   }
 
@@ -20,93 +26,22 @@
     object-fit: cover;
     inset: 0;
     object-position: 65% 50%;
-    filter: brightness(0.6);
     z-index: 0;
-
-    @include medium-up {
-      object-position: center;
-      filter: brightness(0.65);
-    }
   }
 
   &__content {
     @include container-large;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-    padding-top: 4rem !important;
-    padding-bottom: 4rem !important;
-    justify-content: flex-end;
-    height: 100%;
     position: relative;
     z-index: 1;
+    padding-bottom: 2rem !important;
 
-    @include small-up() {
-      gap: 1rem;
-      padding-top: 6rem !important;
+    @include medium-up {
       padding-bottom: 6rem !important;
     }
   }
 
   &__title {
-    font-weight: normal;
-    margin: 0;
+    @include h2;
     color: $color-white;
-    position: relative;
-    overflow: hidden;
-    font-size: clamp(2rem, 12vw, 4rem);
-    line-height: 1.2;
-    height: clamp(4.8rem, 28.8vw, 9.6rem);
-    hyphens: none;
-    overflow-wrap: break-word;
-    word-break: break-word;
-    margin-bottom: 1rem;
-
-    @include small-up {
-      font-size: rem(60px);
-      height: 80px;
-      margin-bottom: 3rem;
-    }
-
-    @include medium-up {
-      font-size: rem(80px);
-      height: 100px;
-    }
-
-    @include large-up {
-      font-size: rem(100px);
-      height: 120px;
-    }
-
-    &--highlight {
-      display: block;
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      transition: opacity 0.25s ease-out, transform 0.25s ease-out;
-      opacity: 0;
-    }
-  }
-
-  &__subtitle {
-    @include subtitle;
-    color: $color-white;
-    margin-bottom: 0;
-  }
-
-  &__links {
-    display: flex;
-    gap: 1rem;
-    flex-wrap: wrap;
-
-    @include small-up {
-      gap: 1rem;
-      flex-direction: row;
-    }
-  }
-
-  &__link {
-    @include primary-button;
   }
 }

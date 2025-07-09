@@ -21,7 +21,7 @@ video {
 
 ::selection {
   color: $color-black;
-  background: $color-yellow;
+  background: $color-green;
 }
 
 .no-scroll {
@@ -33,12 +33,10 @@ video {
   text-decoration: none;
   display: block;
   height: 100%;
-
-  @include hover-scale;
 }
 
 * {
-  accent-color: $color-yellow !important;
+  accent-color: $color-green !important;
 }
 
 .editor-visual-editor {

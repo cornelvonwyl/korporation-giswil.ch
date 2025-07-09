@@ -21,25 +21,30 @@ $unique_id = uniqid('images-block-');
   <?php if ($number_of_images === 1): ?>
     <?php foreach ($images as $image): ?>
       <figure class="images-block__image">
-        <?php
-        echo wp_get_attachment_image($image['ID'], 'huge');
-        ?>
+        <div class="swiper-zoom-container">
+          <?php
+          echo wp_get_attachment_image($image['ID'], 'huge');
+          ?>
+        </div>
         <?php if (!empty($image['caption'])): ?>
           <figcaption><?php echo esc_html($image['caption']); ?></figcaption>
         <?php endif; ?>
       </figure>
     <?php endforeach; ?>
-  <?php elseif ($number_of_images > 1): ?>
+
+  <?php else: ?>
     <div class="swiper gallery">
       <div class="swiper-wrapper">
         <?php foreach ($images as $image): ?>
           <div class="swiper-slide">
-            <figure class="images-block__image">
-              <?php echo wp_get_attachment_image($image['ID'], 'huge'); ?>
-              <?php if (!empty($image['caption'])): ?>
-                <figcaption><?php echo esc_html($image['caption']); ?></figcaption>
-              <?php endif; ?>
-            </figure>
+            <div class="swiper-zoom-container">
+              <figure class="images-block__image">
+                <?php echo wp_get_attachment_image($image['ID'], 'huge'); ?>
+                <?php if (!empty($image['caption'])): ?>
+                  <figcaption><?php echo esc_html($image['caption']); ?></figcaption>
+                <?php endif; ?>
+              </figure>
+            </div>
           </div>
         <?php endforeach; ?>
       </div>

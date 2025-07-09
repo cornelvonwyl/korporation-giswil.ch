@@ -1,8 +1,4 @@
 .main-wrapper {
-  &:not(.home &) {
-    padding: calc($content-offset) 0 0;
-  }
-
   .main-content {
     privacybee-widget {
       display: block;
@@ -47,7 +43,7 @@
       padding: 0 1rem !important;
 
       @include medium-up {
-        padding: 0 2rem !important;
+        padding: 0 3rem !important;
         --columns: 2 !important;
         --space: 10rem !important;
       }

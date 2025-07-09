@@ -17,10 +17,6 @@
       position: relative;
       display: inline-block;
 
-      a:not(.tooltiptext) {
-        @include link();
-      }
-
       .tooltiptext {
         visibility: hidden;
         width: auto;

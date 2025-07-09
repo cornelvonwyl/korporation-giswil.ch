@@ -3,16 +3,10 @@
     @include container-small;
   }
 
-  &__thumbnail {
-    @include header-image;
-  }
-
-  &__date {
-    @include subtitle;
-  }
-
-  &__title {
-    @include h2;
+  &__header {
+    @include spacing-inner-medium;
+    padding-top: 0 !important;
+    border-bottom: $border;
   }
 
   &__categories {
@@ -22,7 +16,12 @@
   }
 
   &__category {
-    @include category-tag;
+    color: $color-green;
+  }
+
+  &__title {
+    @include h2;
+    @include spacing-small;
   }
 
   &__content {

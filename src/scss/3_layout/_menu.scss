@@ -1,6 +1,5 @@
 .header {
   &__nav {
-    // Shared styles for both mobile and desktop
     .menu {
       > .menu-item {
         &.current-menu-item > .sub-menu,
@@ -95,10 +94,6 @@
           }
         }
       }
-
-      .animated-button {
-        margin-top: 2rem;
-      }
     }
 
     &--show {
@@ -152,7 +147,7 @@
             position: relative;
 
             &:hover {
-              padding: 0 2rem;
+              padding: 0 3rem;
               @include large-up {
                 padding: 0 3.5rem;
               }
@@ -160,7 +155,7 @@
 
             &:last-child {
               &:hover {
-                padding: 0 0 0 2rem;
+                padding: 0 0 0 3rem;
                 @include large-up {
                   padding: 0 0 0 3.5rem;
                 }
@@ -184,10 +179,6 @@
                 mask-size: contain;
                 transition: all 0.3s $transition;
                 display: block;
-
-                .home:not(.scrolled) & {
-                  background: $color-white;
-                }
               }
 
               &[aria-expanded='true'] {
@@ -209,10 +200,6 @@
             justify-content: center;
             transition: color 0.3s $transition;
             font-size: inherit;
-
-            .home:not(.scrolled) & {
-              color: $color-white;
-            }
           }
 
           .sub-menu {

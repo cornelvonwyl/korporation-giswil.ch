@@ -26,7 +26,7 @@ if (is_wp_error($posts)) {
 }
 ?>
 
-<section class="news-slider animate-bg animation-on-scroll" data-bg-color="#f0f0f0">
+<section class="news-slider  animation-on-scroll" data-bg-color="#f0f0f0">
   <div class="news-slider__container">
     <div class="news-slider__header">
       <p class="news-slider__subtitle">Storys aus der Furrer-Welt</p>
@@ -60,7 +60,7 @@ if (is_wp_error($posts)) {
         </div>
 
         <div class="news-slider__button">
-          <a class="animated-button" href="/neuigkeiten">
+          <a class="primary-button" href="/neuigkeiten">
             Mehr Neuigkeiten
           </a>
         </div>

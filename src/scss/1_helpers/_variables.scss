@@ -4,20 +4,21 @@
 
 // Basic Colors
 // -------
-$color-yellow: #ffed00;
+$color-green: #33992b;
 $color-black: #000000;
+$color-blue-dark: #212a31;
+$color-blue: #314049;
+$color-blue-light: #5a7587;
+$color-grey-light: #f5f6f5;
 $color-white: #ffffff;
-$color-grey: #f0f0f0;
-$color-grey-light: #f6f6f6;
+$color-grey: #f0eee8;
 $color-grey-dark: #aeb9c2;
 
 // Fonts
 // -------
 $global-font-size: 16px;
-$font-family: 'Benton Sans', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+$font-family: 'Manrope', -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
   Oxygen-Sans, Ubuntu, Cantarell, Helvetica Neue, sans-serif;
-$font-family-mono: 'Roboto Mono', 'SFMono-Regular', 'Courier New', Courier,
-  monospace;
 
 // Line height
 // -------
@@ -42,11 +43,16 @@ $container-large: 84rem;
 
 // Border
 // -------
-$border: solid 1.5px $color-yellow;
+$border: solid 0.5px $color-grey-dark;
+
+// Box shadow
+// -------
+$box-shadow: 8px 8px 0px 0px $color-grey;
+$box-shadow-hover: 0px 0px 0px 0px $color-grey;
 
 // Transition
 // -------
-$transition: cubic-bezier(0.625, 0.05, 0, 1);
+$transition: cubic-bezier(0, 0, 0.2, 1);
 
 // Navigation height
 // -------

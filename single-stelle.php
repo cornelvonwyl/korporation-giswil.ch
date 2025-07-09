@@ -67,14 +67,14 @@ get_header(); ?>
 
             <div class="job-single__buttons">
 
-              <a href="mailto:hr@elektrofurrer.ch" class="animated-button job-single__apply">Jetzt bewerben</a>
+              <a href="mailto:hr@elektrofurrer.ch" class="primary-button job-single__apply">Jetzt bewerben</a>
 
 
               <?php
               $pdf = get_field('pdf');
               if ($pdf): ?>
                 <div class="job-single__pdf">
-                  <a href="<?php echo esc_url($pdf['url']); ?>" target="_blank" class="animated-button job-single__pdf-button">
+                  <a href="<?php echo esc_url($pdf['url']); ?>" target="_blank" class="primary-button job-single__pdf-button">
                     Inserat Download
                   </a>
                 </div>
@@ -142,7 +142,7 @@ get_header(); ?>
             $last_name = get_field('last_name', $person);
             $portrait = get_field('portrait', $person);
           ?>
-            <div class="job-single__contact animate-bg" data-bg-color="#f0f0f0" data-threshold="25">
+            <div class="job-single__contact " data-bg-color="#f0f0f0" data-threshold="25">
               <div class="job-single__contact-container">
                 <div>
                   <div class="job-single__contact-header">
