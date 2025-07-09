@@ -1,0 +1,16 @@
+{
+  "name": "acf/accordion",
+  "title": "Accordion",
+  "description": "Zeigt ein Accordion-Element mit Titel und Text an",
+  "category": "theme",
+  "icon": "admin-tools",
+  "keywords": ["accordion", "toggle", "collapsible"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "accordion.php"
+  },
+  "supports": {
+    "align": false,
+    "anchor": true
+  }
+}

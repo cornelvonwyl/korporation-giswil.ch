@@ -44,8 +44,6 @@
 // Services Pages
 @import '4_components/services/services-overview';
 @import '4_components/services/service-card';
-@import '4_components/blocks/sub-service';
-@import '4_components/blocks/sub-services';
 
 @import '4_components/blocks/furrer-power';
 
@@ -72,6 +70,9 @@
 @import '4_components/jobs/jobs-filter';
 @import '4_components/jobs/job-teaser';
 @import '4_components/jobs/job-single';
+
+// Bereich Pages
+@import '4_components/bereich/bereich-single';
 
 // Locations Page
 @import '4_components/locations/locations-overview';

@@ -4,8 +4,9 @@
  * Accordion Component
  * 
  * @param array $args {
- *     @type array $items Array of accordion items
- *     @type string $class Additional classes for the accordion wrapper
+ *     @type string $title Accordion title
+ *     @type string $text Accordion content text
+ *     @type string $id Unique identifier for the accordion (optional)
  * }
  */
 
@@ -13,55 +14,37 @@ if (!defined('ABSPATH')) {
     exit; // Exit if accessed directly.
 }
 
-if (!isset($args['items']) || empty($args['items'])) {
+if (!isset($args['title']) || !isset($args['text'])) {
     return;
 }
 
+$accordion_id = isset($args['id']) ? $args['id'] : uniqid('accordion-');
+
 ?>
 
-<div class="accordions" role="presentation">
-    <?php foreach ($args['items'] as $index => $item): ?>
-        <div class="accordion accordion__item" role="heading" aria-level="3">
-            <button class="accordion__trigger"
-                aria-expanded="false"
-                aria-controls="accordion-content-<?php echo esc_attr($index); ?>"
-                id="accordion-trigger-<?php echo esc_attr($index); ?>">
-                <div class="accordion__header">
-                    <?php if (isset($item['category'])): ?>
-                        <p class="accordion__category"><?php echo esc_html($item['category']); ?></p>
-                    <?php endif; ?>
+<div class="accordion" data-accordion>
+    <button class="accordion__trigger"
+        aria-expanded="false"
+        aria-controls="<?php echo esc_attr($accordion_id); ?>">
+        <span class="accordion__title">
+            <?php echo esc_html($args['title']); ?>
+        </span>
+        <svg class="accordion__icon"
+            width="24" height="24" viewBox="0 0 24 24" fill="none">
+            <path d="M6 9l6 6 6-6" stroke="currentColor" stroke-width="2"
+                stroke-linecap="round" stroke-linejoin="round" />
+        </svg>
+    </button>
 
-                    <?php if (isset($item['title'])): ?>
-                        <h4 class="accordion__title"><?php echo esc_html($item['title']); ?></h4>
-                    <?php endif; ?>
-                </div>
-
-                <div class="accordion__arrow-container">
-                    <img class="accordion__arrow accordion__arrow--primary"
-                        src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-down.svg'); ?>"
-                        alt=""
-                        width="24"
-                        height="24"
-                        aria-hidden="true">
-                    <img class="accordion__arrow accordion__arrow--secondary"
-                        src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-down.svg'); ?>"
-                        alt=""
-                        width="24"
-                        height="24"
-                        aria-hidden="true">
-                </div>
-            </button>
-            <div class="accordion__content"
-                id="accordion-content-<?php echo esc_attr($index); ?>"
-                aria-labelledby="accordion-trigger-<?php echo esc_attr($index); ?>"
-                role="region"
-                hidden>
-                <?php if (isset($item['content'])): ?>
-                    <p class="accordion__content-inner">
-                        <?php echo wp_kses_post($item['content']); ?>
-                    </p>
-                <?php endif; ?>
+    <div class="accordion__content"
+        id="<?php echo esc_attr($id); ?>-content-<?php echo $index; ?>"
+        aria-labelledby="<?php echo esc_attr($id); ?>-trigger-<?php echo $index; ?>"
+        role="region"
+        hidden>
+        <?php if ($args['text']): ?>
+            <div class="accordion__content-inner prose">
+                <?php echo wp_kses_post($args['text']); ?>
             </div>
-        </div>
-    <?php endforeach; ?>
+        <?php endif; ?>
+    </div>
 </div>

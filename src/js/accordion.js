@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', function () {
-  const accordionItems = document.querySelectorAll('.accordion__item');
+  const accordionItems = document.querySelectorAll('.accordion');
 
   if (accordionItems.length === 0) {
     return; // No accordion items found
