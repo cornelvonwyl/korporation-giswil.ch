@@ -14,31 +14,15 @@ get_header(); ?>
         the_post(); ?>
         <article class="main-content">
 
-
-          <?php get_template_part('template-parts/components/breadcrumb', NULL, [
-            'items' => [
-              ['title' => 'Neuigkeiten', 'url' => '/neuigkeiten'],
-            ]
-          ]); ?>
-
           <div class="news-single__container">
 
-            <div class="news-single__header">
-              <!--               <div class="news-single__categories">
-                <?php
-                $fields = get_field('fields');
-                if ($fields):
-                  foreach ($fields as $field): ?>
-                    <p class="news-single__category">
-                      <?php echo esc_html(get_the_title($field)); ?>
-                    </p>
-                  <?php endforeach;
-                else: ?>
-                  <p class="news-single__category">
-                    Allgemein
-                  </p>
-                <?php endif; ?>
-              </div> -->
+            <section class="news-single__header">
+
+              <?php get_template_part('template-parts/components/breadcrumb', NULL, [
+                'items' => [
+                  ['title' => 'Neuigkeiten', 'url' => '/neuigkeiten'],
+                ]
+              ]); ?>
 
 
               <h1 class="news-single__title">
@@ -50,9 +34,7 @@ get_header(); ?>
               </p>
 
               <hr>
-            </div>
-
-
+            </section>
 
             <div class="news-single__content prose">
               <?php the_content(); ?>

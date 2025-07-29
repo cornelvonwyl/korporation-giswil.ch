@@ -16,7 +16,9 @@
   --swiper-pagination-bullet-horizontal-gap: 3px;
   --swiper-pagination-bullet-inactive-color: #{$color-blue};
 
-  padding-bottom: 3rem !important;
+  &:has(.swiper-pagination) {
+    padding-bottom: 3rem !important;
+  }
 
   .swiper-pagination {
     text-align: left;

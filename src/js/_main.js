@@ -6,4 +6,4 @@ import './masonry.js';
 import './fade-in-animation.js';
 import './breadcrumb.js';
 import './accordion.js';
-import './swiper.js';
+import './page-nav.js';

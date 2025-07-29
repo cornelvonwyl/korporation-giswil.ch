@@ -1,6 +1,10 @@
 .news-list {
   @include spacing;
 
+  h2 {
+    margin-bottom: 0;
+  }
+
   &__container {
     @include container-large;
   }
@@ -12,11 +16,16 @@
   &__cards {
     display: flex;
     flex-direction: column;
-    gap: 2rem;
+    gap: $gutter-sm;
   }
 
   &__more {
     @include primary-button;
-    margin-top: 3rem;
+
+    margin-top: $gutter-sm;
+
+    @include medium-up {
+      margin-top: 3rem;
+    }
   }
 }

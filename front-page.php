@@ -22,11 +22,19 @@ get_header(); ?>
       <!-- Hero Section -->
       <?php get_template_part('template-parts/frontpage/hero'); ?>
 
+
       <!-- Neuigkeiten Section -->
       <?php get_template_part('template-parts/news/news-list'); ?>
 
       <!-- Event Section -->
       <?php get_template_part('template-parts/events/events-list'); ?>
+
+
+      <!-- Services Section -->
+      <?php get_template_part('template-parts/services/service-by', null, [
+        'show_all' => true,
+        'title' => 'Dienstleistungen'
+      ]); ?>
     </div>
   </div>
 </main>

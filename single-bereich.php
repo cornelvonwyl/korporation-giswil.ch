@@ -31,21 +31,22 @@ get_header(); ?>
                                 <h1 class="department__title">
                                     <?php the_title(); ?>
                                 </h1>
-
-
-                                <nav class="department__navigation">
-                                    <ul>
-                                        <li><a href="#">Übersicht</a></li>
-                                        <li><a href="#">Veranstaltungen</a></li>
-                                        <li><a href="#">Kontakt</a></li>
-                                    </ul>
-                                </nav>
                             </div>
                         </div>
                     </div>
                     <div class="department__container">
+
+                        <nav class="department__navigation">
+                            <ul>
+                                <li><a href="#uebersicht">Übersicht</a></li>
+                                <li><a href="#informationen">Infos</a></li>
+                                <li><a href="#dienstleistungen">Dienstleistungen</a></li>
+                                <li><a href="#team">Team</a></li>
+                                <li><a href="#news-events">News & Events</a></li>
+                            </ul>
+                        </nav>
                         <div class="department__wrapper">
-                            <div class="department__content">
+                            <div class="department__content" id="uebersicht">
                                 <?php if ($text): ?>
                                     <div class="department__text prose">
                                         <?php echo $text; ?>
@@ -78,7 +79,7 @@ get_header(); ?>
                             <?php
                             $accordions = get_field('accordions');
                             if ($accordions): ?>
-                                <div class="department__accordions">
+                                <div class="department__accordions" id="informationen">
                                     <h2>Informationen</h2>
                                     <div class="department__accordions-container">
                                         <?php foreach ($accordions as $accordion_item):
@@ -94,19 +95,23 @@ get_header(); ?>
                             <?php endif; ?>
 
                         </div>
+
+
+                        <div id="dienstleistungen">
+                            <?php get_template_part('template-parts/services/service-by'); ?>
+                        </div>
+
+                        <div id="team">
+                            <?php get_template_part('template-parts/team/people-by'); ?>
+                        </div>
+
+
+                        <div class="department__news-events" id="news-events">
+                            <?php get_template_part('template-parts/news/news-by'); ?>
+
+                            <?php get_template_part('template-parts/events/events-by'); ?>
+                        </div>
                     </div>
-
-                    <?php get_template_part('template-parts/services/service-by'); ?>
-
-                    <?php get_template_part('template-parts/team/people-by'); ?>
-
-
-                    <div class="department__news-events">
-                        <?php get_template_part('template-parts/news/news-by'); ?>
-
-                        <?php get_template_part('template-parts/events/events-by'); ?>
-                    </div>
-
                 </article>
 
         <?php endwhile;

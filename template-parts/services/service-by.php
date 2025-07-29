@@ -1,10 +1,11 @@
 <?php
 
 /**
- * Template part for displaying related services by bereich
+ * Template part for displaying services
  * 
  * @param array $args['services'] Optional. Array of services to display.
  * @param array $args['title'] Optional. Title for the section. Defaults to "Dienstleistungen".
+ * @param bool $args['show_all'] Optional. If true, shows all services. If false, shows services by bereich.
  */
 
 if (!defined('ABSPATH')) {
@@ -14,25 +15,37 @@ if (!defined('ABSPATH')) {
 // Get parameters from args or set defaults
 $services = isset($args['services']) ? $args['services'] : NULL;
 $title = isset($args['title']) ? $args['title'] : 'Dienstleistungen';
+$show_all = isset($args['show_all']) ? $args['show_all'] : false;
 
-// If no services provided, query related services for current bereich
+// If no services provided, query services
 if (empty($services)) {
-    $current_post_id = get_the_ID();
+    if ($show_all) {
+        // Query all services
+        $services_query = new WP_Query(array(
+            'post_type' => 'dienstleistung',
+            'posts_per_page' => -1,
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
+            'post_status' => 'publish'
+        ));
+    } else {
+        // Query related services for current bereich
+        $current_post_id = get_the_ID();
 
-    // Query for services that reference this bereich in their "fields" field
-    $services_query = new WP_Query(array(
-        'post_type' => 'dienstleistung',
-        'posts_per_page' => -1,
-        'orderby' => 'menu_order',
-        'order' => 'ASC',
-        'meta_query' => array(
-            array(
-                'key' => 'fields',
-                'value' => '"' . $current_post_id . '"',
-                'compare' => 'LIKE'
+        $services_query = new WP_Query(array(
+            'post_type' => 'dienstleistung',
+            'posts_per_page' => -1,
+            'orderby' => 'menu_order',
+            'order' => 'ASC',
+            'meta_query' => array(
+                array(
+                    'key' => 'fields',
+                    'value' => '"' . $current_post_id . '"',
+                    'compare' => 'LIKE'
+                )
             )
-        )
-    ));
+        ));
+    }
 
     $services = $services_query->have_posts() ? $services_query->posts : array();
     wp_reset_postdata();

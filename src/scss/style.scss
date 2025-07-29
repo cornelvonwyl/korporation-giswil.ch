@@ -34,14 +34,13 @@
 
 // Blog/Posts
 @import '4_components/news/news-list';
+@import '4_components/news/news-overview';
+@import '4_components/news/news-single';
+@import '4_components/news/news-by';
 
 // Events
 @import '4_components/events/events-list';
 @import '4_components/events/events-single';
-
-@import '4_components/news/news-overview';
-@import '4_components/news/news-filter';
-@import '4_components/news/news-single';
 
 // Services Pages
 @import '4_components/services/services-overview';

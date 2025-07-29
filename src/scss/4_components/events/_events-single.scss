@@ -3,7 +3,7 @@
     @include container-large;
 
     > div {
-      @include two-column-grid(60%, 40%);
+      @include two-column-grid(1.5fr, 1fr);
       @include spacing-medium-bottom;
     }
   }

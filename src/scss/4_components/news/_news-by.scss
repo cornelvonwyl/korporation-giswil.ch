@@ -1,0 +1,7 @@
+.news-by {
+  &__grid {
+    display: flex;
+    flex-direction: column;
+    gap: $gutter-sm;
+  }
+}

@@ -12,7 +12,7 @@ document.addEventListener('DOMContentLoaded', () => {
         modules: [Pagination],
         speed: 500,
         slidesPerView: 3,
-        spaceBetween: 24,
+        spaceBetween: 32,
         /*         navigation: {
           nextEl: '.swiper-button-next-slider',
           prevEl: '.swiper-button-prev-slider',
