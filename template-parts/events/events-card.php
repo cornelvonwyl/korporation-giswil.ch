@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$date = get_field('date', get_the_ID());
+$date = get_field('custom_date', get_the_ID());
 $title = get_the_title();
 $fields = get_field('fields', get_the_ID());
 $link = get_permalink();

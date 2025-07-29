@@ -33,7 +33,7 @@ $link = $args['link'] ?? '#';
             <?php endif; ?>
         </div>
 
-        <div class="card__arrow">
+        <div class="card__arrow arrow">
             <img
                 src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right-up.svg'); ?>"
                 alt=""

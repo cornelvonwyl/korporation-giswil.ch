@@ -1,29 +1,13 @@
 .card {
-  position: relative;
-  @include box;
-  padding: 0;
-  @include transition(all);
-
-  &:has(.card__link:hover) {
-    box-shadow: $box-shadow-hover;
-    transform: translate(3px, 3px);
-  }
-
   &__link {
     display: block;
     text-decoration: none;
-    padding: 1.5rem;
     display: flex;
     gap: 1rem;
     align-items: center;
     justify-content: space-between;
-
-    &:hover {
-      .card__arrow {
-        background-color: $color-blue-dark;
-        transform: rotate(45deg);
-      }
-    }
+    position: relative;
+    @include box;
   }
 
   &__content {
@@ -44,16 +28,5 @@
   &__category {
     @include text-small;
     color: $color-green;
-  }
-
-  &__arrow {
-    background-color: $color-blue;
-    border-radius: 50%;
-    width: 2rem;
-    min-width: 2rem;
-    height: 2rem;
-    padding: 0.5rem;
-    transform: rotate(0deg);
-    @include transition(all);
   }
 }

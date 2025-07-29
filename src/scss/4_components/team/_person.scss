@@ -3,51 +3,18 @@
     margin-bottom: 0.75rem;
   }
 
-  &__function {
-    opacity: 0.5;
-    @include text-small;
-    margin-bottom: 0.75rem;
+  &__name {
+    margin: 0;
   }
 
-  &__contact {
-    display: flex;
-    gap: 1rem;
+  &__function,
+  &__phone,
+  &__email {
+    opacity: 0.5;
+    @include text-small;
 
-    .tooltip {
-      position: relative;
-      display: inline-block;
-
-      .tooltiptext {
-        visibility: hidden;
-        width: auto;
-        min-width: 120px;
-        white-space: nowrap;
-        background-color: $color-black;
-        color: $color-white;
-        text-align: center;
-        padding: 0.75rem 1rem;
-        text-decoration: none;
-
-        position: absolute;
-        z-index: 1;
-        bottom: 99%;
-        left: 50%;
-        transform: translateX(-50%);
-
-        opacity: 0;
-        transition: opacity 0.3s;
-
-        font-size: rem(14px);
-        line-height: 1;
-      }
-
-      // Tooltip-Hover nur auf Geräten mit Hover-Unterstützung aktivieren
-      @media (hover: hover) {
-        &:hover .tooltiptext {
-          visibility: visible;
-          opacity: 1;
-        }
-      }
+    a {
+      text-decoration: none;
     }
   }
 }

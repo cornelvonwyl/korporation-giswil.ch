@@ -1,9 +1,0 @@
-.referenzen {
-  .referenzen-filter {
-    @include filter-component();
-
-    &__container {
-      @include container;
-    }
-  }
-}

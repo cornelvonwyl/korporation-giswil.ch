@@ -4,7 +4,7 @@ if (!defined('ABSPATH')) {
   exit; // Exit if accessed directly.
 }
 
-$images = $images ?? get_field('images') ?: array(
+$images = $args['images'] ?? get_field('images') ?: array(
   array(
     'ID' => 58,
     'url' => 'https://via.placeholder.com/600x400',

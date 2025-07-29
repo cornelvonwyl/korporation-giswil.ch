@@ -14,55 +14,7 @@ if (! defined('ABSPATH')) {
                 <h4 class="footer__section-title" id="newsletter-title">Newsletter abonnieren</h4>
                 <div class="footer__newsletter">
 
-                    <form data-form-language="de" id="contact_form_2_de"
-                        class="contact_form contact_form_de validate_type_all contact_form_cols_1"
-                        action="//web.swissnewsletter.ch/e/3a6566480fd96137/form/de/anmeldeformular_elektrofurrer_ch.html"
-                        method="post" novalidate="novalidate">
-                        <ul class="field_errors"></ul>
-                        <div class="col_0">
 
-                            <div class="field_container contact_field_container"
-                                id="contact_field_email_container">
-                                <label for="data_contact_email" class="sr-only">E-Mail Adresse <span class="required">*</span></label>
-                                <ul class="field_errors"></ul>
-                                <input type="email" placeholder="name@mail.ch" id="data_contact_email" name="data[contact][email]" required="required">
-                            </div>
-                            <div class="submit_container">
-                                <input class="submit_button primary-button" id="submit_button_11" type="submit" value="Abonnieren">
-                            </div>
-                        </div>
-                        <input type="hidden" id="data_form_version" name="data[form_version]" value="5_0">
-                        <input type="hidden" id="data_referrer" name="data[referrer]">
-                        <input type="hidden" id="data_form_validate_data" name="form_validate_data"
-                            value='{"data_contact_email":{"constrains":{"required":true}}}'>
-                        <input type="hidden" id="data_form_id" name="data[form_id]" value="2">
-                        <input type="hidden" id="data_form_language" name="data[form_language]" value="de">
-                        <script>
-                            var inputReferrer = document.getElementById('data_referrer');
-
-                            if (inputReferrer) {
-                                inputReferrer.value = window.location.href;
-                            }
-
-
-                            document.addEventListener('DOMContentLoaded', function() {
-                                setTimeout(function() {
-                                    const form = document.getElementById('contact_form_2_de');
-                                    const errorFields = form.querySelectorAll('.field_errors li');
-
-                                    if (errorFields.length > 0) {
-                                        form.scrollIntoView({
-                                            behavior: 'smooth',
-                                            block: 'start'
-                                        });
-                                    }
-                                }, 1000);
-                            });
-                        </script>
-
-
-
-                    </form>
                 </div>
             </div>
 
@@ -134,27 +86,9 @@ if (! defined('ABSPATH')) {
                     </li>
                 </ul>
 
-                <h4 class="footer__section-title">Support</h4>
-                <ul class="footer__support">
-                    <li>
-                        <a href="https://furrerag.rmmservice.eu/connect/#/4440936652"
-                            target="_blank"
-                            rel="noopener noreferrer"
-                            aria-label="Ninja Remote - Öffnet in neuem Tab">
-                            <img class="footer__social-icon"
-                                src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/ninja-remote.png'); ?>"
-                                alt="Ninja Remote Icon"
-                                width="28"
-                                height="28">
-                        </a>
-                    </li>
-
-                </ul>
             </div>
         </div>
     </div>
-
-    <p class="footer__typo">Eifach Furrer</p>
 </footer>
 
 <?php wp_footer(); ?>

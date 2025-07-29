@@ -5,8 +5,6 @@
  * 
  * @param array $args['services'] Optional. Array of services to display.
  * @param array $args['title'] Optional. Title for the section. Defaults to "Dienstleistungen".
- * @param array $args['subtitle'] Optional. Subtitle for the section. Defaults to "Unsere Leistungen".
- * @param array $args['button'] Optional. Whether to show button. Defaults to TRUE.
  */
 
 if (!defined('ABSPATH')) {
@@ -16,8 +14,6 @@ if (!defined('ABSPATH')) {
 // Get parameters from args or set defaults
 $services = isset($args['services']) ? $args['services'] : NULL;
 $title = isset($args['title']) ? $args['title'] : 'Dienstleistungen';
-$subtitle = isset($args['subtitle']) ? $args['subtitle'] : 'Unsere Leistungen';
-$button = isset($args['button']) ? $args['button'] : TRUE;
 
 // If no services provided, query related services for current bereich
 if (empty($services)) {
@@ -53,37 +49,37 @@ if ($services && !empty($services)): ?>
                         <li class="service-by__item swiper-slide">
                             <?php
                             // Extract service data
-                            $service_image = get_field('image', $service->ID);
+                            $service_image = get_post_thumbnail_id($service->ID);
                             $service_title = get_the_title($service->ID);
                             $service_link = get_permalink($service->ID);
-                            $service_fields = get_field('fields', $service->ID);
 
                             // Pass data as props to services-card
                             get_template_part('template-parts/services/services-card', null, [
                                 'image' => $service_image,
                                 'title' => $service_title,
                                 'link' => $service_link,
-                                'fields' => $service_fields
                             ]);
                             ?>
                         </li>
                     <?php endforeach; ?>
                 </ul>
+
+                <div class="swiper-pagination"></div>
+
+                <!--                 <div class="swiper-buttons">
+                    <button type="button" class="swiper-button-prev swiper-button-prev-slider" aria-label="Vorheriges Element">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
+                            alt="Pfeil nach links"
+                            width="24" height="24">
+                    </button>
+                    <button type="button" class="swiper-button-next swiper-button-next-slider" aria-label="Nächstes Element">
+                        <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
+                            alt="Pfeil nach rechts"
+                            width="24" height="24">
+                    </button>
+                </div> -->
             </div>
 
-
-            <div class="swiper-buttons">
-                <button type="button" class="swiper-button-prev swiper-button-prev-services" aria-label="Vorheriges Element">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-left.svg'); ?>"
-                        alt="Pfeil nach links"
-                        width="24" height="24">
-                </button>
-                <button type="button" class="swiper-button-next swiper-button-next-services" aria-label="Nächstes Element">
-                    <img src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-right.svg'); ?>"
-                        alt="Pfeil nach rechts"
-                        width="24" height="24">
-                </button>
-            </div>
 
         </div>
     </section>

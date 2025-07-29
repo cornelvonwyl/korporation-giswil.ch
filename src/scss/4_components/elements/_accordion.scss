@@ -21,6 +21,15 @@
     color: $color-black;
   }
 
+  &__icon {
+    width: 1.5rem;
+    height: 1.5rem;
+
+    .active & {
+      transform: rotate(180deg);
+    }
+  }
+
   &__title {
     @include h4;
     font-family: $font-family;

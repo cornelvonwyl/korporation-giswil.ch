@@ -26,6 +26,7 @@
 @import '4_components/elements/cta-list-item';
 @import '4_components/elements/accordion';
 @import '4_components/elements/card';
+@import '4_components/elements/page-header';
 
 // Frontpage
 @import '4_components/frontpage/hero';
@@ -41,20 +42,12 @@
 @import '4_components/news/news-overview';
 @import '4_components/news/news-filter';
 @import '4_components/news/news-single';
+
 // Services Pages
 @import '4_components/services/services-overview';
 @import '4_components/services/service-card';
 @import '4_components/services/service-by';
-
-@import '4_components/blocks/furrer-power';
-
-// Reference Pages
-@import '4_components/referenz/referenzen-slider';
-@import '4_components/referenz/referenzen-overview';
-@import '4_components/referenz/referenzen-filter';
-@import '4_components/referenz/referenz-card';
-@import '4_components/referenz/referenz-impression-single';
-@import '4_components/referenz/referenz-project-single';
+@import '4_components/services/service-single';
 
 // Team/People Pages
 @import '4_components/team/people';
@@ -62,35 +55,16 @@
 @import '4_components/team/person';
 @import '4_components/team/team-filter';
 @import '4_components/team/team-overview';
-
-// Partners Page
-@import '4_components/partners/partners-by';
-
-// Jobs Page
-@import '4_components/jobs/jobs-overview';
-@import '4_components/jobs/jobs-filter';
-@import '4_components/jobs/job-teaser';
-@import '4_components/jobs/job-single';
+@import '4_components/team/contact-person';
 
 // Bereich Pages
 @import '4_components/bereich/bereich-single';
 
-// Locations Page
-@import '4_components/locations/locations-overview';
-
 // Contact Page
 @import '4_components/contact/contact-page';
-
-// History Page
-@import '4_components/history/history-item';
-@import '4_components/history/history-overview';
-
-// Sponsorings
-@import '4_components/sponsorings/sponsorings-overview';
 
 // Reusable Block Components
 @import '4_components/blocks/images-block';
 @import '4_components/blocks/image-with-content';
 @import '4_components/blocks/downloads';
-@import '4_components/blocks/page-header';
 @import '4_components/blocks/page-header-text';

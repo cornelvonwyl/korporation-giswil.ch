@@ -1,0 +1,19 @@
+.service-card {
+  &__link {
+    @include box;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+  }
+
+  &__content {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+
+  &__title {
+    margin: 0;
+  }
+}

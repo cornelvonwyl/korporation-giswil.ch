@@ -12,11 +12,44 @@
   @include sr-only;
 }
 
+@mixin card-arrow() {
+  background-color: $color-blue;
+  border-radius: 50%;
+  width: 2rem;
+  min-width: 2rem;
+  height: 2rem;
+  padding: 0.5rem;
+  transform: rotate(0deg);
+  @include transition(all);
+}
+
+@mixin card-arrow-hover() {
+  background-color: $color-blue-dark;
+  transform: rotate(45deg);
+}
+
 @mixin box() {
   border: $border;
   box-shadow: $box-shadow;
   background-color: $color-white;
   padding: 1.5rem;
+
+  &:is(a) {
+    @include transition(all);
+
+    &:hover {
+      box-shadow: $box-shadow-hover;
+      /*       transform: translate(1px, 1px); */
+
+      .arrow {
+        @include card-arrow-hover;
+      }
+    }
+  }
+
+  .arrow {
+    @include card-arrow;
+  }
 }
 
 @mixin header-image {

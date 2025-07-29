@@ -5,9 +5,22 @@
   }
 }
 
-// Position swiper container relatively for absolute positioning of buttons
 .swiper {
   position: relative;
+
+  --swiper-pagination-color: #{$color-blue};
+  --swiper-pagination-left: 0;
+  --swiper-pagination-right: auto;
+  --swiper-pagination-bottom: 0;
+  --swiper-pagination-bullet-inactive-opacity: 0.35;
+  --swiper-pagination-bullet-horizontal-gap: 3px;
+  --swiper-pagination-bullet-inactive-color: #{$color-blue};
+
+  padding-bottom: 3rem !important;
+
+  .swiper-pagination {
+    text-align: left;
+  }
 }
 
 .swiper-buttons {

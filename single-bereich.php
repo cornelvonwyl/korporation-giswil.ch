@@ -20,9 +20,6 @@ get_header(); ?>
                     $persons = get_field('person');
                     $address = get_field('adress');
                     ?>
-
-
-
                     <div class="department__hero">
                         <div class="department__hero-container">
                             <?php if ($image): ?>
@@ -58,53 +55,9 @@ get_header(); ?>
                                 <?php if ($persons || $address): ?>
                                     <div class="department__sidebar">
                                         <?php if ($persons): ?>
-                                            <div class="department__contact">
-                                                <h4>Ansprechpersonen</h4>
-                                                <div class="department__persons">
-                                                    <?php foreach ($persons as $person): ?>
-                                                        <div class="department__person">
-                                                            <?php
-                                                            $person_image = get_field('portrait', $person->ID);
-                                                            $person_first_name = get_field('first_name', $person->ID);
-                                                            $person_last_name = get_field('last_name', $person->ID);
-                                                            $person_position = get_field('function', $person->ID);
-                                                            $person_phone = get_field('phone', $person->ID);
-                                                            $person_email = get_field('mail', $person->ID);
-                                                            ?>
-
-                                                            <?php if ($person_image): ?>
-                                                                <?php
-                                                                $image_id = is_array($person_image) ? $person_image['id'] : $person_image;
-                                                                echo wp_get_attachment_image($image_id, 'thumbnail', false, ['class' => 'department__person-image']);
-                                                                ?>
-                                                            <?php endif; ?>
-
-                                                            <div class="department__person-info">
-                                                                <p class="department__person-name">
-                                                                    <?php echo esc_html(trim($person_first_name . ' ' . $person_last_name)); ?>
-                                                                </p>
-                                                                <?php if ($person_position): ?>
-                                                                    <p class="department__person-position">
-                                                                        <?php echo esc_html($person_position); ?>
-                                                                    </p>
-                                                                <?php endif; ?>
-
-                                                                <?php if ($person_phone): ?>
-                                                                    <a href="tel:<?php echo esc_attr(str_replace(' ', '', $person_phone)); ?>">
-                                                                        <?php echo esc_html($person_phone); ?>
-                                                                    </a>
-                                                                <?php endif; ?>
-
-                                                                <?php if ($person_email): ?>
-                                                                    <a href="mailto:<?php echo esc_attr($person_email); ?>">
-                                                                        <?php echo esc_html($person_email); ?>
-                                                                    </a>
-                                                                <?php endif; ?>
-                                                            </div>
-                                                        </div>
-                                                    <?php endforeach; ?>
-                                                </div>
-                                            </div>
+                                            <?php get_template_part('template-parts/components/contact-person', null, [
+                                                'persons' => $persons
+                                            ]); ?>
                                         <?php endif; ?>
 
                                         <?php if ($address): ?>
@@ -144,6 +97,15 @@ get_header(); ?>
                     </div>
 
                     <?php get_template_part('template-parts/services/service-by'); ?>
+
+                    <?php get_template_part('template-parts/team/people-by'); ?>
+
+
+                    <div class="department__news-events">
+                        <?php get_template_part('template-parts/news/news-by'); ?>
+
+                        <?php get_template_part('template-parts/events/events-by'); ?>
+                    </div>
 
                 </article>
 
