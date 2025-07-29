@@ -25,9 +25,16 @@ if (!empty($items)) {
 
 <nav class="breadcrumb" aria-label="Breadcrumb">
   <ul>
-    <?php foreach ($breadcrumb_items as $item): ?>
+    <?php foreach ($breadcrumb_items as $index => $item): ?>
       <li>
-        <a href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['title']); ?></a><span class="breadcrumb-separator">→</span>
+        <?php if (!empty($item['url'])): ?>
+          <a href="<?php echo esc_url($item['url']); ?>"><?php echo esc_html($item['title']); ?></a>
+        <?php else: ?>
+          <span><?php echo esc_html($item['title']); ?></span>
+        <?php endif; ?>
+        <?php if ($index < count($breadcrumb_items) - 1): ?>
+          <span class="breadcrumb-separator">→</span>
+        <?php endif; ?>
       </li>
     <?php endforeach; ?>
   </ul>

@@ -1,17 +1,9 @@
 import './menu.js';
 import './gallery.js';
 import './swiper.js';
-import './referenz-filter.js';
 import './hover-effect.js';
 import './masonry.js';
 import './fade-in-animation.js';
-import './furrer-power.js';
-import './news-filter.js';
-import './team-filter.js';
-import './jobs-filter.js';
 import './breadcrumb.js';
-import './service-tabs.js';
-import './timeline-animation.js';
 import './accordion.js';
-import './page-header-scroll.js';
 import './swiper.js';

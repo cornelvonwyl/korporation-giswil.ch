@@ -4,7 +4,7 @@
  * Template Name: Image with Content Block
  * 
  * A flexible block template that displays an image alongside content with configurable layout options.
- * The image can be positioned on either side, and the title can be displayed in different variants.
+ * The image can be positioned on either side.
  *
  * @package vonweb
  */
@@ -29,12 +29,10 @@ if (!empty($block['className'])) {
 $image = get_field('image');
 $image_position = get_field('image_position') ?: 'left';
 $title = get_field('title');
-$title_variant = get_field('title_variant') ?: 'horizontal';
 $content = get_field('content');
 
 // Add class modifiers
 $class_name .= ' image-with-content--image-' . esc_attr($image_position);
-$class_name .= ' image-with-content--title-' . esc_attr($title_variant);
 ?>
 
 <section id="<?php echo esc_attr($id); ?>" class="<?php echo esc_attr($class_name); ?> animation-on-scroll">

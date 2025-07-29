@@ -30,7 +30,7 @@
 
       @include medium-up {
         min-height: 100%;
-        width: 7.5 / 12 * 100%;
+        width: 6 / 12 * 100%;
         max-width: 100%;
       }
     }
@@ -38,7 +38,7 @@
 
   &__content {
     @include medium-up {
-      width: calc(5.5 / 12 * 100%);
+      width: calc(6 / 12 * 100%);
     }
   }
 
@@ -58,25 +58,11 @@
     margin-bottom: 1.5rem;
   }
 
-  &--image-left {
-    .image-with-content__title {
-      @include medium-up {
-        margin-left: -16rem;
-      }
-    }
-  }
-
   // Image Position Modifikationen
   &--image-right {
     .image-with-content__container {
       @include medium-up {
         flex-direction: row-reverse;
-      }
-    }
-
-    .image-with-content__title {
-      @include medium-up {
-        margin-right: -16rem;
       }
     }
   }

@@ -35,7 +35,9 @@ if (is_wp_error($posts)) {
           <ul class="news-list__cards">
             <?php while ($posts->have_posts()): $posts->the_post(); ?>
               <li class="news-list__card">
-                <?php get_template_part('template-parts/news/news-card'); ?>
+                <?php get_template_part('template-parts/news/news-card', null, [
+                    'post' => get_post()
+                ]); ?>
               </li>
             <?php endwhile; ?>
           </ul>

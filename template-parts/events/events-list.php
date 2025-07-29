@@ -46,7 +46,9 @@ if (is_wp_error($events)) {
                     <ul class="events-list__cards">
                         <?php while ($events->have_posts()): $events->the_post(); ?>
                             <li class="events-list__card">
-                                <?php get_template_part('template-parts/events/events-card'); ?>
+                                <?php get_template_part('template-parts/events/events-card', null, [
+                                    'post' => get_post()
+                                ]); ?>
                             </li>
                         <?php endwhile; ?>
                     </ul>

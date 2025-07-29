@@ -4,10 +4,17 @@ if (!defined('ABSPATH')) {
     exit;
 }
 
-$date = get_field('custom_date', get_the_ID());
-$title = get_the_title();
-$fields = get_field('fields', get_the_ID());
-$link = get_permalink();
+// Get post object from args or use global post
+$post_item = isset($args['post']) ? $args['post'] : get_post();
+
+if (!$post_item) {
+    return;
+}
+
+$date = get_field('custom_date', $post_item->ID);
+$title = get_the_title($post_item);
+$fields = get_field('fields', $post_item->ID);
+$link = get_permalink($post_item);
 
 // Get field titles if fields exist
 $category = null;
