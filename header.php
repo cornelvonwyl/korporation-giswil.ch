@@ -26,10 +26,22 @@ if (! defined('ABSPATH')) {
 </head>
 
 <body <?php body_class(); ?>>
-    <div class="layout">
+    <div class="layout-wrapper">
         <header class="header">
 
+            <div class="header__meta-nav">
+                <nav class="header__meta-nav-list">
+                    <ul>
+                        <li><a href="/">Zeltplätze</a></li>
+                        <li><a href="/">Ribihütte</a></li>
+                        <li><a href="/">Kontakt</a></li>
+                    </ul>
+                </nav>
+            </div>
+
             <div class="header__container">
+
+
 
                 <div class="header__wrapper">
                     <div class="header__logo">
@@ -49,15 +61,10 @@ if (! defined('ABSPATH')) {
 
                     <nav class="header__nav header__nav--mobile">
                         <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-
-                        <div class="header__contact">
-                            <a class="primary-button" href="/kontakt">Kontakt</a>
-                        </div>
                     </nav>
 
                     <nav class="header__nav header__nav--desktop">
                         <?php wp_nav_menu(array('theme_location' => 'primary')); ?>
-                        <a class="primary-button" href="/kontakt">Kontakt</a>
                     </nav>
                 </div>
             </div>

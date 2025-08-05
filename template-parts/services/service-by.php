@@ -62,15 +62,17 @@ if ($services && !empty($services)): ?>
                         <li class="service-by__item swiper-slide">
                             <?php
                             // Extract service data
-                            $service_image = get_post_thumbnail_id($service->ID);
+                            $service_image = get_field('image', $service->ID);
                             $service_title = get_the_title($service->ID);
                             $service_link = get_permalink($service->ID);
+                            $service_department = get_field('fields', $service->ID);
 
-                            // Pass data as props to services-card
-                            get_template_part('template-parts/services/services-card', null, [
-                                'image' => $service_image,
+                            // Pass data as props to card-with-image
+                            get_template_part('template-parts/components/card-with-image', null, [
+                                'image' => $service_image ? $service_image['id'] : null,
                                 'title' => $service_title,
                                 'link' => $service_link,
+                                'department' => $service_department
                             ]);
                             ?>
                         </li>

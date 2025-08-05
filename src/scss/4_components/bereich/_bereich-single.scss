@@ -6,6 +6,10 @@
     @include medium-up {
       padding: 0 3rem;
     }
+
+    .page & {
+      @include spacing-bottom;
+    }
   }
 
   &__hero-container {
@@ -77,7 +81,14 @@
   }
 
   &__content {
-    @include two-column-grid(1fr, 1fr);
+    @include two-column-grid(7fr, 5fr);
+  }
+
+  &__text {
+    @include medium-up {
+      font-size: rem(18px);
+      line-height: 1.75;
+    }
   }
 
   &__sidebar {

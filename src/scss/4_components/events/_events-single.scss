@@ -1,4 +1,8 @@
 .events-single {
+  .breadcrumb {
+    @include container-large;
+  }
+
   &__header {
     @include container-large;
 
@@ -32,6 +36,5 @@
 
   &__content {
     @include spacing-medium;
-    @include container;
   }
 }

@@ -1,0 +1,34 @@
+.page {
+  &__container {
+  }
+
+  &__children {
+    @include container-large;
+    @include spacing;
+
+    &-grid {
+      display: grid;
+      grid-template-columns: repeat(1, 1fr);
+      gap: $gutter-sm;
+
+      @include medium-up {
+        grid-template-columns: repeat(3, 1fr);
+      }
+    }
+  }
+
+  /*   .prose {
+    p,
+    ul,
+    ol,
+    blockquote,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+      @include container;
+    }
+  } */
+}

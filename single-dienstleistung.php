@@ -12,8 +12,8 @@ get_header(); ?>
         <?php if (have_posts()):
             while (have_posts()):
                 the_post(); ?>
-                <article class="main-content">
 
+                <article class="main-content">
                     <?php
                     $image = get_field('image');
                     $text = get_field('content');
@@ -33,7 +33,7 @@ get_header(); ?>
                         <div class="service__wrapper">
                             <div class="service__content">
                                 <?php if ($text): ?>
-                                    <div class="service__text prose">
+                                    <div class="service__text">
                                         <?php echo $text; ?>
                                     </div>
                                 <?php endif; ?>
@@ -77,21 +77,28 @@ get_header(); ?>
                             <?php if ($products): ?>
                                 <div class="service__products">
                                     <h2>Produkte</h2>
-                                    <div class="service__products-content">
-                                        <?php foreach ($products as $product_item):
-                                            if ($product_item['acf_fc_layout'] === 'product' && !empty($product_item['product'])):
-                                                echo '<div class="service__product">';
-                                                echo wp_kses_post($product_item['product']);
-                                                echo '</div>';
-                                            endif;
-                                        endforeach; ?>
+                                    <div class="service__products-grid swiper">
+                                        <ul class="swiper-wrapper">
+                                            <?php foreach ($products as $product_item):
+                                                if ($product_item['acf_fc_layout'] === 'product'): ?>
+                                                    <li class="service__products-item swiper-slide">
+                                                        <?php get_template_part('template-parts/components/card-with-image', null, [
+                                                            'title' => $product_item['title'] ?? '',
+                                                            'image' => $product_item['image']['ID'] ?? '',
+                                                            'content' => $product_item['text'] ?? ''
+                                                        ]); ?>
+                                                    </li>
+                                            <?php endif;
+                                            endforeach; ?>
+                                        </ul>
+
+                                        <div class="swiper-pagination"></div>
                                     </div>
                                 </div>
                             <?php endif; ?>
 
                             <?php if ($gallery): ?>
                                 <div class="service__gallery">
-                                    <h2>Galerie</h2>
                                     <?php get_template_part('template-parts/components/gallery', null, [
                                         'images' => $gallery
                                     ]); ?>

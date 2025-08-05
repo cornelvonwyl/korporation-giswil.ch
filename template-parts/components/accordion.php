@@ -40,7 +40,7 @@ $accordion_id = isset($args['id']) ? $args['id'] : uniqid('accordion-');
         role="region"
         hidden>
         <?php if ($args['text']): ?>
-            <div class="accordion__content-inner prose">
+            <div class="accordion__content-inner">
                 <?php echo wp_kses_post($args['text']); ?>
             </div>
         <?php endif; ?>

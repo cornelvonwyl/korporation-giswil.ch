@@ -194,6 +194,11 @@
   margin-top: 5rem;
   margin-bottom: 5rem;
 
+  @include medium-up {
+    margin-top: 7rem;
+    margin-bottom: 7rem;
+  }
+
   @include large-up {
     margin-top: 9rem;
     margin-bottom: 9rem;
@@ -319,10 +324,10 @@
 }
 
 @mixin text-small() {
-  font-size: rem(14px);
+  font-size: rem(13px);
 
   @include medium-up {
-    font-size: rem(14px);
+    font-size: rem(13px);
   }
 }
 
@@ -396,11 +401,11 @@
   margin-bottom: 2rem;
 
   @include medium-up() {
-    font-size: rem(42px);
+    font-size: rem(36px);
   }
 
   @include xlarge-up() {
-    font-size: rem(46px);
+    font-size: rem(42px);
   }
 }
 
@@ -412,7 +417,7 @@
   line-height: 1.35;
 
   @include medium-up() {
-    font-size: rem(22px);
+    font-size: rem(20px);
   }
 }
 

@@ -19,14 +19,16 @@
   &__date {
     @include text-small;
     color: $color-blue-light;
+    margin: 0 !important;
   }
 
   &__title {
-    margin: 0;
+    margin: 0 !important;
   }
 
   &__category {
     @include text-small;
     color: $color-green;
+    margin: 0 !important;
   }
 }

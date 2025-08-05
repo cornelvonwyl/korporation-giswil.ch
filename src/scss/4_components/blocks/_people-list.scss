@@ -1,0 +1,45 @@
+.people-list {
+  @include spacing;
+  position: relative;
+
+  &__container {
+    @include container-large;
+  }
+
+  &__content {
+    margin-bottom: 2rem;
+  }
+
+  // Grid Layout (when show_portrait is true)
+  &__grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
+  // Table Layout (when show_portrait is false)
+  &__table-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: $border;
+    font-weight: 600;
+  }
+
+  &__table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: $border;
+    transition: background-color 0.2s ease;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__table-cell {
+    padding: 1rem 1rem 1rem 0;
+    display: flex;
+    align-items: center;
+  }
+}

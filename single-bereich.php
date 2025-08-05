@@ -16,7 +16,7 @@ get_header(); ?>
 
                     <?php
                     $image = get_field('image');
-                    $text = get_field('Text');
+                    $text = get_field('content');
                     $persons = get_field('person');
                     $address = get_field('adress');
                     ?>
@@ -46,9 +46,9 @@ get_header(); ?>
                             </ul>
                         </nav>
                         <div class="department__wrapper">
-                            <div class="department__content" id="uebersicht">
+                            <div class="department__content " id="uebersicht">
                                 <?php if ($text): ?>
-                                    <div class="department__text prose">
+                                    <div class="department__text">
                                         <?php echo $text; ?>
                                     </div>
                                 <?php endif; ?>

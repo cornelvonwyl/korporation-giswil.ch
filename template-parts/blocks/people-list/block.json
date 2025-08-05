@@ -1,0 +1,23 @@
+{
+  "name": "acf/people-list",
+  "title": "Personen Liste (Kommission & Rat)",
+  "description": "Zeigt eine Liste von Personen an. Kann als Tabelle oder als 3-spaltiges Grid mit Porträts dargestellt werden.",
+  "editorStyle": ["file:./style.css"],
+  "category": "theme",
+  "icon": "groups",
+  "keywords": ["personen", "liste", "team", "kontakt", "portrait", "grid"],
+  "acf": {
+    "mode": "preview",
+    "renderTemplate": "people-list.php"
+  },
+  "attributes": {
+    "align": {
+      "type": "string",
+      "default": "wide"
+    }
+  },
+  "supports": {
+    "align": ["wide"],
+    "anchor": true
+  }
+}

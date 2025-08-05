@@ -45,45 +45,17 @@ if (!$accordions || !have_rows('accordions')) {
       if (!$title && !$text) {
         continue;
       }
-    ?>
-      <div class="accordion accordion__item" role="heading" aria-level="3">
-        <button class="accordion__trigger"
-          aria-expanded="false"
-          aria-controls="<?php echo esc_attr($id); ?>-content-<?php echo $index; ?>"
-          id="<?php echo esc_attr($id); ?>-trigger-<?php echo $index; ?>">
-          <div class="accordion__header">
-            <?php if ($title): ?>
-              <h4 class="accordion__title"><?php echo esc_html($title); ?></h4>
-            <?php endif; ?>
-          </div>
 
-          <div class="accordion__arrow-container">
-            <img class="accordion__arrow accordion__arrow--primary"
-              src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-down.svg'); ?>"
-              alt=""
-              width="24"
-              height="24"
-              aria-hidden="true">
-            <img class="accordion__arrow accordion__arrow--secondary"
-              src="<?php echo esc_url(get_template_directory_uri() . '/src/assets/icons/arrow-down.svg'); ?>"
-              alt=""
-              width="24"
-              height="24"
-              aria-hidden="true">
-          </div>
-        </button>
-        <div class="accordion__content"
-          id="<?php echo esc_attr($id); ?>-content-<?php echo $index; ?>"
-          aria-labelledby="<?php echo esc_attr($id); ?>-trigger-<?php echo $index; ?>"
-          role="region"
-          hidden>
-          <?php if ($text): ?>
-            <div class="accordion__content-inner prose">
-              <?php echo wp_kses_post($text); ?>
-            </div>
-          <?php endif; ?>
-        </div>
-      </div>
+      // Prepare accordion component arguments
+      $accordion_args = array(
+        'title' => $title,
+        'text' => $text,
+        'id' => $id . '-content-' . $index
+      );
+
+      // Include the accordion component
+      get_template_part('template-parts/components/accordion', null, $accordion_args);
+    ?>
     <?php
       $index++;
     endwhile;

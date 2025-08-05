@@ -44,20 +44,19 @@
 
 // Services Pages
 @import '4_components/services/services-overview';
-@import '4_components/services/service-card';
 @import '4_components/services/service-by';
 @import '4_components/services/service-single';
 
 // Team/People Pages
-@import '4_components/team/people';
 @import '4_components/team/people-by';
-@import '4_components/team/person';
-@import '4_components/team/team-filter';
 @import '4_components/team/team-overview';
 @import '4_components/team/contact-person';
 
 // Bereich Pages
 @import '4_components/bereich/bereich-single';
+
+// Page Pages
+@import '4_components/page/page';
 
 // Contact Page
 @import '4_components/contact/contact-page';
@@ -67,3 +66,5 @@
 @import '4_components/blocks/image-with-content';
 @import '4_components/blocks/downloads';
 @import '4_components/blocks/page-header-text';
+@import '4_components/blocks/people-list';
+@import '4_components/elements/card-with-image';

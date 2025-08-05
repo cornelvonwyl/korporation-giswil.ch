@@ -1,0 +1,36 @@
+.people-list {
+  @include spacing;
+  position: relative;
+
+  &__container {
+    @include container-large;
+  }
+
+  &__content {
+    margin-bottom: 2rem;
+  }
+
+  &__table-header {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: $border;
+    font-weight: 600;
+  }
+
+  &__table-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    border-bottom: $border;
+    transition: background-color 0.2s ease;
+
+    &:last-child {
+      border-bottom: none;
+    }
+  }
+
+  &__table-cell {
+    padding: 1rem 1rem 1rem 0;
+    display: flex;
+    align-items: center;
+  }
+}

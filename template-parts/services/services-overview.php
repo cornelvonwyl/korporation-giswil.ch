@@ -24,7 +24,7 @@ $services = new WP_Query($args);
       <ul class="services-overview__grid">
         <?php while ($services->have_posts()):
           $services->the_post(); ?>
-          <?php get_template_part('template-parts/services/services-card'); ?>
+          <?php get_template_part('template-parts/components/card-with-image'); ?>
         <?php endwhile; ?>
       </ul>
     <?php endif; ?>

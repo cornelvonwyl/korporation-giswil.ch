@@ -1,5 +1,6 @@
 .downloads {
   @include spacing-medium;
+  @include container;
 
   &__item {
     a {

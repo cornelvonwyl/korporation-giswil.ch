@@ -4,34 +4,34 @@
   }
 
   &__wrapper {
-    @include spacing-medium;
+    @include spacing;
   }
 
+  &__content {
+    @include two-column-grid(1fr, 1fr);
+  }
 
-
-  &__persons {
+  &__sidebar {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 3rem;
+  }
+
+  &__accordions {
+    @include spacing;
+    @include container;
+    padding: 0 !important;
+
+    h2 {
+      text-align: center;
+    }
   }
 
   &__products {
-    h2 {
-      margin-bottom: 20px;
-      color: var(--color-primary);
-    }
-  }
+    @include spacing;
 
-  &__products-content {
-    &.prose {
-      max-width: none;
-    }
-  }
-
-  &__gallery {
     h2 {
-      margin-bottom: 20px;
-      color: var(--color-primary);
+      text-align: center;
     }
   }
 }

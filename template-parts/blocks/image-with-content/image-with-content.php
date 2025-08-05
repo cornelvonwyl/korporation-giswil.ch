@@ -50,7 +50,7 @@ $class_name .= ' image-with-content--image-' . esc_attr($image_position);
       <?php endif; ?>
 
       <?php if ($content): ?>
-        <div class="image-with-content__text prose"><?php echo wp_kses_post($content); ?></div>
+        <div class="image-with-content__text"><?php echo wp_kses_post($content); ?></div>
       <?php endif; ?>
     </div>
   </div>

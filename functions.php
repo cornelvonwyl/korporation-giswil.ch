@@ -76,6 +76,8 @@ function register_acf_blocks()
   register_block_type(__DIR__ . '/template-parts/blocks/image-with-content');
   register_block_type(__DIR__ . '/template-parts/blocks/downloads');
   register_block_type(__DIR__ . '/template-parts/blocks/news-overview');
+  register_block_type(__DIR__ . '/template-parts/blocks/people-list');
+  register_block_type(__DIR__ . '/template-parts/blocks/accordions');
 }
 
 
@@ -106,7 +108,9 @@ function wpdocs_allowed_block_types($block_editor_context, $editor_context)
       'core/shortcode',
       'gravityforms/form',
       'filebird/gallery',
-      'core/html'
+      'core/html',
+      'acf/people-list',
+      'acf/accordions'
     );
   }
 
