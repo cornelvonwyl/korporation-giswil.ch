@@ -17,4 +17,17 @@
       border-radius: 50%;
     }
   }
+
+  &__name {
+    font-weight: 600;
+  }
+
+  &__position,
+  &__phone,
+  &__email {
+    @include text-small;
+    color: $color-blue-light;
+    margin: 0 !important;
+    display: block;
+  }
 }

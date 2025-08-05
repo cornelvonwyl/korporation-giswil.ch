@@ -36,25 +36,34 @@
 
   &__navigation {
     @include box;
-    padding: 1.25rem 2.5rem;
+    padding: 1.25rem 0;
     border-radius: 100rem;
-    width: fit-content;
+    width: 100%;
     transform: translateY(-50%);
     transition: all 0.3s ease;
     position: sticky;
     top: 8rem;
-    z-index: 100;
+    z-index: 10;
     margin: 0 auto;
+    overflow-x: auto;
 
     @include medium-up {
-      padding: 1.25rem 2.5rem;
+      padding: 1.25rem 1.5rem;
+      width: fit-content;
+      overflow-x: visible;
     }
 
     ul {
       display: flex;
-      gap: $gutter-sm;
 
       li {
+        white-space: nowrap;
+        padding-left: $gutter-sm;
+
+        &:last-child {
+          padding-right: $gutter-sm;
+        }
+
         &.active a {
           color: $color-green;
         }
@@ -62,8 +71,8 @@
 
       a {
         text-decoration: none;
-        font-weight: 600;
         transition: color 0.2s ease;
+        font-size: rem(15px);
 
         &:hover {
           color: $color-green;

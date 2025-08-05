@@ -16,7 +16,11 @@
   &__cards {
     display: flex;
     flex-direction: column;
-    gap: $gutter-sm;
+    gap: $gutter-s;
+
+    @include medium-up {
+      gap: $gutter-sm;
+    }
   }
 
   &__more {

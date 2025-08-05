@@ -1,4 +1,6 @@
 .service-by {
+  @include spacing;
+
   &__container {
     @include container-large;
   }

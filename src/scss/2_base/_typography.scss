@@ -55,9 +55,6 @@
   font-display: swap;
 }
 
-body {
-}
-
 body:not(.block-editor-page) {
   font-size: rem(15px);
   line-height: $line-height;
@@ -87,6 +84,22 @@ strong {
 
 a {
   color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+  text-decoration-thickness: 0.075em;
+  transition: color 0.3s ease;
+
+  &:hover {
+    color: $color-green;
+  }
+}
+
+.full-element-link {
+  color: inherit;
+
+  &:hover {
+    color: inherit;
+  }
 }
 
 h1,
@@ -154,4 +167,8 @@ ul {
     width: 1.5rem;
     height: 1.5rem;
   }
+}
+
+address {
+  font-style: normal;
 }

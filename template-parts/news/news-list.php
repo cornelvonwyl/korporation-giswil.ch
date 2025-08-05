@@ -41,7 +41,7 @@ if (is_wp_error($posts)) {
               </li>
             <?php endwhile; ?>
           </ul>
-          <a class="news-list__more" href="/neuigkeiten">
+          <a class="news-list__more primary-button" href="/neuigkeiten">
             Mehr Neuigkeiten
           </a>
         <?php endif; ?>

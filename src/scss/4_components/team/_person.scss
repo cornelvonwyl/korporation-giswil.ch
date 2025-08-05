@@ -4,17 +4,16 @@
   }
 
   &__name {
-    margin: 0;
+    margin-bottom: 0.25rem;
   }
 
   &__function,
-  &__phone,
-  &__email {
-    opacity: 0.5;
+  &__contact {
     @include text-small;
+    color: $color-blue-light;
 
     a {
-      text-decoration: none;
+      display: block;
     }
   }
 }

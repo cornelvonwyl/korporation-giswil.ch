@@ -41,22 +41,15 @@ if (!$person)
 
 
   <div class="person__contact">
-
     <?php if (get_field('phone', $person->ID)): ?>
-      <p class="person__phone">
-        <a href="tel:<?php echo get_field('phone', $person->ID); ?>">
-          <?php echo get_field('phone', $person->ID); ?>
-        </a>
-      </p>
+      <a href="tel:<?php echo get_field('phone', $person->ID); ?>">
+        <?php echo get_field('phone', $person->ID); ?>
+      </a>
     <?php endif; ?>
     <?php if (get_field('mail', $person->ID)): ?>
-      <p class="person__email">
-        <a href="mailto:<?php echo get_field('mail', $person->ID); ?>">
-          <?php echo get_field('mail', $person->ID); ?>
-        </a>
-      </p>
+      <a href="mailto:<?php echo get_field('mail', $person->ID); ?>">
+        <?php echo get_field('mail', $person->ID); ?>
+      </a>
     <?php endif; ?>
-
-
   </div>
 </div>

@@ -54,7 +54,6 @@
       transform: translateY(100%);
       overflow-y: auto;
       transition: all 0.5s $transition;
-      z-index: -1;
 
       @include medium-up {
         display: none;
@@ -67,7 +66,7 @@
 
         & > .menu-item {
           border-bottom: $border;
-          padding: 3rem 0;
+          padding: 1rem 0;
           width: 100%;
 
           &.menu-item-has-children {
@@ -121,7 +120,6 @@
         gap: 0;
 
         > .menu-item {
-          height: $content-offset;
           cursor: pointer;
           width: fit-content;
           display: flex;
@@ -129,6 +127,10 @@
           justify-content: center;
           font-size: clamp(12px, 1.4vw, 16px);
           padding: 0 1rem;
+
+          @include medium-up {
+            height: 5rem;
+          }
 
           @include large-up {
             padding: 0 1.75rem;

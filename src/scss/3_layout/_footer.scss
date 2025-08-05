@@ -1,82 +1,31 @@
 .footer {
   border-top: $border;
   overflow: hidden;
-  background-color: $color-green;
+  background-color: $color-blue;
+  color: $color-white;
+
+  position: relative;
 
   &__container {
     @include container-large;
-    @include spacing-inner-medium;
-  }
-  &__grid {
-    display: flex;
-    gap: 3rem;
-    flex-direction: column;
-
-    @include medium-up {
-      flex-direction: row;
-      justify-content: space-between;
-    }
+    @include spacing-inner;
+    position: relative;
+    z-index: 1;
   }
 
-  &__section {
-    @include medium-up {
-      max-width: 30%;
-    }
-
-    &-title {
-      @include subtitle;
-      margin-bottom: 1rem;
-    }
+  &__content {
+    @include two-column-grid;
   }
 
-  &__newsletter {
-    .field_errors {
-      @include text-small;
-      margin-bottom: 0.5rem;
-    }
-
-    input[type='email'] {
-      @include input;
-      margin-bottom: 1rem;
-    }
-
+  &__bottom {
+    @include spacing-top;
   }
 
-  &__links {
-    a {
-      @include underlined-link;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  &__contact {
-    a {
-      @include underlined-link;
-      display: block;
-      margin-bottom: 0.5rem;
-    }
-  }
-
-  &__social {
-    display: flex;
-    gap: 1.5rem;
-
-    margin-bottom: 3rem;
-  }
-
-  &__social-icon {
-    display: block;
-    width: 1.75rem;
+  &__wave {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
     height: auto;
-  }
-
-  &__typo {
-    @include container-large;
-    font-size: clamp(2rem, 14.7vw, 13.5rem);
-    line-height: 1;
-    margin-top: 2rem;
-    transform: translateY(15%);
-    color: #f5e400;
   }
 }

@@ -66,9 +66,9 @@ get_header(); ?>
 
                                             <div class="department__address">
                                                 <h4> Adresse</h4>
-                                                <div class="department__address-content">
+                                                <p class="department__address-content">
                                                     <?php echo wp_kses($address, array('br' => array())); ?>
-                                                </div>
+                                                </p>
                                             </div>
                                         <?php endif; ?>
                                     </div>

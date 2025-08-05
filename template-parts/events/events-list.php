@@ -54,7 +54,7 @@ if (is_wp_error($events)) {
                     </ul>
 
 
-                    <a class="events-list__more" href="/veranstaltungen">
+                    <a class="events-list__more primary-button" href="/veranstaltungen">
                         Mehr Veranstaltungen
                     </a>
                 <?php endif; ?>
