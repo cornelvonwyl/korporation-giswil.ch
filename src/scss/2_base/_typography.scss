@@ -88,6 +88,7 @@ a {
   text-underline-offset: 0.2em;
   text-decoration-thickness: 0.075em;
   transition: color 0.3s ease;
+  cursor: pointer;
 
   &:hover {
     color: $color-green;

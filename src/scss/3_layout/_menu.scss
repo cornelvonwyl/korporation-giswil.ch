@@ -169,6 +169,10 @@
               gap: 0.5rem;
               align-items: center;
 
+              &:hover {
+                color: $color-green;
+              }
+
               &::after {
                 content: '';
                 width: 0.75rem;
@@ -202,6 +206,10 @@
             justify-content: center;
             transition: color 0.3s $transition;
             font-size: inherit;
+
+            &:hover {
+              color: $color-green;
+            }
           }
 
           .sub-menu {

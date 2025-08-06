@@ -12,7 +12,7 @@ if (empty($persons)) {
 ?>
 
 <div class="contact-person">
-    <h4>Ansprechpersonen</h4>
+    <h3>Ansprechpersonen</h3>
     <div class="contact-person__list">
         <?php foreach ($persons as $person): ?>
             <div class="contact-person__item">
